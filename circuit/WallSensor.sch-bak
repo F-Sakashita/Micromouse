@@ -1,0 +1,510 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L device:Q_Photo_NPN Q?
+U 1 1 5F95E869
+P 4200 1650
+F 0 "Q?" H 4390 1696 50  0000 L CNN
+F 1 "ST-1KL3A" H 4390 1605 50  0000 L CNN
+F 2 "LEDs:LED_D5.0mm" H 4400 1750 50  0001 C CNN
+F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 4200 1650 50  0001 C CNN
+	1    4200 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F9613E0
+P 4300 900
+F 0 "#PWR?" H 4300 750 50  0001 C CNN
+F 1 "+3.3V" H 4315 1073 50  0000 C CNN
+F 2 "" H 4300 900 50  0001 C CNN
+F 3 "" H 4300 900 50  0001 C CNN
+	1    4300 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5F969F9C
+P 4300 2250
+F 0 "R?" H 4370 2296 50  0000 L CNN
+F 1 "1k" H 4370 2205 50  0000 L CNN
+F 2 "" V 4230 2250 50  0001 C CNN
+F 3 "" H 4300 2250 50  0001 C CNN
+	1    4300 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1850 4300 2000
+$Comp
+L power:GND #PWR?
+U 1 1 5F96B006
+P 4300 2650
+F 0 "#PWR?" H 4300 2400 50  0001 C CNN
+F 1 "GND" H 4305 2477 50  0000 C CNN
+F 2 "" H 4300 2650 50  0001 C CNN
+F 3 "" H 4300 2650 50  0001 C CNN
+	1    4300 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 2400 4300 2550
+Text HLabel 3800 2000 0    50   Input ~ 0
+WALL_SEN1
+Wire Wire Line
+	3750 2000 4300 2000
+Connection ~ 4300 2000
+Wire Wire Line
+	4300 2000 4300 2100
+Wire Wire Line
+	5550 1150 5550 1450
+Wire Wire Line
+	5550 1150 6850 1150
+Wire Wire Line
+	6850 1150 6850 1450
+Wire Wire Line
+	6850 1150 8050 1150
+Wire Wire Line
+	8050 1150 8050 1450
+Connection ~ 6850 1150
+$Comp
+L device:R R?
+U 1 1 5F984CD4
+P 5550 2250
+F 0 "R?" H 5620 2296 50  0000 L CNN
+F 1 "1k" H 5620 2205 50  0000 L CNN
+F 2 "" V 5480 2250 50  0001 C CNN
+F 3 "" H 5550 2250 50  0001 C CNN
+	1    5550 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5F98543A
+P 6850 2250
+F 0 "R?" H 6920 2296 50  0000 L CNN
+F 1 "1k" H 6920 2205 50  0000 L CNN
+F 2 "" V 6780 2250 50  0001 C CNN
+F 3 "" H 6850 2250 50  0001 C CNN
+	1    6850 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5F985747
+P 8050 2250
+F 0 "R?" H 8120 2296 50  0000 L CNN
+F 1 "1k" H 8120 2205 50  0000 L CNN
+F 2 "" V 7980 2250 50  0001 C CNN
+F 3 "" H 8050 2250 50  0001 C CNN
+	1    8050 2250
+	1    0    0    -1  
+$EndComp
+Text HLabel 5200 2000 0    50   Input ~ 0
+WALL_SEN2
+Text HLabel 6500 2000 0    50   Input ~ 0
+WALL_SEN3
+Text HLabel 7850 2000 0    50   Input ~ 0
+WALL_SEN4
+Wire Wire Line
+	5550 1850 5550 2000
+Wire Wire Line
+	4300 2550 5550 2550
+Wire Wire Line
+	5550 2550 5550 2400
+Connection ~ 4300 2550
+Wire Wire Line
+	4300 2550 4300 2650
+Wire Wire Line
+	5550 2550 6850 2550
+Wire Wire Line
+	6850 2550 6850 2400
+Connection ~ 5550 2550
+Wire Wire Line
+	6850 2550 8050 2550
+Wire Wire Line
+	8050 2550 8050 2400
+Connection ~ 6850 2550
+Wire Wire Line
+	8050 1850 8050 2000
+Wire Wire Line
+	5200 2000 5550 2000
+Connection ~ 5550 2000
+Wire Wire Line
+	5550 2000 5550 2100
+Wire Wire Line
+	6850 1850 6850 2000
+Wire Wire Line
+	6500 2000 6850 2000
+Connection ~ 6850 2000
+Wire Wire Line
+	6850 2000 6850 2100
+Wire Wire Line
+	7850 2000 8050 2000
+Connection ~ 8050 2000
+Wire Wire Line
+	8050 2000 8050 2100
+Wire Wire Line
+	4300 1150 4300 1450
+Connection ~ 5550 1150
+Wire Wire Line
+	4300 1150 5550 1150
+Connection ~ 4300 1150
+Wire Wire Line
+	4300 900  4300 1150
+$Comp
+L device:LED D?
+U 1 1 5F9D2F33
+P 4300 4550
+F 0 "D?" V 4339 4432 50  0000 R CNN
+F 1 "SFH4550" V 4248 4432 50  0000 R CNN
+F 2 "LEDs:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 4300 4550 50  0001 C CNN
+F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 4300 4550 50  0001 C CNN
+	1    4300 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:Q_NJFET_GSD Q?
+U 1 1 5F9D5D03
+P 4200 5100
+F 0 "Q?" H 4390 5146 50  0000 L CNN
+F 1 "BSS138" H 4390 5055 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 4400 5200 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/fairchild/BSS138.pdf" H 4200 5100 50  0001 C CNN
+	1    4200 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5F9D7320
+P 4300 4100
+F 0 "R?" H 4370 4146 50  0000 L CNN
+F 1 "18  1/4W" H 4370 4055 50  0000 L CNN
+F 2 "" V 4230 4100 50  0001 C CNN
+F 3 "" H 4300 4100 50  0001 C CNN
+	1    4300 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5F9DF0D4
+P 3850 5400
+F 0 "R?" H 3920 5446 50  0000 L CNN
+F 1 "10k" H 3920 5355 50  0000 L CNN
+F 2 "" V 3780 5400 50  0001 C CNN
+F 3 "" H 3850 5400 50  0001 C CNN
+	1    3850 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F9DFEB4
+P 3850 5800
+F 0 "#PWR?" H 3850 5550 50  0001 C CNN
+F 1 "GND" H 3855 5627 50  0000 C CNN
+F 2 "" H 3850 5800 50  0001 C CNN
+F 3 "" H 3850 5800 50  0001 C CNN
+	1    3850 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 5550 3850 5700
+Wire Wire Line
+	3850 5700 4300 5700
+Wire Wire Line
+	4300 5700 4300 5300
+Connection ~ 3850 5700
+Wire Wire Line
+	3850 5700 3850 5800
+Wire Wire Line
+	4300 4250 4300 4400
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F9E26F1
+P 4300 3800
+F 0 "#PWR?" H 4300 3650 50  0001 C CNN
+F 1 "+3.3V" H 4315 3973 50  0000 C CNN
+F 2 "" H 4300 3800 50  0001 C CNN
+F 3 "" H 4300 3800 50  0001 C CNN
+	1    4300 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 3800 4300 3850
+Text HLabel 3700 5100 0    50   Input ~ 0
+WALL_LED1
+Wire Wire Line
+	3700 5100 3850 5100
+Wire Wire Line
+	3850 5250 3850 5100
+Wire Wire Line
+	3850 5100 4000 5100
+Connection ~ 3850 5100
+Text Notes 2400 4250 0    50   ~ 0
+If = 100mA, Vf = 1.5V\n(3.3 - Vf )/If  = 1.8 / 0.1   = 18 Ohm\n\nW = I^2 * R = 0.01 * 18 = 0.18W < 1/4W
+Wire Wire Line
+	5800 4250 5800 4400
+Text HLabel 5300 5100 0    50   Input ~ 0
+WALL_LED2
+Wire Wire Line
+	5500 5100 5400 5100
+$Comp
+L device:R R?
+U 1 1 5F9F7357
+P 5400 5400
+F 0 "R?" H 5470 5446 50  0000 L CNN
+F 1 "10k" H 5470 5355 50  0000 L CNN
+F 2 "" V 5330 5400 50  0001 C CNN
+F 3 "" H 5400 5400 50  0001 C CNN
+	1    5400 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 5100 5400 5250
+Connection ~ 5400 5100
+Wire Wire Line
+	5400 5100 5300 5100
+Wire Wire Line
+	4300 5700 5400 5700
+Connection ~ 4300 5700
+Wire Wire Line
+	5800 5300 5800 5700
+Wire Wire Line
+	5400 5550 5400 5700
+Connection ~ 5400 5700
+Wire Wire Line
+	4300 3850 5800 3850
+Wire Wire Line
+	5800 3850 5800 3950
+Connection ~ 4300 3850
+Wire Wire Line
+	4300 3850 4300 3950
+Wire Wire Line
+	7250 3850 7250 3950
+Connection ~ 5800 3850
+Wire Wire Line
+	8650 3850 8650 3950
+Wire Wire Line
+	7250 4250 7250 4400
+Connection ~ 7250 3850
+Wire Wire Line
+	7250 3850 8650 3850
+Wire Wire Line
+	5800 3850 7250 3850
+Wire Wire Line
+	4300 4700 4300 4900
+Wire Wire Line
+	5800 4700 5800 4900
+Wire Wire Line
+	7250 4700 7250 4900
+$Comp
+L device:R R?
+U 1 1 5FA0B91A
+P 6900 5400
+F 0 "R?" H 6970 5446 50  0000 L CNN
+F 1 "10k" H 6970 5355 50  0000 L CNN
+F 2 "" V 6830 5400 50  0001 C CNN
+F 3 "" H 6900 5400 50  0001 C CNN
+	1    6900 5400
+	1    0    0    -1  
+$EndComp
+Text HLabel 6750 5100 0    50   Input ~ 0
+WALL_LED3
+Wire Wire Line
+	6750 5100 6900 5100
+Wire Wire Line
+	6900 5700 6900 5550
+Wire Wire Line
+	5400 5700 5800 5700
+Connection ~ 5800 5700
+Wire Wire Line
+	6900 5100 6900 5250
+Connection ~ 6900 5100
+Wire Wire Line
+	6900 5100 6950 5100
+Wire Wire Line
+	7250 5300 7250 5700
+Wire Wire Line
+	5800 5700 6900 5700
+Connection ~ 6900 5700
+Wire Wire Line
+	6900 5700 7250 5700
+Text HLabel 8200 5100 0    50   Input ~ 0
+WALL_LED4
+Wire Wire Line
+	8650 5700 8650 5300
+Wire Wire Line
+	8200 5100 8300 5100
+$Comp
+L device:R R?
+U 1 1 5FA1897B
+P 8300 5400
+F 0 "R?" H 8370 5446 50  0000 L CNN
+F 1 "10k" H 8370 5355 50  0000 L CNN
+F 2 "" V 8230 5400 50  0001 C CNN
+F 3 "" H 8300 5400 50  0001 C CNN
+	1    8300 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 5100 8300 5250
+Connection ~ 8300 5100
+Wire Wire Line
+	8300 5100 8350 5100
+Wire Wire Line
+	8300 5550 8300 5700
+Connection ~ 8300 5700
+Wire Wire Line
+	8300 5700 8650 5700
+Wire Wire Line
+	7250 5700 8300 5700
+Connection ~ 7250 5700
+Wire Wire Line
+	8650 4700 8650 4900
+Wire Wire Line
+	8650 4250 8650 4400
+$Comp
+L device:R R?
+U 1 1 5FA28255
+P 5800 4100
+F 0 "R?" H 5870 4146 50  0000 L CNN
+F 1 "18  1/4W" H 5870 4055 50  0000 L CNN
+F 2 "" V 5730 4100 50  0001 C CNN
+F 3 "" H 5800 4100 50  0001 C CNN
+	1    5800 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5FA28661
+P 7250 4100
+F 0 "R?" H 7320 4146 50  0000 L CNN
+F 1 "18  1/4W" H 7320 4055 50  0000 L CNN
+F 2 "" V 7180 4100 50  0001 C CNN
+F 3 "" H 7250 4100 50  0001 C CNN
+	1    7250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:R R?
+U 1 1 5FA28D76
+P 8650 4100
+F 0 "R?" H 8720 4146 50  0000 L CNN
+F 1 "18  1/4W" H 8720 4055 50  0000 L CNN
+F 2 "" V 8580 4100 50  0001 C CNN
+F 3 "" H 8650 4100 50  0001 C CNN
+	1    8650 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:Q_NJFET_GSD Q?
+U 1 1 5FA40809
+P 5700 5100
+F 0 "Q?" H 5890 5146 50  0000 L CNN
+F 1 "BSS138" H 5890 5055 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 5900 5200 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/fairchild/BSS138.pdf" H 5700 5100 50  0001 C CNN
+	1    5700 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:Q_NJFET_GSD Q?
+U 1 1 5FA40EEC
+P 7150 5100
+F 0 "Q?" H 7340 5146 50  0000 L CNN
+F 1 "BSS138" H 7340 5055 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 7350 5200 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/fairchild/BSS138.pdf" H 7150 5100 50  0001 C CNN
+	1    7150 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:Q_NJFET_GSD Q?
+U 1 1 5FA4288D
+P 8550 5100
+F 0 "Q?" H 8740 5146 50  0000 L CNN
+F 1 "BSS138" H 8740 5055 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 8750 5200 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/fairchild/BSS138.pdf" H 8550 5100 50  0001 C CNN
+	1    8550 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:LED D?
+U 1 1 5FA434BD
+P 5800 4550
+F 0 "D?" V 5839 4432 50  0000 R CNN
+F 1 "SFH4550" V 5748 4432 50  0000 R CNN
+F 2 "LEDs:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 5800 4550 50  0001 C CNN
+F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 5800 4550 50  0001 C CNN
+	1    5800 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:LED D?
+U 1 1 5FA439ED
+P 7250 4550
+F 0 "D?" V 7289 4432 50  0000 R CNN
+F 1 "SFH4550" V 7198 4432 50  0000 R CNN
+F 2 "LEDs:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 7250 4550 50  0001 C CNN
+F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 7250 4550 50  0001 C CNN
+	1    7250 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:LED D?
+U 1 1 5FA44388
+P 8650 4550
+F 0 "D?" V 8689 4432 50  0000 R CNN
+F 1 "SFH4550" V 8598 4432 50  0000 R CNN
+F 2 "LEDs:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 8650 4550 50  0001 C CNN
+F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 8650 4550 50  0001 C CNN
+	1    8650 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L device:Q_Photo_NPN Q?
+U 1 1 5F9D8BA2
+P 5450 1650
+F 0 "Q?" H 5640 1696 50  0000 L CNN
+F 1 "ST-1KL3A" H 5640 1605 50  0000 L CNN
+F 2 "LEDs:LED_D5.0mm" H 5650 1750 50  0001 C CNN
+F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 5450 1650 50  0001 C CNN
+	1    5450 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:Q_Photo_NPN Q?
+U 1 1 5F9D942E
+P 6750 1650
+F 0 "Q?" H 6940 1696 50  0000 L CNN
+F 1 "ST-1KL3A" H 6940 1605 50  0000 L CNN
+F 2 "LEDs:LED_D5.0mm" H 6950 1750 50  0001 C CNN
+F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 6750 1650 50  0001 C CNN
+	1    6750 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L device:Q_Photo_NPN Q?
+U 1 1 5F9D9876
+P 7950 1650
+F 0 "Q?" H 8140 1696 50  0000 L CNN
+F 1 "ST-1KL3A" H 8140 1605 50  0000 L CNN
+F 2 "LEDs:LED_D5.0mm" H 8150 1750 50  0001 C CNN
+F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 7950 1650 50  0001 C CNN
+	1    7950 1650
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
