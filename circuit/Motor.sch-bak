@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 4
+Sheet 4 4
 Title ""
 Date ""
 Rev ""
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L motor_drivers:TB6612FNG U?
+L motor_drivers:TB6612FNG U4
 U 1 1 5FA509D2
 P 4700 3800
-F 0 "U?" H 4700 4575 50  0000 C CNN
+F 0 "U4" H 4700 4575 50  0000 C CNN
 F 1 "TB6612FNG" H 4700 4484 50  0000 C CNN
 F 2 "Housings_SSOP:SSOP-24_5.3x8.2mm_Pitch0.65mm" H 4700 4000 50  0001 C CNN
 F 3 "https://akizukidenshi.com/download/ds/Toshiba/TB6612FNG_datasheet_ja_20141001.pdf" H 4700 4000 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "https://akizukidenshi.com/download/ds/Toshiba/TB6612FNG_datasheet_ja_201410
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VCC #PWR?
+L power:VCC #PWR0136
 U 1 1 5FA52088
 P 4150 2050
-F 0 "#PWR?" H 4150 1900 50  0001 C CNN
+F 0 "#PWR0136" H 4150 1900 50  0001 C CNN
 F 1 "VCC" H 4167 2223 50  0000 C CNN
 F 2 "" H 4150 2050 50  0001 C CNN
 F 3 "" H 4150 2050 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "" H 4150 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:CP C?
+L device:CP C18
 U 1 1 5FA54BC5
 P 4150 2350
-F 0 "C?" H 4268 2396 50  0000 L CNN
+F 0 "C18" H 4268 2396 50  0000 L CNN
 F 1 "47u" H 4268 2305 50  0000 L CNN
 F 2 "" H 4188 2200 50  0001 C CNN
 F 3 "" H 4150 2350 50  0001 C CNN
@@ -47,10 +47,10 @@ F 3 "" H 4150 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C?
+L device:C C19
 U 1 1 5FA556A7
 P 4600 2350
-F 0 "C?" H 4715 2396 50  0000 L CNN
+F 0 "C19" H 4715 2396 50  0000 L CNN
 F 1 "10u" H 4715 2305 50  0000 L CNN
 F 2 "" H 4638 2200 50  0001 C CNN
 F 3 "" H 4600 2350 50  0001 C CNN
@@ -58,10 +58,10 @@ F 3 "" H 4600 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C?
+L device:C C20
 U 1 1 5FA55999
 P 5000 2350
-F 0 "C?" H 5115 2396 50  0000 L CNN
+F 0 "C20" H 5115 2396 50  0000 L CNN
 F 1 "10u" H 5115 2305 50  0000 L CNN
 F 2 "" H 5038 2200 50  0001 C CNN
 F 3 "" H 5000 2350 50  0001 C CNN
@@ -69,10 +69,10 @@ F 3 "" H 5000 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0137
 U 1 1 5FA55E60
 P 4150 2600
-F 0 "#PWR?" H 4150 2350 50  0001 C CNN
+F 0 "#PWR0137" H 4150 2350 50  0001 C CNN
 F 1 "GND" H 4155 2427 50  0000 C CNN
 F 2 "" H 4150 2600 50  0001 C CNN
 F 3 "" H 4150 2600 50  0001 C CNN
@@ -108,10 +108,10 @@ Wire Wire Line
 	5000 2550 4600 2550
 Connection ~ 4600 2550
 $Comp
-L power:VCC #PWR?
+L power:VCC #PWR0138
 U 1 1 5FA58843
 P 5400 3100
-F 0 "#PWR?" H 5400 2950 50  0001 C CNN
+F 0 "#PWR0138" H 5400 2950 50  0001 C CNN
 F 1 "VCC" H 5417 3273 50  0000 C CNN
 F 2 "" H 5400 3100 50  0001 C CNN
 F 3 "" H 5400 3100 50  0001 C CNN
@@ -119,10 +119,10 @@ F 3 "" H 5400 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0139
 U 1 1 5FA5A00C
 P 3150 2050
-F 0 "#PWR?" H 3150 1900 50  0001 C CNN
+F 0 "#PWR0139" H 3150 1900 50  0001 C CNN
 F 1 "+3.3V" H 3165 2223 50  0000 C CNN
 F 2 "" H 3150 2050 50  0001 C CNN
 F 3 "" H 3150 2050 50  0001 C CNN
@@ -130,10 +130,10 @@ F 3 "" H 3150 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0140
 U 1 1 5FA5C2C5
 P 3150 2600
-F 0 "#PWR?" H 3150 2350 50  0001 C CNN
+F 0 "#PWR0140" H 3150 2350 50  0001 C CNN
 F 1 "GND" H 3155 2427 50  0000 C CNN
 F 2 "" H 3150 2600 50  0001 C CNN
 F 3 "" H 3150 2600 50  0001 C CNN
@@ -145,10 +145,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 2450 3150 2500
 $Comp
-L device:CP C?
+L device:CP C16
 U 1 1 5FA5D47E
 P 3150 2300
-F 0 "C?" H 3268 2346 50  0000 L CNN
+F 0 "C16" H 3268 2346 50  0000 L CNN
 F 1 "10u" H 3268 2255 50  0000 L CNN
 F 2 "" H 3188 2150 50  0001 C CNN
 F 3 "" H 3150 2300 50  0001 C CNN
@@ -156,10 +156,10 @@ F 3 "" H 3150 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C?
+L device:C C17
 U 1 1 5FA5F3FD
 P 3600 2300
-F 0 "C?" H 3715 2346 50  0000 L CNN
+F 0 "C17" H 3715 2346 50  0000 L CNN
 F 1 "0.1u" H 3715 2255 50  0000 L CNN
 F 2 "" H 3638 2150 50  0001 C CNN
 F 3 "" H 3600 2300 50  0001 C CNN
@@ -191,10 +191,10 @@ Wire Wire Line
 	5400 4350 5300 4350
 Connection ~ 5400 4250
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0141
 U 1 1 5FA6429D
 P 5650 3100
-F 0 "#PWR?" H 5650 2950 50  0001 C CNN
+F 0 "#PWR0141" H 5650 2950 50  0001 C CNN
 F 1 "+3.3V" H 5665 3273 50  0000 C CNN
 F 2 "" H 5650 3100 50  0001 C CNN
 F 3 "" H 5650 3100 50  0001 C CNN
@@ -206,10 +206,10 @@ Wire Wire Line
 Wire Wire Line
 	5650 3650 5300 3650
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0142
 U 1 1 5FA64FCB
 P 5500 4550
-F 0 "#PWR?" H 5500 4300 50  0001 C CNN
+F 0 "#PWR0142" H 5500 4300 50  0001 C CNN
 F 1 "GND" H 5505 4377 50  0000 C CNN
 F 2 "" H 5500 4550 50  0001 C CNN
 F 3 "" H 5500 4550 50  0001 C CNN
@@ -221,10 +221,10 @@ Wire Wire Line
 Wire Wire Line
 	5500 3850 5500 4550
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0143
 U 1 1 5FA66338
 P 3950 4600
-F 0 "#PWR?" H 3950 4350 50  0001 C CNN
+F 0 "#PWR0143" H 3950 4350 50  0001 C CNN
 F 1 "GND" H 3955 4427 50  0000 C CNN
 F 2 "" H 3950 4600 50  0001 C CNN
 F 3 "" H 3950 4600 50  0001 C CNN
@@ -278,8 +278,6 @@ Text HLabel 6050 3750 2    50   Input ~ 0
 STBY
 Wire Wire Line
 	5300 3750 6050 3750
-Text GLabel 3450 3250 0    50   Input ~ 0
-MOTOR_L+
 Wire Wire Line
 	3450 3250 3750 3250
 Wire Wire Line
@@ -289,8 +287,6 @@ Wire Wire Line
 Connection ~ 3750 3250
 Wire Wire Line
 	3750 3250 4100 3250
-Text GLabel 3450 3650 0    50   Input ~ 0
-MOTOR_L-
 Wire Wire Line
 	3450 3650 3750 3650
 Wire Wire Line
@@ -300,8 +296,6 @@ Wire Wire Line
 Wire Wire Line
 	3750 3750 3750 3650
 Connection ~ 3750 3650
-Text GLabel 3450 3850 0    50   Input ~ 0
-MOTOR_R+
 Wire Wire Line
 	3450 3850 3750 3850
 Wire Wire Line
@@ -311,8 +305,6 @@ Wire Wire Line
 Connection ~ 3750 3850
 Wire Wire Line
 	3750 3850 4100 3850
-Text GLabel 3450 4250 0    50   Input ~ 0
-MOTOR_R-
 Wire Wire Line
 	3450 4250 3750 4250
 Wire Wire Line
@@ -323,25 +315,21 @@ Connection ~ 3750 4250
 Wire Wire Line
 	3750 4250 4100 4250
 $Comp
-L conn:Conn_02x03_Odd_Even J?
+L conn:Conn_02x03_Odd_Even J7
 U 1 1 5FA84090
 P 8050 3400
-F 0 "J?" H 8100 3717 50  0000 C CNN
+F 0 "J7" H 8100 3717 50  0000 C CNN
 F 1 "Conn_02x03_Odd_Even" H 8100 3626 50  0000 C CNN
 F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" H 8050 3400 50  0001 C CNN
 F 3 "https://akizukidenshi.com/download/ds/useconn/BH-XXSG.pdf" H 8050 3400 50  0001 C CNN
 	1    8050 3400
 	1    0    0    -1  
 $EndComp
-Text GLabel 8700 3300 2    50   Input ~ 0
-MOTOR_L+
-Text GLabel 7500 3300 0    50   Input ~ 0
-MOTOR_L-
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0144
 U 1 1 5FA87B9E
 P 7650 3650
-F 0 "#PWR?" H 7650 3400 50  0001 C CNN
+F 0 "#PWR0144" H 7650 3400 50  0001 C CNN
 F 1 "GND" H 7655 3477 50  0000 C CNN
 F 2 "" H 7650 3650 50  0001 C CNN
 F 3 "" H 7650 3650 50  0001 C CNN
@@ -355,10 +343,10 @@ Wire Wire Line
 Wire Wire Line
 	7650 3400 7850 3400
 $Comp
-L power:+5V #PWR?
+L power:+5V #PWR0145
 U 1 1 5FA8D459
 P 8550 3000
-F 0 "#PWR?" H 8550 2850 50  0001 C CNN
+F 0 "#PWR0145" H 8550 2850 50  0001 C CNN
 F 1 "+5V" H 8565 3173 50  0000 C CNN
 F 2 "" H 8550 3000 50  0001 C CNN
 F 3 "" H 8550 3000 50  0001 C CNN
@@ -379,15 +367,11 @@ Text HLabel 7500 3500 0    50   Output ~ 0
 ENCB_L
 Wire Wire Line
 	7500 3500 7850 3500
-Text GLabel 7500 4600 0    50   Input ~ 0
-MOTOR_R-
-Text GLabel 8700 4600 2    50   Input ~ 0
-MOTOR_R+
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0146
 U 1 1 5FAA48C2
 P 7700 4950
-F 0 "#PWR?" H 7700 4700 50  0001 C CNN
+F 0 "#PWR0146" H 7700 4700 50  0001 C CNN
 F 1 "GND" H 7705 4777 50  0000 C CNN
 F 2 "" H 7700 4950 50  0001 C CNN
 F 3 "" H 7700 4950 50  0001 C CNN
@@ -403,10 +387,10 @@ Wire Wire Line
 Wire Wire Line
 	8350 4600 8700 4600
 $Comp
-L power:+5V #PWR?
+L power:+5V #PWR0147
 U 1 1 5FAA8E6E
 P 8550 4400
-F 0 "#PWR?" H 8550 4250 50  0001 C CNN
+F 0 "#PWR0147" H 8550 4250 50  0001 C CNN
 F 1 "+5V" H 8565 4573 50  0000 C CNN
 F 2 "" H 8550 4400 50  0001 C CNN
 F 3 "" H 8550 4400 50  0001 C CNN
@@ -426,14 +410,30 @@ Wire Wire Line
 Wire Wire Line
 	8350 4800 8700 4800
 $Comp
-L conn:Conn_02x03_Odd_Even J?
+L conn:Conn_02x03_Odd_Even J8
 U 1 1 5F9570AC
 P 8050 4700
-F 0 "J?" H 8100 5017 50  0000 C CNN
+F 0 "J8" H 8100 5017 50  0000 C CNN
 F 1 "Conn_02x03_Odd_Even" H 8100 4926 50  0000 C CNN
 F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" H 8050 4700 50  0001 C CNN
 F 3 "https://akizukidenshi.com/download/ds/useconn/BH-XXSG.pdf" H 8050 4700 50  0001 C CNN
 	1    8050 4700
 	1    0    0    -1  
 $EndComp
+Text Label 3450 3650 2    50   ~ 0
+MOTOR_L-
+Text Label 3450 3850 2    50   ~ 0
+MOTOR_R-
+Text Label 3450 4250 2    50   ~ 0
+MOTOR_R+
+Text Label 7500 3300 2    50   ~ 0
+MOTOR_L+
+Text Label 8700 3300 0    50   ~ 0
+MOTOR_L-
+Text Label 7500 4600 2    50   ~ 0
+MOTOR_R+
+Text Label 8700 4600 0    50   ~ 0
+MOTOR_R-
+Text Label 3450 3250 2    50   ~ 0
+MOTOR_L+
 $EndSCHEMATC
