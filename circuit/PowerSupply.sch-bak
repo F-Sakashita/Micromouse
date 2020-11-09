@@ -25,20 +25,22 @@ F 3 "" H 1750 1000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R1
+L Device:R R1
 U 1 1 5F95E89C
 P 2400 1800
 F 0 "R1" H 2470 1846 50  0000 L CNN
-F 1 "100k" H 2470 1755 50  0000 L CNN
-F 2 "" V 2330 1800 50  0001 C CNN
+F 1 "100k 0.25W" H 2470 1755 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 2330 1800 50  0001 C CNN
 F 3 "" H 2400 1800 50  0001 C CNN
 	1    2400 1800
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x02 CN1
+L Connector_Generic:Conn_01x02 CN1
 U 1 1 5F9556B5
 P 1000 1350
+AR Path="/5F9556B5" Ref="CN1"  Part="1" 
+AR Path="/5F951566/5F9556B5" Ref="CN1"  Part="1" 
 F 0 "CN1" H 1000 1000 50  0000 C CNN
 F 1 "Battery" H 1000 1100 50  0000 C CNN
 F 2 "" H 1000 1350 50  0001 C CNN
@@ -74,9 +76,11 @@ F 3 "" H 2300 2550 50  0001 C CNN
 $EndComp
 Connection ~ 1750 1250
 $Comp
-L conn:Conn_01x02 CN2
+L Connector_Generic:Conn_01x02 CN2
 U 1 1 5F93F701
 P 1000 1900
+AR Path="/5F93F701" Ref="CN2"  Part="1" 
+AR Path="/5F951566/5F93F701" Ref="CN2"  Part="1" 
 F 0 "CN2" H 1000 1550 50  0000 C CNN
 F 1 "Battery" H 1000 1650 50  0000 C CNN
 F 2 "" H 1000 1900 50  0001 C CNN
@@ -98,7 +102,7 @@ F 3 "" H 1450 2200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:Q_PMOS_GSD Q1
+L Device:Q_PMOS_GSD Q1
 U 1 1 5F95A78B
 P 2400 1350
 F 0 "Q1" H 2606 1396 50  0000 L CNN
@@ -116,7 +120,7 @@ Wire Wire Line
 	2400 1550 2400 1600
 Connection ~ 2400 1600
 $Comp
-L switches:SW_SPDT SW1
+L Switch:SW_SPDT SW1
 U 1 1 5F987A18
 P 2400 2200
 F 0 "SW1" V 2446 2012 50  0000 R CNN
@@ -131,13 +135,13 @@ Wire Wire Line
 Wire Wire Line
 	2400 2000 2400 1950
 $Comp
-L device:LED D1
+L Device:LED D1
 U 1 1 5F94B7CC
 P 4750 1950
 F 0 "D1" V 4789 1833 50  0000 R CNN
-F 1 "PWR_LED" V 4698 1833 50  0000 R CNN
-F 2 "" H 4750 1950 50  0001 C CNN
-F 3 "" H 4750 1950 50  0001 C CNN
+F 1 "PWR_LED(Red)" V 4698 1833 50  0000 R CNN
+F 2 "LEDs:LED_0603" H 4750 1950 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/optosupply/OSXX1608C1A_ver_a_10.pdf" H 4750 1950 50  0001 C CNN
 	1    4750 1950
 	0    -1   -1   0   
 $EndComp
@@ -155,17 +159,6 @@ $EndComp
 Wire Wire Line
 	4750 2100 4750 2200
 $Comp
-L regul:NJM7805S U1
-U 1 1 5F93E0A1
-P 3600 1250
-F 0 "U1" H 3600 1565 50  0000 C CNN
-F 1 "NJM7805S" H 3600 1474 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:TO-252-2" H 3600 1700 50  0001 C CNN
-F 3 "https://akizukidenshi.com/download/ds/njr/NJM7800S_J.pdf" H 3650 950 50  0001 C CNN
-	1    3600 1250
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0106
 U 1 1 5F9424A0
 P 3600 1800
@@ -178,17 +171,6 @@ F 3 "" H 3600 1800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3600 1600 3600 1750
-$Comp
-L device:C C1
-U 1 1 5F942D36
-P 3100 1550
-F 0 "C1" H 3215 1596 50  0000 L CNN
-F 1 "0.33uF" H 3215 1505 50  0000 L CNN
-F 2 "" H 3138 1400 50  0001 C CNN
-F 3 "" H 3100 1550 50  0001 C CNN
-	1    3100 1550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2750 1250 3100 1250
 Wire Wire Line
@@ -203,17 +185,6 @@ Wire Wire Line
 Connection ~ 3600 1750
 Wire Wire Line
 	3600 1750 3600 1800
-$Comp
-L device:C C3
-U 1 1 5F943C3B
-P 4100 1550
-F 0 "C3" H 4215 1596 50  0000 L CNN
-F 1 "0.1uF" H 4215 1505 50  0000 L CNN
-F 2 "" H 4138 1400 50  0001 C CNN
-F 3 "" H 4100 1550 50  0001 C CNN
-	1    4100 1550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3600 1750 4100 1750
 Wire Wire Line
@@ -223,12 +194,12 @@ Wire Wire Line
 Wire Wire Line
 	4100 1250 4100 1400
 $Comp
-L device:R R4
+L Device:R R4
 U 1 1 5F945E92
 P 4750 1550
 F 0 "R4" H 4820 1596 50  0000 L CNN
 F 1 "1k" H 4820 1505 50  0000 L CNN
-F 2 "" V 4680 1550 50  0001 C CNN
+F 2 "Resistors_SMD:R_0603" V 4680 1550 50  0001 C CNN
 F 3 "" H 4750 1550 50  0001 C CNN
 	1    4750 1550
 	1    0    0    -1  
@@ -280,23 +251,23 @@ F 3 "" H 3150 3450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R2
+L Device:R R2
 U 1 1 5F95A42B
 P 3150 3800
 F 0 "R2" H 3220 3846 50  0000 L CNN
-F 1 "10k" H 3220 3755 50  0000 L CNN
-F 2 "" V 3080 3800 50  0001 C CNN
+F 1 "20k" H 3220 3755 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 3080 3800 50  0001 C CNN
 F 3 "" H 3150 3800 50  0001 C CNN
 	1    3150 3800
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R3
+L Device:R R3
 U 1 1 5F95A966
 P 3150 4300
 F 0 "R3" H 3220 4346 50  0000 L CNN
-F 1 "2.7k" H 3220 4255 50  0000 L CNN
-F 2 "" V 3080 4300 50  0001 C CNN
+F 1 "10k" H 3220 4255 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 3080 4300 50  0001 C CNN
 F 3 "" H 3150 4300 50  0001 C CNN
 	1    3150 4300
 	1    0    0    -1  
@@ -323,10 +294,10 @@ Wire Wire Line
 Connection ~ 3150 4050
 Wire Wire Line
 	3150 4050 3150 4150
-Text Notes 3450 3800 0    50   ~ 0
+Text Notes 3450 3550 0    50   ~ 0
 VCC=8.4V\nSEN_BAT=8.4 * 10k / (10k+20k)\n = 2.8V
 $Comp
-L device:C C2
+L Device:C C2
 U 1 1 5F95E36D
 P 3550 4300
 F 0 "C2" H 3665 4346 50  0000 L CNN
@@ -429,84 +400,31 @@ Wire Wire Line
 Wire Wire Line
 	1800 3600 1800 3500
 $Comp
-L regul:LM3940IMP-3.3 U2
-U 1 1 5F98DB71
-P 6500 1350
-F 0 "U2" H 6500 1715 50  0000 C CNN
-F 1 "LM3940IMP-3.3" H 6500 1624 50  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-223" H 6500 1700 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/lm3940.pdf?HQS=TI-null-null-digikeymode-df-pf-null-wwe&ts=1603528827635" H 6500 1700 50  0001 C CNN
-	1    6500 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0114
 U 1 1 5F98E5D7
-P 6500 2400
-F 0 "#PWR0114" H 6500 2150 50  0001 C CNN
-F 1 "GND" H 6505 2227 50  0000 C CNN
-F 2 "" H 6500 2400 50  0001 C CNN
-F 3 "" H 6500 2400 50  0001 C CNN
-	1    6500 2400
+P 6500 2250
+F 0 "#PWR0114" H 6500 2000 50  0001 C CNN
+F 1 "GND" H 6505 2077 50  0000 C CNN
+F 2 "" H 6500 2250 50  0001 C CNN
+F 3 "" H 6500 2250 50  0001 C CNN
+	1    6500 2250
 	1    0    0    -1  
 $EndComp
+Connection ~ 6500 2100
 Wire Wire Line
-	6000 1450 6000 2250
+	5850 1250 5850 1650
+Connection ~ 5850 1250
 Wire Wire Line
-	6000 2250 6500 2250
+	5850 1250 4750 1250
 Wire Wire Line
-	7000 1450 7000 2250
+	5850 1950 5850 2100
 Wire Wire Line
-	7000 2250 6500 2250
-Connection ~ 6500 2250
-Wire Wire Line
-	6000 1250 5600 1250
-$Comp
-L device:C C4
-U 1 1 5F992186
-P 5600 1800
-F 0 "C4" H 5715 1846 50  0000 L CNN
-F 1 "0.47uF" H 5715 1755 50  0000 L CNN
-F 2 "" H 5638 1650 50  0001 C CNN
-F 3 "" H 5600 1800 50  0001 C CNN
-	1    5600 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5600 1250 5600 1650
-Connection ~ 5600 1250
-Wire Wire Line
-	5600 1250 4750 1250
-Wire Wire Line
-	5600 1950 5600 2250
-Wire Wire Line
-	5600 2250 6000 2250
-Connection ~ 6000 2250
-$Comp
-L device:C C5
-U 1 1 5F99CDC1
-P 7200 1800
-F 0 "C5" H 7315 1846 50  0000 L CNN
-F 1 "33uF" H 7315 1755 50  0000 L CNN
-F 2 "" H 7238 1650 50  0001 C CNN
-F 3 "" H 7200 1800 50  0001 C CNN
-	1    7200 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7200 1950 7200 2250
-Wire Wire Line
-	7200 2250 7000 2250
-Connection ~ 7000 2250
-Wire Wire Line
-	7000 1250 7200 1250
-Wire Wire Line
-	7200 1250 7200 1650
+	6950 1250 6950 1650
 Wire Wire Line
 	7700 1000 7700 1250
 Wire Wire Line
-	7700 1250 7200 1250
-Connection ~ 7200 1250
+	7700 1250 6950 1250
+Connection ~ 6950 1250
 NoConn ~ 2500 2400
 Wire Wire Line
 	2750 1000 2750 1250
@@ -528,5 +446,94 @@ Imax = 1.5A\n
 Text Notes 6650 1000 0    50   ~ 0
 Imax = 1A
 Wire Wire Line
-	6500 2250 6500 2400
+	6500 2100 6500 2250
+Text Notes 4300 2550 0    50   ~ 0
+R = (5 - 1.9)/0.005 = 620
+Text Notes 2050 4150 0    50   ~ 0
+I = 2.8 / 10k \n  = 0.28mA\nWu = 0.1568 W < 1/4 W\nWd = 0.0784 W < 1/4 W
+$Comp
+L Device:C C4
+U 1 1 5F992186
+P 5850 1800
+F 0 "C4" H 5965 1846 50  0000 L CNN
+F 1 "2.2u" H 5965 1755 50  0000 L CNN
+F 2 "" H 5888 1650 50  0001 C CNN
+F 3 "" H 5850 1800 50  0001 C CNN
+	1    5850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5F942D36
+P 3100 1550
+F 0 "C1" H 3215 1596 50  0000 L CNN
+F 1 "4.7u" H 3215 1505 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3138 1400 50  0001 C CNN
+F 3 "" H 3100 1550 50  0001 C CNN
+	1    3100 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:NJM7805S U1
+U 1 1 5F93E0A1
+P 3600 1250
+F 0 "U1" H 3600 1565 50  0000 C CNN
+F 1 "NJM7805S" H 3600 1474 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2" H 3600 1700 50  0001 C CNN
+F 3 "https://akizukidenshi.com/download/ds/njr/NJM7800S_J.pdf" H 3650 950 50  0001 C CNN
+	1    3600 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5F943C3B
+P 4100 1550
+F 0 "C3" H 4215 1596 50  0000 L CNN
+F 1 "1u" H 4215 1505 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4138 1400 50  0001 C CNN
+F 3 "" H 4100 1550 50  0001 C CNN
+	1    4100 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 2100 6500 2100
+Wire Wire Line
+	6500 2100 6950 2100
+$Comp
+L Regulator_Linear:ADP7182AUJZ-3.3 U4
+U 1 1 5FB8CF9C
+P 6500 1350
+F 0 "U4" H 6500 983 50  0000 C CNN
+F 1 "ADP7182AUJZ-3.3" H 6500 1074 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6500 950 50  0001 C CIN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ADP7182.pdf" H 6500 850 50  0001 C CNN
+	1    6500 1350
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5850 1250 6000 1250
+Wire Wire Line
+	6900 1250 6950 1250
+Wire Wire Line
+	6100 1450 6000 1450
+Wire Wire Line
+	6000 1450 6000 1250
+Connection ~ 6000 1250
+Wire Wire Line
+	6000 1250 6100 1250
+Wire Wire Line
+	6500 1650 6500 2100
+$Comp
+L Device:C C24
+U 1 1 5FBA0D44
+P 6950 1800
+F 0 "C24" H 7065 1846 50  0000 L CNN
+F 1 "2.2u" H 7065 1755 50  0000 L CNN
+F 2 "" H 6988 1650 50  0001 C CNN
+F 3 "" H 6950 1800 50  0001 C CNN
+	1    6950 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 1950 6950 2100
 $EndSCHEMATC

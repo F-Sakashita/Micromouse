@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L device:Q_Photo_NPN Q3
+L Device:Q_Photo_NPN Q3
 U 1 1 5F95E869
 P 4300 2150
 F 0 "Q3" H 4490 2196 50  0000 L CNN
@@ -36,7 +36,7 @@ F 3 "" H 4400 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R12
+L Device:R R12
 U 1 1 5F969F9C
 P 4400 2750
 F 0 "R12" H 4470 2796 50  0000 L CNN
@@ -80,7 +80,7 @@ Wire Wire Line
 	8150 1650 8150 1950
 Connection ~ 6950 1650
 $Comp
-L device:R R15
+L Device:R R15
 U 1 1 5F984CD4
 P 5650 2750
 F 0 "R15" H 5720 2796 50  0000 L CNN
@@ -91,7 +91,7 @@ F 3 "" H 5650 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R17
+L Device:R R17
 U 1 1 5F98543A
 P 6950 2750
 F 0 "R17" H 7020 2796 50  0000 L CNN
@@ -102,7 +102,7 @@ F 3 "" H 6950 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R20
+L Device:R R20
 U 1 1 5F985747
 P 8150 2750
 F 0 "R20" H 8220 2796 50  0000 L CNN
@@ -165,7 +165,7 @@ Connection ~ 4400 1650
 Wire Wire Line
 	4400 1400 4400 1650
 $Comp
-L device:LED D6
+L Device:LED D6
 U 1 1 5F9D2F33
 P 2250 4300
 F 0 "D6" V 2289 4182 50  0000 R CNN
@@ -176,7 +176,7 @@ F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 2250 4300 50  0001 
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R13
+L Device:R R13
 U 1 1 5F9D7320
 P 2250 4750
 F 0 "R13" H 2320 4796 50  0000 L CNN
@@ -187,7 +187,7 @@ F 3 "" H 2250 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R11
+L Device:R R11
 U 1 1 5F9DF0D4
 P 1900 5700
 F 0 "R11" H 1970 5746 50  0000 L CNN
@@ -213,7 +213,7 @@ Text Notes 950  4000 0    50   ~ 0
 Text HLabel 4750 4850 1    50   Input ~ 0
 WALL_LED1
 $Comp
-L device:Q_Photo_NPN Q5
+L Device:Q_Photo_NPN Q5
 U 1 1 5F9D8BA2
 P 5550 2150
 F 0 "Q5" H 5740 2196 50  0000 L CNN
@@ -224,7 +224,7 @@ F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 5550 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:Q_Photo_NPN Q7
+L Device:Q_Photo_NPN Q7
 U 1 1 5F9D942E
 P 6850 2150
 F 0 "Q7" H 7040 2196 50  0000 L CNN
@@ -235,7 +235,7 @@ F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 6850 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:Q_Photo_NPN Q9
+L Device:Q_Photo_NPN Q9
 U 1 1 5F9D9876
 P 8050 2150
 F 0 "Q9" H 8240 2196 50  0000 L CNN
@@ -248,7 +248,7 @@ $EndComp
 Text HLabel 1900 4900 1    50   Input ~ 0
 WALL_LED0
 $Comp
-L device:R R14
+L Device:R R14
 U 1 1 5FA15251
 P 1900 5200
 F 0 "R14" H 1970 5246 50  0000 L CNN
@@ -265,7 +265,7 @@ Wire Wire Line
 Wire Wire Line
 	1900 5850 1900 6000
 $Comp
-L linear:AD8397 U5
+L Amplifier_Operational:AD8397 U5
 U 1 1 5FA1D160
 P 3250 5400
 F 0 "U5" H 3250 5775 50  0000 C CNN
@@ -324,7 +324,7 @@ Wire Wire Line
 Wire Wire Line
 	2750 4050 2250 4050
 $Comp
-L device:LED D7
+L Device:LED D7
 U 1 1 5FA38F00
 P 4200 4300
 F 0 "D7" V 4239 4182 50  0000 R CNN
@@ -356,7 +356,7 @@ $EndComp
 Wire Wire Line
 	3750 5050 3750 5250
 $Comp
-L device:R R16
+L Device:R R16
 U 1 1 5FA41E2C
 P 4200 4700
 F 0 "R16" H 4270 4746 50  0000 L CNN
@@ -378,7 +378,7 @@ Connection ~ 4200 4500
 Wire Wire Line
 	4200 4500 4200 4550
 $Comp
-L device:R R18
+L Device:R R18
 U 1 1 5FA4597C
 P 4750 5150
 F 0 "R18" H 4820 5196 50  0000 L CNN
@@ -389,7 +389,7 @@ F 3 "" H 4750 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R19
+L Device:R R19
 U 1 1 5FA4675D
 P 4750 5650
 F 0 "R19" H 4820 5696 50  0000 L CNN
@@ -448,7 +448,7 @@ F 3 "" H 1450 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C21
+L Device:C C21
 U 1 1 5FA54426
 P 1450 5700
 F 0 "C21" H 1565 5746 50  0000 L CNN
@@ -463,7 +463,7 @@ Wire Wire Line
 Wire Wire Line
 	1450 5850 1450 6000
 $Comp
-L device:LED D8
+L Device:LED D8
 U 1 1 5FA80E67
 P 7050 4250
 F 0 "D8" V 7089 4132 50  0000 R CNN
@@ -474,7 +474,7 @@ F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 7050 4250 50  0001 
 	0    -1   -1   0   
 $EndComp
 $Comp
-L device:R R23
+L Device:R R23
 U 1 1 5FA80E6D
 P 7050 4700
 F 0 "R23" H 7120 4746 50  0000 L CNN
@@ -485,7 +485,7 @@ F 3 "" H 7050 4700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R22
+L Device:R R22
 U 1 1 5FA80E73
 P 6700 5650
 F 0 "R22" H 6770 5696 50  0000 L CNN
@@ -511,7 +511,7 @@ WALL_LED3
 Text HLabel 6700 4850 1    50   Input ~ 0
 WALL_LED2
 $Comp
-L device:R R21
+L Device:R R21
 U 1 1 5FA80E81
 P 6700 5150
 F 0 "R21" H 6770 5196 50  0000 L CNN
@@ -528,7 +528,7 @@ Wire Wire Line
 Wire Wire Line
 	6700 5800 6700 5950
 $Comp
-L linear:AD8397 U6
+L Amplifier_Operational:AD8397 U6
 U 1 1 5FA80E8A
 P 8050 5350
 F 0 "U6" H 8050 5725 50  0000 C CNN
@@ -587,7 +587,7 @@ Wire Wire Line
 Wire Wire Line
 	7550 4000 7050 4000
 $Comp
-L device:LED D9
+L Device:LED D9
 U 1 1 5FA80EAA
 P 9000 4250
 F 0 "D9" V 9039 4132 50  0000 R CNN
@@ -619,7 +619,7 @@ $EndComp
 Wire Wire Line
 	8550 5000 8550 5200
 $Comp
-L device:R R24
+L Device:R R24
 U 1 1 5FA80EBB
 P 9000 4650
 F 0 "R24" H 9070 4696 50  0000 L CNN
@@ -641,7 +641,7 @@ Connection ~ 9000 4450
 Wire Wire Line
 	9000 4450 9000 4500
 $Comp
-L device:R R25
+L Device:R R25
 U 1 1 5FA80EC7
 P 9550 5100
 F 0 "R25" H 9620 5146 50  0000 L CNN
@@ -652,7 +652,7 @@ F 3 "" H 9550 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:R R26
+L Device:R R26
 U 1 1 5FA80ECD
 P 9550 5600
 F 0 "R26" H 9620 5646 50  0000 L CNN
@@ -711,7 +711,7 @@ F 3 "" H 6250 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C22
+L Device:C C22
 U 1 1 5FA80EED
 P 6250 5650
 F 0 "C22" H 6365 5696 50  0000 L CNN
@@ -726,10 +726,10 @@ Wire Wire Line
 Wire Wire Line
 	6250 5800 6250 5950
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0135
 U 1 1 5FAA5075
 P 4200 5050
-F 0 "#PWR?" H 4200 4800 50  0001 C CNN
+F 0 "#PWR0135" H 4200 4800 50  0001 C CNN
 F 1 "GND" H 4205 4877 50  0000 C CNN
 F 2 "" H 4200 5050 50  0001 C CNN
 F 3 "" H 4200 5050 50  0001 C CNN
@@ -739,10 +739,10 @@ $EndComp
 Wire Wire Line
 	4200 4850 4200 5050
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0148
 U 1 1 5FAA7F9E
 P 9000 4950
-F 0 "#PWR?" H 9000 4700 50  0001 C CNN
+F 0 "#PWR0148" H 9000 4700 50  0001 C CNN
 F 1 "GND" H 9005 4777 50  0000 C CNN
 F 2 "" H 9000 4950 50  0001 C CNN
 F 3 "" H 9000 4950 50  0001 C CNN

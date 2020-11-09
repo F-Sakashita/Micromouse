@@ -6545,3 +6545,5 @@ java.io.FileNotFoundException: /Applications/STM32CubeIDE.app/Contents/Eclipse/p
 2020-11-01 17:28:28,317 [INFO] ProjectBuilder:3155 - Time for Generating toolchain IDE Files: 5150mS.
 2020-11-01 17:28:28,326 [INFO] ProjectBuilder:2044 - Time for Copy CMSIS : 0mS.
 2020-11-01 17:28:28,343 [INFO] ProjectBuilder:2044 - Time for Copy CMSIS : 0mS.
+2020-11-04 21:30:09,914 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] ***WARNING: Display must be created on main thread due to Cocoa restrictions. Use vmarg -XstartOnFirstThread
+2020-11-04 21:30:09,918 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] ***WARNING: Display must be created on main thread due to Cocoa restrictions. Use vmarg -XstartOnFirstThread

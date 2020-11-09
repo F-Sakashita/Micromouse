@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L motor_drivers:TB6612FNG U4
-U 1 1 5FA509D2
-P 4700 3800
-F 0 "U4" H 4700 4575 50  0000 C CNN
-F 1 "TB6612FNG" H 4700 4484 50  0000 C CNN
-F 2 "Housings_SSOP:SSOP-24_5.3x8.2mm_Pitch0.65mm" H 4700 4000 50  0001 C CNN
-F 3 "https://akizukidenshi.com/download/ds/Toshiba/TB6612FNG_datasheet_ja_20141001.pdf" H 4700 4000 50  0001 C CNN
-	1    4700 3800
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:VCC #PWR0136
 U 1 1 5FA52088
 P 4150 2050
@@ -36,7 +25,7 @@ F 3 "" H 4150 2050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:CP C18
+L Device:CP C18
 U 1 1 5FA54BC5
 P 4150 2350
 F 0 "C18" H 4268 2396 50  0000 L CNN
@@ -47,7 +36,7 @@ F 3 "" H 4150 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C19
+L Device:C C19
 U 1 1 5FA556A7
 P 4600 2350
 F 0 "C19" H 4715 2396 50  0000 L CNN
@@ -58,7 +47,7 @@ F 3 "" H 4600 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C20
+L Device:C C20
 U 1 1 5FA55999
 P 5000 2350
 F 0 "C20" H 5115 2396 50  0000 L CNN
@@ -110,12 +99,12 @@ Connection ~ 4600 2550
 $Comp
 L power:VCC #PWR0138
 U 1 1 5FA58843
-P 5400 3100
-F 0 "#PWR0138" H 5400 2950 50  0001 C CNN
-F 1 "VCC" H 5417 3273 50  0000 C CNN
-F 2 "" H 5400 3100 50  0001 C CNN
-F 3 "" H 5400 3100 50  0001 C CNN
-	1    5400 3100
+P 4950 3400
+F 0 "#PWR0138" H 4950 3250 50  0001 C CNN
+F 1 "VCC" H 4967 3573 50  0000 C CNN
+F 2 "" H 4950 3400 50  0001 C CNN
+F 3 "" H 4950 3400 50  0001 C CNN
+	1    4950 3400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -145,7 +134,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 2450 3150 2500
 $Comp
-L device:CP C16
+L Device:CP C16
 U 1 1 5FA5D47E
 P 3150 2300
 F 0 "C16" H 3268 2346 50  0000 L CNN
@@ -156,7 +145,7 @@ F 3 "" H 3150 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:C C17
+L Device:C C17
 U 1 1 5FA5F3FD
 P 3600 2300
 F 0 "C17" H 3715 2346 50  0000 L CNN
@@ -176,146 +165,55 @@ Wire Wire Line
 Connection ~ 3150 2150
 Wire Wire Line
 	3600 2450 3600 2500
-Wire Wire Line
-	5400 3100 5400 3250
-Wire Wire Line
-	5400 3250 5300 3250
-Wire Wire Line
-	5400 3250 5400 4250
-Wire Wire Line
-	5400 4250 5300 4250
-Connection ~ 5400 3250
-Wire Wire Line
-	5400 4250 5400 4350
-Wire Wire Line
-	5400 4350 5300 4350
-Connection ~ 5400 4250
 $Comp
 L power:+3.3V #PWR0141
 U 1 1 5FA6429D
-P 5650 3100
-F 0 "#PWR0141" H 5650 2950 50  0001 C CNN
-F 1 "+3.3V" H 5665 3273 50  0000 C CNN
-F 2 "" H 5650 3100 50  0001 C CNN
-F 3 "" H 5650 3100 50  0001 C CNN
-	1    5650 3100
+P 4450 3400
+F 0 "#PWR0141" H 4450 3250 50  0001 C CNN
+F 1 "+3.3V" H 4465 3573 50  0000 C CNN
+F 2 "" H 4450 3400 50  0001 C CNN
+F 3 "" H 4450 3400 50  0001 C CNN
+	1    4450 3400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 3100 5650 3650
-Wire Wire Line
-	5650 3650 5300 3650
 $Comp
 L power:GND #PWR0142
 U 1 1 5FA64FCB
-P 5500 4550
-F 0 "#PWR0142" H 5500 4300 50  0001 C CNN
-F 1 "GND" H 5505 4377 50  0000 C CNN
-F 2 "" H 5500 4550 50  0001 C CNN
-F 3 "" H 5500 4550 50  0001 C CNN
-	1    5500 4550
+P 5050 5800
+F 0 "#PWR0142" H 5050 5550 50  0001 C CNN
+F 1 "GND" H 5055 5627 50  0000 C CNN
+F 2 "" H 5050 5800 50  0001 C CNN
+F 3 "" H 5050 5800 50  0001 C CNN
+	1    5050 5800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5300 3850 5500 3850
-Wire Wire Line
-	5500 3850 5500 4550
 $Comp
 L power:GND #PWR0143
 U 1 1 5FA66338
-P 3950 4600
-F 0 "#PWR0143" H 3950 4350 50  0001 C CNN
-F 1 "GND" H 3955 4427 50  0000 C CNN
-F 2 "" H 3950 4600 50  0001 C CNN
-F 3 "" H 3950 4600 50  0001 C CNN
-	1    3950 4600
+P 4450 5800
+F 0 "#PWR0143" H 4450 5550 50  0001 C CNN
+F 1 "GND" H 4455 5627 50  0000 C CNN
+F 2 "" H 4450 5800 50  0001 C CNN
+F 3 "" H 4450 5800 50  0001 C CNN
+	1    4450 5800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4100 4150 3950 4150
-Wire Wire Line
-	3950 4150 3950 4600
-Wire Wire Line
-	4100 4050 3950 4050
-Wire Wire Line
-	3950 4050 3950 4150
-Connection ~ 3950 4150
-Wire Wire Line
-	4100 3550 3950 3550
-Wire Wire Line
-	3950 3550 3950 4050
-Connection ~ 3950 4050
-Wire Wire Line
-	4100 3450 3950 3450
-Wire Wire Line
-	3950 3450 3950 3550
-Connection ~ 3950 3550
-Text HLabel 6050 3350 2    50   Input ~ 0
+Text HLabel 3950 4400 0    50   Input ~ 0
 PWM_L
-Wire Wire Line
-	5300 3350 6050 3350
-Text HLabel 6050 3450 2    50   Input ~ 0
+Text HLabel 3950 4800 0    50   Input ~ 0
 IN2_L
-Text HLabel 6050 3550 2    50   Input ~ 0
+Text HLabel 3950 4700 0    50   Input ~ 0
 IN1_L
-Wire Wire Line
-	5300 3450 6050 3450
-Wire Wire Line
-	5300 3550 6050 3550
-Text HLabel 6050 4150 2    50   Input ~ 0
+Text HLabel 3950 4500 0    50   Input ~ 0
 PWM_R
-Text HLabel 6050 3950 2    50   Input ~ 0
+Text HLabel 3950 4900 0    50   Input ~ 0
 IN1_R
-Text HLabel 6050 4050 2    50   Input ~ 0
+Text HLabel 3950 5000 0    50   Input ~ 0
 IN2_R
-Wire Wire Line
-	5300 3950 6050 3950
-Wire Wire Line
-	5300 4050 6050 4050
-Wire Wire Line
-	5300 4150 6050 4150
-Text HLabel 6050 3750 2    50   Input ~ 0
+Text HLabel 3950 4200 0    50   Input ~ 0
 STBY
-Wire Wire Line
-	5300 3750 6050 3750
-Wire Wire Line
-	3450 3250 3750 3250
-Wire Wire Line
-	4100 3350 3750 3350
-Wire Wire Line
-	3750 3350 3750 3250
-Connection ~ 3750 3250
-Wire Wire Line
-	3750 3250 4100 3250
-Wire Wire Line
-	3450 3650 3750 3650
-Wire Wire Line
-	3750 3650 4100 3650
-Wire Wire Line
-	4100 3750 3750 3750
-Wire Wire Line
-	3750 3750 3750 3650
-Connection ~ 3750 3650
-Wire Wire Line
-	3450 3850 3750 3850
-Wire Wire Line
-	4100 3950 3750 3950
-Wire Wire Line
-	3750 3950 3750 3850
-Connection ~ 3750 3850
-Wire Wire Line
-	3750 3850 4100 3850
-Wire Wire Line
-	3450 4250 3750 4250
-Wire Wire Line
-	4100 4350 3750 4350
-Wire Wire Line
-	3750 4350 3750 4250
-Connection ~ 3750 4250
-Wire Wire Line
-	3750 4250 4100 4250
 $Comp
-L conn:Conn_02x03_Odd_Even J7
+L Connector_Generic:Conn_02x03_Odd_Even J7
 U 1 1 5FA84090
 P 8050 3400
 F 0 "J7" H 8100 3717 50  0000 C CNN
@@ -410,7 +308,7 @@ Wire Wire Line
 Wire Wire Line
 	8350 4800 8700 4800
 $Comp
-L conn:Conn_02x03_Odd_Even J8
+L Connector_Generic:Conn_02x03_Odd_Even J8
 U 1 1 5F9570AC
 P 8050 4700
 F 0 "J8" H 8100 5017 50  0000 C CNN
@@ -420,11 +318,11 @@ F 3 "https://akizukidenshi.com/download/ds/useconn/BH-XXSG.pdf" H 8050 4700 50  
 	1    8050 4700
 	1    0    0    -1  
 $EndComp
-Text Label 3450 3650 2    50   ~ 0
+Text Label 5450 4400 0    50   ~ 0
 MOTOR_L-
-Text Label 3450 3850 2    50   ~ 0
+Text Label 5450 4700 0    50   ~ 0
 MOTOR_R-
-Text Label 3450 4250 2    50   ~ 0
+Text Label 5450 4900 0    50   ~ 0
 MOTOR_R+
 Text Label 7500 3300 2    50   ~ 0
 MOTOR_L+
@@ -434,6 +332,65 @@ Text Label 7500 4600 2    50   ~ 0
 MOTOR_R+
 Text Label 8700 4600 0    50   ~ 0
 MOTOR_R-
-Text Label 3450 3250 2    50   ~ 0
+Text Label 5450 4200 0    50   ~ 0
 MOTOR_L+
+Wire Wire Line
+	4450 5600 4450 5800
+$Comp
+L Driver_Motor:TB6612FNG U2
+U 1 1 5FAE9218
+P 4750 4600
+F 0 "U2" H 4750 3511 50  0000 C CNN
+F 1 "TB6612FNG" H 4750 3420 50  0000 C CNN
+F 2 "Package_SO:SSOP-24_5.3x8.2mm_P0.65mm" H 6050 3700 50  0001 C CNN
+F 3 "https://toshiba.semicon-storage.com/us/product/linear/motordriver/detail.TB6612FNG.html" H 5200 5200 50  0001 C CNN
+	1    4750 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 4200 5450 4200
+Wire Wire Line
+	5350 4700 5450 4700
+Wire Wire Line
+	5350 4900 5450 4900
+Wire Wire Line
+	5350 4400 5450 4400
+Wire Wire Line
+	4850 5600 4850 5700
+Wire Wire Line
+	4850 5700 5050 5700
+Wire Wire Line
+	5050 5700 5050 5800
+Wire Wire Line
+	5050 5600 5050 5700
+Connection ~ 5050 5700
+Wire Wire Line
+	4950 3400 4950 3550
+Wire Wire Line
+	4850 3600 4850 3550
+Wire Wire Line
+	4850 3550 4950 3550
+Connection ~ 4950 3550
+Wire Wire Line
+	4950 3550 4950 3600
+Wire Wire Line
+	4950 3550 5050 3550
+Wire Wire Line
+	5050 3550 5050 3600
+Wire Wire Line
+	4450 3400 4450 3600
+Wire Wire Line
+	3950 4700 4150 4700
+Wire Wire Line
+	3950 4800 4150 4800
+Wire Wire Line
+	3950 4900 4150 4900
+Wire Wire Line
+	3950 5000 4150 5000
+Wire Wire Line
+	3950 4500 4150 4500
+Wire Wire Line
+	3950 4400 4150 4400
+Wire Wire Line
+	3950 4200 4150 4200
 $EndSCHEMATC
