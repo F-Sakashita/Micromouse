@@ -474,7 +474,7 @@ F 3 "" H 3100 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Regulator_Linear:NJM7805S U1
+L Micromouse-rescue:NJM7805S-Regulator_Linear U1
 U 1 1 5F93E0A1
 P 3600 1250
 AR Path="/5F93E0A1" Ref="U1"  Part="1" 

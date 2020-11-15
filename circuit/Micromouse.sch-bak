@@ -757,7 +757,7 @@ F 3 "" H 12100 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Audio:CSS-0575A-SMT LS1
+L Micromouse-rescue:CSS-0575A-SMT-Audio LS1
 U 1 1 5FB2CA92
 P 2650 6950
 F 0 "LS1" H 2755 6996 50  0000 L CNN

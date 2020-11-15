@@ -19,7 +19,7 @@ U 1 1 5F95E869
 P 4300 2150
 F 0 "Q3" H 4490 2196 50  0000 L CNN
 F 1 "ST-1KL3A" H 4490 2105 50  0000 L CNN
-F 2 "LED_THT:LED_D5.0mm" H 4500 2250 50  0001 C CNN
+F 2 "Original:ST-1KL3A_ForWall" H 4500 2250 50  0001 C CNN
 F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 4300 2150 50  0001 C CNN
 	1    4300 2150
 	1    0    0    -1  
@@ -218,7 +218,7 @@ U 1 1 5F9D8BA2
 P 5550 2150
 F 0 "Q5" H 5740 2196 50  0000 L CNN
 F 1 "ST-1KL3A" H 5740 2105 50  0000 L CNN
-F 2 "LED_THT:LED_D5.0mm" H 5750 2250 50  0001 C CNN
+F 2 "Original:ST-1KL3A_ForWall" H 5750 2250 50  0001 C CNN
 F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 5550 2150 50  0001 C CNN
 	1    5550 2150
 	1    0    0    -1  
@@ -229,7 +229,7 @@ U 1 1 5F9D942E
 P 6850 2150
 F 0 "Q7" H 7040 2196 50  0000 L CNN
 F 1 "ST-1KL3A" H 7040 2105 50  0000 L CNN
-F 2 "LED_THT:LED_D5.0mm" H 7050 2250 50  0001 C CNN
+F 2 "Original:ST-1KL3A_ForWall" H 7050 2250 50  0001 C CNN
 F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 6850 2150 50  0001 C CNN
 	1    6850 2150
 	1    0    0    -1  
@@ -240,7 +240,7 @@ U 1 1 5F9D9876
 P 8050 2150
 F 0 "Q9" H 8240 2196 50  0000 L CNN
 F 1 "ST-1KL3A" H 8240 2105 50  0000 L CNN
-F 2 "LED_THT:LED_D5.0mm" H 8250 2250 50  0001 C CNN
+F 2 "Original:ST-1KL3A_ForWall" H 8250 2250 50  0001 C CNN
 F 3 "http://www.kashinoki.co.jp/pdf/ST-1KL3A.pdf" H 8050 2150 50  0001 C CNN
 	1    8050 2150
 	1    0    0    -1  
@@ -265,7 +265,7 @@ Wire Wire Line
 Wire Wire Line
 	1900 5850 1900 6000
 $Comp
-L Amplifier_Operational:AD8397 U5
+L Micromouse-rescue:AD8397-Amplifier_Operational U5
 U 1 1 5FA1D160
 P 3250 5400
 AR Path="/5FA1D160" Ref="U5"  Part="1" 
@@ -470,7 +470,7 @@ U 1 1 5FA80E67
 P 7050 4250
 F 0 "D8" V 7089 4132 50  0000 R CNN
 F 1 "SFH4550" V 6998 4132 50  0000 R CNN
-F 2 "LED_THT:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 7050 4250 50  0001 C CNN
+F 2 "Original:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm_reverse" H 7050 4250 50  0001 C CNN
 F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 7050 4250 50  0001 C CNN
 	1    7050 4250
 	0    -1   -1   0   
@@ -530,7 +530,7 @@ Wire Wire Line
 Wire Wire Line
 	6700 5800 6700 5950
 $Comp
-L Amplifier_Operational:AD8397 U6
+L Micromouse-rescue:AD8397-Amplifier_Operational U6
 U 1 1 5FA80E8A
 P 8050 5350
 AR Path="/5FA80E8A" Ref="U6"  Part="1" 
@@ -596,7 +596,7 @@ U 1 1 5FA80EAA
 P 9000 4250
 F 0 "D9" V 9039 4132 50  0000 R CNN
 F 1 "SFH4550" V 8948 4132 50  0000 R CNN
-F 2 "LED_THT:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm" H 9000 4250 50  0001 C CNN
+F 2 "Original:LED_D5.0mm_Horizontal_O3.81mm_Z9.0mm_reverse" H 9000 4250 50  0001 C CNN
 F 3 "https://docs.rs-online.com/103c/0900766b808b12d5.pdf" H 9000 4250 50  0001 C CNN
 	1    9000 4250
 	0    -1   -1   0   
