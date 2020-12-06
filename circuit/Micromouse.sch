@@ -407,11 +407,11 @@ WALL_LED3
 Wire Wire Line
 	10850 3800 11050 3800
 Text Label 11050 3900 0    50   ~ 0
-ENC_R_B
+ENC_L_B
 Wire Wire Line
 	10850 3900 11050 3900
 Text Label 11050 3800 0    50   ~ 0
-ENC_R_A
+ENC_L_A
 Text Label 11050 4000 0    50   ~ 0
 DBG_TX
 Wire Wire Line
@@ -429,11 +429,11 @@ IMU_SCK
 Wire Wire Line
 	10850 4300 11050 4300
 Text Label 11050 4400 0    50   ~ 0
-WALL_SEN0
+WALL_SEN1
 Wire Wire Line
 	10850 4400 11050 4400
 Text Label 11050 4500 0    50   ~ 0
-WALL_SEN1
+WALL_SEN0
 Wire Wire Line
 	10850 4500 11050 4500
 Text Label 11050 4600 0    50   ~ 0
@@ -457,11 +457,11 @@ MOTOR_STBY
 Wire Wire Line
 	10850 5000 11050 5000
 Text Label 11050 5300 0    50   ~ 0
-ENC_L_A
+ENC_R_A
 Wire Wire Line
 	10850 5300 11050 5300
 Text Label 11050 5800 0    50   ~ 0
-ENC_L_B
+ENC_R_B
 Wire Wire Line
 	10850 5800 11050 5800
 Text Label 11050 5500 0    50   ~ 0
@@ -535,7 +535,6 @@ NoConn ~ 10850 6900
 NoConn ~ 10850 7000
 NoConn ~ 10850 6400
 NoConn ~ 10850 6300
-NoConn ~ 9450 6000
 Text Label 7500 8400 1    50   ~ 0
 SW0
 Wire Wire Line
@@ -796,17 +795,6 @@ F 1 "IRLML6344" H 2756 7405 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 2750 7550 50  0001 C CNN
 F 3 "https://akizukidenshi.com/download/ds/ir/irlml6344pbf.pdf" H 2550 7450 50  0001 C CNN
 	1    2550 7450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR0128
-U 1 1 5FAB5052
-P 2650 6650
-F 0 "#PWR0128" H 2650 6500 50  0001 C CNN
-F 1 "+5V" H 2665 6823 50  0000 C CNN
-F 2 "" H 2650 6650 50  0001 C CNN
-F 3 "" H 2650 6650 50  0001 C CNN
-	1    2650 6650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1167,4 +1155,43 @@ Wire Wire Line
 Wire Wire Line
 	6000 8850 6100 8850
 NoConn ~ 6000 8950
+$Comp
+L power:+3.3V #PWR0128
+U 1 1 5FCF8981
+P 2650 6650
+F 0 "#PWR0128" H 2650 6500 50  0001 C CNN
+F 1 "+3.3V" H 2665 6823 50  0000 C CNN
+F 2 "" H 2650 6650 50  0001 C CNN
+F 3 "" H 2650 6650 50  0001 C CNN
+	1    2650 6650
+	1    0    0    -1  
+$EndComp
+Text Label 9250 6000 2    50   ~ 0
+SW0
+Wire Wire Line
+	9250 6000 9450 6000
+$Comp
+L Connector:TestPoint TP?
+U 1 1 5FFC074B
+P 6500 9800
+F 0 "TP?" H 6558 9918 50  0000 L CNN
+F 1 "TestPoint" H 6558 9827 50  0000 L CNN
+F 2 "" H 6700 9800 50  0001 C CNN
+F 3 "~" H 6700 9800 50  0001 C CNN
+	1    6500 9800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FFC282D
+P 6500 10100
+F 0 "#PWR?" H 6500 9850 50  0001 C CNN
+F 1 "GND" H 6505 9927 50  0000 C CNN
+F 2 "" H 6500 10100 50  0001 C CNN
+F 3 "" H 6500 10100 50  0001 C CNN
+	1    6500 10100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 9800 6500 10100
 $EndSCHEMATC
