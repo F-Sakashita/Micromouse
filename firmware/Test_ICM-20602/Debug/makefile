@@ -71,7 +71,7 @@ main-build: Test_ICM-20602.elf secondary-outputs
 
 # Tool invocations
 Test_ICM-20602.elf: $(OBJS) $(USER_OBJS) /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Test_ICM-20602/STM32F446RETX_FLASH.ld
-	arm-none-eabi-g++ -o "Test_ICM-20602.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Test_ICM-20602/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_ICM-20602.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "Test_ICM-20602.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Test_ICM-20602/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_ICM-20602.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

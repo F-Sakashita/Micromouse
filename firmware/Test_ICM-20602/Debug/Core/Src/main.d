@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h \
@@ -19,7 +19,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/usart.h \
- ../Core/Inc/gpio.h ../Core/Peripheral/SystickTimer.h
+ ../Core/Inc/gpio.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
+ ../Core/Peripheral/SystickTimer.h ../Core/Peripheral/ICM_20602.hpp
 
 ../Core/Inc/main.h:
 
@@ -69,4 +70,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/gpio.h:
 
+../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
+
 ../Core/Peripheral/SystickTimer.h:
+
+../Core/Peripheral/ICM_20602.hpp:

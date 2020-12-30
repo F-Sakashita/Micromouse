@@ -1,3 +1,4 @@
+"Core/Peripheral/ICM_20602.o"
 "Core/Peripheral/SystickTimer.o"
 "Core/Src/gpio.o"
 "Core/Src/main.o"

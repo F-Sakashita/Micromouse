@@ -1,0 +1,20 @@
+stm32f4xx_ll_gpio.h:882:22:void LL_GPIO_SetOutputPin(GPIO_TypeDef*, uint32_t)	16	static
+stm32f4xx_ll_gpio.h:911:22:void LL_GPIO_ResetOutputPin(GPIO_TypeDef*, uint32_t)	16	static
+stm32f4xx_ll_spi.h:298:22:void LL_SPI_Enable(SPI_TypeDef*)	16	static
+stm32f4xx_ll_spi.h:310:22:void LL_SPI_Disable(SPI_TypeDef*)	16	static
+stm32f4xx_ll_spi.h:732:26:uint32_t LL_SPI_IsActiveFlag_RXNE(SPI_TypeDef*)	16	static
+stm32f4xx_ll_spi.h:743:26:uint32_t LL_SPI_IsActiveFlag_TXE(SPI_TypeDef*)	16	static
+stm32f4xx_ll_spi.h:1076:25:uint8_t LL_SPI_ReceiveData8(SPI_TypeDef*)	16	static
+stm32f4xx_ll_spi.h:1099:22:void LL_SPI_TransmitData8(SPI_TypeDef*, uint8_t)	24	static
+ICM_20602.cpp:25:1:ICM_20602::ICM_20602(ICM_20602::CommMode_t)	16	static
+ICM_20602.cpp:31:1:ICM_20602::~ICM_20602()	16	static
+ICM_20602.cpp:36:6:bool ICM_20602::SetSPIPort(SPI_TypeDef*, GPIO_TypeDef*, uint32_t)	24	static
+ICM_20602.cpp:59:6:bool ICM_20602::SetI2CPort(I2C_TypeDef*)	16	static
+ICM_20602.cpp:73:6:bool ICM_20602::SetINTPort(GPIO_TypeDef*, uint32_t)	24	static
+ICM_20602.cpp:78:6:void ICM_20602::Setup()	16	static
+ICM_20602.cpp:102:6:bool ICM_20602::IsConnected()	16	static
+ICM_20602.cpp:106:6:void ICM_20602::Update()	24	static
+ICM_20602.cpp:122:6:void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t, uint8_t)	24	static
+ICM_20602.cpp:145:9:uint8_t ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t)	24	static
+ICM_20602.cpp:177:6:void ICM_20602::CommunicateSPIMode(uint8_t*, uint8_t*, uint16_t)	40	static
+ICM_20602.cpp:209:6:void ICM_20602::CommunicateI2CMode(uint8_t*, uint8_t*, uint16_t)	24	static

@@ -68,7 +68,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void __io_putchar(uint8_t u8WriteData);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
