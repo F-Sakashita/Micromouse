@@ -14,6 +14,7 @@
 //STM32 Driver
 #include "stm32f4xx.h"	//SPI_TypeDef, I2C_TypeDef, ...
 
+
 class ICM_20602{
 public:
 	typedef enum{
@@ -21,18 +22,31 @@ public:
 		EN_COMM_MODE_I2C
 	}CommMode_t;
 
+	typedef struct{
+		int16_t sValueX;
+		int16_t sValueY;
+		int16_t sValueZ;
+	}RawData_t;
+
+	typedef struct{
+		float fValueX;
+		float fValueY;
+		float fValueZ;
+	}Coord_t;
+
 	typedef enum{
-		EN_DATA_WHO_AM_I = 0,
+			EN_GYRO_FULLSCALE_PM250DPS = 0,
+			EN_GYRO_FULLSCALE_PM500DPS,
+			EN_GYRO_FULLSCALE_PM1000DPS,
+			EN_GYRO_FULLSCALE_PM2000DPS
+	}GyroFullScaleMode_t;
 
-		EN_DATA_GYRO_X,
-		EN_DATA_GYRO_Y,
-		EN_DATA_GYRO_Z,
-
-		EN_DATA_ACC_X,
-		EN_DATA_ACC_Y,
-		EN_DATA_ACC_Z
-
-	}Data_t;
+	typedef enum{
+		EN_ACCEL_FULLSCALE_PM2G = 0,
+		EN_ACCEL_FULLSCALE_PM4G,
+		EN_ACCEL_FULLSCALE_PM8G,
+		EN_ACCEL_FULLSCALE_PM16G
+	}AccelFullScaleMode_t;
 
 	ICM_20602(CommMode_t enCommMode = EN_COMM_MODE_SPI);
 	~ICM_20602();
@@ -46,9 +60,18 @@ public:
 
 	bool IsConnected();
 	void Update();
+	const Coord_t& GetGyroDPS();
+	const Coord_t& GetGyroRPS();
+	const Coord_t& GetAccelG();
+	const RawData_t& GetGyroRawData();
+	const RawData_t& GetAccelRawData();
 
+	void SetGyroFullScale(GyroFullScaleMode_t enScaleMode);
+	void SetAccelFullScale(AccelFullScaleMode_t enScaleMode);
 
 private:
+	#define WHO_AM_I_VALUE 		(0x12)
+	#define GRAV_ACCEL			(9.81f)
 
 	typedef enum{
 		EN_REG_ADDR_XG_OFFS_TC_H		= 0x04,
@@ -130,29 +153,81 @@ private:
 
 		EN_REG_ADDR_ZA_OFFSET_H			= 0x7D,
 		EN_REG_ADDR_ZA_OFFSET_L			= 0x7E,
-
 	}RegisterAddress_t;
 
-	void WriteRegister(RegisterAddress_t enAddr, uint8_t u8WriteData);
+	typedef enum{
+		EN_RW_MODE_READ = 0,
+		EN_RW_MODE_WRITE
+	}RW_Mode_t;
+
+	typedef struct{
+		GyroFullScaleMode_t enScaleMode;
+		float	fLSB_per_dps;
+	}GyroFullScale_t;
+
+	typedef struct{
+		AccelFullScaleMode_t enScaleMode;
+		float	fLSB_per_G;
+	}AccelFullScale_t;
+
+
+	int16_t ConvertHLDataTo16Bits(uint8_t ucHighData, uint8_t ucLowData){
+		return (((int16_t)ucHighData << 8) | ((int16_t)ucLowData));
+	}
+
+	float ConvertRawDataToFloat(int16_t sRawData, float fScaleFactor){
+		if(fScaleFactor == 0.0){
+			return 0.0;
+		}
+		return ((float)sRawData / fScaleFactor);		//value[LSB] / (LSB/unit) = unit
+	}
+
+	void ScaleConvert();
+
+	void SetGyroConfig();
+	void SetAccelConfig();
+	void SetAccelConfig2();
+
+	void WriteRegister(RegisterAddress_t enAddr, uint8_t ucWriteData);
+	void WriteRegister(RegisterAddress_t enStartAddr, uint8_t *pWriteData, uint16_t usLength);
 	uint8_t ReadRegister(RegisterAddress_t enAddr);
+	void ReadRegister(RegisterAddress_t enStartAddr, uint8_t *pReadData, uint16_t usLength);
 
-
-	void Communicate(uint8_t *pTxData, uint8_t *pRxData, uint16_t u16DataLength);
-	void CommunicateSPIMode(uint8_t *pTxData, uint8_t *pRxData, uint16_t u16DataLength);
-	void CommunicateI2CMode(uint8_t *pTxData, uint8_t *pRxData, uint16_t u16DataLength);
+	void CommunicateSPIMode(RW_Mode_t mode, RegisterAddress_t enStartAddr, uint8_t *pTxData, uint8_t *pRxData, uint16_t usDataLength);
+	void CommunicateI2CMode(RW_Mode_t mode, RegisterAddress_t enStartAddr, uint8_t *pTxData, uint8_t *pRxData, uint16_t usDataLength);
 
 
 	CommMode_t enCommMode;
+
+	GyroFullScaleMode_t enGyroScaleMode;
+	AccelFullScaleMode_t enAccelScaleMode;
+	static const GyroFullScale_t stGyroScale[4];
+	static const AccelFullScale_t stAccelScale[4];
 	bool bIsConnected;
+
+	uint8_t ucGyroConfigValue;
+	uint8_t ucAccelConfigValue;
+	uint8_t ucAccelConfig2Value;
+	uint8_t ucGyroConfigValueOld;
+	uint8_t ucAccelConfigValueOld;
+	uint8_t ucAccelConfig2ValueOld;
+
+	RawData_t stGyroRawData;
+	RawData_t stAccelRawData;
+	Coord_t stGyroDPS;	//unit:[deg/s]
+	Coord_t stGyroRPS;	//unit:[rad/s]
+	Coord_t stAccelG;	//unit:[m/s^2]
 
 	//STM32 Configuration
 	SPI_TypeDef *pSPIx;
 	GPIO_TypeDef *pSPI_CS_GPIOx;
-	uint32_t 	SPI_CS_PINx;
+	uint32_t 	ui_SPI_CS_PINx;
 	I2C_TypeDef *pI2Cx;
 
 	GPIO_TypeDef *pINT_GPIOx;
-	uint32_t pINT_PINx;
+	uint32_t ui_INT_PINx;
+
+
 
 };	//class ICM_20602
 

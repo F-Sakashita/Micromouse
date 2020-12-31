@@ -1,3 +1,5 @@
+ICM_20602.hpp:174:10:int16_t ICM_20602::ConvertHLDataTo16Bits(uint8_t, uint8_t)	16	static
+ICM_20602.hpp:178:8:float ICM_20602::ConvertRawDataToFloat(int16_t, float)	24	static
 stm32f4xx_ll_gpio.h:882:22:void LL_GPIO_SetOutputPin(GPIO_TypeDef*, uint32_t)	16	static
 stm32f4xx_ll_gpio.h:911:22:void LL_GPIO_ResetOutputPin(GPIO_TypeDef*, uint32_t)	16	static
 stm32f4xx_ll_spi.h:298:22:void LL_SPI_Enable(SPI_TypeDef*)	16	static
@@ -6,15 +8,28 @@ stm32f4xx_ll_spi.h:732:26:uint32_t LL_SPI_IsActiveFlag_RXNE(SPI_TypeDef*)	16	sta
 stm32f4xx_ll_spi.h:743:26:uint32_t LL_SPI_IsActiveFlag_TXE(SPI_TypeDef*)	16	static
 stm32f4xx_ll_spi.h:1076:25:uint8_t LL_SPI_ReceiveData8(SPI_TypeDef*)	16	static
 stm32f4xx_ll_spi.h:1099:22:void LL_SPI_TransmitData8(SPI_TypeDef*, uint8_t)	24	static
-ICM_20602.cpp:25:1:ICM_20602::ICM_20602(ICM_20602::CommMode_t)	16	static
-ICM_20602.cpp:31:1:ICM_20602::~ICM_20602()	16	static
-ICM_20602.cpp:36:6:bool ICM_20602::SetSPIPort(SPI_TypeDef*, GPIO_TypeDef*, uint32_t)	24	static
-ICM_20602.cpp:59:6:bool ICM_20602::SetI2CPort(I2C_TypeDef*)	16	static
-ICM_20602.cpp:73:6:bool ICM_20602::SetINTPort(GPIO_TypeDef*, uint32_t)	24	static
-ICM_20602.cpp:78:6:void ICM_20602::Setup()	16	static
-ICM_20602.cpp:102:6:bool ICM_20602::IsConnected()	16	static
-ICM_20602.cpp:106:6:void ICM_20602::Update()	24	static
-ICM_20602.cpp:122:6:void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t, uint8_t)	24	static
-ICM_20602.cpp:145:9:uint8_t ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t)	24	static
-ICM_20602.cpp:177:6:void ICM_20602::CommunicateSPIMode(uint8_t*, uint8_t*, uint16_t)	40	static
-ICM_20602.cpp:209:6:void ICM_20602::CommunicateI2CMode(uint8_t*, uint8_t*, uint16_t)	24	static
+ICM_20602.cpp:49:1:ICM_20602::ICM_20602(ICM_20602::CommMode_t)	16	static
+ICM_20602.cpp:79:1:ICM_20602::~ICM_20602()	16	static
+ICM_20602.cpp:84:6:bool ICM_20602::SetSPIPort(SPI_TypeDef*, GPIO_TypeDef*, uint32_t)	24	static
+ICM_20602.cpp:107:6:bool ICM_20602::SetI2CPort(I2C_TypeDef*)	16	static
+ICM_20602.cpp:121:6:bool ICM_20602::SetINTPort(GPIO_TypeDef*, uint32_t)	24	static
+ICM_20602.cpp:126:6:void ICM_20602::Setup()	16	static
+ICM_20602.cpp:158:6:bool ICM_20602::IsConnected()	16	static
+ICM_20602.cpp:162:6:void ICM_20602::Update()	32	static
+ICM_20602.cpp:204:27:const ICM_20602::Coord_t& ICM_20602::GetGyroDPS()	16	static
+ICM_20602.cpp:208:27:const ICM_20602::Coord_t& ICM_20602::GetGyroRPS()	16	static
+ICM_20602.cpp:212:27:const ICM_20602::Coord_t& ICM_20602::GetAccelG()	16	static
+ICM_20602.cpp:216:29:const ICM_20602::RawData_t& ICM_20602::GetGyroRawData()	16	static
+ICM_20602.cpp:220:29:const ICM_20602::RawData_t& ICM_20602::GetAccelRawData()	16	static
+ICM_20602.cpp:226:6:void ICM_20602::SetGyroFullScale(ICM_20602::GyroFullScaleMode_t)	16	static
+ICM_20602.cpp:242:6:void ICM_20602::SetAccelFullScale(ICM_20602::AccelFullScaleMode_t)	16	static
+ICM_20602.cpp:262:6:void ICM_20602::ScaleConvert()	16	static
+ICM_20602.cpp:274:6:void ICM_20602::SetGyroConfig()	16	static
+ICM_20602.cpp:280:6:void ICM_20602::SetAccelConfig()	16	static
+ICM_20602.cpp:286:6:void ICM_20602::SetAccelConfig2()	16	static
+ICM_20602.cpp:292:6:void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t, uint8_t)	24	static
+ICM_20602.cpp:308:6:void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t, uint8_t*, uint16_t)	32	static
+ICM_20602.cpp:325:9:uint8_t ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t)	32	static
+ICM_20602.cpp:343:6:void ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t, uint8_t*, uint16_t)	32	static
+ICM_20602.cpp:362:6:void ICM_20602::CommunicateSPIMode(ICM_20602::RW_Mode_t, ICM_20602::RegisterAddress_t, uint8_t*, uint8_t*, uint16_t)	40	static
+ICM_20602.cpp:417:6:void ICM_20602::CommunicateI2CMode(ICM_20602::RW_Mode_t, ICM_20602::RegisterAddress_t, uint8_t*, uint8_t*, uint16_t)	24	static

@@ -12,10 +12,34 @@
 #include "stm32f4xx_ll_gpio.h"
 #include "stm32f4xx_ll_spi.h"
 
+#include "arm_math.h"
+#include <string.h>
+
 #ifdef DEBUG
 #include <stdio.h>
 #include <main.h>
+
 #endif
+/*
+ * Static member variable
+ */
+const ICM_20602::GyroFullScale_t ICM_20602::stGyroScale[4] =
+{
+	/*  Full-Scale Range,				Scale Factor [LSB/dps]	*/
+	{	EN_GYRO_FULLSCALE_PM250DPS,		131.0f	},
+	{	EN_GYRO_FULLSCALE_PM500DPS,		65.5f	},
+	{	EN_GYRO_FULLSCALE_PM1000DPS,	32.8f	},
+	{	EN_GYRO_FULLSCALE_PM2000DPS,	16.4f	},
+};
+const ICM_20602::AccelFullScale_t ICM_20602::stAccelScale[4] =
+{
+	/*  Full-Scale Range,				Scale Factor [LSB/g]	*/
+	{	EN_ACCEL_FULLSCALE_PM2G,		16484.0f	},
+	{	EN_ACCEL_FULLSCALE_PM4G,		8192.0f		},
+	{	EN_ACCEL_FULLSCALE_PM8G,		4096.0f		},
+	{	EN_ACCEL_FULLSCALE_PM16G,		2048.0f		},
+};
+
 
 /*
  * Public member function
@@ -25,6 +49,30 @@
 ICM_20602::ICM_20602(ICM_20602::CommMode_t enCommMode)
 {
 	this->enCommMode = enCommMode;
+
+	enGyroScaleMode = EN_GYRO_FULLSCALE_PM250DPS;
+	enAccelScaleMode = EN_ACCEL_FULLSCALE_PM2G;
+	bIsConnected = false;
+
+	ucGyroConfigValue		= 0x00;
+	ucAccelConfigValue		= 0x00;
+	ucAccelConfig2Value		= 0x00;
+	ucGyroConfigValueOld	= 0x00;
+	ucAccelConfigValueOld	= 0x00;
+	ucAccelConfig2ValueOld	= 0x00;
+
+	stGyroRawData.sValueX = 0x0000;
+	stGyroRawData.sValueY = 0x0000;
+	stGyroRawData.sValueZ = 0x0000;
+	stAccelRawData.sValueX = 0x0000;
+	stAccelRawData.sValueY = 0x0000;
+	stAccelRawData.sValueZ = 0x0000;
+	stGyroDPS.fValueX = 0.0f;
+	stGyroDPS.fValueY = 0.0f;
+	stGyroDPS.fValueZ = 0.0f;
+	stAccelG.fValueX = 0.0f;
+	stAccelG.fValueY = 0.0f;
+	stAccelG.fValueZ = 0.0f;
 }
 
 //Destructor
@@ -48,9 +96,9 @@ bool ICM_20602::SetSPIPort(SPI_TypeDef *pSPIx, GPIO_TypeDef *pSPI_CS_GPIOx, uint
 		return false;
 	}
 	this->pSPI_CS_GPIOx = pSPI_CS_GPIOx;
-	this->SPI_CS_PINx = SPI_CS_PINx;
+	this->ui_SPI_CS_PINx = SPI_CS_PINx;
 
-	LL_GPIO_SetOutputPin(this->pSPI_CS_GPIOx, this->SPI_CS_PINx);
+	LL_GPIO_SetOutputPin(this->pSPI_CS_GPIOx, this->ui_SPI_CS_PINx);
 	LL_SPI_Disable(pSPIx);
 
 	return true;
@@ -80,57 +128,188 @@ void ICM_20602::Setup()
 	SystickTimer_DelayMS(500);
 	LL_SPI_Enable(pSPIx);
 
+	if(WHO_AM_I_VALUE == ReadRegister(EN_REG_ADDR_WHO_AM_I)){
+		bIsConnected = true;
+	}else{
+		bIsConnected = false;
+	}
+
 #ifdef DEBUG
-	printf("Who am I : 0x%x\n", ReadRegister(EN_REG_ADDR_WHO_AM_I));
+	//printf("Who am I : 0x%x\n", ReadRegister(EN_REG_ADDR_WHO_AM_I));
 
 #endif
 	WriteRegister(EN_REG_ADDR_PWR_MGMT_1, 0x80);	//b10000000 = Device Reset
 	SystickTimer_DelayMS(50);
 
-	WriteRegister(EN_REG_ADDR_PWR_MGMT_1, 0x01);
+	WriteRegister(EN_REG_ADDR_PWR_MGMT_1, 0x01);	//b00000001 = Auto Selects the best available clock source
 	SystickTimer_DelayMS(50);
 
-	WriteRegister(EN_REG_ADDR_PWR_MGMT_2, 0x00);
+	WriteRegister(EN_REG_ADDR_PWR_MGMT_2, 0x00);	//b00000000 = Gyro and Accelerometer are all enabled
 	SystickTimer_DelayMS(50);
 
-	WriteRegister(EN_REG_ADDR_I2C_IF, 0x40);
-	SystickTimer_DelayMS(50);
+	//WriteRegister(EN_REG_ADDR_I2C_IF, 0x40);		//SPI mode only
+	//SystickTimer_DelayMS(50);
 
-	//printf("Device Reset : 0x%x\n", ReadRegister(EN_REG_ADDR_PWR_MGMT_1));
-	SystickTimer_DelayMS(500);
+	SetGyroFullScale(EN_GYRO_FULLSCALE_PM2000DPS);	//Set Gyro Full Scale : ±2000 dps
+	SetAccelFullScale(EN_ACCEL_FULLSCALE_PM16G);	//Set Accel Full Scale : ±16 G
+	SetGyroConfig();	//Gyro FullScale
+	SetAccelConfig();	//Accle FullScale
 }
 bool ICM_20602::IsConnected()
 {
-	return true;
+	return bIsConnected;
 }
 void ICM_20602::Update()
 {
+	uint8_t ucGyroRawDataHL[6] = {0x00};
+	uint8_t ucAccelRawDataHL[6] = {0x00};
+
+	if(ucGyroConfigValue != ucGyroConfigValueOld){
+		SetGyroConfig();
+	}
+	if(ucAccelConfigValue != ucAccelConfigValueOld){
+		SetAccelConfig();
+	}
+	if(ucAccelConfig2Value != ucAccelConfig2ValueOld){
+		SetAccelConfig2();
+	}
+
+	//Read Gyro Raw Data
+	ReadRegister(EN_REG_ADDR_GYRO_XOUT_H, ucGyroRawDataHL, 6);
+
+	//Read Accel Raw Data
+	ReadRegister(EN_REG_ADDR_ACCEL_XOUT_H, ucAccelRawDataHL, 6);
+
+	//Convert HL data to 16bits data
+	stGyroRawData.sValueX	= ConvertHLDataTo16Bits(ucGyroRawDataHL[0], ucGyroRawDataHL[1]);
+	stGyroRawData.sValueY	= ConvertHLDataTo16Bits(ucGyroRawDataHL[2], ucGyroRawDataHL[3]);
+	stGyroRawData.sValueZ	= ConvertHLDataTo16Bits(ucGyroRawDataHL[4], ucGyroRawDataHL[5]);
+
+	stAccelRawData.sValueX	= ConvertHLDataTo16Bits(ucAccelRawDataHL[0], ucAccelRawDataHL[1]);
+	stAccelRawData.sValueY	= ConvertHLDataTo16Bits(ucAccelRawDataHL[2], ucAccelRawDataHL[3]);
+	stAccelRawData.sValueZ	= ConvertHLDataTo16Bits(ucAccelRawDataHL[4], ucAccelRawDataHL[5]);
+
+	ScaleConvert();
+
+	//Old Config Value update
+	ucGyroConfigValueOld = ucGyroConfigValue;
+	ucAccelConfigValueOld = ucAccelConfigValue;
+	ucAccelConfig2ValueOld = ucAccelConfig2Value;
+
 #ifdef DEBUG
 	//printf("Who am I : 0x%x\n", ReadRegister(EN_REG_ADDR_WHO_AM_I));
-	printf("GyroZ:0x%x, 0x%x\n", ReadRegister(EN_REG_ADDR_GYRO_ZOUT_H), ReadRegister(EN_REG_ADDR_GYRO_ZOUT_L));
-	//uint8_t u8ReadData = ReadRegister(EN_REG_ADDR_PWR_MGMT_1);
-	//printf("Device Reset : %d,", (u8ReadData & 0x80) >> 7);
-	//printf("Sleep : %d,", (u8ReadData & 0x40) >> 6);
-	//printf("Cycle : %d,", (u8ReadData & 0x20) >> 5);
-	//printf("Gyro_standby : %d,", (u8ReadData & 0x10) >> 4);
-	//printf("Temp_dis : %d,", (u8ReadData & 0x08) >> 3);
-	//printf("clksel : %d\n,", (u8ReadData & 0x07));
 #endif
 }
 
-//Private member function
-void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t enAddr, uint8_t u8WriteData)
+const ICM_20602::Coord_t& ICM_20602::GetGyroDPS()
 {
-	//SPI Mode
-	uint8_t u8TxData[2] = {0x00, 0x00};
-	uint8_t u8RxData[2] = {0x00, 0x00};
+	return (const Coord_t&)stGyroDPS;
+}
+const ICM_20602::Coord_t& ICM_20602::GetGyroRPS()
+{
+	//return (const Coord_t&)stGyroRPS;
+}
+const ICM_20602::Coord_t& ICM_20602::GetAccelG()
+{
+	return (const Coord_t&)stAccelG;
+}
+const ICM_20602::RawData_t& ICM_20602::GetGyroRawData()
+{
+	return (const RawData_t&)stGyroRawData;
+}
+const ICM_20602::RawData_t& ICM_20602::GetAccelRawData()
+{
+	return (const RawData_t&)stAccelRawData;
+}
 
+//
+void ICM_20602::SetGyroFullScale(GyroFullScaleMode_t enScaleMode)
+{
+	if(enScaleMode < EN_GYRO_FULLSCALE_PM250DPS || enScaleMode > EN_GYRO_FULLSCALE_PM2000DPS){
+		return;
+	}
+
+	enGyroScaleMode = enScaleMode;
+
+	if(EN_GYRO_FULLSCALE_PM250DPS == enGyroScaleMode){
+		ucGyroConfigValue = ucGyroConfigValue & 0xE7;	//b11100111 : 3,4bitのみ0をAND
+	}else{
+		ucGyroConfigValue = ucGyroConfigValue | ((uint8_t)enGyroScaleMode << 3);	//3bitシフトし，OR
+	}
+}
+
+//
+void ICM_20602::SetAccelFullScale(AccelFullScaleMode_t enScaleMode)
+{
+	if(enScaleMode < EN_ACCEL_FULLSCALE_PM2G || enScaleMode > EN_ACCEL_FULLSCALE_PM16G){
+		return;
+	}
+
+	enAccelScaleMode = enScaleMode;
+
+	if(EN_ACCEL_FULLSCALE_PM2G == enAccelScaleMode){
+		ucAccelConfigValue = ucAccelConfigValue & 0xE7;	//b11100111 : 3,4bitのみ0をAND
+	}else{
+		ucAccelConfigValue = ucAccelConfigValue | ((uint8_t)enAccelScaleMode << 3);	//3bitシフトし，OR
+	}
+}
+
+/*
+ * Private member function
+ */
+
+//
+void ICM_20602::ScaleConvert()
+{
+	stGyroDPS.fValueX = ConvertRawDataToFloat(stGyroRawData.sValueX, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+	stGyroDPS.fValueY = ConvertRawDataToFloat(stGyroRawData.sValueY, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+	stGyroDPS.fValueZ = ConvertRawDataToFloat(stGyroRawData.sValueZ, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+
+	stAccelG.fValueX = ConvertRawDataToFloat(stAccelRawData.sValueX, stAccelScale[enAccelScaleMode].fLSB_per_G);
+	stAccelG.fValueY = ConvertRawDataToFloat(stAccelRawData.sValueY, stAccelScale[enAccelScaleMode].fLSB_per_G);
+	stAccelG.fValueZ = ConvertRawDataToFloat(stAccelRawData.sValueZ, stAccelScale[enAccelScaleMode].fLSB_per_G);
+}
+
+//
+void ICM_20602::SetGyroConfig()
+{
+	WriteRegister(EN_REG_ADDR_GYRO_CONFIG, ucGyroConfigValue);
+}
+
+//
+void ICM_20602::SetAccelConfig()
+{
+	WriteRegister(EN_REG_ADDR_ACCEL_CONFIG, ucAccelConfigValue);
+}
+
+//
+void ICM_20602::SetAccelConfig2()
+{
+	WriteRegister(EN_REG_ADDR_ACCEL_CONFIG_2, ucAccelConfig2Value);
+}
+
+//レジスタ書き込み（1バイト）
+void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t enAddr, uint8_t ucWriteData)
+{
 	switch(enCommMode){
 	case EN_COMM_MODE_SPI:
-		//ref : ICM020602 Datasheet, SPI Interface
-		u8TxData[0] = (uint8_t)enAddr & 0x7F;	//書き込みレジスタをセットし，7bit目を0にセット
-		u8TxData[1] = u8WriteData;		//書き込みデータをセット
-		CommunicateSPIMode(u8TxData, u8RxData, sizeof(u8TxData)/sizeof(uint8_t));
+		CommunicateSPIMode(EN_RW_MODE_WRITE, enAddr, &ucWriteData, NULL, 1);
+		break;
+	case EN_COMM_MODE_I2C:
+		//TODO : 追加実装
+		//CommunicateI2CMode(...);
+		break;
+	default:
+		//do nothing
+		break;
+	}
+}
+//レジスタ書き込み（複数バイト）
+void ICM_20602::WriteRegister(RegisterAddress_t enStartAddr, uint8_t *pWriteData, uint16_t usLength)
+{
+	switch(enCommMode){
+	case EN_COMM_MODE_SPI:
+		CommunicateSPIMode(EN_RW_MODE_WRITE, enStartAddr, pWriteData, NULL, usLength);
 		break;
 	case EN_COMM_MODE_I2C:
 		//TODO : 追加実装
@@ -142,22 +321,13 @@ void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t enAddr, uint8_t u8Wri
 	}
 }
 
+
 uint8_t ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t enAddr)
 {
-	uint8_t u8ReadData = 0x00;
-	uint8_t u8TxData[2] = {0x00, 0x00};
-	uint8_t u8RxData[2] = {0x00, 0x00};
-
+	uint8_t ucReadData = 0x00;
 	switch(enCommMode){
 	case EN_COMM_MODE_SPI:
-		//SPI Mode
-		//ref : ICM020602 Datasheet, SPI Interface
-		u8TxData[0] = (uint8_t)enAddr | 0x80;	//読み出しレジスタをセットし，7bit目を1にセット
-
-		//CommunicateSPIMode(&u8TxData[0], &u8RxData[0], 1);
-		//u8ReadData = u8RxData[0];
-		CommunicateSPIMode(u8TxData, u8RxData, 2);
-		u8ReadData = u8RxData[1];
+		CommunicateSPIMode(EN_RW_MODE_READ, enAddr, NULL, &ucReadData, 1);
 		break;
 	case EN_COMM_MODE_I2C:
 		//TODO : 追加実装
@@ -167,46 +337,84 @@ uint8_t ICM_20602::ReadRegister(ICM_20602::RegisterAddress_t enAddr)
 		//do nothing
 		break;
 	}
+	return ucReadData;
+}
 
-	return u8ReadData;
+void ICM_20602::ReadRegister(RegisterAddress_t enStartAddr, uint8_t *pReadData, uint16_t usLength)
+{
+	switch(enCommMode){
+	case EN_COMM_MODE_SPI:
+		CommunicateSPIMode(EN_RW_MODE_READ, enStartAddr, NULL, pReadData, usLength);
+		break;
+	case EN_COMM_MODE_I2C:
+		//TODO : 追加実装
+		//CommunicateI2CMode(...);
+		break;
+	default:
+		//do nothing
+		break;
+	}
 }
 
 
 //
 //ref : https://garberas.com/archives/1542
-void ICM_20602::CommunicateSPIMode(uint8_t *pTxData, uint8_t *pRxData, uint16_t u16DataLength)
+void ICM_20602::CommunicateSPIMode(RW_Mode_t mode, RegisterAddress_t enStartAddr, uint8_t *pTxData, uint8_t *pRxData, uint16_t usDataLength)
 {
-	uint16_t u16Count = u16DataLength;
+	uint16_t usCount = usDataLength;
+	uint8_t ucAddress = 0x00;
 
-	LL_GPIO_ResetOutputPin(pSPI_CS_GPIOx, SPI_CS_PINx);
-	//LL_GPIO_ResetOutputPin(SPI2_CS_GPIO_Port, SPI2_CS_Pin);
+	//Chip Select
+	LL_GPIO_ResetOutputPin(pSPI_CS_GPIOx, ui_SPI_CS_PINx);
 
-
-	//if ( LL_SPI_IsActiveFlag_RXNE(pSPIx) == SET ) LL_SPI_ReceiveData8(pSPIx);
-	//if ( LL_SPI_IsEnabled(pSPIx) == RESET ) LL_SPI_Enable(pSPIx);
-
-	while(0 < u16Count){
-		//__disable_irq();
-		//送信
-		LL_SPI_TransmitData8(pSPIx, *pTxData++);
-		while(RESET == LL_SPI_IsActiveFlag_TXE(pSPIx)){
-			//送信完了待ち（必要ならTimeout処理）
-		}
-
-		while(RESET == LL_SPI_IsActiveFlag_RXNE(pSPIx)){
-			//受信完了待ち（必要ならTimeout処理）
-		}
-		//受信
-		*pRxData++ = LL_SPI_ReceiveData8(pSPIx);
-		//__enable_irq();
-		u16Count --;
+	//MSB Setting
+	switch(mode){
+	case EN_RW_MODE_READ:
+		ucAddress = enStartAddr | 0x80;		//7bit目を1に設定
+		break;
+	case EN_RW_MODE_WRITE:
+		ucAddress = enStartAddr & 0x7F;		//7bit目を0に設定
+		break;
+	default:
+		return;		//設定外のため，即Return
+		break;
 	}
 
-	LL_GPIO_SetOutputPin(pSPI_CS_GPIOx, SPI_CS_PINx);
-	//LL_GPIO_SetOutputPin(SPI2_CS_GPIO_Port, SPI2_CS_Pin);
+	//Address送信
+	LL_SPI_TransmitData8(pSPIx, ucAddress);
+	while(RESET == LL_SPI_IsActiveFlag_TXE(pSPIx));
+	while(RESET == LL_SPI_IsActiveFlag_RXNE(pSPIx));
+	LL_SPI_ReceiveData8(pSPIx); //Dummy Received
+
+	//Data送受信
+	while(0 < usCount){
+		//送信
+		if(NULL != pTxData){
+			LL_SPI_TransmitData8(pSPIx, *pTxData++);
+		}else{
+			LL_SPI_TransmitData8(pSPIx, 0x00);
+		}
+		while(RESET == LL_SPI_IsActiveFlag_TXE(pSPIx)){
+			//送信完了待ち（送信バッファが空でない時）
+			//※必要ならTimeout処理
+		}
+		while(RESET == LL_SPI_IsActiveFlag_RXNE(pSPIx)){
+			//受信完了待ち（受信バッファが空の時）
+			//※必要ならTimeout処理
+		}
+		//受信
+		if(NULL != pRxData){
+			*pRxData++ = LL_SPI_ReceiveData8(pSPIx);
+		}else{
+			LL_SPI_ReceiveData8(pSPIx);
+		}
+		usCount --;
+	}
+	//Chip Deselect
+	LL_GPIO_SetOutputPin(pSPI_CS_GPIOx, ui_SPI_CS_PINx);
 }
 
-void ICM_20602::CommunicateI2CMode(uint8_t *pTxData, uint8_t *pRxData, uint16_t u16DataLength)
+void ICM_20602::CommunicateI2CMode(RW_Mode_t mode, RegisterAddress_t enStartAddr, uint8_t *pTxData, uint8_t *pRxData, uint16_t usDataLength)
 {
 
 }

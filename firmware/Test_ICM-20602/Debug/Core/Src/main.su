@@ -18,7 +18,7 @@ stm32f4xx_ll_system.h:1568:26:uint32_t LL_FLASH_GetLatency()	4	static
 stm32f4xx_ll_pwr.h:345:22:void LL_PWR_EnableOverDriveMode()	4	static
 stm32f4xx_ll_pwr.h:507:22:void LL_PWR_SetRegulVoltageScaling(uint32_t)	16	static
 stm32f4xx_ll_gpio.h:940:22:void LL_GPIO_TogglePin(GPIO_TypeDef*, uint32_t)	16	static
-main.cpp:78:5:int main()	48	static
-main.cpp:157:6:void SystemClock_Config()	8	static
-main.cpp:197:6:void __io_putchar(uint8_t)	16	static
-main.cpp:207:6:void Error_Handler()	4	static,ignoring_inline_asm
+main.cpp:78:5:int main()	168	static
+main.cpp:181:6:void SystemClock_Config()	8	static
+main.cpp:221:6:void __io_putchar(uint8_t)	16	static
+main.cpp:231:6:void Error_Handler()	4	static,ignoring_inline_asm

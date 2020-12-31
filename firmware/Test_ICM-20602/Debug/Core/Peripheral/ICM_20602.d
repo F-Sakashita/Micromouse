@@ -11,7 +11,7 @@ Core/Peripheral/ICM_20602.o: ../Core/Peripheral/ICM_20602.cpp \
  ../Core/Peripheral/SystickTimer.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h \
- ../Core/Inc/main.h \
+ ../Middlewares/ST/ARM/DSP/Inc/arm_math.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h \
@@ -45,6 +45,8 @@ Core/Peripheral/ICM_20602.o: ../Core/Peripheral/ICM_20602.cpp \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h:
+
+../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
 
 ../Core/Inc/main.h:
 

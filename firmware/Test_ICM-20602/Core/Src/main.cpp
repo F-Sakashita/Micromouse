@@ -115,7 +115,8 @@ int main(void)
   ICM20602.SetSPIPort(SPI2, SPI2_CS_GPIO_Port, SPI2_CS_Pin);
   ICM20602.Setup();
 
-  uint64_t u64StartTimeMs = SystickTimer_GetTimeMS();
+  uint64_t u64LedTimeMs = SystickTimer_GetTimeMS();
+  uint64_t u64DebugTimeMs = SystickTimer_GetTimeMS();
   float fTimer = 0.0;
 
   /* USER CODE END 2 */
@@ -129,13 +130,38 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	  if(SystickTimer_IsSamplingTimeElapsed()){
-		  if(SystickTimer_IsTimeElapsed(u64StartTimeMs, 50)){
-			  u64StartTimeMs = SystickTimer_GetTimeMS();
+		  ICM20602.Update();
 
-			  //fTimer = (float)(SystickTimer_GetTimeMS())/1000.0f;
-			  //printf("t:%.3f,sin:%.3f\n", fTimer, arm_sin_f32(fTimer/M_2_PI));
+		  if(SystickTimer_IsTimeElapsed(u64LedTimeMs, 500)){
+			  u64LedTimeMs = SystickTimer_GetTimeMS();
 			  LL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-			  ICM20602.Update();
+		  }
+
+		  if(SystickTimer_IsTimeElapsed(u64DebugTimeMs, 50)){
+			  u64DebugTimeMs = SystickTimer_GetTimeMS();
+			  fTimer = (float)(SystickTimer_GetTimeMS())/1000.0f;
+
+			  printf("t,%6.2f,Gyro,X,%d,Y,%d,Z,%d,Accel,X,%d,Y,%d,Z,%d\n",
+						  fTimer,
+						  ICM20602.GetGyroRawData().sValueX,
+						  ICM20602.GetGyroRawData().sValueY,
+						  ICM20602.GetGyroRawData().sValueZ,
+						  ICM20602.GetAccelRawData().sValueX,
+						  ICM20602.GetAccelRawData().sValueY,
+						  ICM20602.GetAccelRawData().sValueZ
+					  );
+
+			  /*
+			  printf("t,%6.2f,Gyro,X,%6.3f,Y,%6.3f,Z,%6.3f,Accel,X,%6.3f,Y,%6.3f,Z,%6.3f\n",
+					  	  fTimer,
+						  ICM20602.GetGyroDPS().fValueX,
+						  ICM20602.GetGyroDPS().fValueY,
+						  ICM20602.GetGyroDPS().fValueZ,
+						  ICM20602.GetAccelG().fValueX,
+						  ICM20602.GetAccelG().fValueY,
+						  ICM20602.GetAccelG().fValueZ
+					  );
+			  */
 		  }
 
 
