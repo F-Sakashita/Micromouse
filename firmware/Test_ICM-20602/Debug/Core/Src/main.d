@@ -20,7 +20,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h \
  ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/usart.h \
  ../Core/Inc/gpio.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
- ../Core/Peripheral/SystickTimer.h ../Core/Peripheral/ICM_20602.hpp
+ ../Core/Peripheral/SystickTimer.h ../Core/Peripheral/ICM_20602.hpp \
+ ../Core/Peripheral/Button.hpp
 
 ../Core/Inc/main.h:
 
@@ -75,3 +76,5 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Peripheral/SystickTimer.h:
 
 ../Core/Peripheral/ICM_20602.hpp:
+
+../Core/Peripheral/Button.hpp:

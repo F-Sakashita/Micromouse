@@ -1140,7 +1140,7 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    0    0    -1  
 $EndComp
 $Comp
-L Sensor_Motion:ICM-20602-module U7
+L Micromouse-rescue:ICM-20602-module-Sensor_Motion U7
 U 1 1 5FBFC8AB
 P 5500 8900
 F 0 "U7" H 5500 9275 50  0000 C CNN
@@ -1171,21 +1171,21 @@ SW0
 Wire Wire Line
 	9250 6000 9450 6000
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP1
 U 1 1 5FFC074B
 P 6500 9800
-F 0 "TP?" H 6558 9918 50  0000 L CNN
+F 0 "TP1" H 6558 9918 50  0000 L CNN
 F 1 "TestPoint" H 6558 9827 50  0000 L CNN
-F 2 "" H 6700 9800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 6700 9800 50  0001 C CNN
 F 3 "~" H 6700 9800 50  0001 C CNN
 	1    6500 9800
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0149
 U 1 1 5FFC282D
 P 6500 10100
-F 0 "#PWR?" H 6500 9850 50  0001 C CNN
+F 0 "#PWR0149" H 6500 9850 50  0001 C CNN
 F 1 "GND" H 6505 9927 50  0000 C CNN
 F 2 "" H 6500 10100 50  0001 C CNN
 F 3 "" H 6500 10100 50  0001 C CNN

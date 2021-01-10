@@ -155,6 +155,33 @@ void ICM_20602::Setup()
 	SetGyroConfig();	//Gyro FullScale
 	SetAccelConfig();	//Accle FullScale
 }
+
+void ICM_20602::StartGyroOffestCalc(uint32_t uiCalcTimeMs, bool bCalcX=true, bool bCalcY=true, bool bCalcZ=true)
+{
+	if(bCalcX || bCalcY || bCalcZ){
+		bGyroOffsetCalcStart = true;
+	}else{
+		bGyroOffsetCalcStart = false;
+	}
+
+	bGyroOffsetCalcStartFlag[0] = bCalcX;
+	bGyroOffsetCalcStartFlag[1] = bCalcY;
+	bGyroOffsetCalcStartFlag[2] = bCalcZ;
+
+	for(uint8_t ucCount; ucCount < 3; uCount ++){
+		bGyroOffsetCalcCompleted[ucCount] = !bGyroOffsetCalcStartFlag[ucCount];
+	}
+}
+bool ICM_20602::IsGyroOffsetCompleted()
+{
+	bool bResult = true;
+	for(uint8_t ucCount; ucCount < 3; uCount ++){
+		bResult = bGyroOffsetCalcCompleted[ucCount];
+	}
+	return bResult;
+}
+
+
 bool ICM_20602::IsConnected()
 {
 	return bIsConnected;
@@ -191,6 +218,17 @@ void ICM_20602::Update()
 
 	ScaleConvert();
 
+	if(bGyroOffsetCalcStart){
+		CalcGyroOffset();
+		if(IsGyroOffsetCompleted()){
+			bGyroOffsetCalcStart = false;
+		}
+	}
+
+	stGyroDPSOffseted.fValueX = stGyroDPS.fValueX - stGyroDPSOffsetValue.fValueX;
+	stGyroDPSOffseted.fValueY = stGyroDPS.fValueY - stGyroDPSOffsetValue.fValueY;
+	stGyroDPSOffseted.fValueZ = stGyroDPS.fValueZ - stGyroDPSOffsetValue.fValueZ;
+
 	//Old Config Value update
 	ucGyroConfigValueOld = ucGyroConfigValue;
 	ucAccelConfigValueOld = ucAccelConfigValue;
@@ -203,7 +241,7 @@ void ICM_20602::Update()
 
 const ICM_20602::Coord_t& ICM_20602::GetGyroDPS()
 {
-	return (const Coord_t&)stGyroDPS;
+	return (const Coord_t&)stGyroDPSOffseted;
 }
 const ICM_20602::Coord_t& ICM_20602::GetGyroRPS()
 {
@@ -257,6 +295,13 @@ void ICM_20602::SetAccelFullScale(AccelFullScaleMode_t enScaleMode)
 /*
  * Private member function
  */
+
+
+
+void ICM_20602::CalcGyroOffset()
+{
+
+}
 
 //
 void ICM_20602::ScaleConvert()

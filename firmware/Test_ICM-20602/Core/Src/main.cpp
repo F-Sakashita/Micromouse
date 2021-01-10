@@ -31,6 +31,7 @@
 #include "arm_math.h"
 #include "SystickTimer.h"
 #include "ICM_20602.hpp"
+#include "Button.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -109,15 +110,19 @@ int main(void)
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
   SystickTimer_EnableInterrupt();
-  SystickTimer_SetSamplingTime(5u);
+  SystickTimer_SetSamplingTime(2u);
 
-  ICM_20602 ICM20602(ICM_20602::EN_COMM_MODE_SPI);
-  ICM20602.SetSPIPort(SPI2, SPI2_CS_GPIO_Port, SPI2_CS_Pin);
-  ICM20602.Setup();
+  ICM_20602 IMU_6Axis(ICM_20602::EN_COMM_MODE_SPI);
+  IMU_6Axis.SetSPIPort(SPI2, SPI2_CS_GPIO_Port, SPI2_CS_Pin);
+  IMU_6Axis.Setup();
 
-  uint64_t u64LedTimeMs = SystickTimer_GetTimeMS();
-  uint64_t u64DebugTimeMs = SystickTimer_GetTimeMS();
-  float fTimer = 0.0;
+  Button BlueButton(B1_GPIO_Port, B1_Pin);
+  BlueButton.SetPushReverse();
+  BlueButton.SetEdgeFilter();
+
+  uint64_t ullLedTimeMs = SystickTimer_GetTimeMS();
+  uint64_t ullDebugTimeMs = SystickTimer_GetTimeMS();
+  uint64_t ullTimeStampMs = SystickTimer_GetTimeMS();
 
   /* USER CODE END 2 */
 
@@ -130,36 +135,54 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	  if(SystickTimer_IsSamplingTimeElapsed()){
-		  ICM20602.Update();
+		  IMU_6Axis.Update();
+		  BlueButton.Update();
 
-		  if(SystickTimer_IsTimeElapsed(u64LedTimeMs, 500)){
-			  u64LedTimeMs = SystickTimer_GetTimeMS();
+
+		  if(SystickTimer_IsTimeElapsed(ullLedTimeMs, 500)){
+			  ullLedTimeMs = SystickTimer_GetTimeMS();
 			  LL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 		  }
 
-		  if(SystickTimer_IsTimeElapsed(u64DebugTimeMs, 50)){
-			  u64DebugTimeMs = SystickTimer_GetTimeMS();
-			  fTimer = (float)(SystickTimer_GetTimeMS())/1000.0f;
+		  if(SystickTimer_IsTimeElapsed(ullDebugTimeMs, 50)){
+			  ullDebugTimeMs = SystickTimer_GetTimeMS();
 
+			  static bool bStartFlag = false;
+			  if(1u == BlueButton.IsReleaseCount() % 2){
+
+				  if(!bStartFlag){
+					  bStartFlag = true;
+					  printf("t,GyroZ[raw],GyroZ[dps]\n");
+				  }
+				  printf("%6.2f,%d,%6.3f,\n",
+						  (float)(SystickTimer_GetTimeMS() - ullTimeStampMs) / 1000.0f,
+						  IMU_6Axis.GetGyroRawData().sValueZ,
+						  IMU_6Axis.GetGyroDPS().fValueZ);
+			  }else{
+				  bStartFlag = false;
+				  ullTimeStampMs = SystickTimer_GetTimeMS();
+			  }
+
+			  	/*
 			  printf("t,%6.2f,Gyro,X,%d,Y,%d,Z,%d,Accel,X,%d,Y,%d,Z,%d\n",
 						  fTimer,
-						  ICM20602.GetGyroRawData().sValueX,
-						  ICM20602.GetGyroRawData().sValueY,
-						  ICM20602.GetGyroRawData().sValueZ,
-						  ICM20602.GetAccelRawData().sValueX,
-						  ICM20602.GetAccelRawData().sValueY,
-						  ICM20602.GetAccelRawData().sValueZ
+						  IMU_6Axis.GetGyroRawData().sValueX,
+						  IMU_6Axis.GetGyroRawData().sValueY,
+						  IMU_6Axis.GetGyroRawData().sValueZ,
+						  IMU_6Axis.GetAccelRawData().sValueX,
+						  IMU_6Axis.GetAccelRawData().sValueY,
+						  IMU_6Axis.GetAccelRawData().sValueZ
 					  );
-
+				*/
 			  /*
 			  printf("t,%6.2f,Gyro,X,%6.3f,Y,%6.3f,Z,%6.3f,Accel,X,%6.3f,Y,%6.3f,Z,%6.3f\n",
 					  	  fTimer,
-						  ICM20602.GetGyroDPS().fValueX,
-						  ICM20602.GetGyroDPS().fValueY,
-						  ICM20602.GetGyroDPS().fValueZ,
-						  ICM20602.GetAccelG().fValueX,
-						  ICM20602.GetAccelG().fValueY,
-						  ICM20602.GetAccelG().fValueZ
+						  IMU_6Axis.GetGyroDPS().fValueX,
+						  IMU_6Axis.GetGyroDPS().fValueY,
+						  IMU_6Axis.GetGyroDPS().fValueZ,
+						  IMU_6Axis.GetAccelG().fValueX,
+						  IMU_6Axis.GetAccelG().fValueY,
+						  IMU_6Axis.GetAccelG().fValueZ
 					  );
 			  */
 		  }

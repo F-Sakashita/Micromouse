@@ -57,6 +57,8 @@ public:
 	bool IsINTActive();
 
 	void Setup();
+	void StartGyroOffestCalc(uint32_t uiCalcTimeMs, bool bCalcX=true, bool bCalcY=true, bool bCalcZ=true);
+	bool IsGyroOffsetCompleted();
 
 	bool IsConnected();
 	void Update();
@@ -171,6 +173,9 @@ private:
 	}AccelFullScale_t;
 
 
+	void CalcGyroOffset();
+
+
 	int16_t ConvertHLDataTo16Bits(uint8_t ucHighData, uint8_t ucLowData){
 		return (((int16_t)ucHighData << 8) | ((int16_t)ucLowData));
 	}
@@ -183,10 +188,12 @@ private:
 	}
 
 	void ScaleConvert();
+	void CalcGyroDeg();
 
 	void SetGyroConfig();
 	void SetAccelConfig();
 	void SetAccelConfig2();
+
 
 	void WriteRegister(RegisterAddress_t enAddr, uint8_t ucWriteData);
 	void WriteRegister(RegisterAddress_t enStartAddr, uint8_t *pWriteData, uint16_t usLength);
@@ -217,6 +224,14 @@ private:
 	Coord_t stGyroDPS;	//unit:[deg/s]
 	Coord_t stGyroRPS;	//unit:[rad/s]
 	Coord_t stAccelG;	//unit:[m/s^2]
+
+	bool bGyroOffsetCalcStart;
+	bool bGyroOffsetCalcStartFlag[3];
+
+	bool bGyroOffsetCalcCompleted[3];
+	Coord_t stGyroDPSOffseted;		//unit:[deg/s]
+	Coord_t stGyroDPSOffsetValue;	//unit:[deg/s]
+	Coord_t stGyroDegree;			//unit:[deg]
 
 	//STM32 Configuration
 	SPI_TypeDef *pSPIx;

@@ -1140,7 +1140,7 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    0    0    -1  
 $EndComp
 $Comp
-L Sensor_Motion:ICM-20602-module U7
+L Micromouse-rescue:ICM-20602-module-Sensor_Motion U7
 U 1 1 5FBFC8AB
 P 5500 8900
 F 0 "U7" H 5500 9275 50  0000 C CNN
