@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
-  * File Name          : ADC.h
-  * Description        : This file provides code for the configuration
-  *                      of the ADC instances.
+  * @file    adc.h
+  * @brief   This file contains all the function prototypes for
+  *          the adc.c file
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -17,44 +17,41 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __adc_H
-#define __adc_H
+#ifndef __ADC_H__
+#define __ADC_H__
+
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
 /* USER CODE END Includes */
 
-extern ADC_HandleTypeDef hadc1;
-extern ADC_HandleTypeDef hadc2;
-
 /* USER CODE BEGIN Private defines */
-
+#define ADC1_CHANNEL_NUM	(5)
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
-void MX_ADC2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+void Adc1_StartConvert(void);
+bool Adc1_IsStartConvert(void);
+uint16_t Adc1_GetAdcChannelValue(uint8_t ucChannelRank);
+void Adc1_GetAdcValues(uint16_t *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
+float Adc1_GetRateAdcChannelValue(uint8_t ucChannelRank);
+void Adc1_GetRateAdcValues(float *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
 
+uint16_t Adc_GetResolutionValue(ADC_TypeDef *ADCx);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ adc_H */
 
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
+#endif /* __ADC_H__ */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

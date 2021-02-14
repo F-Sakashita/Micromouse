@@ -8,13 +8,11 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
--include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
--include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
--include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Core/Peripheral/subdir.mk
+-include Core/Calculation/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -74,7 +72,7 @@ main-build: TestCircuit.elf secondary-outputs
 
 # Tool invocations
 TestCircuit.elf: $(OBJS) $(USER_OBJS) /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld
-	arm-none-eabi-g++ -o "TestCircuit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestCircuit.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "TestCircuit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestCircuit.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

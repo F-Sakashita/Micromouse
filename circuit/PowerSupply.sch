@@ -27,12 +27,12 @@ $EndComp
 $Comp
 L Device:R R1
 U 1 1 5F95E89C
-P 2400 1800
-F 0 "R1" H 2470 1846 50  0000 L CNN
-F 1 "100k 0.25W" H 2470 1755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2330 1800 50  0001 C CNN
-F 3 "" H 2400 1800 50  0001 C CNN
-	1    2400 1800
+P 2100 1750
+F 0 "R1" H 1900 1800 50  0000 L CNN
+F 1 "100k 0.25W" H 1600 1700 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2030 1750 50  0001 C CNN
+F 3 "" H 2100 1750 50  0001 C CNN
+	1    2100 1750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -116,9 +116,6 @@ Wire Wire Line
 	1200 1900 1450 1900
 Wire Wire Line
 	1450 1900 1450 2200
-Wire Wire Line
-	2400 1550 2400 1600
-Connection ~ 2400 1600
 $Comp
 L Switch:SW_SPDT SW1
 U 1 1 5F987A18
@@ -132,8 +129,6 @@ F 3 "" H 2400 2200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2300 2400 2300 2550
-Wire Wire Line
-	2400 2000 2400 1950
 $Comp
 L Device:LED D1
 U 1 1 5F94B7CC
@@ -211,17 +206,6 @@ Wire Wire Line
 Wire Wire Line
 	4750 1250 4750 1400
 Connection ~ 4100 1250
-Wire Wire Line
-	1750 1250 2000 1250
-Wire Wire Line
-	2400 1600 2000 1600
-Wire Wire Line
-	2000 1600 2000 1250
-Wire Wire Line
-	2400 1600 2400 1650
-Connection ~ 2000 1250
-Wire Wire Line
-	2000 1250 2200 1250
 Wire Wire Line
 	2600 1250 2750 1250
 Connection ~ 2750 1250
@@ -419,7 +403,7 @@ Wire Wire Line
 Wire Wire Line
 	5850 1950 5850 2100
 Wire Wire Line
-	6950 1250 6950 1650
+	6950 1250 6950 1350
 Wire Wire Line
 	7700 1000 7700 1250
 Wire Wire Line
@@ -444,7 +428,7 @@ BAT_MONI
 Text Notes 3900 1100 0    50   ~ 0
 Imax = 1.5A\n
 Text Notes 6650 1000 0    50   ~ 0
-Imax = 1A
+Imax = 200mA
 Wire Wire Line
 	6500 2100 6500 2250
 Text Notes 4300 2550 0    50   ~ 0
@@ -501,17 +485,6 @@ Wire Wire Line
 	5850 2100 6500 2100
 Wire Wire Line
 	6500 2100 6950 2100
-$Comp
-L Regulator_Linear:ADP7182AUJZ-3.3 U4
-U 1 1 5FB8CF9C
-P 6500 1350
-F 0 "U4" H 6500 983 50  0000 C CNN
-F 1 "ADP7182AUJZ-3.3" H 6500 1074 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6500 950 50  0001 C CIN
-F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ADP7182.pdf" H 6500 850 50  0001 C CNN
-	1    6500 1350
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	5850 1250 6000 1250
 Wire Wire Line
@@ -538,4 +511,36 @@ F 3 "" H 6950 1800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6950 1950 6950 2100
+Wire Wire Line
+	2400 1550 2400 1950
+$Comp
+L Regulator_Linear:ADP7142AUJZ-3.3 U4
+U 1 1 600DD8DD
+P 6500 1350
+F 0 "U4" H 6500 1717 50  0000 C CNN
+F 1 "ADP7142AUJZ-3.3" H 6500 1626 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5" H 6500 950 50  0001 C CIN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/ADP7142.pdf" H 6500 850 50  0001 C CNN
+	1    6500 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 1350 6950 1350
+Connection ~ 6950 1350
+Wire Wire Line
+	6950 1350 6950 1650
+Wire Wire Line
+	2100 1600 2100 1250
+Wire Wire Line
+	1750 1250 2100 1250
+Connection ~ 2100 1250
+Wire Wire Line
+	2100 1250 2200 1250
+Wire Wire Line
+	2100 1900 2100 1950
+Wire Wire Line
+	2100 1950 2400 1950
+Connection ~ 2400 1950
+Wire Wire Line
+	2400 1950 2400 2000
 $EndSCHEMATC

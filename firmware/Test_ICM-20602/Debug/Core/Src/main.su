@@ -23,7 +23,7 @@ Button.hpp:45:7:void Button::SetReleaseEdgeFilter(uint32_t)	16	static
 Button.hpp:49:7:void Button::SetEdgeFilter(uint32_t, uint32_t)	24	static
 Button.hpp:54:7:void Button::SetPushReverse(bool)	16	static
 Button.hpp:76:11:uint32_t Button::IsReleaseCount()	16	static
-main.cpp:79:5:int main()	208	static
+main.cpp:79:5:int main()	248	static
 main.cpp:204:6:void SystemClock_Config()	8	static
 main.cpp:244:6:void __io_putchar(uint8_t)	16	static
 main.cpp:254:6:void Error_Handler()	4	static,ignoring_inline_asm

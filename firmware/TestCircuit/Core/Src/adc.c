@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
-  * File Name          : ADC.c
-  * Description        : This file provides code for the configuration
-  *                      of the ADC instances.
+  * @file    adc.c
+  * @brief   This file provides code for the configuration
+  *          of the ADC instances.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -21,183 +21,219 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+#include <stdio.h>
+#include <stdbool.h>
 
+uint16_t g_usAdc1Value[ADC1_CHANNEL_NUM];
+bool g_bAdc1Start = false;
+static bool Adc_IsValidReadChannel(uint8_t ucRequestRank, uint8_t ucChannelSize);
+static bool Adc_IsValidReadSize(uint8_t ucStartRank, uint8_t ucRequestSize, uint8_t ucChannelSize, uint8_t *pSize);
 /* USER CODE END 0 */
-
-ADC_HandleTypeDef hadc1;
-ADC_HandleTypeDef hadc2;
 
 /* ADC1 init function */
 void MX_ADC1_Init(void)
 {
-  ADC_ChannelConfTypeDef sConfig = {0};
+  LL_ADC_InitTypeDef ADC_InitStruct = {0};
+  LL_ADC_REG_InitTypeDef ADC_REG_InitStruct = {0};
+  LL_ADC_CommonInitTypeDef ADC_CommonInitStruct = {0};
 
-  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* Peripheral clock enable */
+  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_ADC1);
+
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOA);
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOB);
+  /**ADC1 GPIO Configuration
+  PA4   ------> ADC1_IN4
+  PA6   ------> ADC1_IN6
+  PA7   ------> ADC1_IN7
+  PB0   ------> ADC1_IN8
+  PB1   ------> ADC1_IN9
   */
-  hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc1.Init.ScanConvMode = DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
-  hadc1.Init.DiscontinuousConvMode = DISABLE;
-  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.NbrOfConversion = 1;
-  hadc1.Init.DMAContinuousRequests = DISABLE;
-  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-  if (HAL_ADC_Init(&hadc1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  GPIO_InitStruct.Pin = BAT_MONI_Pin|WALL_SEN0_Pin|WALL_SEN1_Pin;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = WALL_SEN2_Pin|WALL_SEN3_Pin;
+  GPIO_InitStruct.Mode = LL_GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  LL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /* ADC1 DMA Init */
+
+  /* ADC1 Init */
+  LL_DMA_SetChannelSelection(DMA2, LL_DMA_STREAM_0, LL_DMA_CHANNEL_0);
+
+  LL_DMA_SetDataTransferDirection(DMA2, LL_DMA_STREAM_0, LL_DMA_DIRECTION_PERIPH_TO_MEMORY);
+
+  LL_DMA_SetStreamPriorityLevel(DMA2, LL_DMA_STREAM_0, LL_DMA_PRIORITY_MEDIUM);
+
+  LL_DMA_SetMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MODE_CIRCULAR);
+
+  LL_DMA_SetPeriphIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_PERIPH_NOINCREMENT);
+
+  LL_DMA_SetMemoryIncMode(DMA2, LL_DMA_STREAM_0, LL_DMA_MEMORY_INCREMENT);
+
+  LL_DMA_SetPeriphSize(DMA2, LL_DMA_STREAM_0, LL_DMA_PDATAALIGN_HALFWORD);
+
+  LL_DMA_SetMemorySize(DMA2, LL_DMA_STREAM_0, LL_DMA_MDATAALIGN_HALFWORD);
+
+  LL_DMA_DisableFifoMode(DMA2, LL_DMA_STREAM_0);
+
+  /** Common config
   */
-  sConfig.Channel = ADC_CHANNEL_6;
-  sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-}
-/* ADC2 init function */
-void MX_ADC2_Init(void)
-{
-  ADC_ChannelConfTypeDef sConfig = {0};
-
-  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  ADC_InitStruct.Resolution = LL_ADC_RESOLUTION_12B;
+  ADC_InitStruct.DataAlignment = LL_ADC_DATA_ALIGN_RIGHT;
+  ADC_InitStruct.SequencersScanMode = LL_ADC_SEQ_SCAN_ENABLE;
+  LL_ADC_Init(ADC1, &ADC_InitStruct);
+  ADC_REG_InitStruct.TriggerSource = LL_ADC_REG_TRIG_SOFTWARE;
+  ADC_REG_InitStruct.SequencerLength = LL_ADC_REG_SEQ_SCAN_ENABLE_5RANKS;
+  ADC_REG_InitStruct.SequencerDiscont = LL_ADC_REG_SEQ_DISCONT_DISABLE;
+  ADC_REG_InitStruct.ContinuousMode = LL_ADC_REG_CONV_CONTINUOUS;
+  ADC_REG_InitStruct.DMATransfer = LL_ADC_REG_DMA_TRANSFER_UNLIMITED;
+  LL_ADC_REG_Init(ADC1, &ADC_REG_InitStruct);
+  LL_ADC_REG_SetFlagEndOfConversion(ADC1, LL_ADC_REG_FLAG_EOC_SEQUENCE_CONV);
+  ADC_CommonInitStruct.CommonClock = LL_ADC_CLOCK_SYNC_PCLK_DIV4;
+  ADC_CommonInitStruct.Multimode = LL_ADC_MULTI_INDEPENDENT;
+  LL_ADC_CommonInit(__LL_ADC_COMMON_INSTANCE(ADC1), &ADC_CommonInitStruct);
+  /** Configure Regular Channel
   */
-  hadc2.Instance = ADC2;
-  hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
-  hadc2.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc2.Init.ScanConvMode = DISABLE;
-  hadc2.Init.ContinuousConvMode = DISABLE;
-  hadc2.Init.DiscontinuousConvMode = DISABLE;
-  hadc2.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc2.Init.NbrOfConversion = 1;
-  hadc2.Init.DMAContinuousRequests = DISABLE;
-  hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-  if (HAL_ADC_Init(&hadc2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_4);
+  LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_480CYCLES);
+  /** Configure Regular Channel
   */
-  sConfig.Channel = ADC_CHANNEL_4;
-  sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
-  if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_2, LL_ADC_CHANNEL_6);
+  LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_6, LL_ADC_SAMPLINGTIME_480CYCLES);
+  /** Configure Regular Channel
+  */
+  LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_3, LL_ADC_CHANNEL_7);
+  LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_7, LL_ADC_SAMPLINGTIME_480CYCLES);
+  /** Configure Regular Channel
+  */
+  LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_8);
+  LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_8, LL_ADC_SAMPLINGTIME_480CYCLES);
+  /** Configure Regular Channel
+  */
+  LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_5, LL_ADC_CHANNEL_9);
+  LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_9, LL_ADC_SAMPLINGTIME_480CYCLES);
 
-}
-
-void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
-{
-
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(adcHandle->Instance==ADC1)
-  {
-  /* USER CODE BEGIN ADC1_MspInit 0 */
-
-  /* USER CODE END ADC1_MspInit 0 */
-    /* ADC1 clock enable */
-    __HAL_RCC_ADC1_CLK_ENABLE();
-
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOB_CLK_ENABLE();
-    /**ADC1 GPIO Configuration
-    PA6     ------> ADC1_IN6
-    PA7     ------> ADC1_IN7
-    PB0     ------> ADC1_IN8
-    PB1     ------> ADC1_IN9
-    */
-    GPIO_InitStruct.Pin = WALL_SEN0_Pin|WALL_SEN1_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = WALL_SEN2_Pin|WALL_SEN3_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN ADC1_MspInit 1 */
-
-  /* USER CODE END ADC1_MspInit 1 */
-  }
-  else if(adcHandle->Instance==ADC2)
-  {
-  /* USER CODE BEGIN ADC2_MspInit 0 */
-
-  /* USER CODE END ADC2_MspInit 0 */
-    /* ADC2 clock enable */
-    __HAL_RCC_ADC2_CLK_ENABLE();
-
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**ADC2 GPIO Configuration
-    PA4     ------> ADC2_IN4
-    */
-    GPIO_InitStruct.Pin = BAT_MONI_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(BAT_MONI_GPIO_Port, &GPIO_InitStruct);
-
-  /* USER CODE BEGIN ADC2_MspInit 1 */
-
-  /* USER CODE END ADC2_MspInit 1 */
-  }
-}
-
-void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
-{
-
-  if(adcHandle->Instance==ADC1)
-  {
-  /* USER CODE BEGIN ADC1_MspDeInit 0 */
-
-  /* USER CODE END ADC1_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_ADC1_CLK_DISABLE();
-
-    /**ADC1 GPIO Configuration
-    PA6     ------> ADC1_IN6
-    PA7     ------> ADC1_IN7
-    PB0     ------> ADC1_IN8
-    PB1     ------> ADC1_IN9
-    */
-    HAL_GPIO_DeInit(GPIOA, WALL_SEN0_Pin|WALL_SEN1_Pin);
-
-    HAL_GPIO_DeInit(GPIOB, WALL_SEN2_Pin|WALL_SEN3_Pin);
-
-  /* USER CODE BEGIN ADC1_MspDeInit 1 */
-
-  /* USER CODE END ADC1_MspDeInit 1 */
-  }
-  else if(adcHandle->Instance==ADC2)
-  {
-  /* USER CODE BEGIN ADC2_MspDeInit 0 */
-
-  /* USER CODE END ADC2_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_ADC2_CLK_DISABLE();
-
-    /**ADC2 GPIO Configuration
-    PA4     ------> ADC2_IN4
-    */
-    HAL_GPIO_DeInit(BAT_MONI_GPIO_Port, BAT_MONI_Pin);
-
-  /* USER CODE BEGIN ADC2_MspDeInit 1 */
-
-  /* USER CODE END ADC2_MspDeInit 1 */
-  }
 }
 
 /* USER CODE BEGIN 1 */
+static bool Adc_IsValidReadChannel(uint8_t ucRequestRank, uint8_t ucChannelSize)
+{
+  if(ucRequestRank <= 0 || ucRequestRank > ucChannelSize){
+    return false;
+  }
+  return true;
+}
+
+static bool Adc_IsValidReadSize(uint8_t ucStartRank, uint8_t ucRequestSize, uint8_t ucChannelSize, uint8_t *pSize)
+{
+  if(!Adc_IsValidReadChannel(ucStartRank, ucChannelSize)){
+    return false;
+  }
+
+  if(ucRequestSize > ucChannelSize - (ucStartRank-1)){
+    *pSize = ucChannelSize - (ucStartRank-1);
+  }else{
+    *pSize = ucRequestSize;
+  }
+
+  return true;
+}
+
+void Adc1_StartConvert(void)
+{
+  LL_DMA_EnableIT_TC(DMA2, LL_DMA_STREAM_0);
+  LL_ADC_Enable(ADC1);
+  LL_DMA_DisableStream(DMA2, LL_DMA_STREAM_0);
+  LL_DMA_ConfigAddresses( DMA2, //DMA Channel
+                          LL_DMA_STREAM_0, //DMA Stream
+                          LL_ADC_DMA_GetRegAddr(ADC1, LL_ADC_DMA_REG_REGULAR_DATA), //ADC Register(Source) 
+                          (uint32_t)&g_usAdc1Value, //Destination
+                          LL_DMA_DIRECTION_PERIPH_TO_MEMORY //Direction
+                          ); 
+  LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_0, ADC1_CHANNEL_NUM);
+  LL_DMA_EnableStream(DMA2, LL_DMA_STREAM_0);
+  LL_ADC_REG_StartConversionSWStart(ADC1);
+  g_bAdc1Start = true;
+}
+
+bool Adc1_IsStartConvert(void)
+{
+  return g_bAdc1Start;
+}
+
+uint16_t Adc1_GetAdcChannelValue(uint8_t ucChannelRank)
+{
+  if(!Adc_IsValidReadChannel(ucChannelRank, ADC1_CHANNEL_NUM)){
+    return 0;
+  }
+  return g_usAdc1Value[ucChannelRank-1];
+}
+
+void Adc1_GetAdcValues(uint16_t *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize)
+{
+  uint8_t ucSize = 0;
+  if(!Adc_IsValidReadSize(ucStartChannelRank, ucRequestSize, ADC1_CHANNEL_NUM, &ucSize)){
+    return;
+  }
+  memcpy(pValue, &g_usAdc1Value[ucStartChannelRank-1], ucSize);
+}
+
+float Adc1_GetRateAdcChannelValue(uint8_t ucChannelRank)
+{
+  if(!Adc_IsValidReadChannel(ucChannelRank, ADC1_CHANNEL_NUM)){
+    return 0.0;
+  }
+  uint16_t uiResolutionValue = Adc_GetResolutionValue(ADC1);
+  float fValue = (float)g_usAdc1Value[ucChannelRank-1] / (float)(uiResolutionValue);
+  return fValue;
+}
+
+void Adc1_GetRateAdcValues(float *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize)
+{
+  uint16_t uiResolutionValue = Adc_GetResolutionValue(ADC1);
+
+  uint8_t ucSize = 0;
+  if(!Adc_IsValidReadSize(ucStartChannelRank, ucRequestSize, ADC1_CHANNEL_NUM, &ucSize)){
+    return;
+  }
+  uint16_t *pAdcValue = &g_usAdc1Value[ucStartChannelRank-1];
+  while(ucSize > 0){
+    *pValue = (float)(*pAdcValue) / (float)(uiResolutionValue);
+    pValue ++;
+    pAdcValue ++;
+    ucSize --;
+  }
+}
+
+uint16_t Adc_GetResolutionValue(ADC_TypeDef *ADCx)
+{
+  uint32_t uiResolution = LL_ADC_GetResolution(ADCx);
+  uint16_t uiResolutionValue = 0x0FFF;
+  switch(uiResolution) {
+  case LL_ADC_RESOLUTION_12B:
+    uiResolutionValue = 0x0FFF;
+    break;
+  case LL_ADC_RESOLUTION_10B:
+    uiResolutionValue = 0x03FF;
+    break;
+  case LL_ADC_RESOLUTION_8B:
+    uiResolutionValue = 0x00FF;
+    break;
+  case LL_ADC_RESOLUTION_6B:
+    uiResolutionValue = 0x003F;
+    break;
+  default:
+    /* do nothing */
+    break;
+  }
+  return uiResolutionValue;
+}
 
 /* USER CODE END 1 */
 

@@ -1,3 +1,32 @@
-main.c:71:5:main	8	static
-main.c:129:6:SystemClock_Config	88	static
-main.c:177:6:Error_Handler	4	static
+core_cm4.h:1657:22:void __NVIC_SetPriorityGrouping(uint32_t)	24	static
+stm32f4xx_ll_rcc.h:2989:22:void LL_RCC_HSI_Enable()	4	static
+stm32f4xx_ll_rcc.h:3009:26:uint32_t LL_RCC_HSI_IsReady()	4	static
+stm32f4xx_ll_rcc.h:3035:22:void LL_RCC_HSI_SetCalibTrimming(uint32_t)	16	static
+stm32f4xx_ll_rcc.h:3190:22:void LL_RCC_SetSysClkSource(uint32_t)	16	static
+stm32f4xx_ll_rcc.h:3206:26:uint32_t LL_RCC_GetSysClkSource()	4	static
+stm32f4xx_ll_rcc.h:3226:22:void LL_RCC_SetAHBPrescaler(uint32_t)	16	static
+stm32f4xx_ll_rcc.h:3242:22:void LL_RCC_SetAPB1Prescaler(uint32_t)	16	static
+stm32f4xx_ll_rcc.h:3258:22:void LL_RCC_SetAPB2Prescaler(uint32_t)	16	static
+stm32f4xx_ll_rcc.h:4186:22:void LL_RCC_PLL_Enable()	4	static
+stm32f4xx_ll_rcc.h:4207:26:uint32_t LL_RCC_PLL_IsReady()	4	static
+stm32f4xx_ll_rcc.h:4306:22:void LL_RCC_PLL_ConfigDomain_SYS(uint32_t, uint32_t, uint32_t, uint32_t)	24	static
+stm32f4xx_ll_bus.h:1187:22:void LL_APB1_GRP1_EnableClock(uint32_t)	24	static
+stm32f4xx_ll_bus.h:1706:22:void LL_APB2_GRP1_EnableClock(uint32_t)	24	static
+stm32f4xx_ll_system.h:1542:22:void LL_FLASH_SetLatency(uint32_t)	16	static
+stm32f4xx_ll_system.h:1568:26:uint32_t LL_FLASH_GetLatency()	4	static
+stm32f4xx_ll_pwr.h:507:22:void LL_PWR_SetRegulVoltageScaling(uint32_t)	16	static
+Button.hpp:54:7:void Button::SetPushReverse(bool)	16	static
+Button.hpp:70:11:uint32_t Button::IsPushCount()	16	static
+Button.hpp:85:7:bool Button::IsReleaseEdge()	16	static
+Button.hpp:89:7:void Button::ResetCount()	16	static
+Blink.hpp:29:10:void Blink::SetPeriod(uint32_t, float)	24	static
+Blink.hpp:35:10:void Blink::SetOnTime(uint32_t)	16	static
+Blink.hpp:38:10:void Blink::SetOffTime(uint32_t)	16	static
+Blink.hpp:41:10:void Blink::SetStartDelayTime(uint32_t)	16	static
+Blink.hpp:44:10:void Blink::SetStartState(bool)	16	static
+Blink.hpp:51:10:void Blink::Off()	16	static
+BatteryMonitor.hpp:28:11:float BatteryMonitor::GetVoltage()	16	static
+main.cpp:79:5:int main()	632	static
+main.cpp:221:6:void SystemClock_Config()	8	static
+main.cpp:259:5:int __io_putchar(int)	16	static
+main.cpp:270:6:void Error_Handler()	4	static,ignoring_inline_asm
