@@ -32,20 +32,28 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-#define ADC1_CHANNEL_NUM	(5)
+#define ADC1_CHANNEL_NUM	(1)
+#define ADC2_CHANNEL_NUM  (4)
+
+typedef enum{
+  EN_ADC_NUM_FIRST = 0,
+  EN_ADC_NUM_1 = 0,
+  EN_ADC_NUM_2,
+  EN_ADC_NUM_LAST
+}EN_ADC_NUM;
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
+void MX_ADC2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void Adc1_StartConvert(void);
-bool Adc1_IsStartConvert(void);
-uint16_t Adc1_GetAdcChannelValue(uint8_t ucChannelRank);
-void Adc1_GetAdcValues(uint16_t *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
-float Adc1_GetRateAdcChannelValue(uint8_t ucChannelRank);
-void Adc1_GetRateAdcValues(float *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
-
-uint16_t Adc_GetResolutionValue(ADC_TypeDef *ADCx);
+void Adc_StartConvert(EN_ADC_NUM enAdcNum);
+bool Adc_IsStartConvert(EN_ADC_NUM enAdcNum);
+uint16_t Adc_GetAdcChannelValue(EN_ADC_NUM enAdcNum, uint8_t ucChannelRank);
+void Adc_GetAdcValues(EN_ADC_NUM enAdcNum, uint16_t *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
+float Adc_GetRateAdcChannelValue(EN_ADC_NUM enAdcNum, uint8_t ucChannelRank);
+void Adc_GetRateAdcValues(EN_ADC_NUM enAdcNum, float *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize);
+uint16_t Adc_GetResolutionValue(EN_ADC_NUM enAdcNum);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

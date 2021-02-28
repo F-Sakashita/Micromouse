@@ -37,6 +37,7 @@
 #include "Blink.hpp"
 #include "BatteryMonitor.hpp"
 #include "ICM_20602.hpp"
+#include "WallSensor.h"
 #include <vector>
 /* USER CODE END Includes */
 
@@ -108,15 +109,31 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
+  MX_ADC2_Init();
   MX_I2C2_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM5_Init();
+  MX_TIM3_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   SystickTimer_EnableInterrupt();
-  SystickTimer_SetSamplingTime(2u);
+  SystickTimer_SetSamplingTime(1u);
+
+
+  LL_GPIO_SetOutputPin(WALL_LED0_GPIO_Port, WALL_LED0_Pin);
+  LL_GPIO_ResetOutputPin(WALL_LED1_GPIO_Port, WALL_LED1_Pin);
+  LL_GPIO_ResetOutputPin(WALL_LED2_GPIO_Port, WALL_LED2_Pin);
+  LL_GPIO_ResetOutputPin(WALL_LED3_GPIO_Port, WALL_LED3_Pin);
+
+  LL_ADC_Enable(ADC2);			//ADC2 Enabled
+  //LL_ADC_EnableIT_EOCS(ADC2);	//ADC2 Interrupt Start
+
+  LL_TIM_EnableIT_UPDATE(TIM3);	//TIM3 Interrupt Start
+  LL_TIM_EnableCounter(TIM3);	//TIM3 Count Up Start
+  
+  Adc_StartConvert(EN_ADC_NUM_2);
 
   Button Sw[2] = {
     Button(SW0_GPIO_Port, SW0_Pin),
@@ -126,16 +143,16 @@ int main(void)
   Sw[1].SetPushReverse();
   Blink TickLed(TICK_LED_GPIO_Port, TICK_LED_Pin, 1000);
   TickLed.SetStartState(false);
-
+  /*
   Blink DbgLed[3] = {
     Blink(DBG_LED0_GPIO_Port, DBG_LED0_Pin),
     Blink(DBG_LED1_GPIO_Port, DBG_LED1_Pin),
     Blink(DBG_LED2_GPIO_Port, DBG_LED2_Pin)
   };
-  
+
   Blink Buzzer(BUZZER_GPIO_Port, BUZZER_Pin, 1000);
   Buzzer.Off();
-  
+
   for(uint8_t ucCount = 0; ucCount < sizeof(DbgLed)/sizeof(Blink); ucCount++){
     DbgLed[ucCount].SetOnTime(250);
     DbgLed[ucCount].SetOffTime(500);
@@ -144,7 +161,25 @@ int main(void)
   DbgLed[0].SetStartState(true);
   DbgLed[1].SetStartState(false);
   DbgLed[2].SetStartState(false);
-  
+  */
+
+  /*
+  Blink WallLed[4] = {
+    Blink(WALL_LED0_GPIO_Port, WALL_LED0_Pin),
+    Blink(WALL_LED1_GPIO_Port, WALL_LED1_Pin),
+    Blink(WALL_LED2_GPIO_Port, WALL_LED2_Pin),
+    Blink(WALL_LED3_GPIO_Port, WALL_LED3_Pin),
+  };
+  WallLed[0].SetOnTime(20);
+  WallLed[0].SetOffTime(2000);
+  WallLed[1].SetOnTime(20);
+  WallLed[1].SetOffTime(2000);
+  WallLed[2].SetOnTime(20);
+  WallLed[2].SetOffTime(2000);
+  WallLed[3].SetOnTime(20);
+  WallLed[3].SetOffTime(2000);
+  */
+
   BatteryMonitor BatteryMoni;
   ICM_20602 IMU(ICM_20602::EN_COMM_MODE_SPI);
   IMU.SetSPIPort(SPI1, IMU_CS_GPIO_Port, IMU_CS_Pin);
@@ -166,49 +201,46 @@ int main(void)
       Sw[1].Update();
       BatteryMoni.Update();
       IMU.Update();
-      
+      WallSensor_Update();
+
       if(Sw[1].IsReleaseEdge()){
         Sw[0].ResetCount();
       }
       if(1 == Sw[0].IsPushCount() % 2){
         TickLed.SetPeriod(500);
-        Buzzer.SetPeriod(2000);
       }else{
         TickLed.SetPeriod(1000);
-        Buzzer.Off();
       }
 
-		  if(SystickTimer_IsTimeElapsed(ullDebugTimeMs, 50)){
+		  if(SystickTimer_IsTimeElapsed(ullDebugTimeMs, 5)){
 			  ullDebugTimeMs = SystickTimer_GetTimeMS();
         float fTimer = (float)SystickTimer_GetTimeMS()/1000.0f;
         uint16_t usAdcValue[4];
         float fAdcRate[4];
-
-        Adc1_GetAdcValues(usAdcValue, 2, 4);
-        Adc1_GetRateAdcValues(fAdcRate, 2, 4);
+        //printf("TIM3 Counter %d\n", LL_TIM_GetCounter(TIM3));
+        //Adc1_GetAdcValues(usAdcValue, 2, 4);
+        //Adc1_GetRateAdcValues(fAdcRate, 2, 4);
         //fValue*3.3 = Vbat * 10k / (10k+20k)
         //Vbat = fValue*3.3*30k/10k
-			  printf("t,%.3f, sin,%.3f, sw0,%d, Vbat:%.3f, WallSen0:%.3f, GyroZ:%.3f, Yaw[deg],%.3f\n",
+        WallSensor_GetValue(usAdcValue, 4);
+        //printf("AD:%d\n", Adc_GetAdcChannelValue(EN_ADC_NUM_2, 1));
+       printf("Wall:%d, %d, %d, %d\n", usAdcValue[0], usAdcValue[1], usAdcValue[2], usAdcValue[3]);
+			  /*printf("t,%.3f, sin,%.3f, sw0,%d, Vbat:%.3f GyroZ:%.3f, Yaw[deg],%.3f\n",
                 fTimer,
-                arm_sin_f32(fTimer), 
+                arm_sin_f32(fTimer),
                 Sw[0].IsPushCount(),
                 BatteryMoni.GetVoltage(),
-                fAdcRate[0],
                 IMU.GetGyroDPS().fValueZ,
-				//IMU.IsGyroOffsetCompleted(),
                 IMU.GetGyroDeg().fValueZ);
-			 /*
-			  printf("%6.2f,ButtonCnt:%d\n",
-					  (float)(SystickTimer_GetTimeMS() - ullTimeStampMs) / 1000.0f,
-					  Sw0.IsReleaseCount());
-					  */
+*/
+        //if(Adc1_GetAdcChannelValue(2) > 1000){
+          //printf("%d\n", Adc1_GetAdcChannelValue(2));
+          //printf("%f, %f, %f, %f\n", fAdcRate[0], fAdcRate[1], fAdcRate[2], fAdcRate[3]);
+        //}
+
 		  }
 
       TickLed.Update();
-      DbgLed[0].Update();
-      DbgLed[1].Update();
-      DbgLed[2].Update();
-      Buzzer.Update();
 	  } //SamplingTime Elapsed
   }
   /* USER CODE END 3 */

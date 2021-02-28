@@ -18,8 +18,8 @@ BatteryMonitor::BatteryMonitor(float fFullVoltage)
     bIsLowerError = false;
     this->fFullVoltage = fFullVoltage;
 
-    if(!Adc1_IsStartConvert()){
-        Adc1_StartConvert();
+    if(!Adc_IsStartConvert(EN_ADC_NUM_1)){
+        Adc_StartConvert(EN_ADC_NUM_1);
     }
 }
 
@@ -34,7 +34,7 @@ void BatteryMonitor::Update()
         return;
     }
 
-    fVoltage = fGain * Adc1_GetRateAdcChannelValue(DEF_ADC_CHANNEL_RANK) - fOffset;
+    fVoltage = fGain * Adc_GetRateAdcChannelValue(EN_ADC_NUM_1, DEF_ADC_CHANNEL_RANK) - fOffset;
     fPercentage = fVoltage / fFullVoltage;
 
     if(fVoltage < stThreshold.fLower){

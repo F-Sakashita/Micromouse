@@ -6,7 +6,13 @@
 	],
 	"settings": {
 		"files.associations": {
-			"cstdio": "cpp"
+			"cstdio": "cpp",
+			"systicktask.h": "c",
+			"__string": "c",
+			"cstring": "c",
+			"memory": "c",
+			"utility": "c",
+			"wallsensor.h": "c"
 		}
 	}
 }

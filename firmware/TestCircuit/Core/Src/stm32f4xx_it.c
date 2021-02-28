@@ -24,11 +24,17 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "SystickTimer.h"
+#include "adc.h"
+#include "WallSensor.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+typedef struct{
+  GPIO_TypeDef *pGPIOx;
+  uint32_t  uiPinNum;
+}Port_t;
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -43,7 +49,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+static const Port_t stWallLedTbl[] = {
+  {WALL_LED0_GPIO_Port, WALL_LED0_Pin},
+  {WALL_LED1_GPIO_Port, WALL_LED1_Pin},
+  {WALL_LED2_GPIO_Port, WALL_LED2_Pin},
+  {WALL_LED3_GPIO_Port, WALL_LED3_Pin},
+};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -187,7 +198,7 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 0 */
   SystickTimer_Interrupt();
   /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
+
   /* USER CODE BEGIN SysTick_IRQn 1 */
 
   /* USER CODE END SysTick_IRQn 1 */
@@ -199,6 +210,22 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles TIM3 global interrupt.
+  */
+void TIM3_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM3_IRQn 0 */
+	if(1u == LL_TIM_IsActiveFlag_UPDATE(TIM3)){
+		LL_TIM_ClearFlag_UPDATE(TIM3);
+		LL_GPIO_TogglePin(DBG_LED0_GPIO_Port, DBG_LED0_Pin);
+	}
+  /* USER CODE END TIM3_IRQn 0 */
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+
+  /* USER CODE END TIM3_IRQn 1 */
+}
 
 /**
   * @brief This function handles DMA2 stream0 global interrupt.
@@ -214,6 +241,52 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
 
   /* USER CODE END DMA2_Stream0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2 stream2 global interrupt.
+  */
+void DMA2_Stream2_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2_Stream2_IRQn 0 */
+  static uint16_t usAdcValue[4];
+  static uint8_t ucWallLedNum = 0u;
+  static Port_t *pWallLed;
+  static bool bFirst = true;
+  
+  //転送完了フラグON
+  if( LL_DMA_IsActiveFlag_TC2(DMA2) == 1){
+		  LL_DMA_ClearFlag_TC2(DMA2);
+      LL_GPIO_TogglePin(DBG_LED1_GPIO_Port, DBG_LED1_Pin);
+      //Adc_GetAdcValues(EN_ADC_NUM_2, usAdcValue, 1, 4);
+      //printf("%d, %d, %d, %d\n", usAdcValue[0], usAdcValue[1], usAdcValue[2], usAdcValue[3]);
+      /*
+      printf("%d, %d, %d, %d\n", Adc_GetAdcChannelValue(EN_ADC_NUM_2, 1)
+                              ,Adc_GetAdcChannelValue(EN_ADC_NUM_2, 2)
+                              ,Adc_GetAdcChannelValue(EN_ADC_NUM_2, 3)
+                              ,Adc_GetAdcChannelValue(EN_ADC_NUM_2, 4));*/
+      pWallLed = &stWallLedTbl[ucWallLedNum];
+
+      if(0u == LL_GPIO_IsOutputPinSet(pWallLed->pGPIOx, pWallLed->uiPinNum)){
+        if(!bFirst){
+          WallSensor_SetValueLedOff((EN_WALLSENSOR_POS)ucWallLedNum, Adc_GetAdcChannelValue(EN_ADC_NUM_2, ucWallLedNum+1));
+        }
+        LL_GPIO_SetOutputPin(pWallLed->pGPIOx, pWallLed->uiPinNum);
+      }else{
+        WallSensor_SetValueLedOn((EN_WALLSENSOR_POS)ucWallLedNum, Adc_GetAdcChannelValue(EN_ADC_NUM_2, ucWallLedNum+1));
+        LL_GPIO_ResetOutputPin(pWallLed->pGPIOx, pWallLed->uiPinNum);
+        ucWallLedNum ++;
+        if(sizeof(stWallLedTbl)/ sizeof(Port_t) <= ucWallLedNum){
+          ucWallLedNum = 0;
+          bFirst = false;
+        }
+      }
+	}
+  /* USER CODE END DMA2_Stream2_IRQn 0 */
+
+  /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
+
+  /* USER CODE END DMA2_Stream2_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

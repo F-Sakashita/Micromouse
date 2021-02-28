@@ -1,3 +1,7 @@
+core_cm4.h:1676:26:__NVIC_GetPriorityGrouping	4	static
+core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+core_cm4.h:1863:26:NVIC_EncodePriority	40	static
 stm32f4xx_ll_bus.h:411:22:LL_AHB1_GRP1_EnableClock	24	static
 stm32f4xx_ll_bus.h:1187:22:LL_APB1_GRP1_EnableClock	24	static
 stm32f4xx_ll_bus.h:1706:22:LL_APB2_GRP1_EnableClock	24	static
@@ -8,9 +12,11 @@ stm32f4xx_ll_tim.h:2222:22:LL_TIM_IC_SetActiveInput	32	static
 stm32f4xx_ll_tim.h:2272:22:LL_TIM_IC_SetPrescaler	32	static
 stm32f4xx_ll_tim.h:2335:22:LL_TIM_IC_SetFilter	32	static
 stm32f4xx_ll_tim.h:2401:22:LL_TIM_IC_SetPolarity	24	static
+stm32f4xx_ll_tim.h:2605:22:LL_TIM_SetClockSource	16	static
 stm32f4xx_ll_tim.h:2622:22:LL_TIM_SetEncoderMode	16	static
 stm32f4xx_ll_tim.h:2651:22:LL_TIM_SetTriggerOutput	16	static
 stm32f4xx_ll_tim.h:2717:22:LL_TIM_DisableMasterSlaveMode	16	static
 tim.c:28:6:MX_TIM1_Init	112	static
 tim.c:86:6:MX_TIM2_Init	56	static
-tim.c:137:6:MX_TIM5_Init	56	static
+tim.c:137:6:MX_TIM3_Init	32	static
+tim.c:160:6:MX_TIM5_Init	56	static
