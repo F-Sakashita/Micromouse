@@ -22,11 +22,9 @@ stm32f4xx_ll_gpio.h:882:22:void LL_GPIO_SetOutputPin(GPIO_TypeDef*, uint32_t)	16
 stm32f4xx_ll_gpio.h:911:22:void LL_GPIO_ResetOutputPin(GPIO_TypeDef*, uint32_t)	16	static
 Button.hpp:54:7:void Button::SetPushReverse(bool)	16	static
 Button.hpp:70:11:uint32_t Button::IsPushCount()	16	static
-Button.hpp:85:7:bool Button::IsReleaseEdge()	16	static
-Button.hpp:89:7:void Button::ResetCount()	16	static
 Blink.hpp:29:10:void Blink::SetPeriod(uint32_t, float)	24	static
 Blink.hpp:44:10:void Blink::SetStartState(bool)	16	static
-main.cpp:80:5:int main()	376	static
-main.cpp:253:6:void SystemClock_Config()	8	static
-main.cpp:291:5:int __io_putchar(int)	16	static
-main.cpp:302:6:void Error_Handler()	4	static,ignoring_inline_asm
+main.cpp:82:5:int main()	384	static
+main.cpp:297:6:void SystemClock_Config()	8	static
+main.cpp:335:5:int __io_putchar(int)	16	static
+main.cpp:346:6:void Error_Handler()	4	static,ignoring_inline_asm

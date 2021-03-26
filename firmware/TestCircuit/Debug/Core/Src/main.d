@@ -26,7 +26,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Core/Inc/gpio.h ../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
  ../Core/Peripheral/SystickTimer.h ../Core/Peripheral/Button.hpp \
  ../Core/Peripheral/Blink.hpp ../Core/Peripheral/BatteryMonitor.hpp \
- ../Core/Peripheral/ICM_20602.hpp ../Core/Peripheral/WallSensor.h
+ ../Core/Peripheral/ICM_20602.hpp ../Core/Peripheral/WallSensor.h \
+ ../Core/Peripheral/Encoder.h ../Core/Peripheral/TB6612FNG.hpp
 
 ../Core/Inc/main.h:
 
@@ -103,3 +104,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Peripheral/ICM_20602.hpp:
 
 ../Core/Peripheral/WallSensor.h:
+
+../Core/Peripheral/Encoder.h:
+
+../Core/Peripheral/TB6612FNG.hpp:

@@ -21,7 +21,7 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-
+#include <stdio.h>
 /* USER CODE END 0 */
 
 /* TIM1 init function */
@@ -35,13 +35,14 @@ void MX_TIM1_Init(void)
   /* Peripheral clock enable */
   LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_TIM1);
 
-  TIM_InitStruct.Prescaler = 0;
+  TIM_InitStruct.Prescaler = LL_TIM_IC_FILTER_FDIV1_N2-LL_TIM_IC_FILTER_FDIV1_N2;
   TIM_InitStruct.CounterMode = LL_TIM_COUNTERMODE_UP;
-  TIM_InitStruct.Autoreload = 65535;
+  TIM_InitStruct.Autoreload = 1680-LL_TIM_IC_FILTER_FDIV1_N2;
   TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
   TIM_InitStruct.RepetitionCounter = 0;
   LL_TIM_Init(TIM1, &TIM_InitStruct);
-  LL_TIM_DisableARRPreload(TIM1);
+  LL_TIM_EnableARRPreload(TIM1);
+  LL_TIM_SetClockSource(TIM1, LL_TIM_CLOCKSOURCE_INTERNAL);
   LL_TIM_OC_EnablePreload(TIM1, LL_TIM_CHANNEL_CH1);
   TIM_OC_InitStruct.OCMode = LL_TIM_OCMODE_PWM1;
   TIM_OC_InitStruct.OCState = LL_TIM_OCSTATE_DISABLE;
@@ -114,7 +115,11 @@ void MX_TIM2_Init(void)
   GPIO_InitStruct.Alternate = LL_GPIO_AF_1;
   LL_GPIO_Init(ENC_L_B_GPIO_Port, &GPIO_InitStruct);
 
-  LL_TIM_SetEncoderMode(TIM2, LL_TIM_ENCODERMODE_X2_TI1);
+  /* TIM2 interrupt Init */
+  NVIC_SetPriority(TIM2_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 0));
+  NVIC_EnableIRQ(TIM2_IRQn);
+
+  LL_TIM_SetEncoderMode(TIM2, LL_TIM_ENCODERMODE_X4_TI12);
   LL_TIM_IC_SetActiveInput(TIM2, LL_TIM_CHANNEL_CH1, LL_TIM_ACTIVEINPUT_DIRECTTI);
   LL_TIM_IC_SetPrescaler(TIM2, LL_TIM_CHANNEL_CH1, LL_TIM_ICPSC_DIV1);
   LL_TIM_IC_SetFilter(TIM2, LL_TIM_CHANNEL_CH1, LL_TIM_IC_FILTER_FDIV1);
@@ -129,7 +134,7 @@ void MX_TIM2_Init(void)
   TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
   LL_TIM_Init(TIM2, &TIM_InitStruct);
   LL_TIM_DisableARRPreload(TIM2);
-  LL_TIM_SetTriggerOutput(TIM2, LL_TIM_TRGO_RESET);
+  LL_TIM_SetTriggerOutput(TIM2, LL_TIM_TRGO_UPDATE);
   LL_TIM_DisableMasterSlaveMode(TIM2);
 
 }
@@ -142,7 +147,7 @@ void MX_TIM3_Init(void)
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_TIM3);
 
   /* TIM3 interrupt Init */
-  NVIC_SetPriority(TIM3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 0));
+  NVIC_SetPriority(TIM3_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),2, 0));
   NVIC_EnableIRQ(TIM3_IRQn);
 
   TIM_InitStruct.Prescaler = 100-LL_TIM_IC_FILTER_FDIV1_N2;
@@ -179,7 +184,11 @@ void MX_TIM5_Init(void)
   GPIO_InitStruct.Alternate = LL_GPIO_AF_2;
   LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  LL_TIM_SetEncoderMode(TIM5, LL_TIM_ENCODERMODE_X2_TI1);
+  /* TIM5 interrupt Init */
+  NVIC_SetPriority(TIM5_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),1, 0));
+  NVIC_EnableIRQ(TIM5_IRQn);
+
+  LL_TIM_SetEncoderMode(TIM5, LL_TIM_ENCODERMODE_X4_TI12);
   LL_TIM_IC_SetActiveInput(TIM5, LL_TIM_CHANNEL_CH1, LL_TIM_ACTIVEINPUT_DIRECTTI);
   LL_TIM_IC_SetPrescaler(TIM5, LL_TIM_CHANNEL_CH1, LL_TIM_ICPSC_DIV1);
   LL_TIM_IC_SetFilter(TIM5, LL_TIM_CHANNEL_CH1, LL_TIM_IC_FILTER_FDIV1);
@@ -194,13 +203,63 @@ void MX_TIM5_Init(void)
   TIM_InitStruct.ClockDivision = LL_TIM_CLOCKDIVISION_DIV1;
   LL_TIM_Init(TIM5, &TIM_InitStruct);
   LL_TIM_DisableARRPreload(TIM5);
-  LL_TIM_SetTriggerOutput(TIM5, LL_TIM_TRGO_RESET);
+  LL_TIM_SetTriggerOutput(TIM5, LL_TIM_TRGO_UPDATE);
   LL_TIM_DisableMasterSlaveMode(TIM5);
 
 }
 
 /* USER CODE BEGIN 1 */
+void TIM_StartPWM(TIM_TypeDef *TIMx, uint32_t uiChannel)
+{
+  if(LL_TIM_CHANNEL_CH1 > uiChannel || LL_TIM_CHANNEL_CH4 < uiChannel){
+    return;
+  }
+  LL_TIM_CC_EnableChannel(TIMx, uiChannel);
+  if(0u == LL_TIM_IsEnabledCounter(TIMx)){
+      LL_TIM_EnableCounter(TIMx);
+      LL_TIM_EnableAllOutputs(TIMx);
+  }
+}
 
+void TIM_StopPWM(TIM_TypeDef *TIMx, uint32_t uiChannel)
+{
+  if(LL_TIM_CHANNEL_CH1 > uiChannel || LL_TIM_CHANNEL_CH4 < uiChannel){
+    return;
+  }
+  
+  if(1u == LL_TIM_CC_IsEnabledChannel(TIMx, uiChannel)){
+    LL_TIM_CC_DisableChannel(TIMx, uiChannel);
+    LL_TIM_DisableCounter(TIMx);
+    LL_TIM_DisableAllOutputs(TIMx);
+  }
+}
+
+void TIM_SetPWMDuty(TIM_TypeDef *TIMx, uint32_t uiChannel, float fDuty)
+{
+  uint32_t uiAutoReload = LL_TIM_GetAutoReload(TIMx);
+  uint32_t uiCompareValue = (uint32_t)((float)uiAutoReload * fDuty);
+
+  switch(uiChannel)
+  {
+    case LL_TIM_CHANNEL_CH1:
+      LL_TIM_OC_SetCompareCH1(TIMx, uiCompareValue);  
+      break;
+    case LL_TIM_CHANNEL_CH2:
+      LL_TIM_OC_SetCompareCH2(TIMx, uiCompareValue);
+      break;
+    case LL_TIM_CHANNEL_CH3:
+      LL_TIM_OC_SetCompareCH3(TIMx, uiCompareValue);
+      break;
+    case LL_TIM_CHANNEL_CH4:
+      LL_TIM_OC_SetCompareCH4(TIMx, uiCompareValue);
+      break;
+    default:
+      /* do nothing */
+      break;
+  }
+  //printf("TIM1 OC Ch1 Comp:%d\n", LL_TIM_OC_GetCompareCH1(TIM1));
+  //printf("TIM1 OC Ch2 Comp:%d\n", LL_TIM_OC_GetCompareCH2(TIM1));
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

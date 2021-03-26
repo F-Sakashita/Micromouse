@@ -26,6 +26,7 @@
 #include "SystickTimer.h"
 #include "adc.h"
 #include "WallSensor.h"
+#include "Encoder.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -212,6 +213,30 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+  static EN_ENCODER_OVERFLOW enOverflow = EN_ENCODER_OVERFLOW_NONE;
+  if(LL_TIM_IsActiveFlag_UPDATE(TIM2)){
+    LL_TIM_ClearFlag_UPDATE(TIM2);
+    if(LL_TIM_COUNTERDIRECTION_DOWN ==  LL_TIM_GetDirection(TIM2)){
+      /* 0 -> CounterPeriod */
+      enOverflow = EN_ENCODER_OVERFLOW_MINUS;
+    }else{
+      enOverflow = EN_ENCODER_OVERFLOW_PLUS;
+    }
+    //LL_GPIO_TogglePin(DBG_LED2_GPIO_Port, DBG_LED2_Pin);
+    Encoder_Interrupt(EN_ENCODER_0, enOverflow);
+  }
+  /* USER CODE END TIM2_IRQn 0 */
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM3 global interrupt.
   */
 void TIM3_IRQHandler(void)
@@ -225,6 +250,30 @@ void TIM3_IRQHandler(void)
   /* USER CODE BEGIN TIM3_IRQn 1 */
 
   /* USER CODE END TIM3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM5 global interrupt.
+  */
+void TIM5_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM5_IRQn 0 */
+  static EN_ENCODER_OVERFLOW enOverflow = EN_ENCODER_OVERFLOW_NONE;
+  if(LL_TIM_IsActiveFlag_UPDATE(TIM5)){
+    LL_TIM_ClearFlag_UPDATE(TIM5);
+    if(LL_TIM_COUNTERDIRECTION_DOWN ==  LL_TIM_GetDirection(TIM5)){
+      /* 0 -> CounterPeriod */
+      enOverflow = EN_ENCODER_OVERFLOW_MINUS;
+    }else{
+      enOverflow = EN_ENCODER_OVERFLOW_PLUS;
+    }
+    //LL_GPIO_TogglePin(DBG_LED2_GPIO_Port, DBG_LED2_Pin);
+    Encoder_Interrupt(EN_ENCODER_1, enOverflow);
+  }
+  /* USER CODE END TIM5_IRQn 0 */
+  /* USER CODE BEGIN TIM5_IRQn 1 */
+
+  /* USER CODE END TIM5_IRQn 1 */
 }
 
 /**

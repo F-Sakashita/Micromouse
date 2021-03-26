@@ -38,6 +38,8 @@
 #include "BatteryMonitor.hpp"
 #include "ICM_20602.hpp"
 #include "WallSensor.h"
+#include "Encoder.h"
+#include "TB6612FNG.hpp"
 #include <vector>
 /* USER CODE END Includes */
 
@@ -186,6 +188,13 @@ int main(void)
   IMU.StartGyroOffestCalc(2000, true, true, true);
   IMU.Setup(2);
 
+  
+  Encoder_Setup(EN_ENCODER_0, TIM2, 0xFFFFFFFF);
+  Encoder_Setup(EN_ENCODER_1, TIM5, 0xFFFFFFFF);
+
+  TB6612FNG *pMotorDriver = TB6612FNG::GetInstance();
+  pMotorDriver->Initialize(0.5f);
+
   uint64_t ullDebugTimeMs = SystickTimer_GetTimeMS();
   /* USER CODE END 2 */
 
@@ -202,15 +211,45 @@ int main(void)
       BatteryMoni.Update();
       IMU.Update();
       WallSensor_Update();
+      Encoder_Update(EN_ENCODER_0);
+      Encoder_Update(EN_ENCODER_1);
 
-      if(Sw[1].IsReleaseEdge()){
-        Sw[0].ResetCount();
-      }
+
       if(1 == Sw[0].IsPushCount() % 2){
         TickLed.SetPeriod(500);
       }else{
         TickLed.SetPeriod(1000);
       }
+
+      uint32_t uiSwCount = Sw[1].IsPushCount() % 5;
+      switch(uiSwCount){
+        case 0:
+          pMotorDriver->Stop(TB6612FNG::EN_MOTOR_CH_A);
+          pMotorDriver->Stop(TB6612FNG::EN_MOTOR_CH_B);
+          break;
+        case 1:
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_A, 0.1f);
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_B, 0.0f);
+          break;
+        case 2:
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_A, -0.1f);
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_B, 0.0f);
+          break;
+        case 3:
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_A, 0.0f);
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_B, 0.1f);
+          break;
+        case 4:
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_A, 0.0f);
+          pMotorDriver->SetDuty(TB6612FNG::EN_MOTOR_CH_B, -0.1f);
+          break;  
+        default:
+          pMotorDriver->Stop(TB6612FNG::EN_MOTOR_CH_A);
+          pMotorDriver->Stop(TB6612FNG::EN_MOTOR_CH_B);
+          break;
+      }
+
+      
 
 		  if(SystickTimer_IsTimeElapsed(ullDebugTimeMs, 5)){
 			  ullDebugTimeMs = SystickTimer_GetTimeMS();
@@ -224,8 +263,12 @@ int main(void)
         //Vbat = fValue*3.3*30k/10k
         WallSensor_GetValue(usAdcValue, 4);
         //printf("AD:%d\n", Adc_GetAdcChannelValue(EN_ADC_NUM_2, 1));
-       printf("Wall:%d, %d, %d, %d\n", usAdcValue[0], usAdcValue[1], usAdcValue[2], usAdcValue[3]);
-			  /*printf("t,%.3f, sin,%.3f, sw0,%d, Vbat:%.3f GyroZ:%.3f, Yaw[deg],%.3f\n",
+       //printf("Enc0, %ld, %ld, %ld, Enc1, %ld, %ld, %ld\n", 	LL_TIM_GetCounter(TIM2),  Encoder_IsRawCount(EN_ENCODER_0), Encoder_IsCount(EN_ENCODER_0),
+    	//	   								                          LL_TIM_GetCounter(TIM5),  Encoder_IsRawCount(EN_ENCODER_1), Encoder_IsCount(EN_ENCODER_1));
+		//printf("enc(reg), %ld, %ld\n", LL_TIM_GetCounter(TIM2), LL_TIM_GetCounter(TIM5));
+        //printf("enc(raw), %ld, %ld\n", Encoder_IsRawCount(EN_ENCODER_0), Encoder_IsRawCount(EN_ENCODER_1));
+        printf("enc, %ld, %ld\n", (int32_t)Encoder_IsCount(EN_ENCODER_0), (int32_t)Encoder_IsCount(EN_ENCODER_1));
+        /*printf("t,%.3f, sin,%.3f, sw0,%d, Vbat:%.3f GyroZ:%.3f, Yaw[deg],%.3f\n",
                 fTimer,
                 arm_sin_f32(fTimer),
                 Sw[0].IsPushCount(),
@@ -241,6 +284,7 @@ int main(void)
 		  }
 
       TickLed.Update();
+      pMotorDriver->Update();
 	  } //SamplingTime Elapsed
   }
   /* USER CODE END 3 */

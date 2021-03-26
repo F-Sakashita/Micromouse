@@ -32,7 +32,6 @@ extern "C" {
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
-
 /* USER CODE END Private defines */
 
 void MX_TIM1_Init(void);
@@ -41,7 +40,9 @@ void MX_TIM3_Init(void);
 void MX_TIM5_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void TIM_StartPWM(TIM_TypeDef *TIMx, uint32_t uiChannel);
+void TIM_StopPWM(TIM_TypeDef *TIMx, uint32_t uiChannel);
+void TIM_SetPWMDuty(TIM_TypeDef *TIMx, uint32_t uiChannel, float fDuty);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
