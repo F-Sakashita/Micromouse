@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/build",
+  "command": "/usr/local/bin/g++-10  -I/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/../Source/Utility -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -o CMakeFiles/TestProgramming.dir/main.cpp.o -c /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/main.cpp",
+  "file": "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/main.cpp"
+},
+{
+  "directory": "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/build/build",
+  "command": "/usr/local/bin/g++-10  -I/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/../Source/Utility -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -o CMakeFiles/utility_lib.dir/Calculation.cpp.o -c /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Source/Utility/Calculation.cpp",
+  "file": "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Source/Utility/Calculation.cpp"
+}
+]

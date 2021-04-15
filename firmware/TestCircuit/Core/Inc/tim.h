@@ -31,8 +31,8 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-/* USER CODE BEGIN Private defines */
 /* USER CODE END Private defines */
+/* USER CODE BEGIN Private defines */
 
 void MX_TIM1_Init(void);
 void MX_TIM2_Init(void);

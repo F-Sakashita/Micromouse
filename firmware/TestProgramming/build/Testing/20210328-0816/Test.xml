@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-g++-10"
+	BuildStamp="20210328-0816-Experimental"
+	Name="FumihikonoMacBook-Pro.local"
+	Generator="ctest-3.20.0"
+	CompilerName="/usr/local/bin/g++-10"
+	CompilerVersion="10.2.0"
+	OSName="macOS"
+	Hostname="FumihikonoMacBook-Pro.local"
+	OSRelease="11.1"
+	OSVersion="20C69"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="6"
+	ModelID="0"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="11264"
+	TotalPhysicalMemory="16384"
+	LogicalProcessorsPerPhysical="8"
+	ProcessorClockFrequency="2400"
+	>
+	<Testing>
+		<StartDateTime>Mar 28 17:16 JST</StartDateTime>
+		<StartTestTime>1616919416</StartTestTime>
+		<TestList/>
+		<EndDateTime>Mar 28 17:16 JST</EndDateTime>
+		<EndTestTime>1616919416</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

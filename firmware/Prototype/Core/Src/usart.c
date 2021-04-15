@@ -62,7 +62,11 @@ void MX_USART2_UART_Init(void)
 }
 
 /* USER CODE BEGIN 1 */
-
+void USART_TransmitByte(USART_TypeDef *pUSARTx, uint8_t u8WriteData)
+{
+	LL_USART_TransmitData8(pUSARTx, u8WriteData);
+	while(0 == LL_USART_IsActiveFlag_TXE(pUSARTx));
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

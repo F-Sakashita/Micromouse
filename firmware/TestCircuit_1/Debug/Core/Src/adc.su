@@ -1,7 +1,0 @@
-stm32f4xx_ll_adc.h:2454:22:LL_ADC_REG_SetSequencerRanks	32	static,ignoring_inline_asm
-stm32f4xx_ll_adc.h:2686:22:LL_ADC_REG_SetFlagEndOfConversion	16	static
-stm32f4xx_ll_adc.h:3240:22:LL_ADC_SetChannelSamplingTime	48	static,ignoring_inline_asm
-stm32f4xx_ll_bus.h:411:22:LL_AHB1_GRP1_EnableClock	24	static
-stm32f4xx_ll_bus.h:1706:22:LL_APB2_GRP1_EnableClock	24	static
-adc.c:28:6:MX_ADC1_Init	80	static
-adc.c:80:6:MX_ADC2_Init	64	static

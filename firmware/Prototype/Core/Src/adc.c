@@ -20,8 +20,88 @@
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
 
-/* USER CODE BEGIN 0 */
+/* USER CODE BEGIN 0 */#include <stdio.h>
+#include <stdbool.h>
 
+typedef struct{
+  EN_ADC_NUM enAdcNum;
+  ADC_TypeDef *pADCx;
+  uint16_t *pAdcValue;
+  uint8_t   ucAdcChannelNum;
+}AdcConfig_t;
+
+uint16_t g_usAdc1Value[ADC1_CHANNEL_NUM];
+bool g_bAdc1Start = false;
+uint16_t g_usAdc2Value[ADC2_CHANNEL_NUM];
+bool g_bAdc2Start = false;
+
+static const AdcConfig_t g_AdcConfigTable[] = {
+  {EN_ADC_NUM_1, ADC1, g_usAdc1Value, ADC1_CHANNEL_NUM},
+  {EN_ADC_NUM_2, ADC2, g_usAdc2Value, ADC2_CHANNEL_NUM},
+};
+
+static bool Adc_IsValidReadChannel(uint8_t ucRequestRank, uint8_t ucChannelSize);
+static bool Adc_IsValidReadSize(uint8_t ucStartRank, uint8_t ucRequestSize, uint8_t ucChannelSize, uint8_t *pSize);
+static void Adc1_StartConvert(void);
+static void Adc2_StartConvert(void);
+
+/* 内部関数 */
+static bool Adc_IsValidReadChannel(uint8_t ucRequestRank, uint8_t ucChannelSize)
+{
+  if(ucRequestRank <= 0 || ucRequestRank > ucChannelSize){
+    return false;
+  }
+  return true;
+}
+
+static bool Adc_IsValidReadSize(uint8_t ucStartRank, uint8_t ucRequestSize, uint8_t ucChannelSize, uint8_t *pSize)
+{
+  if(!Adc_IsValidReadChannel(ucStartRank, ucChannelSize)){
+    return false;
+  }
+
+  if(ucRequestSize > ucChannelSize - (ucStartRank-1)){
+    *pSize = ucChannelSize - (ucStartRank-1);
+  }else{
+    *pSize = ucRequestSize;
+  }
+
+  return true;
+}
+
+static void Adc1_StartConvert(void)
+{
+  LL_DMA_EnableIT_TC(DMA2, LL_DMA_STREAM_0);
+  LL_ADC_Enable(ADC1);
+  LL_DMA_DisableStream(DMA2, LL_DMA_STREAM_0);
+  LL_DMA_ConfigAddresses( DMA2, //DMA Channel
+                          LL_DMA_STREAM_0, //DMA Stream
+                          LL_ADC_DMA_GetRegAddr(ADC1, LL_ADC_DMA_REG_REGULAR_DATA), //ADC Register(Source) 
+                          (uint32_t)&g_usAdc1Value, //Destination
+                          LL_DMA_DIRECTION_PERIPH_TO_MEMORY //Direction
+                          ); 
+  LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_0, ADC1_CHANNEL_NUM);
+  LL_DMA_EnableStream(DMA2, LL_DMA_STREAM_0);
+  LL_ADC_REG_StartConversionSWStart(ADC1);
+  g_bAdc1Start = true;
+}
+
+static void Adc2_StartConvert(void)
+{
+  LL_DMA_EnableIT_TC(DMA2, LL_DMA_STREAM_2);
+  //LL_ADC_Enable(ADC2);
+  LL_DMA_DisableStream(DMA2, LL_DMA_STREAM_2);
+  LL_DMA_ConfigAddresses( DMA2, //DMA Channel
+                          LL_DMA_STREAM_2, //DMA Stream
+                          LL_ADC_DMA_GetRegAddr(ADC2, LL_ADC_DMA_REG_REGULAR_DATA), //ADC Register(Source) 
+                          (uint32_t)&g_usAdc2Value, //Destination
+                          LL_DMA_DIRECTION_PERIPH_TO_MEMORY //Direction
+                          ); 
+  LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_2, ADC2_CHANNEL_NUM);
+  LL_DMA_EnableStream(DMA2, LL_DMA_STREAM_2);
+  //LL_ADC_REG_StartConversionSWStart(ADC2);
+  g_bAdc2Start = true;
+}
 /* USER CODE END 0 */
 
 /* ADC1 init function */
@@ -172,6 +252,139 @@ void MX_ADC2_Init(void)
 }
 
 /* USER CODE BEGIN 1 */
+/* 外部関数 */
+void Adc_StartConvert(EN_ADC_NUM enAdcNum)
+{
+  switch(enAdcNum){
+    case EN_ADC_NUM_1:
+      Adc1_StartConvert();
+      break;
+    case EN_ADC_NUM_2:
+      Adc2_StartConvert();
+      break;
+    default:
+      break;
+  }
+}
+
+bool Adc_IsStartConvert(EN_ADC_NUM enAdcNum)
+{
+  bool bResult = false;
+  switch(enAdcNum){
+    case EN_ADC_NUM_1:
+      bResult = g_bAdc1Start;
+      break;
+    case EN_ADC_NUM_2:
+      bResult = g_bAdc2Start;
+      break;
+    default:
+      break;
+  }
+  return bResult;
+}
+
+uint16_t Adc_GetAdcChannelValue(EN_ADC_NUM enAdcNum, uint8_t ucChannelRank)
+{
+  if(enAdcNum >= EN_ADC_NUM_LAST){
+    return 0;
+  }
+  const AdcConfig_t *pConfigTbl = &g_AdcConfigTable[enAdcNum];
+  if(!Adc_IsValidReadChannel(ucChannelRank, pConfigTbl->ucAdcChannelNum)){
+    return 0;
+  }
+  return (*(pConfigTbl->pAdcValue + ucChannelRank - 1));
+}
+
+void Adc_GetAdcValues(EN_ADC_NUM enAdcNum, uint16_t *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize)
+{
+  uint8_t ucSize = 0;
+  if(enAdcNum >= EN_ADC_NUM_LAST){
+    return;
+  }
+  const AdcConfig_t *pConfigTbl = &g_AdcConfigTable[enAdcNum];
+
+  if(!Adc_IsValidReadSize(ucStartChannelRank, ucRequestSize, pConfigTbl->ucAdcChannelNum, &ucSize)){
+    return;
+  }
+  
+  //memcpy(pValue, &g_usAdc1Value[ucStartChannelRank-1], ucSize);
+  memcpy(pValue, (pConfigTbl->pAdcValue + ucStartChannelRank - 1), ucSize * sizeof(uint16_t));
+  /*printf("Get:%d, %d, %d, %d\n", *(pConfigTbl->pAdcValue)
+		  , *(pConfigTbl->pAdcValue+1)
+		  , *(pConfigTbl->pAdcValue+2)
+		  , *(pConfigTbl->pAdcValue+3));*/
+}
+
+float Adc_GetRateAdcChannelValue(EN_ADC_NUM enAdcNum, uint8_t ucChannelRank)
+{
+  if(enAdcNum >= EN_ADC_NUM_LAST){
+    return 0;
+  }
+  const AdcConfig_t *pConfigTbl = &g_AdcConfigTable[enAdcNum];
+  if(!Adc_IsValidReadChannel(ucChannelRank, pConfigTbl->ucAdcChannelNum)){
+    return 0.0;
+  }
+  uint16_t uiResolutionValue = Adc_GetResolutionValue(enAdcNum);
+  float fValue = (float)(*(pConfigTbl->pAdcValue + ucChannelRank - 1)) / (float)(uiResolutionValue);
+  return fValue;
+}
+
+void Adc_GetRateAdcValues(EN_ADC_NUM enAdcNum, float *pValue, uint8_t ucStartChannelRank, uint8_t ucRequestSize)
+{
+  if(enAdcNum >= EN_ADC_NUM_LAST){
+    return;
+  }
+  const AdcConfig_t *pConfigTbl = &g_AdcConfigTable[enAdcNum];
+  uint16_t uiResolutionValue = Adc_GetResolutionValue(enAdcNum);
+  uint8_t ucSize = 0;
+  if(!Adc_IsValidReadSize(ucStartChannelRank, ucRequestSize, pConfigTbl->ucAdcChannelNum, &ucSize)){
+    return;
+  }
+  uint16_t *pAdcValue = (pConfigTbl->pAdcValue + ucStartChannelRank - 1);
+  while(ucSize > 0){
+    *pValue = (float)(*pAdcValue) / (float)(uiResolutionValue);
+    pValue ++;
+    pAdcValue ++;
+    ucSize --;
+  }
+}
+
+uint16_t Adc_GetResolutionValue(EN_ADC_NUM enAdcNum)
+{
+  ADC_TypeDef *pADCx;
+  switch (enAdcNum)
+  {
+  case EN_ADC_NUM_1:
+    pADCx = ADC1;
+    break;
+  case EN_ADC_NUM_2:
+    pADCx = ADC2;
+    break;
+  default:
+    return 1u;
+    break;
+  }
+  uint32_t uiResolution = LL_ADC_GetResolution(pADCx);
+  uint16_t uiResolutionValue = 0x0FFF;
+  switch(uiResolution) {
+  case LL_ADC_RESOLUTION_12B:
+    uiResolutionValue = 0x0FFF;
+    break;
+  case LL_ADC_RESOLUTION_10B:
+    uiResolutionValue = 0x03FF;
+    break;
+  case LL_ADC_RESOLUTION_8B:
+    uiResolutionValue = 0x00FF;
+    break;
+  case LL_ADC_RESOLUTION_6B:
+    uiResolutionValue = 0x003F;
+    break;
+  default:
+    /* do nothing */
+    break;
+  }
+  return uiResolutionValue;
+}
 
 /* USER CODE END 1 */
 

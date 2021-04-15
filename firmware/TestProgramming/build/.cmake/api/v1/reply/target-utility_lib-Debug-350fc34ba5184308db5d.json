@@ -1,0 +1,95 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "build/libutility_lib.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Source/Utility/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 2
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestProgramming/../Source/Utility"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "utility_lib::@039278ea0a093c55e3e1",
+	"name" : "utility_lib",
+	"nameOnDisk" : "libutility_lib.a",
+	"paths" : 
+	{
+		"build" : "build",
+		"source" : "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Source/Utility"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Source/Utility/Calculation.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

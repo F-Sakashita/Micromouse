@@ -8,7 +8,7 @@
 
 #include "ICM_20602.hpp"
 #include "SystickTimer.h"
-#include "Utility.h"
+#include "Calculation.h"
 
 #include "stm32f4xx_ll_gpio.h"
 #include "stm32f4xx_ll_spi.h"

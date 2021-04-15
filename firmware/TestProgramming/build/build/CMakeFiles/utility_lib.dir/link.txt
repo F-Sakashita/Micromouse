@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutility_lib.a CMakeFiles/utility_lib.dir/Calculation.cpp.o
+/usr/bin/ranlib libutility_lib.a

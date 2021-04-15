@@ -1,10 +1,24 @@
 {
     "folders": [
         {
+            "path": "Prototype"
+        },
+        {
+            "path": "Source"
+        },
+        {
+            "path": "Test_ICM-20602"
+        },
+        {
             "path": "TestCircuit"
         },
         {
-            "path": "Prototype"
+            "path": "TestProgramming"
         }
-    ]
+    ],
+    "settings": {
+        "files.associations": {
+            "stm32f4xx_it.h": "c"
+        }
+    }
 }

@@ -1,5 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
 ################################################################################
 
 -include ../makefile.init
@@ -45,6 +46,12 @@ endif
 
 -include ../makefile.defs
 
+OPTIONAL_TOOL_DEPS := \
+$(wildcard ../makefile.defs) \
+$(wildcard ../makefile.init) \
+$(wildcard ../makefile.targets) \
+
+
 BUILD_ARTIFACT_NAME := TestCircuit
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
@@ -71,22 +78,22 @@ all: main-build
 main-build: TestCircuit.elf secondary-outputs
 
 # Tool invocations
-TestCircuit.elf: $(OBJS) $(USER_OBJS) /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld
-	arm-none-eabi-g++ -o "TestCircuit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestCircuit.map" -Wl,--gc-sections -static -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+TestCircuit.elf: $(OBJS) $(USER_OBJS) /Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "TestCircuit.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/TestCircuit/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestCircuit.map" -Wl,--gc-sections -static -Wl,--start-group -larm_cortexM4l_math -Wl,--end-group -L../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-default.size.stdout: $(EXECUTABLES)
+default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-size  $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-TestCircuit.list: $(EXECUTABLES)
+TestCircuit.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "TestCircuit.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-TestCircuit.bin: $(EXECUTABLES)
+TestCircuit.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "TestCircuit.bin"
 	@echo 'Finished building: $@'
 	@echo ' '

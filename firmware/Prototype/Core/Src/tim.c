@@ -21,7 +21,7 @@
 #include "tim.h"
 
 /* USER CODE BEGIN 0 */
-
+#include <stdio.h>
 /* USER CODE END 0 */
 
 /* TIM1 init function */
@@ -209,7 +209,57 @@ void MX_TIM5_Init(void)
 }
 
 /* USER CODE BEGIN 1 */
+void TIM_StartPWM(TIM_TypeDef *TIMx, uint32_t uiChannel)
+{
+  if(LL_TIM_CHANNEL_CH1 > uiChannel || LL_TIM_CHANNEL_CH4 < uiChannel){
+    return;
+  }
+  LL_TIM_CC_EnableChannel(TIMx, uiChannel);
+  if(0u == LL_TIM_IsEnabledCounter(TIMx)){
+      LL_TIM_EnableCounter(TIMx);
+      LL_TIM_EnableAllOutputs(TIMx);
+  }
+}
 
+void TIM_StopPWM(TIM_TypeDef *TIMx, uint32_t uiChannel)
+{
+  if(LL_TIM_CHANNEL_CH1 > uiChannel || LL_TIM_CHANNEL_CH4 < uiChannel){
+    return;
+  }
+  
+  if(1u == LL_TIM_CC_IsEnabledChannel(TIMx, uiChannel)){
+    LL_TIM_CC_DisableChannel(TIMx, uiChannel);
+    LL_TIM_DisableCounter(TIMx);
+    LL_TIM_DisableAllOutputs(TIMx);
+  }
+}
+
+void TIM_SetPWMDuty(TIM_TypeDef *TIMx, uint32_t uiChannel, float fDuty)
+{
+  uint32_t uiAutoReload = LL_TIM_GetAutoReload(TIMx);
+  uint32_t uiCompareValue = (uint32_t)((float)uiAutoReload * fDuty);
+
+  switch(uiChannel)
+  {
+    case LL_TIM_CHANNEL_CH1:
+      LL_TIM_OC_SetCompareCH1(TIMx, uiCompareValue);  
+      break;
+    case LL_TIM_CHANNEL_CH2:
+      LL_TIM_OC_SetCompareCH2(TIMx, uiCompareValue);
+      break;
+    case LL_TIM_CHANNEL_CH3:
+      LL_TIM_OC_SetCompareCH3(TIMx, uiCompareValue);
+      break;
+    case LL_TIM_CHANNEL_CH4:
+      LL_TIM_OC_SetCompareCH4(TIMx, uiCompareValue);
+      break;
+    default:
+      /* do nothing */
+      break;
+  }
+  //printf("TIM1 OC Ch1 Comp:%d\n", LL_TIM_OC_GetCompareCH1(TIM1));
+  //printf("TIM1 OC Ch2 Comp:%d\n", LL_TIM_OC_GetCompareCH2(TIM1));
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

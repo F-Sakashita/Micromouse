@@ -38,7 +38,7 @@ extern "C" {
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void USART_TransmitByte(USART_TypeDef *pUSARTx, uint8_t u8WriteData);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
