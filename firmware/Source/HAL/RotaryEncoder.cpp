@@ -23,7 +23,7 @@ RotaryEncoder::RotaryEncoder() :
     fOldRadian(0.0f),
     fNowDps(0.0f),
     fNowRps(0.0f),
-    bEnableAngleUpdate(false)
+    bEnableUpdateAngle(false)
 {
 
 }
@@ -46,7 +46,7 @@ void RotaryEncoder::UpdateRadian()
     fNowRadian += fNowRps * static_cast<float>(uiSamplingTimeMs);
 }
 
-bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableAngleUpdate, float fStartDeg)
+bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableUpdateAngle, float fStartDeg)
 {
     if(EN_ENC_LAST <= enName){
         return false;
@@ -61,7 +61,7 @@ bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bE
 
     this->uiSamplingTimeMs = uiSamplingTimeMs;
     this->bReverse = bReverse;
-    this->bEnableAngleUpdate = bEnableAngleUpdate;
+    this->bEnableUpdateAngle = bEnableUpdateAngle;
     fStartDegree = fStartDeg;
     fNowDegree = fStartDegree;
     fNowRadian = Calc_ConvDegToRad(fNowDegree);
@@ -88,11 +88,10 @@ void RotaryEncoder::Update()
     UpdateDps();
     UpdateRps();
 
-    if(bEnableAngleUpdate){
+    if(bEnableUpdateAngle){
         UpdateDegree();
         UpdateRadian();
     }
-
 
     llOldCount = llNowCount;
     fOldDegree = fNowDegree;
@@ -102,23 +101,19 @@ void RotaryEncoder::Update()
 float RotaryEncoder::GetDegree(EN_DEG_MODE enMode)
 {
     float fResult = 0.0f;
-    if(bEnableAngleUpdate){
-        fResult = fNowDegree;
-        switch (enMode)
-        {
-        case EN_DEG_MODE_0_360:
-            fResult = Calc_ConvDegRange0To360(fResult);
-            break;
-        case EN_DEG_MODE_M180_180:
-            fResult = Calc_ConvDegRangeM180ToP180(fResult);
-            break;
-        case EN_DEG_MODE_UNLIMITED:
-        default:
-            /* do nothing */
-            break;
-        }
-    }else{
-        fResult = 0.0f;
+    fResult = fNowDegree;
+    switch (enMode)
+    {
+    case EN_DEG_MODE_0_360:
+        fResult = Calc_ConvDegRange0To360(fResult);
+        break;
+    case EN_DEG_MODE_M180_180:
+        fResult = Calc_ConvDegRangeM180ToP180(fResult);
+        break;
+    case EN_DEG_MODE_UNLIMITED:
+    default:
+        /* do nothing */
+        break;
     }
 
     return fResult;
@@ -126,21 +121,21 @@ float RotaryEncoder::GetDegree(EN_DEG_MODE enMode)
 float RotaryEncoder::GetRadian(EN_RAD_MODE enMode)
 {
     float fResult = 0.0f;
-    if(bEnableAngleUpdate){
-        fResult = fNowRadian;
-        switch (enMode)
-        {
-        case EN_RAD_MODE_0_2PI:
-            fResult = Calc_ConvRadRange0To2PI(fResult);
-            break;
-        case EN_RAD_MODE_MPI_PI:
-            fResult = Calc_ConvRadRangeMPIToPI(fResult);
-            break;
-        case EN_RAD_MODE_UNLIMITED:
-        default:
-            /* do nothing */
-            break;
-        }
+
+    fResult = fNowRadian;
+    switch (enMode)
+    {
+    case EN_RAD_MODE_0_2PI:
+        fResult = Calc_ConvRadRange0To2PI(fResult);
+        break;
+    case EN_RAD_MODE_MPI_PI:
+        fResult = Calc_ConvRadRangeMPIToPI(fResult);
+        break;
+    case EN_RAD_MODE_UNLIMITED:
+    default:
+        /* do nothing */
+        break;
     }
+
     return fResult;
 }

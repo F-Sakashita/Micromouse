@@ -27,7 +27,7 @@ void SystickTimer_EnableInterrupt(void);
 void SystickTimer_DisableInterrpt(void);
 
 //サンプリングタイムの設定
-void SystickTimer_SetSamplingTime(uint16_t u16SamplingTimeMs);
+void SystickTimer_SetSamplingTime(uint16_t usSamplingTimeMs);
 //サンプリングタイムの経過判定
 bool SystickTimer_IsSamplingTimeElapsed(void);
 
@@ -37,12 +37,12 @@ uint64_t SystickTimer_GetTimeMS(void);
 //uint64_t SystickTimer_GetTimeUS();
 
 //遅延 [ms]
-void SystickTimer_DelayMS(uint32_t u32DelayMs);
+void SystickTimer_DelayMS(uint32_t uiDelayMs);
 //遅延 [us]
-//void SystickTimer_DelayUS(uint64_t u64DelayUs);
+//void SystickTimer_DelayUS(uint64_t ullDelayUs);
 
 //指定時間経過
-bool SystickTimer_IsTimeElapsed(uint64_t u64StartTimeMs ,uint32_t u32IntervalMs);
+bool SystickTimer_IsTimeElapsed(uint64_t ullStartTimeMs ,uint32_t uiIntervalMs);
 
 
 #ifdef __cplusplus

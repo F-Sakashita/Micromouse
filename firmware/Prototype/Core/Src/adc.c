@@ -20,7 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
 
-/* USER CODE BEGIN 0 */#include <stdio.h>
+/* USER CODE BEGIN 0 */
 #include <stdbool.h>
 
 typedef struct{
@@ -88,6 +88,11 @@ static void Adc1_StartConvert(void)
 
 static void Adc2_StartConvert(void)
 {
+  LL_ADC_Enable(ADC2);			//ADC2 Enabled
+  
+  LL_TIM_EnableIT_UPDATE(TIM3);	//TIM3 Interrupt Start
+  LL_TIM_EnableCounter(TIM3);	//TIM3 Count Up Start
+
   LL_DMA_EnableIT_TC(DMA2, LL_DMA_STREAM_2);
   //LL_ADC_Enable(ADC2);
   LL_DMA_DisableStream(DMA2, LL_DMA_STREAM_2);
@@ -99,7 +104,7 @@ static void Adc2_StartConvert(void)
                           ); 
   LL_DMA_SetDataLength(DMA2, LL_DMA_STREAM_2, ADC2_CHANNEL_NUM);
   LL_DMA_EnableStream(DMA2, LL_DMA_STREAM_2);
-  //LL_ADC_REG_StartConversionSWStart(ADC2);
+
   g_bAdc2Start = true;
 }
 /* USER CODE END 0 */
@@ -107,6 +112,11 @@ static void Adc2_StartConvert(void)
 /* ADC1 init function */
 void MX_ADC1_Init(void)
 {
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
   LL_ADC_InitTypeDef ADC_InitStruct = {0};
   LL_ADC_REG_InitTypeDef ADC_REG_InitStruct = {0};
   LL_ADC_CommonInitTypeDef ADC_CommonInitStruct = {0};
@@ -146,6 +156,9 @@ void MX_ADC1_Init(void)
 
   LL_DMA_DisableFifoMode(DMA2, LL_DMA_STREAM_0);
 
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
   /** Common config
   */
   ADC_InitStruct.Resolution = LL_ADC_RESOLUTION_12B;
@@ -166,11 +179,19 @@ void MX_ADC1_Init(void)
   */
   LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_4);
   LL_ADC_SetChannelSamplingTime(ADC1, LL_ADC_CHANNEL_4, LL_ADC_SAMPLINGTIME_480CYCLES);
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
 
 }
 /* ADC2 init function */
 void MX_ADC2_Init(void)
 {
+
+  /* USER CODE BEGIN ADC2_Init 0 */
+
+  /* USER CODE END ADC2_Init 0 */
+
   LL_ADC_InitTypeDef ADC_InitStruct = {0};
   LL_ADC_REG_InitTypeDef ADC_REG_InitStruct = {0};
 
@@ -218,6 +239,9 @@ void MX_ADC2_Init(void)
 
   LL_DMA_DisableFifoMode(DMA2, LL_DMA_STREAM_2);
 
+  /* USER CODE BEGIN ADC2_Init 1 */
+
+  /* USER CODE END ADC2_Init 1 */
   /** Common config
   */
   ADC_InitStruct.Resolution = LL_ADC_RESOLUTION_12B;
@@ -227,7 +251,7 @@ void MX_ADC2_Init(void)
   ADC_REG_InitStruct.TriggerSource = LL_ADC_REG_TRIG_EXT_TIM3_TRGO;
   ADC_REG_InitStruct.SequencerLength = LL_ADC_REG_SEQ_SCAN_ENABLE_4RANKS;
   ADC_REG_InitStruct.SequencerDiscont = LL_ADC_REG_SEQ_DISCONT_DISABLE;
-  ADC_REG_InitStruct.ContinuousMode = LL_ADC_REG_CONV_SINGLE;
+  ADC_REG_InitStruct.ContinuousMode = LL_ADC_REG_CONV_CONTINUOUS;
   ADC_REG_InitStruct.DMATransfer = LL_ADC_REG_DMA_TRANSFER_UNLIMITED;
   LL_ADC_REG_Init(ADC2, &ADC_REG_InitStruct);
   LL_ADC_REG_SetFlagEndOfConversion(ADC2, LL_ADC_REG_FLAG_EOC_SEQUENCE_CONV);
@@ -248,6 +272,9 @@ void MX_ADC2_Init(void)
   */
   LL_ADC_REG_SetSequencerRanks(ADC2, LL_ADC_REG_RANK_4, LL_ADC_CHANNEL_9);
   LL_ADC_SetChannelSamplingTime(ADC2, LL_ADC_CHANNEL_9, LL_ADC_SAMPLINGTIME_84CYCLES);
+  /* USER CODE BEGIN ADC2_Init 2 */
+
+  /* USER CODE END ADC2_Init 2 */
 
 }
 

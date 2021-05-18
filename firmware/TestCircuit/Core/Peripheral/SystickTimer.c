@@ -26,13 +26,17 @@ void SystickTimer_Interrupt(void)
 //割り込み有効
 void SystickTimer_EnableInterrupt(void)
 {
+	#ifndef ENABLE_FREERTOS
 	LL_SYSTICK_EnableIT();
+	#else
+	
+	#endif
 }
 
 //割り込み無効
 void SystickTimer_DisableInterrpt(void)
 {
-	LL_SYSTICK_DisableIT();
+	//LL_SYSTICK_DisableIT();
 }
 
 //サンプリングタイムの設定

@@ -12,6 +12,19 @@
 #include <math.h>
 #endif
 
+typedef struct{
+    float fValueX;
+    float fValueY;
+    float fValueZ;
+}Coord_t;
+
+typedef struct{
+    float fValueX;
+    float fValueY;
+    float fRad;
+}Posture_t;
+
+void Calc_SetCoordValue(Coord_t *pCoord, float fValueX, float fValueY, float fValueZ);
 float Calc_ConvDegToRad(float fDegree);
 float Calc_ConvRadToDeg(float fRadian);
 float Calc_GetAverage(const float *pData, uint32_t uiSize);

@@ -1,6 +1,13 @@
 #include "Calculation.h"
 #include <vector>
 
+void Calc_SetCoordValue(Coord_t *pCoord, float fValueX, float fValueY, float fValueZ)
+{
+    pCoord->fValueX = fValueX;
+    pCoord->fValueY = fValueY;
+    pCoord->fValueZ = fValueZ; 
+}
+
 float Calc_ConvDegToRad(float fDegree)
 {
     return (fDegree * M_PI / 180.0f);

@@ -27,12 +27,13 @@ TB6612FNG::TB6612FNG()
 {
     pGPIO_PortStandby   = MOTOR_STBY_GPIO_Port;
     GPIO_PinStandby = MOTOR_STBY_Pin;
-    bIsBrake[EN_MOTOR_CH_A] = false;
-    bIsBrake[EN_MOTOR_CH_B] = false;
-    fReqDuty[EN_MOTOR_CH_A] = 0.0f;
-    fReqDuty[EN_MOTOR_CH_B] = 0.0f;
-    bInitialized = false;
-    fMaxDuty = 1.0f;
+    for(uint8_t ucCount = EN_MOTOR_CH_FIRST; ucCount < EN_MOTOR_CH_LAST; ucCount ++){
+        bIsBrake[ucCount] = false;
+        fReqDuty[ucCount] = 0.0f;
+        fMaxDuty[ucCount] = 1.0f;
+        bInitialized[ucCount] = false;
+    }
+    bEnableStandby = false;
 }
 
 void TB6612FNG::SetDirAndPwm(MotorChConfig_t *pMotorChDef, float fReqDuty, bool bEnableBrake)
@@ -66,61 +67,65 @@ void TB6612FNG::SetDirAndPwm(MotorChConfig_t *pMotorChDef, float fReqDuty, bool 
 }
 
 /* Public */
-TB6612FNG *TB6612FNG::GetInstance(void)
+TB6612FNG& TB6612FNG::GetInstance()
 {
     static TB6612FNG self;
-    return &self;
+    return self;
 }
-
-void TB6612FNG::Initialize(float fMaxDuty)
+bool TB6612FNG::Initialize(EN_MOTOR_CH enChannel, float fMaxDuty)
 {
-    if(0.0f > fMaxDuty){
-        return;
+    if(EN_MOTOR_CH_LAST <= enChannel){
+        return false;
     }
-    TIM_StartPWM(stMotorChConfig[EN_MOTOR_CH_A].pTIMDef_Pwm, stMotorChConfig[EN_MOTOR_CH_A].TIMCh_Pwm);
-    TIM_StartPWM(stMotorChConfig[EN_MOTOR_CH_B].pTIMDef_Pwm, stMotorChConfig[EN_MOTOR_CH_B].TIMCh_Pwm);
-    LL_GPIO_ResetOutputPin(pGPIO_PortStandby, GPIO_PinStandby);
-    bInitialized = true;
-    this->fMaxDuty = fMaxDuty;
 
-    //printf("TIM1 Ena Cnt:%d", LL_TIM_IsEnabledCounter(TIM1));
-    //printf("TIM1 CC1 Ena:%d\n", LL_TIM_CC_IsEnabledChannel(TIM1, LL_TIM_CHANNEL_CH1));
-    //printf("TIM1 CC2 Ena:%d\n", LL_TIM_CC_IsEnabledChannel(TIM1, LL_TIM_CHANNEL_CH2));
+    if(0.0f > fMaxDuty){
+        return false;
+    }
+    TIM_StartPWM(stMotorChConfig[enChannel].pTIMDef_Pwm, stMotorChConfig[enChannel].TIMCh_Pwm);
+
+    bInitialized[enChannel] = true;
+    this->fMaxDuty[enChannel] = fMaxDuty;
+    if(!IsEnableStandby()){
+        EnableStandby();
+    }
+    return true;
 }
 
 void TB6612FNG::EnableStandby()
 {
-    
+    LL_GPIO_SetOutputPin(pGPIO_PortStandby, GPIO_PinStandby);
+    bEnableStandby = true;
 }
 
 void TB6612FNG::DisableStandby()
 {
-    
+    LL_GPIO_ResetOutputPin(pGPIO_PortStandby, GPIO_PinStandby);
+    bEnableStandby = false;
 }
 
-void TB6612FNG::SetDirection(MOTOR_CH enChannel, bool bDirection)
+void TB6612FNG::SetDirReverse(EN_MOTOR_CH enChannel, bool bDirReverse)
 {
     if(EN_MOTOR_CH_LAST <= enChannel){
         return;
     }
-    stMotorChConfig[enChannel].bDirReverse = bDirection;
+    stMotorChConfig[enChannel].bDirReverse = bDirReverse;
 }
 
-void TB6612FNG::SetDuty(MOTOR_CH enChannel, float fDuty)
+void TB6612FNG::SetDuty(EN_MOTOR_CH enChannel, float fDuty)
 {
     if(EN_MOTOR_CH_LAST <= enChannel){
         return;
     }
-    if(fMaxDuty < fDuty){
-        fDuty = fMaxDuty;
-    }else if(-1.0 * fMaxDuty > fDuty){
-        fDuty = -1.0 * fMaxDuty;
+    if(fMaxDuty[enChannel] < fDuty){
+        fDuty = fMaxDuty[enChannel];
+    }else if(-1.0 * fMaxDuty[enChannel] > fDuty){
+        fDuty = -1.0 * fMaxDuty[enChannel];
     }
 
     this->fReqDuty[enChannel] = fDuty;
 }
 
-void TB6612FNG::Stop(MOTOR_CH enChannel)
+void TB6612FNG::Stop(EN_MOTOR_CH enChannel)
 {
     if(EN_MOTOR_CH_LAST <= enChannel){
         return;
@@ -128,7 +133,7 @@ void TB6612FNG::Stop(MOTOR_CH enChannel)
     this->fReqDuty[enChannel] = 0.0f;
 }
 
-void TB6612FNG::SetBrake(MOTOR_CH enChannel, bool bEnableBrake)
+void TB6612FNG::SetBrake(EN_MOTOR_CH enChannel, bool bEnableBrake)
 {
     if(EN_MOTOR_CH_LAST <= enChannel){
         return;
@@ -136,12 +141,29 @@ void TB6612FNG::SetBrake(MOTOR_CH enChannel, bool bEnableBrake)
     bIsBrake[enChannel] = bEnableBrake;
 }
 
-void TB6612FNG::Update()
+bool TB6612FNG::IsBrake(EN_MOTOR_CH enChannel)
 {
-    if(bInitialized){
-        SetDirAndPwm(&stMotorChConfig[EN_MOTOR_CH_A], fReqDuty[EN_MOTOR_CH_A], bIsBrake[EN_MOTOR_CH_A]);
-        SetDirAndPwm(&stMotorChConfig[EN_MOTOR_CH_B], fReqDuty[EN_MOTOR_CH_B], bIsBrake[EN_MOTOR_CH_B]);
-        LL_GPIO_SetOutputPin(pGPIO_PortStandby, GPIO_PinStandby);
+    if(EN_MOTOR_CH_LAST <= enChannel){
+        return false;
+    }
+    return bIsBrake[enChannel];
+}
+
+float TB6612FNG::IsDuty(EN_MOTOR_CH enChannel)
+{
+    if(EN_MOTOR_CH_LAST <= enChannel){
+        return 0.0f;
+    }
+    return fReqDuty[enChannel];
+}
+
+void TB6612FNG::Update(EN_MOTOR_CH enChannel)
+{
+    if(EN_MOTOR_CH_LAST <= enChannel){
+        return;
+    }
+    if(bEnableStandby && bInitialized[enChannel]){
+        SetDirAndPwm(&stMotorChConfig[enChannel], fReqDuty[enChannel], bIsBrake[enChannel]);
     }
 }
 

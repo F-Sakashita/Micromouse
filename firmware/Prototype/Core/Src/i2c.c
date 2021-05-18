@@ -27,6 +27,11 @@
 /* I2C2 init function */
 void MX_I2C2_Init(void)
 {
+
+  /* USER CODE BEGIN I2C2_Init 0 */
+
+  /* USER CODE END I2C2_Init 0 */
+
   LL_I2C_InitTypeDef I2C_InitStruct = {0};
 
   LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -47,6 +52,9 @@ void MX_I2C2_Init(void)
   /* Peripheral clock enable */
   LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_I2C2);
 
+  /* USER CODE BEGIN I2C2_Init 1 */
+
+  /* USER CODE END I2C2_Init 1 */
   /** I2C Initialization
   */
   LL_I2C_DisableOwnAddress2(I2C2);
@@ -60,6 +68,9 @@ void MX_I2C2_Init(void)
   I2C_InitStruct.OwnAddrSize = LL_I2C_OWNADDRESS1_7BIT;
   LL_I2C_Init(I2C2, &I2C_InitStruct);
   LL_I2C_SetOwnAddress2(I2C2, 0);
+  /* USER CODE BEGIN I2C2_Init 2 */
+
+  /* USER CODE END I2C2_Init 2 */
 
 }
 

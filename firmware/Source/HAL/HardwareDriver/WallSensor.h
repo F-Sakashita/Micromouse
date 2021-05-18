@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef enum{
     EN_WALLSENSOR_POS_FIRST = 0,
@@ -16,10 +17,12 @@ typedef enum{
     EN_WALLSENSOR_POS_LAST
 }EN_WALLSENSOR_POS;
 
-void WallSensor_SetValueLedOn(EN_WALLSENSOR_POS enPos, uint16_t usValue);
-void WallSensor_SetValueLedOff(EN_WALLSENSOR_POS enPos, uint16_t usValue);
+bool WallSensor_Initialize(void);
+void WallSensor_InterruptTimer(void);
+void WallSensor_InterruptDMA(void);
 void WallSensor_Update();
-void WallSensor_GetValue(uint16_t *pValue, uint8_t ucSize);
+uint16_t WallSensor_GetValue(EN_WALLSENSOR_POS enWallSensorPos);
+float WallSensor_GetDistance(EN_WALLSENSOR_POS enWallSensorPos);
 
 #ifdef __cplusplus
 }

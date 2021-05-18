@@ -11,17 +11,22 @@ public:
         EN_MOTOR_CH_A      = 0u,
         EN_MOTOR_CH_B,
         EN_MOTOR_CH_LAST
-    }MOTOR_CH;
+    }EN_MOTOR_CH;
 
-    static TB6612FNG *GetInstance(void);
-    void Initialize(float fMaxDuty);
+    static TB6612FNG &GetInstance(void);
+    bool Initialize(EN_MOTOR_CH enChannel, float fMaxDuty);
     void EnableStandby();
     void DisableStandby();
-    void SetDirection(MOTOR_CH enChannel, bool bDirection);
-    void SetDuty(MOTOR_CH enChannel, float fDuty);
-    void Stop(MOTOR_CH enChannel);
-    void SetBrake(MOTOR_CH enChannel, bool bEnableBrake);
-    void Update();
+    bool IsEnableStandby(){
+        return bEnableStandby;
+    }
+    void SetDirReverse(EN_MOTOR_CH enChannel, bool bDirReverse);
+    void SetDuty(EN_MOTOR_CH enChannel, float fDuty);
+    void Stop(EN_MOTOR_CH enChannel);
+    void SetBrake(EN_MOTOR_CH enChannel, bool bEnableBrake);
+    bool IsBrake(EN_MOTOR_CH enChannel);
+    float IsDuty(EN_MOTOR_CH enChannel);
+    void Update(EN_MOTOR_CH enChannel);
 
 private:
     TB6612FNG();
@@ -40,13 +45,14 @@ private:
     static TB6612FNG self;
     static MotorChConfig_t stMotorChConfig[EN_MOTOR_CH_LAST];
 
-    bool bInitialized;
+    bool bInitialized[EN_MOTOR_CH_LAST];
+    bool bEnableStandby;
     GPIO_TypeDef *pGPIO_PortStandby;
     uint32_t        GPIO_PinStandby;
     
     bool bIsBrake[EN_MOTOR_CH_LAST];
     float fReqDuty[EN_MOTOR_CH_LAST];
-    float fMaxDuty;
+    float fMaxDuty[EN_MOTOR_CH_LAST];
 };
 
 

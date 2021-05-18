@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include "Calculation.h"
 
 //STM32 Driver
 #include "stm32f4xx.h"	//SPI_TypeDef, I2C_TypeDef, ...
@@ -27,12 +28,6 @@ public:
 		int16_t sValueY;
 		int16_t sValueZ;
 	}RawData_t;
-
-	typedef struct{
-		float fValueX;
-		float fValueY;
-		float fValueZ;
-	}Coord_t;
 
 	typedef enum{
 			EN_GYRO_FULLSCALE_PM250DPS = 0,
@@ -56,25 +51,20 @@ public:
 	bool SetINTPort(GPIO_TypeDef *pINT_GPIOx, uint32_t INT_PINx);
 	bool IsINTActive();
 
-	void Setup(uint32_t uiSamplingTimeMs=2);
-	void StartGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX=true, bool bCalcY=true, bool bCalcZ=true);
-	bool IsGyroOffsetCompleted();
+	bool Initialize();
 
 	bool IsConnected();
 	void Update();
-	const Coord_t& GetGyroDPS();
-	const Coord_t& GetGyroRPS();
-	const Coord_t& GetAccelG();
 	const RawData_t& GetGyroRawData();
 	const RawData_t& GetAccelRawData();
-	const Coord_t& GetGyroDeg();
+    const Coord_t& GetGyroDPS();
+    const Coord_t& GetAccelG();
 
 	void SetGyroFullScale(GyroFullScaleMode_t enScaleMode);
 	void SetAccelFullScale(AccelFullScaleMode_t enScaleMode);
 
 private:
 	#define WHO_AM_I_VALUE 		(0x12)
-	#define GRAV_ACCEL			(9.81f)
 
 	typedef enum{
 		EN_REG_ADDR_XG_OFFS_TC_H		= 0x04,
@@ -174,9 +164,6 @@ private:
 	}AccelFullScale_t;
 
 
-	void CalcGyroOffset();
-
-
 	int16_t ConvertHLDataTo16Bits(uint8_t ucHighData, uint8_t ucLowData){
 		return (((int16_t)ucHighData << 8) | ((int16_t)ucLowData));
 	}
@@ -188,13 +175,14 @@ private:
 		return ((float)sRawData / fScaleFactor);		//value[LSB] / (LSB/unit) = unit
 	}
 
+   	void CalcGyroOffset();
+    void CalcGyroDeg();
+
 	void ScaleConvert();
-	void CalcGyroDeg();
 
 	void SetGyroConfig();
 	void SetAccelConfig();
 	void SetAccelConfig2();
-
 
 	void WriteRegister(RegisterAddress_t enAddr, uint8_t ucWriteData);
 	void WriteRegister(RegisterAddress_t enStartAddr, uint8_t *pWriteData, uint16_t usLength);
@@ -212,7 +200,7 @@ private:
 	static const GyroFullScale_t stGyroScale[4];
 	static const AccelFullScale_t stAccelScale[4];
 	bool bIsConnected;
-
+    bool bSetCommPort;
 	uint8_t ucGyroConfigValue;
 	uint8_t ucAccelConfigValue;
 	uint8_t ucAccelConfig2Value;
@@ -222,20 +210,8 @@ private:
 
 	RawData_t stGyroRawData;
 	RawData_t stAccelRawData;
-	Coord_t stGyroDPS;	//unit:[deg/s]
-	Coord_t stGyroRPS;	//unit:[rad/s]
-	Coord_t stAccelG;	//unit:[m/s^2]
-
-	uint32_t uiSamplingTimeMs;
-
-	bool bGyroOffsetCalcStart;
-	bool bGyroOffsetCalcStartFlag[3];
-	uint32_t uiGyroOffsetSamplingNum;
-	uint32_t uiGyroOffsetSamplingCount;
-	bool bGyroOffsetCalcCompleted[3];
-	Coord_t stGyroDPSOffseted;		//unit:[deg/s]
-	Coord_t stGyroDPSOffsetValue;	//unit:[deg/s]
-	Coord_t stGyroDeg;			//unit:[deg]
+    Coord_t stGyroDPS;	//unit:[deg/s]
+    Coord_t stAccelG;	//unit:[m/s^2]
 
 	//STM32 Configuration
 	SPI_TypeDef *pSPIx;
@@ -245,8 +221,6 @@ private:
 
 	GPIO_TypeDef *pINT_GPIOx;
 	uint32_t ui_INT_PINx;
-
-
 
 };	//class ICM_20602
 

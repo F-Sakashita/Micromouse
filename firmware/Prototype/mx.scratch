@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScratchFile FileVersion="3.0">
+  <FileVersion>3.0</FileVersion>
+  <Workspace>
+    <WorkspaceType>Single-project</WorkspaceType>
+    <WorkspacePath>/Users/fumihiko-mbp/Documents/GitHub/Micromouse/firmware/Prototype/</WorkspacePath>
+    <underRoot>true</underRoot>
+    <TrustZone>0</TrustZone>
+    <HAL_Driver>/Users/fumihiko-mbp/STM32Cube/Repository//STM32Cube_FW_F4_V1.26.1</HAL_Driver>
+    <CMSIS>Drivers/CMSIS</CMSIS>
+    <Toolchain>STM32CubeIDE</Toolchain>
+    <IocFile>Prototype.ioc</IocFile>
+    <Project>
+      <ProjectName>Prototype</ProjectName>
+      <ProjectNature>CPP</ProjectNature>
+      <Secure />
+      <filestoremove>
+        <file>
+          <name>Middlewares/ST/ARM/DSP/Inc/arm_math.h</name>
+        </file>
+        <file>
+          <name>Middlewares/ST/ARM/DSP/Lib/libarm_cortexM4lf_math.a</name>
+        </file>
+      </filestoremove>
+      <sourceEntriesToRemove>
+        <sourceEntry />
+      </sourceEntriesToRemove>
+      <configs>
+        <config>
+          <name>Prototype</name>
+          <mainSourceRepo>Core</mainSourceRepo>
+          <sourceStructure>Advanced</sourceStructure>
+          <device>STM32F405RGTx</device>
+          <cpucore>Arm Cortex-M4</cpucore>
+          <fpu>SP</fpu>
+          <memories>
+            <memory access="xrw" name="RAM" size="128" start="0x20000000" />
+            <memory access="xrw" name="CCMRAM" size="64" start="0x10000000" />
+            <memory access="rx" name="FLASH" size="1024" start="0x8000000" />
+          </memories>
+          <startup>/Users/fumihiko-mbp/STM32Cube/Repository/STM32Cube_FW_F4_V1.26.1/Drivers/CMSIS/Device\ST\STM32F4xx\Source\Templates\gcc\startup_stm32f405xx.s</startup>
+          <LinkSettings>
+            <LinkAdditionalLibs />
+          </LinkSettings>
+          <heapSize>0x200</heapSize>
+          <stackSize>0x400</stackSize>
+          <board>custom</board>
+          <debugprobe>swd</debugprobe>
+          <optimization />
+          <Aincludes>
+            <include />
+          </Aincludes>
+          <Adefines />
+          <Cdefines>
+            <define>USE_FULL_LL_DRIVER</define>
+            <define>STM32F405xx</define>
+            <define>USE_HAL_DRIVER</define>
+          </Cdefines>
+          <Ldefines />
+          <Cincludes>
+            <include>Core/Inc</include>
+            <include>Drivers/STM32F4xx_HAL_Driver/Inc</include>
+            <include>Drivers/STM32F4xx_HAL_Driver/Inc/Legacy</include>
+            <include>Middlewares/Third_Party/FreeRTOS/Source/include</include>
+            <include>Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2</include>
+            <include>Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F</include>
+            <include>Drivers/CMSIS/Device/ST/STM32F4xx/Include</include>
+            <include>Drivers/CMSIS/Include</include>
+            <include>Middlewares\ST\ARM\DSP\Inc</include>
+          </Cincludes>
+          <definestoremove>
+            <Adefines />
+            <Cdefines>
+              <define>MBEDTLS_CONFIG_FILE="mbedtls_config.h"</define>
+            </Cdefines>
+            <Ldefines />
+          </definestoremove>
+          <inctoremove>
+            <Aincludes>
+              <include />
+            </Aincludes>
+            <Cincludes />
+          </inctoremove>
+        </config>
+      </configs>
+      <copyAsReference>false</copyAsReference>
+      <sourceEntries>
+        <sourceEntry>
+          <name>Core</name>
+        </sourceEntry>
+        <sourceEntry>
+          <name>Drivers</name>
+        </sourceEntry>
+        <sourceEntry>
+          <name>Middlewares</name>
+        </sourceEntry>
+        <sourceEntry>
+          <name>Library</name>
+        </sourceEntry>
+      </sourceEntries>
+      <Groups>
+        <group>
+          <name>Library</name>
+          <group>
+            <name>DSP Library/DSP Library</name>
+            <file>
+              <name>Middlewares/ST/ARM/DSP/Lib/libarm_cortexM4lf_math.a</name>
+            </file>
+          </group>
+        </group>
+      </Groups>
+    </Project>
+  </Workspace>
+</ScratchFile>
+

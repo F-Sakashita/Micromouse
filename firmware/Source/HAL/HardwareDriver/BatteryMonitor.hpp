@@ -9,7 +9,7 @@ private:
     float fPercentage;
     bool bIsUpperError;
     bool bIsLowerError;
-
+    bool bInitialized;
     typedef struct{
         float fUpper;
         float fLower;
@@ -19,9 +19,10 @@ private:
     #define DEF_ADC_CHANNEL_RANK    (1)
 
 public:
-    BatteryMonitor(float fFullVoltage=8.2);
+    BatteryMonitor();
     ~BatteryMonitor();
 
+    bool Initialize(float fFullVoltage);
     void SetOffset(float fOffset){
         this->fOffset = fOffset;
     }

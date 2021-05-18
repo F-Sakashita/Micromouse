@@ -10,15 +10,21 @@
             "path": "Test_ICM-20602"
         },
         {
-            "path": "TestCircuit"
-        },
-        {
             "path": "TestProgramming"
         }
     ],
     "settings": {
         "files.associations": {
-            "stm32f4xx_it.h": "c"
+            "stm32f4xx_it.h": "c",
+            "algorithm": "cpp",
+            "*.tcc": "cpp",
+            "freertos.h": "c",
+            "cmsis_os.h": "c",
+            "stdint.h": "c",
+            "cstring": "c",
+            "stm32f4xx_ll_cortex.h": "c",
+            "wallsensor.h": "c",
+            "systicktimer.h": "c"
         }
     }
 }

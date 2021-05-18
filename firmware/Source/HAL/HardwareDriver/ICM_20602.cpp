@@ -14,7 +14,8 @@
 #include "stm32f4xx_ll_spi.h"
 #include "arm_math.h"
 #include <string.h>
-
+#include "DebugConsole.h"
+#include "DebugQueue.h"
 
 #ifdef DEBUG
 #include <stdio.h>
@@ -41,7 +42,6 @@ const ICM_20602::AccelFullScale_t ICM_20602::stAccelScale[4] =
 	{	EN_ACCEL_FULLSCALE_PM16G,		2048.0f		},
 };
 
-
 /*
  * Public member function
  */
@@ -54,7 +54,7 @@ ICM_20602::ICM_20602(ICM_20602::CommMode_t enCommMode)
 	enGyroScaleMode = EN_GYRO_FULLSCALE_PM250DPS;
 	enAccelScaleMode = EN_ACCEL_FULLSCALE_PM2G;
 	bIsConnected = false;
-
+    bSetCommPort = false;
 	ucGyroConfigValue		= 0x00;
 	ucAccelConfigValue		= 0x00;
 	ucAccelConfig2Value		= 0x00;
@@ -74,12 +74,6 @@ ICM_20602::ICM_20602(ICM_20602::CommMode_t enCommMode)
 	stAccelG.fValueX = 0.0f;
 	stAccelG.fValueY = 0.0f;
 	stAccelG.fValueZ = 0.0f;
-	stGyroDeg.fValueX = 0.0f;
-	stGyroDeg.fValueY = 0.0f;
-	stGyroDeg.fValueZ = 0.0f;
-	uiGyroOffsetSamplingNum = 0;
-	uiGyroOffsetSamplingCount = 0;
-	uiSamplingTimeMs = 0;
 }
 
 //Destructor
@@ -108,6 +102,7 @@ bool ICM_20602::SetSPIPort(SPI_TypeDef *pSPIx, GPIO_TypeDef *pSPI_CS_GPIOx, uint
 	LL_GPIO_SetOutputPin(this->pSPI_CS_GPIOx, this->ui_SPI_CS_PINx);
 	LL_SPI_Disable(pSPIx);
 
+    bSetCommPort = true;
 	return true;
 }
 
@@ -122,6 +117,7 @@ bool ICM_20602::SetI2CPort(I2C_TypeDef *pI2Cx)
 	}
 	this->pI2Cx = pI2Cx;
 
+    bSetCommPort = true;
 	return true;
 }
 
@@ -130,12 +126,20 @@ bool ICM_20602::SetINTPort(GPIO_TypeDef *pINT_GPIOx, uint32_t INT_PINx)
 	return true;
 }
 
-void ICM_20602::Setup(uint32_t uiSamplingTimeMs)
+bool ICM_20602::Initialize()
 {
-	this->uiSamplingTimeMs = uiSamplingTimeMs;
-	SystickTimer_DelayMS(500);
-	LL_SPI_Enable(pSPIx);
+    if(!bSetCommPort){
+        return false;
+    }
+    SystickTimer_DelayMS(500);
 
+    if(enCommMode == EN_COMM_MODE_SPI){
+        LL_SPI_Enable(pSPIx);
+    }else{
+        /* I2C mode */
+    }
+
+#if 1
 	if(WHO_AM_I_VALUE == ReadRegister(EN_REG_ADDR_WHO_AM_I)){
 		bIsConnected = true;
 	}else{
@@ -162,33 +166,9 @@ void ICM_20602::Setup(uint32_t uiSamplingTimeMs)
 	SetAccelFullScale(EN_ACCEL_FULLSCALE_PM16G);	//Set Accel Full Scale : ±16 G
 	SetGyroConfig();	//Gyro FullScale
 	SetAccelConfig();	//Accle FullScale
+#endif
+    return true;
 }
-
-void ICM_20602::StartGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX, bool bCalcY, bool bCalcZ)
-{
-	if(bCalcX || bCalcY || bCalcZ){
-		bGyroOffsetCalcStart = true;
-	}else{
-		bGyroOffsetCalcStart = false;
-	}
-	uiGyroOffsetSamplingNum = uiSamplingNum;
-	bGyroOffsetCalcStartFlag[0] = bCalcX;
-	bGyroOffsetCalcStartFlag[1] = bCalcY;
-	bGyroOffsetCalcStartFlag[2] = bCalcZ;
-
-	for(uint8_t ucCount; ucCount < 3; ucCount ++){
-		bGyroOffsetCalcCompleted[ucCount] = !bGyroOffsetCalcStartFlag[ucCount];
-	}
-}
-bool ICM_20602::IsGyroOffsetCompleted()
-{
-	bool bResult = true;
-	for(uint8_t ucCount; ucCount < 3; ucCount ++){
-		bResult &= bGyroOffsetCalcCompleted[ucCount];
-	}
-	return bResult;
-}
-
 
 bool ICM_20602::IsConnected()
 {
@@ -226,21 +206,6 @@ void ICM_20602::Update()
 
 	ScaleConvert();
 
-	if(bGyroOffsetCalcStart){
-		CalcGyroOffset();
-		if(IsGyroOffsetCompleted()){
-			bGyroOffsetCalcStart = false;
-		}
-		stGyroDPSOffseted.fValueX = stGyroDPS.fValueX;
-		stGyroDPSOffseted.fValueY = stGyroDPS.fValueY;
-		stGyroDPSOffseted.fValueZ = stGyroDPS.fValueZ;
-	}else{
-		stGyroDPSOffseted.fValueX = stGyroDPS.fValueX - stGyroDPSOffsetValue.fValueX;
-		stGyroDPSOffseted.fValueY = stGyroDPS.fValueY - stGyroDPSOffsetValue.fValueY;
-		stGyroDPSOffseted.fValueZ = stGyroDPS.fValueZ - stGyroDPSOffsetValue.fValueZ;
-		CalcGyroDeg();
-	}
-
 	//Old Config Value update
 	ucGyroConfigValueOld = ucGyroConfigValue;
 	ucAccelConfigValueOld = ucAccelConfigValue;
@@ -251,18 +216,6 @@ void ICM_20602::Update()
 #endif
 }
 
-const ICM_20602::Coord_t& ICM_20602::GetGyroDPS()
-{
-	return (const Coord_t&)stGyroDPSOffseted;
-}
-const ICM_20602::Coord_t& ICM_20602::GetGyroRPS()
-{
-	return (const Coord_t&)stGyroRPS;
-}
-const ICM_20602::Coord_t& ICM_20602::GetAccelG()
-{
-	return (const Coord_t&)stAccelG;
-}
 const ICM_20602::RawData_t& ICM_20602::GetGyroRawData()
 {
 	return (const RawData_t&)stGyroRawData;
@@ -271,10 +224,13 @@ const ICM_20602::RawData_t& ICM_20602::GetAccelRawData()
 {
 	return (const RawData_t&)stAccelRawData;
 }
-
-const ICM_20602::Coord_t& ICM_20602::GetGyroDeg()
+const Coord_t& ICM_20602::GetGyroDPS()
 {
-	return (const Coord_t&)stGyroDeg;
+	return (const Coord_t&)stGyroDPS;
+}
+const Coord_t& ICM_20602::GetAccelG()
+{
+	return (const Coord_t&)stAccelG;
 }
 
 //
@@ -312,45 +268,7 @@ void ICM_20602::SetAccelFullScale(AccelFullScaleMode_t enScaleMode)
 /*
  * Private member function
  */
-void ICM_20602::CalcGyroDeg()
-{
-	stGyroDeg.fValueX += (stGyroDPSOffseted.fValueX * ((float)uiSamplingTimeMs / 1000.0f));
-	stGyroDeg.fValueY += (stGyroDPSOffseted.fValueY * ((float)uiSamplingTimeMs / 1000.0f));
-	stGyroDeg.fValueZ += (stGyroDPSOffseted.fValueZ * ((float)uiSamplingTimeMs / 1000.0f));
-}
 
-
-void ICM_20602::CalcGyroOffset()
-{
-	/* 一定時間Gyro値をサンプリングし，　その後平均値を計算 */
-	if(uiGyroOffsetSamplingCount <= uiGyroOffsetSamplingNum){
-		uiGyroOffsetSamplingCount ++;
-			
-		if(true == bGyroOffsetCalcStartFlag[0]){
-			bGyroOffsetCalcCompleted[0] = false;
-			stGyroDPSOffsetValue.fValueX = Calc_GetSeqAverage(stGyroDPSOffsetValue.fValueX, stGyroDPS.fValueX, uiGyroOffsetSamplingCount);
-		}
-
-		if(true == bGyroOffsetCalcStartFlag[1]){
-			bGyroOffsetCalcCompleted[1] = false;
-			stGyroDPSOffsetValue.fValueY = Calc_GetSeqAverage(stGyroDPSOffsetValue.fValueY, stGyroDPS.fValueY, uiGyroOffsetSamplingCount);
-		}
-
-		if(true == bGyroOffsetCalcStartFlag[2]){
-			bGyroOffsetCalcCompleted[2] = false;
-			stGyroDPSOffsetValue.fValueZ = Calc_GetSeqAverage(stGyroDPSOffsetValue.fValueZ, stGyroDPS.fValueZ, uiGyroOffsetSamplingCount);
-		}
-
-	}else{
-		bGyroOffsetCalcStartFlag[0] = false;  /* x */
-		bGyroOffsetCalcStartFlag[1] = false;  /* y */
-		bGyroOffsetCalcStartFlag[2] = false;  /* z */
-		/* 平均値を計算したのち，，オフセット計算終了フラグを立てる */
-		bGyroOffsetCalcCompleted[0] = true;
-		bGyroOffsetCalcCompleted[1] = true;
-		bGyroOffsetCalcCompleted[2] = true;
-	}
-}
 
 //
 void ICM_20602::ScaleConvert()

@@ -9,6 +9,10 @@
                 "${workspaceFolder}/../Prototype/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
                 "${workspaceFolder}/../Prototype/Drivers/CMSIS/Include",
                 "${workspaceFolder}/../Prototype/Middlewares/ST/ARM/DSP/Inc",
+                "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source",
+                "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+                "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/include",
+                "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
                 "${workspaceFolder}/Application",
                 "${workspaceFolder}/Middle",
                 "${workspaceFolder}/HAL",
@@ -31,7 +35,8 @@
                 "INSTRUCTION_CACHE_ENABLE=1",
                 "HSE_VALUE=25000000",
                 "USE_FULL_LL_DRIVER",
-                "PREFETCH_ENABLE=1"
+                "PREFETCH_ENABLE=1",
+                "ENABLE_FREERTOS"
             ],
             "macFrameworkPath": [],
             "compilerPath": "/usr/local/bin/gcc-10",
