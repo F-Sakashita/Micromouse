@@ -14,8 +14,6 @@
 #include "stm32f4xx_ll_spi.h"
 #include "arm_math.h"
 #include <string.h>
-#include "DebugConsole.h"
-#include "DebugQueue.h"
 
 #ifdef DEBUG
 #include <stdio.h>
@@ -51,17 +49,13 @@ ICM_20602::ICM_20602(ICM_20602::CommMode_t enCommMode)
 {
 	this->enCommMode = enCommMode;
 
+    bEnableGyro = false;
+    bEnableAccel = false;
+
 	enGyroScaleMode = EN_GYRO_FULLSCALE_PM250DPS;
 	enAccelScaleMode = EN_ACCEL_FULLSCALE_PM2G;
 	bIsConnected = false;
     bSetCommPort = false;
-	ucGyroConfigValue		= 0x00;
-	ucAccelConfigValue		= 0x00;
-	ucAccelConfig2Value		= 0x00;
-	ucGyroConfigValueOld	= 0x00;
-	ucAccelConfigValueOld	= 0x00;
-	ucAccelConfig2ValueOld	= 0x00;
-
 	stGyroRawData.sValueX = 0x0000;
 	stGyroRawData.sValueY = 0x0000;
 	stGyroRawData.sValueZ = 0x0000;
@@ -159,13 +153,31 @@ bool ICM_20602::Initialize()
 	WriteRegister(EN_REG_ADDR_PWR_MGMT_2, 0x00);	//b00000000 = Gyro and Accelerometer are all enabled
 	SystickTimer_DelayMS(50);
 
-	//WriteRegister(EN_REG_ADDR_I2C_IF, 0x40);		//SPI mode only
-	//SystickTimer_DelayMS(50);
+    //Config
+    //7bit,     -        : 0 (User should set it to 0)
+    //6bit,     FIFO_MODE : 0 (FIFOがフルの時，最古のデータを上書きする)
+    //5:3bit,   EXT_SYNC_SET : b000 (FSYNC Disable)
+    //2:0bit,   DLPF_CFG : b000 (Gyroscope, 3-db BW:250Hz, Noise BW : 306.6Hz, Rate : 8KHz)
+    //Config Value : b00000000
+    WriteRegister(EN_REG_ADDR_CONFIG, 0x00);
 
-	SetGyroFullScale(EN_GYRO_FULLSCALE_PM2000DPS);	//Set Gyro Full Scale : ±2000 dps
-	SetAccelFullScale(EN_ACCEL_FULLSCALE_PM16G);	//Set Accel Full Scale : ±16 G
-	SetGyroConfig();	//Gyro FullScale
-	SetAccelConfig();	//Accle FullScale
+    //Gyro Config
+    //7bit,     X Gyro self-test : Disable (0)
+    //6bit,     Y Gyro self-test : Disable (0)
+    //5bit,     Z Gyro self-test : Disable (0)
+    //4:3bit,   Gyro Full Scale : ±2000 dps (b11)
+    //2bit,     Reserved
+    //1:0bit,   DLPF : b00
+    //Config Value : b00011000
+    enGyroScaleMode = EN_GYRO_FULLSCALE_PM2000DPS;
+    WriteRegister(EN_REG_ADDR_GYRO_CONFIG, 0x18);   
+
+    //Accel Config
+    //Set Accel Full Scale : ±16 G
+    //Config Value : b00011000
+    enAccelScaleMode = EN_ACCEL_FULLSCALE_PM16G;
+    WriteRegister(EN_REG_ADDR_ACCEL_CONFIG, 0x18);
+
 #endif
     return true;
 }
@@ -179,37 +191,28 @@ void ICM_20602::Update()
 	uint8_t ucGyroRawDataHL[6] = {0x00};
 	uint8_t ucAccelRawDataHL[6] = {0x00};
 
-	if(ucGyroConfigValue != ucGyroConfigValueOld){
-		SetGyroConfig();
-	}
-	if(ucAccelConfigValue != ucAccelConfigValueOld){
-		SetAccelConfig();
-	}
-	if(ucAccelConfig2Value != ucAccelConfig2ValueOld){
-		SetAccelConfig2();
-	}
-
-	//Read Gyro Raw Data
-	ReadRegister(EN_REG_ADDR_GYRO_XOUT_H, ucGyroRawDataHL, 6);
-
-	//Read Accel Raw Data
-	ReadRegister(EN_REG_ADDR_ACCEL_XOUT_H, ucAccelRawDataHL, 6);
-
-	//Convert HL data to 16bits data
-	stGyroRawData.sValueX	= ConvertHLDataTo16Bits(ucGyroRawDataHL[0], ucGyroRawDataHL[1]);
-	stGyroRawData.sValueY	= ConvertHLDataTo16Bits(ucGyroRawDataHL[2], ucGyroRawDataHL[3]);
-	stGyroRawData.sValueZ	= ConvertHLDataTo16Bits(ucGyroRawDataHL[4], ucGyroRawDataHL[5]);
-
-	stAccelRawData.sValueX	= ConvertHLDataTo16Bits(ucAccelRawDataHL[0], ucAccelRawDataHL[1]);
-	stAccelRawData.sValueY	= ConvertHLDataTo16Bits(ucAccelRawDataHL[2], ucAccelRawDataHL[3]);
-	stAccelRawData.sValueZ	= ConvertHLDataTo16Bits(ucAccelRawDataHL[4], ucAccelRawDataHL[5]);
-
-	ScaleConvert();
-
-	//Old Config Value update
-	ucGyroConfigValueOld = ucGyroConfigValue;
-	ucAccelConfigValueOld = ucAccelConfigValue;
-	ucAccelConfig2ValueOld = ucAccelConfig2Value;
+    if(bEnableGyro){
+        //Read Gyro Raw Data
+        ReadRegister(EN_REG_ADDR_GYRO_XOUT_H, ucGyroRawDataHL, 6);
+        //Convert HL data to 16bits data
+        stGyroRawData.sValueX	= ConvertHLDataTo16Bits(ucGyroRawDataHL[0], ucGyroRawDataHL[1]);
+        stGyroRawData.sValueY	= ConvertHLDataTo16Bits(ucGyroRawDataHL[2], ucGyroRawDataHL[3]);
+        stGyroRawData.sValueZ	= ConvertHLDataTo16Bits(ucGyroRawDataHL[4], ucGyroRawDataHL[5]);
+        stGyroDPS.fValueX = ConvertRawDataToFloat(stGyroRawData.sValueX, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+        stGyroDPS.fValueY = ConvertRawDataToFloat(stGyroRawData.sValueY, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+        stGyroDPS.fValueZ = ConvertRawDataToFloat(stGyroRawData.sValueZ, stGyroScale[enGyroScaleMode].fLSB_per_dps);
+    }
+    
+    if(bEnableAccel){
+        //Read Accel Raw Data
+        ReadRegister(EN_REG_ADDR_ACCEL_XOUT_H, ucAccelRawDataHL, 6);
+        stAccelRawData.sValueX	= ConvertHLDataTo16Bits(ucAccelRawDataHL[0], ucAccelRawDataHL[1]);
+        stAccelRawData.sValueY	= ConvertHLDataTo16Bits(ucAccelRawDataHL[2], ucAccelRawDataHL[3]);
+        stAccelRawData.sValueZ	= ConvertHLDataTo16Bits(ucAccelRawDataHL[4], ucAccelRawDataHL[5]);
+        stAccelG.fValueX = ConvertRawDataToFloat(stAccelRawData.sValueX, stAccelScale[enAccelScaleMode].fLSB_per_G);
+        stAccelG.fValueY = ConvertRawDataToFloat(stAccelRawData.sValueY, stAccelScale[enAccelScaleMode].fLSB_per_G);
+        stAccelG.fValueZ = ConvertRawDataToFloat(stAccelRawData.sValueZ, stAccelScale[enAccelScaleMode].fLSB_per_G);
+    }
 
 #ifdef DEBUG
 	//printf("Who am I : 0x%x\n", ReadRegister(EN_REG_ADDR_WHO_AM_I));
@@ -233,8 +236,14 @@ const Coord_t& ICM_20602::GetAccelG()
 	return (const Coord_t&)stAccelG;
 }
 
-//
-void ICM_20602::SetGyroFullScale(GyroFullScaleMode_t enScaleMode)
+
+
+/*
+ * Private member function
+ */
+
+#if 0
+uint8_t ICM_20602::SetGyroFullScale(GyroFullScaleMode_t enScaleMode)
 {
 	if(enScaleMode < EN_GYRO_FULLSCALE_PM250DPS || enScaleMode > EN_GYRO_FULLSCALE_PM2000DPS){
 		return;
@@ -247,6 +256,7 @@ void ICM_20602::SetGyroFullScale(GyroFullScaleMode_t enScaleMode)
 	}else{
 		ucGyroConfigValue = ucGyroConfigValue | ((uint8_t)enGyroScaleMode << 3);	//3bitシフトし，OR
 	}
+    return ucGyroConfigValue;
 }
 
 //
@@ -263,23 +273,6 @@ void ICM_20602::SetAccelFullScale(AccelFullScaleMode_t enScaleMode)
 	}else{
 		ucAccelConfigValue = ucAccelConfigValue | ((uint8_t)enAccelScaleMode << 3);	//3bitシフトし，OR
 	}
-}
-
-/*
- * Private member function
- */
-
-
-//
-void ICM_20602::ScaleConvert()
-{
-	stGyroDPS.fValueX = ConvertRawDataToFloat(stGyroRawData.sValueX, stGyroScale[enGyroScaleMode].fLSB_per_dps);
-	stGyroDPS.fValueY = ConvertRawDataToFloat(stGyroRawData.sValueY, stGyroScale[enGyroScaleMode].fLSB_per_dps);
-	stGyroDPS.fValueZ = ConvertRawDataToFloat(stGyroRawData.sValueZ, stGyroScale[enGyroScaleMode].fLSB_per_dps);
-
-	stAccelG.fValueX = ConvertRawDataToFloat(stAccelRawData.sValueX, stAccelScale[enAccelScaleMode].fLSB_per_G);
-	stAccelG.fValueY = ConvertRawDataToFloat(stAccelRawData.sValueY, stAccelScale[enAccelScaleMode].fLSB_per_G);
-	stAccelG.fValueZ = ConvertRawDataToFloat(stAccelRawData.sValueZ, stAccelScale[enAccelScaleMode].fLSB_per_G);
 }
 
 //
@@ -299,6 +292,7 @@ void ICM_20602::SetAccelConfig2()
 {
 	WriteRegister(EN_REG_ADDR_ACCEL_CONFIG_2, ucAccelConfig2Value);
 }
+#endif
 
 //レジスタ書き込み（1バイト）
 void ICM_20602::WriteRegister(ICM_20602::RegisterAddress_t enAddr, uint8_t ucWriteData)

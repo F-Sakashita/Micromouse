@@ -64,7 +64,9 @@ void IMU::CalcGyroOffset()
 	}
 }
 
-void IMU::StartGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX, bool bCalcY, bool bCalcZ)
+/* public member functions */
+
+void IMU::EnableGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX, bool bCalcY, bool bCalcZ)
 {
 	if(bCalcX || bCalcY || bCalcZ){
 		bGyroOffsetCalcStart = true;
@@ -84,9 +86,9 @@ void IMU::StartGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX, bool bCalcY, 
     }
 }
 
-/* public member functions */
 
-bool IMU::Initialize(uint32_t uiSamplingTimeMs)
+
+bool IMU::Initialize(uint32_t uiSamplingTimeMs, bool bEnableGyro, bool bEnableAccel)
 {
     if(uiSamplingTimeMs <= 0){
         return false;
@@ -99,9 +101,10 @@ bool IMU::Initialize(uint32_t uiSamplingTimeMs)
         return false;    
     }
 
-    StartGyroOffestCalc(1000);
-    bInitialized = true;
+    Icm20602.SetGyroEnable(bEnableGyro);
+    Icm20602.SetAccelEnable(bEnableAccel);
 
+    bInitialized = true;
     return true;
 }
 
@@ -139,29 +142,37 @@ void IMU::Update()
             Icm20602.Update();
         }
 
-        stRawGyroDPS = Icm20602.GetGyroDPS();
-        stRawAccelG = Icm20602.GetAccelG();
-        stAccelG = stRawAccelG;
-
-        if(bGyroOffsetCalcStart){
-            CalcGyroOffset();
-            if(IsGyroOffsetCompleted()){
-                bGyroOffsetCalcStart = false;
+        //Gyro
+        if(Icm20602.IsGyroEnable()){
+            stRawGyroDPS = Icm20602.GetGyroDPS();
+            if(bGyroOffsetCalcStart){
+                //Gyro　オフセット計算
+                CalcGyroOffset();
+                if(IsGyroOffsetCompleted()){
+                    bGyroOffsetCalcStart = false;
+                }
+                Calc_SetCoordValue(&stGyroDPS, 
+                                    stRawGyroDPS.fValueX,
+                                    stRawGyroDPS.fValueY,
+                                    stRawGyroDPS.fValueZ);
+            }else{
+                Calc_SetCoordValue(&stGyroDPS,
+                                    stRawGyroDPS.fValueX - stGyroDPSOffsetValue.fValueX,
+                                    stRawGyroDPS.fValueY - stGyroDPSOffsetValue.fValueY,
+                                    stRawGyroDPS.fValueZ - stGyroDPSOffsetValue.fValueZ);
+                CalcGyroDeg();
             }
-            Calc_SetCoordValue(&stGyroDPS, 
-                                stRawGyroDPS.fValueX,
-                                stRawGyroDPS.fValueY,
-                                stRawGyroDPS.fValueZ);
-        }else{
-            Calc_SetCoordValue(&stGyroDPS,
-                                stRawGyroDPS.fValueX - stGyroDPSOffsetValue.fValueX,
-                                stRawGyroDPS.fValueY - stGyroDPSOffsetValue.fValueY,
-                                stRawGyroDPS.fValueZ - stGyroDPSOffsetValue.fValueZ);
-            CalcGyroDeg();
+            stGyroRPS.fValueX = Calc_ConvDegToRad(stGyroDPS.fValueX);
+            stGyroRPS.fValueY = Calc_ConvDegToRad(stGyroDPS.fValueY);
+            stGyroRPS.fValueZ = Calc_ConvDegToRad(stGyroDPS.fValueZ);
         }
-        stGyroRPS.fValueX = Calc_ConvDegToRad(stGyroDPS.fValueX);
-        stGyroRPS.fValueY = Calc_ConvDegToRad(stGyroDPS.fValueY);
-        stGyroRPS.fValueZ = Calc_ConvDegToRad(stGyroDPS.fValueZ);
+        
+        //Accel
+        if(Icm20602.IsAccelEnable()){
+            stRawAccelG = Icm20602.GetAccelG();
+            stAccelG = stRawAccelG;
+
+        }
     }
 }
 

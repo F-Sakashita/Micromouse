@@ -37,7 +37,7 @@ class RotaryEncoder{
             return self[enEncName];
         }
 
-        bool Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableUpdateAngle=false,float fStartDeg=0.0f);
+        bool Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableUpdateAngle=false,float fStartDeg=0.0f, float fLimitDeg = 360.0f);
         void Update();
         void EnableUpdateAngle(){
             bEnableUpdateAngle = true;
@@ -90,6 +90,7 @@ class RotaryEncoder{
         bool bInitialized;
         EN_ENC_NAME enName;
         float fStartDegree;
+        
         bool bEnableUpdateAngle;
 
         int64_t llNowCount;
@@ -102,6 +103,7 @@ class RotaryEncoder{
         float fOldRadian;
         float fNowDps;
         float fNowRps;
+        float fLimitDegree;
 
         static const EncoderConfig_t stEncConfig[EN_ENC_LAST];  
 

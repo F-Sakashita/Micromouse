@@ -24,7 +24,7 @@ typedef enum{
     EN_ENCODER_OVERFLOW_LAST,
 }EN_ENCODER_OVERFLOW;
 
-void Encoder_Setup(EN_ENCODER_NUM  enEncNum, uint32_t uiResolution);
+bool Encoder_Initialize(EN_ENCODER_NUM  enEncNum, uint32_t uiResolution);
 void Encoder_IsStart(EN_ENCODER_NUM enEncNum);
 void Encoder_Update(EN_ENCODER_NUM  enEncNum);
 uint32_t Encoder_IsRawCount(EN_ENCODER_NUM  enEncNum);

@@ -5,7 +5,9 @@
  extern "C" {
 #endif
 
-void DebugConsole_Setup();
+#include <stdbool.h>
+
+bool DebugConsole_Initialize();
 void DebugConsole_Printf(const char * pFormat, ...);
 
 #ifdef ENABLE_UART_PRINTF

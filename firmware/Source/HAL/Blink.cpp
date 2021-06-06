@@ -1,25 +1,25 @@
 #include "Blink.hpp"
 #include "SystickTimer.h"
+#include <stddef.h>
 
 /*
  * Public member functions
  */
-Blink::Blink(GPIO_TypeDef *pGPIOx, uint32_t ulOutputPin, uint32_t ulPeriodMs)
+Blink::Blink()
 {
-    this->pGPIOx = pGPIOx;
-    this->ulOutputPin = ulOutputPin;
-    ulOnTimeMs = 0;
-    ulOffTimeMs = 0;
-    ulDelayTimeMs = 0;
+    uiOnTimeMs = 0;
+    uiOffTimeMs = 0;
+    uiDelayTimeMs = 0;
     bStartState = false;
     bNowState = false;
     bOldState = false;
     bFinishDelay = false;
     bFirst = true;
     bChangeStateFlag = false;
-    ulWaitTime = 0;
-    ulStartTimeMs = 0;
-    SetPeriod(ulPeriodMs);
+    uiWaitTime = 0;
+    uiStartTimeMs = 0;
+    bInitialized = false;
+    SetPeriod(uiPeriodMs);
     SetState(false);
 }
 
@@ -37,33 +37,52 @@ Blink::Blink(const Blink &other)
     this->bOldState = other.bOldState;
     this->bStartState = other.bStartState;
     this->pGPIOx = other.pGPIOx;
-    this->ulDelayTimeMs = other.ulDelayTimeMs;
-    this->ulOffTimeMs = other.ulOffTimeMs;
-    this->ulOnTimeMs = other.ulOnTimeMs;
-    this->ulOutputPin = other.ulOutputPin;
-    this->ulPeriodMs = other.ulPeriodMs;
-    this->ulStartTimeMs = other.ulStartTimeMs;
-    this->ulWaitTime = other.ulWaitTime;
+    this->uiDelayTimeMs = other.uiDelayTimeMs;
+    this->uiOffTimeMs = other.uiOffTimeMs;
+    this->uiOnTimeMs = other.uiOnTimeMs;
+    this->uiOutputPin = other.uiOutputPin;
+    this->uiPeriodMs = other.uiPeriodMs;
+    this->uiStartTimeMs = other.uiStartTimeMs;
+    this->uiWaitTime = other.uiWaitTime;
+    this->bInitialized = other.bInitialized;
+}
+
+bool Blink::Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiOutputPin, uint32_t uiPeriodMs)
+{
+    if(NULL == pGPIOx || 0u == uiPeriodMs){
+        return false;
+    }
+    this->pGPIOx = pGPIOx;
+    this->uiOutputPin = uiOutputPin;
+    SetPeriod(uiPeriodMs);
+    SetState(false);
+    
+    bInitialized = true;
+    return true;
 }
 
 void Blink::Update()
 {
+    if(!bInitialized){
+        return;
+    }
+    
     if(bFirst){
         bFirst = false;
         bNowState = bStartState;
-        ulStartTimeMs = SystickTimer_GetTimeMS();
+        uiStartTimeMs = SystickTimer_GetTimeMS();
     }
 
-    if(ulDelayTimeMs == 0 && !bFinishDelay){
+    if(uiDelayTimeMs == 0 && !bFinishDelay){
         bFinishDelay = true;
         bChangeStateFlag = true;
         bOldState = !bNowState;
     }
 
     if(!bFinishDelay){
-        if(SystickTimer_IsTimeElapsed(ulStartTimeMs, ulDelayTimeMs)){
+        if(SystickTimer_IsTimeElapsed(uiStartTimeMs, uiDelayTimeMs)){
             bFinishDelay = true;
-            ulStartTimeMs = SystickTimer_GetTimeMS();
+            uiStartTimeMs = SystickTimer_GetTimeMS();
             bChangeStateFlag = true;
         }
     }else{
@@ -71,15 +90,15 @@ void Blink::Update()
         if(bChangeStateFlag){
             bChangeStateFlag = false;
             if(!bOldState){
-                ulWaitTime = ulOnTimeMs; 
+                uiWaitTime = uiOnTimeMs; 
             }else{
-                ulWaitTime = ulOffTimeMs;
+                uiWaitTime = uiOffTimeMs;
             }
             bNowState = !bOldState;
         }
 
-        if(SystickTimer_IsTimeElapsed(ulStartTimeMs, ulWaitTime)){
-            ulStartTimeMs = SystickTimer_GetTimeMS();
+        if(SystickTimer_IsTimeElapsed(uiStartTimeMs, uiWaitTime)){
+            uiStartTimeMs = SystickTimer_GetTimeMS();
             bChangeStateFlag = true;
         }
     }
@@ -90,7 +109,7 @@ void Blink::Update()
 
 bool Blink::IsState()
 {
-    return (bool)LL_GPIO_IsOutputPinSet(pGPIOx, ulOutputPin);
+    return (bool)LL_GPIO_IsOutputPinSet(pGPIOx, uiOutputPin);
 }
 
 /*
@@ -99,8 +118,8 @@ bool Blink::IsState()
 void Blink::SetState(bool bState)
 {
     if(true == bState){
-        LL_GPIO_SetOutputPin(pGPIOx, ulOutputPin);
+        LL_GPIO_SetOutputPin(pGPIOx, uiOutputPin);
     }else{
-        LL_GPIO_ResetOutputPin(pGPIOx, ulOutputPin);
+        LL_GPIO_ResetOutputPin(pGPIOx, uiOutputPin);
     }
 }

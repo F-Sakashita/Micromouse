@@ -1,0 +1,11 @@
+% CSVファイルをRead
+rawData = readmatrix('Log/20210606_AngVel.csv');
+
+% 各データを取得
+timeData = rawData(:,2);
+timeStart = timeData(1,1);
+timeData = timeData - timeStart;
+
+wheelLeftCmdData = rawData(:,4);
+wheelLeft
+

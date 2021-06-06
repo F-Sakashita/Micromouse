@@ -12,8 +12,8 @@ class IMU{
             return self;
         }
 
-        bool Initialize(uint32_t uiSamplingTimeMs=2);
-       	void StartGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX=true, bool bCalcY=true, bool bCalcZ=true);
+        bool Initialize(uint32_t uiSamplingTimeMs, bool bEnableGyro, bool bEnableAccel);
+       	void EnableGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX=true, bool bCalcY=true, bool bCalcZ=true);
     	bool IsGyroOffsetCompleted();
         void Update();
         const Coord_t& GetGyroDPS();

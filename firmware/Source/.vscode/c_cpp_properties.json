@@ -14,6 +14,7 @@
                 "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/include",
                 "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
                 "${workspaceFolder}/Application",
+                "${workspaceFolder}/Application/MessageQueue",
                 "${workspaceFolder}/Middle",
                 "${workspaceFolder}/HAL",
                 "${workspaceFolder}/HAL/HardwareDriver",
@@ -42,7 +43,6 @@
             "compilerPath": "/usr/local/bin/gcc-10",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "macos-gcc-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],

@@ -4,7 +4,6 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/../Source/Application",
                 "${workspaceFolder}/../Source/Utility"
             ],
             "defines": [],

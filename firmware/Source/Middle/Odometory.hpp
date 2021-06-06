@@ -15,8 +15,12 @@ class Odometory{
             return self;
         }
 
-        bool Initialize(uint32_t uiSamplingTimeMs, Posture_t stInitPosture);
-        void Update();
+        bool InitializeVel(uint32_t uiSamplingTimeMs);
+        bool InitializePos(uint32_t uiSamplingTimeMs, Posture_t stInitPosture);
+
+        void UpdateVelocity();
+        void UpdatePosition(const Posture_t &stVel);
+
         void ResetPosture(Posture_t stPosture);
 
         const float& GetAngle(){
@@ -36,7 +40,17 @@ class Odometory{
             return bEnableUpdate;
         }
 
+        //外部参照可能にする
+        static RotaryEncoder &rLeftEnc;
+        static RotaryEncoder &rRightEnc;
+
     private:
+        enum{
+        	EN_ODOMETORY_FIRST = 0,
+            EN_ODOMETORY_POS = 0,
+            EN_ODOMETORY_VEL,
+            EN_ODOMETORY_LAST
+        };
         Odometory();
         ~Odometory(){};
         Odometory(const Odometory &other);
@@ -46,13 +60,13 @@ class Odometory{
         Posture_t stNowPosture;
         Posture_t stNowVelocity;
 
-        bool bInitialized;
+        bool bInitialized[EN_ODOMETORY_LAST];
+        uint32_t uiSamplingTimeMs[EN_ODOMETORY_LAST];
+
         bool bResetPosFlag;
         bool bEnableUpdate;
-        uint32_t uiSamplingTimeMs;
         
-        static RotaryEncoder &rLeftEnc;
-        static RotaryEncoder &rRightEnc;
+
         static IMU &rImu;
 };
 

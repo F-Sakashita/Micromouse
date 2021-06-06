@@ -5,8 +5,18 @@
 extern "C" {
 #endif
 
-bool WallDetectTask_Initialize();
+#include <cmsis_os.h>
+
+//Taskで使用するOS機能
+typedef struct{
+    osMessageQueueId_t *pQueueId;
+}WallDetectTask_OsFunc_t;
+
+
+bool WallDetectTask_Initialize(const WallDetectTask_OsFunc_t *pOsFunc);
 void WallDetectTask_Update(void);
+void WallDetectTask_Enable();
+void WallDetectTask_Disable();
 
 #ifdef __cplusplus
 }

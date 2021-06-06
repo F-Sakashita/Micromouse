@@ -3,6 +3,9 @@
 
 class BatteryMonitor{
 private:
+    BatteryMonitor();
+    ~BatteryMonitor();
+
     float fOffset;
     float fVoltage;
     float fFullVoltage;
@@ -19,8 +22,10 @@ private:
     #define DEF_ADC_CHANNEL_RANK    (1)
 
 public:
-    BatteryMonitor();
-    ~BatteryMonitor();
+    static BatteryMonitor& GetInstance(){
+        static BatteryMonitor self;
+        return self;
+    }
 
     bool Initialize(float fFullVoltage);
     void SetOffset(float fOffset){
@@ -40,6 +45,10 @@ public:
     }
     bool IsUpperError(){
         return bIsUpperError;
+    }
+    void ClearError(){
+        bIsLowerError = false;
+        bIsUpperError = false;
     }
 
     void Update();

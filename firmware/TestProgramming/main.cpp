@@ -23,7 +23,6 @@ int main()
         623.425f,
         -401.564f        
     };
-    printf();
     cout << "0 to 360 deg limited" << endl;
     for (uint8_t ucCount = 0; ucCount < sizeof(fTest)/sizeof(float); ucCount ++){
         cout << "deg:" << fTest[ucCount] << "\t" << Calc_ConvDegRange0To360(fTest[ucCount]) << endl;

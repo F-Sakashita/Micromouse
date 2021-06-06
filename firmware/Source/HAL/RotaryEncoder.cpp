@@ -23,7 +23,8 @@ RotaryEncoder::RotaryEncoder() :
     fOldRadian(0.0f),
     fNowDps(0.0f),
     fNowRps(0.0f),
-    bEnableUpdateAngle(false)
+    bEnableUpdateAngle(false),
+    fLimitDegree(0.0f)
 {
 
 }
@@ -31,22 +32,35 @@ RotaryEncoder::RotaryEncoder() :
 
 void RotaryEncoder::UpdateDps()
 {
-    fNowDps = fDiffRate * 360.0f / static_cast<float>(uiSamplingTimeMs);
+    fNowDps = fDiffRate * 360.0f / (static_cast<float>(uiSamplingTimeMs) / 1000.0f);
 }
 void RotaryEncoder::UpdateRps()
 {
-    fNowRps = fDiffRate * 2.0f * M_PI / static_cast<float>(uiSamplingTimeMs);
+    fNowRps = fDiffRate * 2.0f * M_PI / (static_cast<float>(uiSamplingTimeMs) / 1000.0f);
 }
 void RotaryEncoder::UpdateDegree()
 {
-    fNowDegree += fNowDps * static_cast<float>(uiSamplingTimeMs);
+    fNowDegree += fNowDps * (static_cast<float>(uiSamplingTimeMs) / 1000.0f);
+    //角度制限
+    if(fLimitDegree < fNowDegree){
+        fNowDegree = fLimitDegree;
+    }else if(-1.0 * fLimitDegree > fNowDegree){
+        fNowDegree = -1.0f * fLimitDegree;
+    }
 }
 void RotaryEncoder::UpdateRadian()
 {
-    fNowRadian += fNowRps * static_cast<float>(uiSamplingTimeMs);
+    fNowRadian += fNowRps * (static_cast<float>(uiSamplingTimeMs) / 1000.0f);
+    //角度制限
+    float fLimitRadian = Calc_ConvDegToRad(fLimitDegree);
+    if(fLimitRadian < fNowRadian){
+        fNowRadian = fLimitRadian;
+    }else if(-1.0 * fLimitRadian > fNowRadian){
+        fNowRadian = -1.0f * fLimitRadian;
+    }
 }
 
-bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableUpdateAngle, float fStartDeg)
+bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bEnableUpdateAngle, float fStartDeg, float fLimitDeg)
 {
     if(EN_ENC_LAST <= enName){
         return false;
@@ -57,7 +71,9 @@ bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bE
 
     pEncConfig = &stEncConfig[enName];
 
-    Encoder_Setup(pEncConfig->enEncNum, pEncConfig->uiResolution);
+    if(!Encoder_Initialize(pEncConfig->enEncNum, pEncConfig->uiResolution)){
+        return false;
+    }
 
     this->uiSamplingTimeMs = uiSamplingTimeMs;
     this->bReverse = bReverse;
@@ -66,7 +82,7 @@ bool RotaryEncoder::Initialize(uint32_t uiSamplingTimeMs, bool bReverse, bool bE
     fNowDegree = fStartDegree;
     fNowRadian = Calc_ConvDegToRad(fNowDegree);
     Encoder_ClearCount(pEncConfig->enEncNum);
-
+    fLimitDegree = fLimitDeg;
     this->bInitialized = true;
     return true;
 }
@@ -108,6 +124,7 @@ float RotaryEncoder::GetDegree(EN_DEG_MODE enMode)
         fResult = Calc_ConvDegRange0To360(fResult);
         break;
     case EN_DEG_MODE_M180_180:
+        //角度が累積しすぎると計算に時間がかかるので注意
         fResult = Calc_ConvDegRangeM180ToP180(fResult);
         break;
     case EN_DEG_MODE_UNLIMITED:
@@ -129,6 +146,7 @@ float RotaryEncoder::GetRadian(EN_RAD_MODE enMode)
         fResult = Calc_ConvRadRange0To2PI(fResult);
         break;
     case EN_RAD_MODE_MPI_PI:
+        //角度が累積しすぎると計算に時間がかかるので注意
         fResult = Calc_ConvRadRangeMPIToPI(fResult);
         break;
     case EN_RAD_MODE_UNLIMITED:

@@ -1,110 +1,126 @@
 #include "MainTask.h"
-#include "SystickTimer.h"
-#include "RotaryEncoder.hpp"
-#include "DebugConsole.h"
-#include "Blink.hpp"
-#include "Button.hpp"
-#include "DCMotor.hpp"
-#include "IMU.hpp"
-#include "BatteryMonitor.hpp"
+#include "Odometory.hpp"
+#include "TaskConfig.h"
 #include "Calculation.h"
+#include "Button.hpp"
+#include "Blink.hpp"
 #include "main.h"
-#include <stdio.h>
+#include "DebugQueue.hpp"
+#include "MessageQueueType.h"
+#include "SystickTimer.h"
+#include "TrajControlTask.h"
+#include "VelControlTask.h"
 
-static const uint32_t g_uiSamplingTimeMs = 2u;
-static RotaryEncoder &rLeftEnc = RotaryEncoder::GetInstance(RotaryEncoder::EN_ENC_LEFT);
-static RotaryEncoder &rRightEnc = RotaryEncoder::GetInstance(RotaryEncoder::EN_ENC_RIGHT);
-static Blink TickLed(TICK_LED_GPIO_Port, TICK_LED_Pin);
-static Button Sw[2] = {
-    Button(SW0_GPIO_Port, SW0_Pin),
-    Button(SW1_GPIO_Port, SW1_Pin),
-};
-static DCMotor &rLeftMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_LEFT);
-static DCMotor &rRightMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_RIGHT);
-static BatteryMonitor BatMoni;
-static IMU &rImu = IMU::GetInstance();
 
-void MainTask_Setup()
+MessageQueue<PosControlCmdMsg_t> g_PosCmdMsgQueue;
+MessageQueue<bool> g_MotionStartMsgQueue;
+
+static Button g_Sw0(SW0_GPIO_Port, SW0_Pin);
+static Blink g_TickLed;
+static bool g_bInitialized = false;
+static DebugQueue& g_rDebugQueue = DebugQueue::GetInstance();
+static bool g_bEnable = false;
+static const MainTask_OsFunc_t*	g_pOsFunc;
+
+static void MainTask_SetOtherTaskEnable(bool bEnable)
 {
-    SystickTimer_EnableInterrupt();
-    SystickTimer_SetSamplingTime(g_uiSamplingTimeMs);
+    if(bEnable){
+        VelControlTask_Enable();
+        TrajControlTask_Enable();
+        g_bEnable = true;
+    }else{
+        VelControlTask_Disable();
+        TrajControlTask_Disable();
+        g_bEnable= false;
+    }
+}
 
-    DebugConsole_Setup();
 
-    rLeftEnc.Initialize(g_uiSamplingTimeMs, false, false);
-    rRightEnc.Initialize(g_uiSamplingTimeMs, true, false);
-    rLeftMotor.Initialize(0.5f);
-    rRightMotor.Initialize(0.5f);
+bool MainTask_Initialize(const MainTask_OsFunc_t *pOsFunc)
+{
+    bool bResult = true;
 
-    Sw[0].SetPushReverse();
-    Sw[1].SetPushReverse();
-    Sw[0].SetEdgeFilter(10,10);
-    Sw[1].SetEdgeFilter(10,10);
-    //Encoder_Setup(EN_ENCODER_0,0xFFFFFFFF);
-    //Encoder_Setup(EN_ENCODER_1,0xFFFFFFFF);
-    TickLed.SetPeriod(500, 0.5);
-    BatMoni.Initialize(8.0f);
-    BatMoni.SetOffset(-0.09f);
+    bResult &= g_TickLed.Initialize(TICK_LED_GPIO_Port, TICK_LED_Pin, 1000);
+    bResult &= g_PosCmdMsgQueue.Initialize(pOsFunc->PosCmdQueueId);
+    
+    if(!bResult){
+        return false;
+    }
 
-    rImu.Initialize(g_uiSamplingTimeMs);
-
-    DebugConsole_Printf("Initializing was completed,\n");
-    SystickTimer_DelayMS(3000);
+    g_pOsFunc = pOsFunc;
+    g_Sw0.SetPushReverse();
+    g_TickLed.ForceOn();
+   
+    g_bInitialized = true;
+    return true;
 }
 
 void MainTask_Update()
 {
-    if(SystickTimer_IsSamplingTimeElapsed()){
-        rLeftEnc.Update();
-        rRightEnc.Update();
-        Sw[0].Update();
-        Sw[1].Update();
-        BatMoni.Update();
-        rImu.Update();
-
-        //Encoder_Update(EN_ENCODER_0);
-        //Encoder_Update(EN_ENCODER_1);
-        //DebugConsole_Printf("Left,%d, Right,%d\n", (int32_t)rLeftEnc.GetCount(), (int32_t)rRightEnc.GetCount());
-        static uint64_t ullStartTimeMs[DCMotor::EN_MOTOR_LAST] = {0.0f};
-        float fMotorReqDuty[DCMotor::EN_MOTOR_LAST] = {0.0f};
-        Button *pSw;
-        for(uint8_t ucCount=DCMotor::EN_MOTOR_FIRST; ucCount<DCMotor::EN_MOTOR_LAST; ucCount++){
-            if(DCMotor::EN_MOTOR_LEFT == ucCount){
-                pSw = &Sw[0];
-            }else{
-                pSw = &Sw[1];
-            }
-
-            if(1u == pSw->IsPushCount() % 2){
-                float fTimer = static_cast<float>(SystickTimer_GetTimeMS() - ullStartTimeMs[ucCount]) / (1000.0f);
-                fMotorReqDuty[ucCount] = arm_sin_f32(fTimer * M_PI / 4);
-            }else{
-                ullStartTimeMs[ucCount] = SystickTimer_GetTimeMS();
-                fMotorReqDuty[ucCount] = 0.0f;
-            }
-            
-        }
-        rLeftMotor.SetDuty(fMotorReqDuty[DCMotor::EN_MOTOR_LEFT]);
-        rRightMotor.SetDuty(fMotorReqDuty[DCMotor::EN_MOTOR_RIGHT]);
-
-        //DebugConsole_Printf("Left,%f,%d, Right,%f,%d\n", rLeftEnc.GetDegree(), rLeftEnc.IsEnableUpdateAngle(), rRightEnc.GetDegree(), rRightEnc.IsEnableUpdateAngle());
-        //DebugConsole_Printf("Cnt,%d,DPS,%f, RPS,%f\n",  (int32_t)rRightEnc.GetCount(), rRightEnc.GetDPS(), rRightEnc.GetRPS());
-        /*
-        DebugConsole_Printf("Left,NowDuty,%f,Rps,%f,Right,NowDuty,%f,Rps,%f,Bat,%f, GyroZ,%f, %d\n",
-                            rLeftMotor.IsNowDuty(),
-                            rLeftEnc.GetRPS(),
-                            rRightMotor.IsNowDuty(),
-                            rRightEnc.GetRPS(),
-                            BatMoni.GetVoltage(),
-                            rImu.GetGyroDeg().fValueZ,
-                            rImu.IsGyroOffsetCompleted()
-                            );
-                            */
-        DebugConsole_Printf("%f, %d\n",rImu.GetGyroDeg().fValueZ,
-                            rImu.IsGyroOffsetCompleted());
-
-        TickLed.Update();
-        rLeftMotor.Update();
-        rRightMotor.Update();
+    uint32_t uiTick = osKernelGetTickCount();
+	osDelayUntil(uiTick + MAIN_TASK_SAMPLING_PERIOD_MS);
+    
+    if(     !g_bInitialized 
+        ||  !g_rDebugQueue.IsInitialized()){
+        return;
     }
+
+    g_Sw0.Update();
+
+    uint32_t uiSwCount = g_Sw0.IsPushCount();
+    static bool bMotionStartFlag = false;
+    static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
+    //動作開始
+    if(1u == uiSwCount % 2){
+        if(g_Sw0.IsReleaseEdge() && !bMotionStartFlag){
+            bMotionStartFlag = true;
+            uiTimerMs = SystickTimer_GetTimeMS();
+        }
+    }else{
+
+        MainTask_SetOtherTaskEnable(false);
+    }
+
+    //動作開始フラグが有効
+    if(bMotionStartFlag){
+        //5秒後に動作開始
+        if(SystickTimer_IsTimeElapsed(uiTimerMs, 5000)){
+            MainTask_SetOtherTaskEnable(true);
+            bMotionStartFlag = false;
+        }
+    }
+
+    static uint32_t uiConsoleOutputTimeMs = SystickTimer_GetTimeMS();
+
+    if(g_bEnable){
+    	g_TickLed.SetPeriod(250);
+        uiConsoleOutputTimeMs = SystickTimer_GetTimeMS();
+    }else if(bMotionStartFlag && 1u == uiSwCount % 2){
+    	g_TickLed.SetPeriod(500);
+
+        uiConsoleOutputTimeMs = SystickTimer_GetTimeMS();
+
+        #ifdef ENABLE_MAIN_TASK_DEBUG_CONSOLE
+        if(!g_rDebugQueue.IsFull()){
+            g_rDebugQueue.Printf(0,"Waiting for Start, Progress: %3.1f [%%]", static_cast<float>(SystickTimer_GetTimeMS() - uiTimerMs) / 50.0f);
+        }
+        #endif
+    }else{
+    	g_TickLed.SetPeriod(1000);
+    
+        if(SystickTimer_IsTimeElapsed(uiConsoleOutputTimeMs, 1000)){
+            if(!g_rDebugQueue.IsFull()){
+                g_rDebugQueue.Printf(0,"Waiting for Start switch pushed ...");
+            }
+            uiConsoleOutputTimeMs = SystickTimer_GetTimeMS();
+        }
+    }
+
+    #ifdef ENABLE_MAIN_TASK_DEBUG_CONSOLE
+    if(!g_rDebugQueue.IsFull()){
+            g_rDebugQueue.Printf(0,"sw0:%d",uiSwCount);
+    }
+    #endif
+
+    g_TickLed.Update();
 }

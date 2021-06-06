@@ -53,15 +53,27 @@ public:
 
 	bool Initialize();
 
+    void SetGyroEnable(bool bEnable){
+        bEnableGyro = bEnable;
+    }
+    void SetAccelEnable(bool bEnable){
+        bEnableAccel = bEnable;
+    }
+
+    bool IsGyroEnable(){
+        return bEnableGyro;
+    }
+
+    bool IsAccelEnable(){
+        return bEnableAccel;
+    }
+
 	bool IsConnected();
 	void Update();
 	const RawData_t& GetGyroRawData();
 	const RawData_t& GetAccelRawData();
     const Coord_t& GetGyroDPS();
     const Coord_t& GetAccelG();
-
-	void SetGyroFullScale(GyroFullScaleMode_t enScaleMode);
-	void SetAccelFullScale(AccelFullScaleMode_t enScaleMode);
 
 private:
 	#define WHO_AM_I_VALUE 		(0x12)
@@ -175,14 +187,9 @@ private:
 		return ((float)sRawData / fScaleFactor);		//value[LSB] / (LSB/unit) = unit
 	}
 
+
    	void CalcGyroOffset();
     void CalcGyroDeg();
-
-	void ScaleConvert();
-
-	void SetGyroConfig();
-	void SetAccelConfig();
-	void SetAccelConfig2();
 
 	void WriteRegister(RegisterAddress_t enAddr, uint8_t ucWriteData);
 	void WriteRegister(RegisterAddress_t enStartAddr, uint8_t *pWriteData, uint16_t usLength);
@@ -195,6 +202,9 @@ private:
 
 	CommMode_t enCommMode;
 
+    bool bEnableGyro;
+    bool bEnableAccel;
+
 	GyroFullScaleMode_t enGyroScaleMode;
 	AccelFullScaleMode_t enAccelScaleMode;
 	static const GyroFullScale_t stGyroScale[4];
@@ -204,9 +214,6 @@ private:
 	uint8_t ucGyroConfigValue;
 	uint8_t ucAccelConfigValue;
 	uint8_t ucAccelConfig2Value;
-	uint8_t ucGyroConfigValueOld;
-	uint8_t ucAccelConfigValueOld;
-	uint8_t ucAccelConfig2ValueOld;
 
 	RawData_t stGyroRawData;
 	RawData_t stAccelRawData;

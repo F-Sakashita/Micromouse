@@ -24,6 +24,9 @@ void WallSensor_Update();
 uint16_t WallSensor_GetValue(EN_WALLSENSOR_POS enWallSensorPos);
 float WallSensor_GetDistance(EN_WALLSENSOR_POS enWallSensorPos);
 
+uint16_t WallSensor_GetOnValue(EN_WALLSENSOR_POS enWallSensorPos);
+uint16_t WallSensor_GetOffValue(EN_WALLSENSOR_POS enWallSensorPos);
+
 #ifdef __cplusplus
 }
 #endif

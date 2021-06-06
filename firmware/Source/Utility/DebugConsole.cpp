@@ -10,11 +10,12 @@
 static USART_TypeDef* g_pUARTx = NULL;
 #endif
 
-void DebugConsole_Setup()
+bool DebugConsole_Initialize()
 {
 #ifdef ENABLE_UART_PRINTF
     g_pUARTx = USART2;
 #endif
+    return true;
 }
 
 void DebugConsole_Printf(const char * pFormat, ...)

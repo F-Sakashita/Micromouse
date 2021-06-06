@@ -7,6 +7,7 @@ typedef struct{
     int64_t     llCount;
     uint32_t    uiResolution;
     bool        bStartFlag;
+    bool        bInitialized;
 }Encoder_t;
 
 static const TIM_TypeDef *g_pTimerTypeDefTable[EN_ENCODER_LAST] = {
@@ -16,12 +17,14 @@ static const TIM_TypeDef *g_pTimerTypeDefTable[EN_ENCODER_LAST] = {
 
 static Encoder_t g_stEncoderSelf[EN_ENCODER_LAST];
 
-void Encoder_Setup(EN_ENCODER_NUM  enEncNum, uint32_t uiResolution)
+bool Encoder_Initialize(EN_ENCODER_NUM  enEncNum, uint32_t uiResolution)
 {
-    if(EN_ENCODER_LAST <= enEncNum){
-        return;
-    }
     Encoder_t *pSelf = &g_stEncoderSelf[enEncNum];
+
+    if(EN_ENCODER_LAST <= enEncNum){
+        pSelf->bInitialized = false;
+        return false;
+    }
     //pSelf->pTIMx = g_pTimerTypeDefTable[enEncNum];
     switch(enEncNum){
         case EN_ENCODER_0: pSelf->pTIMx = TIM2; break;
@@ -36,14 +39,18 @@ void Encoder_Setup(EN_ENCODER_NUM  enEncNum, uint32_t uiResolution)
     LL_TIM_EnableCounter(pSelf->pTIMx);
     /* 割り込み許可 */
     LL_TIM_EnableIT_UPDATE(pSelf->pTIMx);
+
+    pSelf->bInitialized = true;
+    return true;
 }
 
 void Encoder_Update(EN_ENCODER_NUM  enEncNum)
 {
-    if(EN_ENCODER_LAST <= enEncNum){
+    Encoder_t *pSelf = &g_stEncoderSelf[enEncNum];
+
+    if(EN_ENCODER_LAST <= enEncNum && !(pSelf->bInitialized)){
         return;
     }
-    Encoder_t *pSelf = &g_stEncoderSelf[enEncNum];
     pSelf->uiRawCount = LL_TIM_GetCounter(pSelf->pTIMx);
     pSelf->llCount = (int64_t)pSelf->uiRawCount + ((int64_t)(pSelf->iOverflowCount) * (int64_t)pSelf->uiResolution);
 }
@@ -78,10 +85,10 @@ void Encoder_ClearCount(EN_ENCODER_NUM enEncNum)
 
 void Encoder_Interrupt(EN_ENCODER_NUM  enEncNum, EN_ENCODER_OVERFLOW enOverflow)
 {
-    if(EN_ENCODER_LAST <= enEncNum){
+    Encoder_t *pSelf = &g_stEncoderSelf[enEncNum];
+    if(EN_ENCODER_LAST <= enEncNum || !(pSelf->bInitialized)){
         return;
     }
-    Encoder_t *pSelf = &g_stEncoderSelf[enEncNum];
     switch(enOverflow){
     case EN_ENCODER_OVERFLOW_PLUS:
         pSelf->iOverflowCount ++;

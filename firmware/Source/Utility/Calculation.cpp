@@ -1,5 +1,6 @@
 #include "Calculation.h"
 #include <vector>
+#include <float.h>
 
 void Calc_SetCoordValue(Coord_t *pCoord, float fValueX, float fValueY, float fValueZ)
 {
@@ -44,6 +45,7 @@ float Calc_ConvDegRange0To360(float fDegree)
 float Calc_ConvDegRangeM180ToP180(float fDegree)
 {
     float fResult = fDegree;
+    #if 0
     while(fabsf(fResult) > 180.0f){
         if(fResult > 180.0f){
             fResult -= 360.0f;
@@ -53,6 +55,14 @@ float Calc_ConvDegRangeM180ToP180(float fDegree)
             /* do nothing */
         }
     }
+    #else
+    if(fabsf(fResult) - 180.0f <= FLT_EPSILON){
+        
+    }else{
+        fResult = fmodf(fResult, 180.0f);
+    }
+
+    #endif
     return fResult;
 }
 float Calc_ConvRadRange0To2PI(float fRadian)
