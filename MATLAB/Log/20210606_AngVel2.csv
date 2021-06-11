@@ -1,0 +1,2580 @@
+1, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.122,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.129,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.136,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.143,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.150,Cmd, 0.000, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.157,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.164,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.171,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.178,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.185,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.192,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.199,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.206,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.213,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.220,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.227,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.234,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.241,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.248,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.255,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.262,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.269,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.276,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.283,Cmd, 0.002, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.290,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.297,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.304,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.311,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.318,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.325,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,20.332,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.339,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.346,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.353,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.360,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,20.367,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.374,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.381,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.388,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.395,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.402,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.409,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.416,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.423,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.430,Cmd, 0.001, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,20.437,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.444,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.451,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.458,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,20.465,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.472,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.479,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.486,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.493,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.500,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.507,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.514,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.521,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.528,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.535,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.542,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.549,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.556,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.563,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.570,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.577,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.584,Cmd,-0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.591,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.598,Cmd,-0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.605,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.612,Cmd, 0.000, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.619,Cmd, 0.001, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,20.626,Cmd, 0.000, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.633,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.640,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.647,Cmd, 0.000, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.654,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.661,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.668,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.675,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.682,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.689,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.696,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,20.703,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.710,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.717,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.724,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.731,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.738,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.745,Cmd, 0.000, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.752,Cmd,-0.000, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.759,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.766,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.773,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.780,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.787,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.794,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.801,Cmd, 0.000, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.808,Cmd, 0.001, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,20.815,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.822,Cmd, 0.001, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,20.829,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.836,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.843,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,20.850,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.857,Cmd, 0.001, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,20.864,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.871,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.878,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.885,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.892,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,20.899,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.906,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,20.913,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.920,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.927,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,20.934,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.941,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.948,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.955,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.962,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.969,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.976,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.983,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,20.990,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,20.997,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.004,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.011,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.018,Cmd, 0.000, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.025,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.032,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.039,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.046,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.053,Cmd, 0.000, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.060,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.067,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.074,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.081,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.088,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.095,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.102,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.109,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.116,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.123,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.130,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.137,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.144,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.151,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.158,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.165,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.172,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.179,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.186,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.193,Cmd, 0.000, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.200,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.207,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.214,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.221,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.228,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.235,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.242,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.249,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.256,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.263,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.270,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.277,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.284,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.291,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.298,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.305,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.312,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.319,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.326,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.333,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.340,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.347,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.354,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.361,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.368,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.375,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.382,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.389,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.396,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.403,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.410,Cmd, 0.002, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,21.417,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.424,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.431,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.438,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.445,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.452,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.459,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.466,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.473,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.480,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.487,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.494,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.501,Cmd, 0.002, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.508,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.515,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.522,Cmd, 0.002, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.529,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.536,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.543,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.550,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.557,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.564,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.571,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.578,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.585,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.592,Cmd, 0.001, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.599,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.606,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.613,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.620,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.627,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.634,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.641,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.648,Cmd, 0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.655,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.662,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.669,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.676,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.683,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.690,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.697,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.704,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.711,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.718,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.725,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.732,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.739,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.746,Cmd, 0.002, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,21.753,Cmd, 0.003, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.760,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.767,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.774,Cmd, 0.002, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,21.781,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.788,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.795,Cmd, 0.002, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,21.802,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.809,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.816,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.823,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.830,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.837,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.844,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.851,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.858,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.865,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.872,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.879,Cmd, 0.003, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.886,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.893,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.900,Cmd, 0.003, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,21.907,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.914,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.921,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.928,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,21.935,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.942,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,21.949,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.956,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.963,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.970,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,21.977,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.984,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,21.991,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,21.998,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.005,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.012,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.019,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.026,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.033,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.040,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.047,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.054,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.061,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.068,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.075,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.082,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.089,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.096,Cmd, 0.004, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.103,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.110,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.117,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.124,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.131,Cmd, 0.004, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.138,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.145,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.152,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.159,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.166,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.173,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.180,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.187,Cmd, 0.003, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.194,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.201,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.208,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.215,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.222,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.229,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.236,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.243,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.250,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.257,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.264,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.271,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.278,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.285,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.292,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.299,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.306,Cmd, 0.002, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.313,Cmd, 0.002, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,22.320,Cmd, 0.003, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.327,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.334,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.341,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.348,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.355,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.362,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.369,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.376,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.383,Cmd, 0.003, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.390,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.397,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.404,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.411,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.418,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.425,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.432,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.439,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.446,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.453,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.460,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.467,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.474,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.481,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.488,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.495,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.502,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.509,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.516,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.523,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.530,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.537,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.544,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.551,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.558,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.565,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.572,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.579,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.586,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.593,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.600,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.607,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.614,Cmd, 0.002, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.621,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.628,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.635,Cmd, 0.002, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,22.642,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.649,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.656,Cmd, 0.002, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.663,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.670,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.677,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.684,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.691,Cmd, 0.002, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.698,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.705,Cmd, 0.003, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.712,Cmd, 0.003, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.719,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.726,Cmd, 0.003, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.733,Cmd, 0.002, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.740,Cmd, 0.002, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,22.747,Cmd, 0.010, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,22.754,Cmd, 0.006, Enc, 0.000, Gyro,-0.017
+VelControlTask  ,22.761,Cmd, 0.007, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.768,Cmd, 0.004, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.775,Cmd, 0.005, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.782,Cmd, 0.006, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.789,Cmd, 0.006, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.796,Cmd, 0.009, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.803,Cmd, 0.001, Enc, 0.000, Gyro, 0.022
+VelControlTask  ,22.810,Cmd,-0.007, Enc, 0.000, Gyro, 0.011
+VelControlTask  ,22.817,Cmd, 0.000, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,22.824,Cmd, 0.006, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.831,Cmd,-0.001, Enc, 0.000, Gyro, 0.012
+VelControlTask  ,22.838,Cmd,-0.005, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,22.845,Cmd, 0.001, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,22.852,Cmd, 0.009, Enc, 0.000, Gyro,-0.013
+VelControlTask  ,22.859,Cmd, 0.008, Enc, 0.000, Gyro, 0.012
+VelControlTask  ,22.866,Cmd,-0.001, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.873,Cmd, 0.001, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,22.880,Cmd, 0.002, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,22.887,Cmd, 0.004, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.894,Cmd, 0.003, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,22.901,Cmd,-0.000, Enc, 0.000, Gyro, 0.006
+VelControlTask  ,22.908,Cmd, 0.001, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.915,Cmd, 0.002, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,22.922,Cmd, 0.005, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.929,Cmd, 0.002, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,22.936,Cmd, 0.001, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,22.943,Cmd, 0.002, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,22.950,Cmd, 0.004, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,22.957,Cmd, 0.002, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,22.964,Cmd, 0.001, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,22.971,Cmd,-0.002, Enc, 0.000, Gyro, 0.013
+VelControlTask  ,22.978,Cmd,-0.005, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,22.985,Cmd,-0.002, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,22.992,Cmd, 0.005, Enc, 0.000, Gyro,-0.018
+VelControlTask  ,22.999,Cmd, 0.009, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,23.006,Cmd, 0.008, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,23.013,Cmd, 0.007, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,23.020,Cmd, 0.007, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,23.027,Cmd, 0.008, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,23.034,Cmd, 0.006, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,23.041,Cmd, 0.006, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,23.048,Cmd, 0.005, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,23.055,Cmd, 0.005, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,23.062,Cmd, 0.006, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,23.069,Cmd, 0.004, Enc, 0.000, Gyro, 0.017
+VelControlTask  ,23.076,Cmd,-0.006, Enc, 0.000, Gyro, 0.020
+VelControlTask  ,23.083,Cmd,-0.009, Enc, 0.000, Gyro, 0.021
+VelControlTask  ,23.090,Cmd,-0.010, Enc, 0.000, Gyro, 0.011
+VelControlTask  ,23.097,Cmd,-0.007, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,23.104,Cmd,-0.006, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,23.111,Cmd, 0.005, Enc, 0.000, Gyro,-0.020
+VelControlTask  ,23.118,Cmd, 0.010, Enc, 0.000, Gyro,-0.017
+VelControlTask  ,23.125,Cmd, 0.011, Enc, 0.000, Gyro,-0.024
+VelControlTask  ,23.132,Cmd, 0.017, Enc, 0.000, Gyro,-0.018
+VelControlTask  ,23.139,Cmd, 0.013, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,23.146,Cmd, 0.002, Enc, 0.000, Gyro, 0.015
+VelControlTask  ,23.153,Cmd,-0.007, Enc, 0.000, Gyro, 0.047
+VelControlTask  ,23.160,Cmd,-0.023, Enc, 0.000, Gyro, 0.073
+VelControlTask  ,23.167,Cmd,-0.053, Enc, 0.000, Gyro, 0.094
+VelControlTask  ,23.174,Cmd,-0.065, Enc, 0.000, Gyro, 0.099
+VelControlTask  ,23.181,Cmd,-0.079, Enc, 0.000, Gyro, 0.085
+VelControlTask  ,23.188,Cmd,-0.077, Enc, 0.000, Gyro, 0.060
+VelControlTask  ,23.195,Cmd,-0.073, Enc, 0.000, Gyro, 0.047
+VelControlTask  ,23.202,Cmd,-0.066, Enc, 0.056, Gyro, 0.022
+VelControlTask  ,23.209,Cmd,-0.062, Enc, 0.038, Gyro, 0.031
+VelControlTask  ,23.216,Cmd,-0.075, Enc, 0.019, Gyro, 0.045
+VelControlTask  ,23.223,Cmd,-0.085, Enc, 0.038, Gyro, 0.059
+VelControlTask  ,23.230,Cmd,-0.093, Enc, 0.056, Gyro, 0.063
+VelControlTask  ,23.237,Cmd,-0.107, Enc, 0.075, Gyro, 0.073
+VelControlTask  ,23.244,Cmd,-0.116, Enc, 0.094, Gyro, 0.081
+VelControlTask  ,23.251,Cmd,-0.136, Enc, 0.094, Gyro, 0.097
+VelControlTask  ,23.258,Cmd,-0.148, Enc, 0.094, Gyro, 0.102
+VelControlTask  ,23.265,Cmd,-0.158, Enc, 0.113, Gyro, 0.102
+VelControlTask  ,23.272,Cmd,-0.176, Enc, 0.113, Gyro, 0.115
+VelControlTask  ,23.279,Cmd,-0.189, Enc, 0.113, Gyro, 0.140
+VelControlTask  ,23.286,Cmd,-0.217, Enc, 0.113, Gyro, 0.109
+VelControlTask  ,23.293,Cmd,-0.202, Enc, 0.132, Gyro, 0.013
+VelControlTask  ,23.300,Cmd,-0.167, Enc, 0.075, Gyro,-0.073
+VelControlTask  ,23.307,Cmd,-0.089, Enc, 0.038, Gyro,-0.174
+VelControlTask  ,23.314,Cmd,-0.043, Enc,-0.207, Gyro,-0.235
+VelControlTask  ,23.321,Cmd, 0.054, Enc,-0.226, Gyro,-0.321
+VelControlTask  ,23.328,Cmd, 0.109, Enc,-0.357, Gyro,-0.412
+VelControlTask  ,23.335,Cmd, 0.171, Enc,-0.432, Gyro,-0.538
+VelControlTask  ,23.342,Cmd, 0.338, Enc,-0.489, Gyro,-0.674
+VelControlTask  ,23.349,Cmd, 0.454, Enc,-0.583, Gyro,-1.012
+VelControlTask  ,23.356,Cmd, 0.844, Enc,-1.297, Gyro,-1.286
+VelControlTask  ,23.363,Cmd, 1.065, Enc,-1.579, Gyro,-1.791
+VelControlTask  ,23.370,Cmd, 1.388, Enc,-2.312, Gyro,-2.320
+VelControlTask  ,23.377,Cmd, 2.114, Enc,-2.500, Gyro,-2.823
+VelControlTask  ,23.384,Cmd, 2.509, Enc,-2.989, Gyro,-3.247
+VelControlTask  ,23.391,Cmd, 3.287, Enc,-3.440, Gyro,-3.616
+VelControlTask  ,23.398,Cmd, 3.691, Enc,-3.591, Gyro,-3.851
+VelControlTask  ,23.405,Cmd, 4.056, Enc,-3.591, Gyro,-4.120
+VelControlTask  ,23.412,Cmd, 4.831, Enc,-4.023, Gyro,-4.160
+VelControlTask  ,23.419,Cmd, 5.145, Enc,-3.929, Gyro,-4.197
+VelControlTask  ,23.426,Cmd, 5.775, Enc,-3.628, Gyro,-4.123
+VelControlTask  ,23.433,Cmd, 6.038, Enc,-3.703, Gyro,-3.883
+VelControlTask  ,23.440,Cmd, 6.231, Enc,-3.703, Gyro,-3.596
+VelControlTask  ,23.447,Cmd, 6.555, Enc,-3.309, Gyro,-3.269
+VelControlTask  ,23.454,Cmd, 6.673, Enc,-2.876, Gyro,-2.859
+VelControlTask  ,23.461,Cmd, 6.744, Enc,-2.199, Gyro,-2.134
+VelControlTask  ,23.468,Cmd, 6.560, Enc,-1.053, Gyro,-1.205
+VelControlTask  ,23.475,Cmd, 6.314, Enc,-0.019, Gyro,-0.063
+VelControlTask  ,23.482,Cmd, 5.662, Enc, 0.132, Gyro, 0.155
+VelControlTask  ,23.489,Cmd, 5.642, Enc, 0.094, Gyro, 0.137
+VelControlTask  ,23.496,Cmd, 5.588, Enc, 0.263, Gyro, 0.280
+VelControlTask  ,23.503,Cmd, 5.464, Enc, 0.658, Gyro, 0.654
+VelControlTask  ,23.510,Cmd, 5.278, Enc, 1.372, Gyro, 1.425
+VelControlTask  ,23.517,Cmd, 4.493, Enc, 2.143, Gyro, 2.344
+VelControlTask  ,23.524,Cmd, 3.971, Enc, 3.121, Gyro, 3.178
+VelControlTask  ,23.531,Cmd, 2.944, Enc, 3.497, Gyro, 3.863
+VelControlTask  ,23.538,Cmd, 2.388, Enc, 4.267, Gyro, 4.329
+VelControlTask  ,23.545,Cmd, 1.901, Enc, 4.718, Gyro, 4.959
+VelControlTask  ,23.552,Cmd, 0.783, Enc, 4.775, Gyro, 5.421
+VelControlTask  ,23.559,Cmd, 0.189, Enc, 5.057, Gyro, 5.757
+VelControlTask  ,23.566,Cmd,-0.824, Enc, 5.583, Gyro, 5.892
+VelControlTask  ,23.573,Cmd,-1.347, Enc, 5.489, Gyro, 6.020
+VelControlTask  ,23.580,Cmd,-1.839, Enc, 5.790, Gyro, 6.029
+VelControlTask  ,23.587,Cmd,-2.725, Enc, 5.489, Gyro, 5.821
+VelControlTask  ,23.594,Cmd,-3.085, Enc, 5.113, Gyro, 5.645
+VelControlTask  ,23.601,Cmd,-3.721, Enc, 4.850, Gyro, 5.202
+VelControlTask  ,23.608,Cmd,-3.898, Enc, 4.700, Gyro, 4.500
+VelControlTask  ,23.615,Cmd,-3.977, Enc, 3.553, Gyro, 3.640
+VelControlTask  ,23.622,Cmd,-3.881, Enc, 2.350, Gyro, 2.442
+VelControlTask  ,23.629,Cmd,-3.549, Enc, 0.771, Gyro, 0.959
+VelControlTask  ,23.636,Cmd,-2.555, Enc,-0.282, Gyro,-0.577
+VelControlTask  ,23.643,Cmd,-2.080, Enc,-1.391, Gyro,-1.277
+VelControlTask  ,23.650,Cmd,-1.718, Enc,-1.955, Gyro,-2.195
+VelControlTask  ,23.657,Cmd,-0.743, Enc,-2.820, Gyro,-3.127
+VelControlTask  ,23.664,Cmd,-0.145, Enc,-3.854, Gyro,-4.077
+VelControlTask  ,23.671,Cmd, 1.215, Enc,-4.812, Gyro,-5.121
+VelControlTask  ,23.678,Cmd, 1.969, Enc,-5.771, Gyro,-5.938
+VelControlTask  ,23.685,Cmd, 2.696, Enc,-6.185, Gyro,-6.835
+VelControlTask  ,23.692,Cmd, 4.251, Enc,-7.031, Gyro,-7.182
+VelControlTask  ,23.699,Cmd, 4.927, Enc,-6.956, Gyro,-7.585
+VelControlTask  ,23.706,Cmd, 6.215, Enc,-6.918, Gyro,-7.557
+VelControlTask  ,23.713,Cmd, 6.719, Enc,-6.862, Gyro,-7.250
+VelControlTask  ,23.720,Cmd, 7.152, Enc,-6.542, Gyro,-6.659
+VelControlTask  ,23.727,Cmd, 7.678, Enc,-5.940, Gyro,-5.766
+VelControlTask  ,23.734,Cmd, 7.776, Enc,-4.023, Gyro,-4.969
+VelControlTask  ,23.741,Cmd, 7.764, Enc,-3.816, Gyro,-3.670
+VelControlTask  ,23.748,Cmd, 7.516, Enc,-2.369, Gyro,-2.196
+VelControlTask  ,23.755,Cmd, 7.169, Enc,-0.808, Gyro,-0.857
+VelControlTask  ,23.762,Cmd, 6.384, Enc, 0.188, Gyro, 0.104
+VelControlTask  ,23.769,Cmd, 6.102, Enc, 0.282, Gyro, 0.209
+VelControlTask  ,23.776,Cmd, 6.024, Enc, 0.150, Gyro, 0.209
+VelControlTask  ,23.783,Cmd, 6.002, Enc, 0.244, Gyro, 0.278
+VelControlTask  ,23.790,Cmd, 5.950, Enc, 0.451, Gyro, 0.578
+VelControlTask  ,23.797,Cmd, 5.571, Enc, 1.372, Gyro, 1.173
+VelControlTask  ,23.804,Cmd, 5.256, Enc, 2.011, Gyro, 2.154
+VelControlTask  ,23.811,Cmd, 4.168, Enc, 3.027, Gyro, 3.193
+VelControlTask  ,23.818,Cmd, 3.545, Enc, 3.741, Gyro, 4.158
+VelControlTask  ,23.825,Cmd, 2.898, Enc, 4.812, Gyro, 4.759
+VelControlTask  ,23.832,Cmd, 1.716, Enc, 4.888, Gyro, 5.399
+VelControlTask  ,23.839,Cmd, 1.099, Enc, 5.452, Gyro, 5.748
+VelControlTask  ,23.846,Cmd,-0.051, Enc, 5.884, Gyro, 6.086
+VelControlTask  ,23.853,Cmd,-0.591, Enc, 6.016, Gyro, 6.292
+VelControlTask  ,23.860,Cmd,-1.132, Enc, 6.016, Gyro, 6.417
+VelControlTask  ,23.867,Cmd,-2.115, Enc, 5.752, Gyro, 6.380
+VelControlTask  ,23.874,Cmd,-2.601, Enc, 5.621, Gyro, 6.268
+VelControlTask  ,23.881,Cmd,-3.410, Enc, 5.395, Gyro, 5.984
+VelControlTask  ,23.888,Cmd,-3.709, Enc, 5.264, Gyro, 5.499
+VelControlTask  ,23.895,Cmd,-3.952, Enc, 5.038, Gyro, 4.976
+VelControlTask  ,23.902,Cmd,-4.304, Enc, 4.549, Gyro, 4.338
+VelControlTask  ,23.909,Cmd,-4.397, Enc, 3.290, Gyro, 3.691
+VelControlTask  ,23.916,Cmd,-4.369, Enc, 2.425, Gyro, 2.771
+VelControlTask  ,23.923,Cmd,-4.209, Enc, 1.673, Gyro, 1.553
+VelControlTask  ,23.930,Cmd,-3.874, Enc, 0.019, Gyro, 0.176
+VelControlTask  ,23.937,Cmd,-2.872, Enc,-0.959, Gyro,-1.054
+VelControlTask  ,23.944,Cmd,-2.412, Enc,-1.993, Gyro,-2.233
+VelControlTask  ,23.951,Cmd,-1.174, Enc,-3.346, Gyro,-3.430
+VelControlTask  ,23.958,Cmd,-0.467, Enc,-4.531, Gyro,-4.737
+VelControlTask  ,23.965,Cmd, 0.361, Enc,-5.546, Gyro,-6.088
+VelControlTask  ,23.972,Cmd, 2.184, Enc,-6.768, Gyro,-7.197
+VelControlTask  ,23.979,Cmd, 3.157, Enc,-7.670, Gyro,-8.154
+VelControlTask  ,23.986,Cmd, 4.954, Enc,-8.140, Gyro,-8.628
+VelControlTask  ,23.993,Cmd, 5.720, Enc,-8.102, Gyro,-8.827
+VelControlTask  ,24.000,Cmd, 6.451, Enc,-8.215, Gyro,-8.877
+VelControlTask  ,24.007,Cmd, 7.749, Enc,-8.159, Gyro,-8.593
+VelControlTask  ,24.014,Cmd, 8.264, Enc,-7.914, Gyro,-8.051
+VelControlTask  ,24.021,Cmd, 8.978, Enc,-7.332, Gyro,-7.184
+VelControlTask  ,24.028,Cmd, 9.166, Enc,-5.433, Gyro,-5.954
+VelControlTask  ,24.035,Cmd, 9.084, Enc,-3.685, Gyro,-4.481
+VelControlTask  ,24.042,Cmd, 8.752, Enc,-3.365, Gyro,-3.220
+VelControlTask  ,24.049,Cmd, 8.548, Enc,-1.617, Gyro,-2.230
+VelControlTask  ,24.056,Cmd, 8.142, Enc,-1.222, Gyro,-1.157
+VelControlTask  ,24.063,Cmd, 7.844, Enc,-0.508, Gyro,-0.422
+VelControlTask  ,24.070,Cmd, 7.635, Enc, 0.056, Gyro, 0.015
+VelControlTask  ,24.077,Cmd, 7.383, Enc, 0.019, Gyro, 0.083
+VelControlTask  ,24.084,Cmd, 7.364, Enc, 0.038, Gyro, 0.145
+VelControlTask  ,24.091,Cmd, 7.286, Enc, 0.244, Gyro, 0.255
+VelControlTask  ,24.098,Cmd, 7.200, Enc, 0.526, Gyro, 0.524
+VelControlTask  ,24.105,Cmd, 7.060, Enc, 1.034, Gyro, 1.034
+VelControlTask  ,24.112,Cmd, 6.480, Enc, 1.673, Gyro, 1.818
+VelControlTask  ,24.119,Cmd, 6.065, Enc, 2.463, Gyro, 2.526
+VelControlTask  ,24.126,Cmd, 5.132, Enc, 2.933, Gyro, 3.291
+VelControlTask  ,24.133,Cmd, 4.615, Enc, 3.685, Gyro, 3.799
+VelControlTask  ,24.140,Cmd, 4.159, Enc, 3.741, Gyro, 4.424
+VelControlTask  ,24.147,Cmd, 3.107, Enc, 4.888, Gyro, 4.706
+VelControlTask  ,24.154,Cmd, 2.686, Enc, 4.718, Gyro, 5.104
+VelControlTask  ,24.161,Cmd, 1.579, Enc, 4.737, Gyro, 5.572
+VelControlTask  ,24.168,Cmd, 1.050, Enc, 5.640, Gyro, 5.725
+VelControlTask  ,24.175,Cmd, 0.555, Enc, 5.846, Gyro, 5.956
+VelControlTask  ,24.182,Cmd,-0.525, Enc, 5.752, Gyro, 6.296
+VelControlTask  ,24.189,Cmd,-1.092, Enc, 5.715, Gyro, 6.332
+VelControlTask  ,24.196,Cmd,-2.058, Enc, 5.640, Gyro, 6.245
+VelControlTask  ,24.203,Cmd,-2.444, Enc, 5.621, Gyro, 5.892
+VelControlTask  ,24.210,Cmd,-2.750, Enc, 5.470, Gyro, 5.407
+VelControlTask  ,24.217,Cmd,-3.201, Enc, 4.775, Gyro, 4.867
+VelControlTask  ,24.224,Cmd,-3.372, Enc, 3.591, Gyro, 4.317
+VelControlTask  ,24.231,Cmd,-3.541, Enc, 3.215, Gyro, 3.526
+VelControlTask  ,24.238,Cmd,-3.478, Enc, 2.651, Gyro, 2.633
+VelControlTask  ,24.245,Cmd,-3.356, Enc, 1.222, Gyro, 1.765
+VelControlTask  ,24.252,Cmd,-2.904, Enc, 0.602, Gyro, 0.549
+VelControlTask  ,24.259,Cmd,-2.496, Enc,-0.301, Gyro,-0.393
+VelControlTask  ,24.266,Cmd,-1.839, Enc,-0.940, Gyro,-1.046
+VelControlTask  ,24.273,Cmd,-1.520, Enc,-1.560, Gyro,-1.764
+VelControlTask  ,24.280,Cmd,-1.119, Enc,-2.613, Gyro,-2.645
+VelControlTask  ,24.287,Cmd,-0.059, Enc,-3.666, Gyro,-3.613
+VelControlTask  ,24.294,Cmd, 0.566, Enc,-4.267, Gyro,-4.596
+VelControlTask  ,24.301,Cmd, 1.971, Enc,-5.094, Gyro,-5.473
+VelControlTask  ,24.308,Cmd, 2.670, Enc,-5.790, Gyro,-6.184
+VelControlTask  ,24.315,Cmd, 3.388, Enc,-6.392, Gyro,-6.704
+VelControlTask  ,24.322,Cmd, 4.761, Enc,-6.373, Gyro,-7.185
+VelControlTask  ,24.329,Cmd, 5.457, Enc,-6.918, Gyro,-7.237
+VelControlTask  ,24.336,Cmd, 6.557, Enc,-6.880, Gyro,-7.153
+VelControlTask  ,24.343,Cmd, 7.043, Enc,-6.617, Gyro,-6.970
+VelControlTask  ,24.350,Cmd, 7.481, Enc,-6.222, Gyro,-6.468
+VelControlTask  ,24.357,Cmd, 8.064, Enc,-5.452, Gyro,-5.796
+VelControlTask  ,24.364,Cmd, 8.229, Enc,-5.188, Gyro,-4.810
+VelControlTask  ,24.371,Cmd, 8.249, Enc,-3.459, Gyro,-3.865
+VelControlTask  ,24.378,Cmd, 8.108, Enc,-2.500, Gyro,-2.698
+VelControlTask  ,24.385,Cmd, 7.897, Enc,-1.203, Gyro,-1.436
+VelControlTask  ,24.392,Cmd, 7.211, Enc,-0.263, Gyro,-0.336
+VelControlTask  ,24.399,Cmd, 6.883, Enc, 0.357, Gyro, 0.323
+VelControlTask  ,24.406,Cmd, 6.463, Enc, 0.470, Gyro, 0.575
+VelControlTask  ,24.413,Cmd, 6.350, Enc, 0.790, Gyro, 0.771
+VelControlTask  ,24.420,Cmd, 6.216, Enc, 0.921, Gyro, 1.090
+VelControlTask  ,24.427,Cmd, 5.828, Enc, 1.354, Gyro, 1.416
+VelControlTask  ,24.434,Cmd, 5.586, Enc, 1.842, Gyro, 1.927
+VelControlTask  ,24.441,Cmd, 4.887, Enc, 2.218, Gyro, 2.531
+VelControlTask  ,24.448,Cmd, 4.483, Enc, 2.839, Gyro, 3.026
+VelControlTask  ,24.455,Cmd, 4.071, Enc, 3.290, Gyro, 3.715
+VelControlTask  ,24.462,Cmd, 3.069, Enc, 4.136, Gyro, 4.248
+VelControlTask  ,24.469,Cmd, 2.556, Enc, 4.474, Gyro, 4.852
+VelControlTask  ,24.476,Cmd, 1.390, Enc, 5.301, Gyro, 5.315
+VelControlTask  ,24.483,Cmd, 0.863, Enc, 5.452, Gyro, 5.877
+VelControlTask  ,24.490,Cmd, 0.198, Enc, 5.602, Gyro, 6.388
+VelControlTask  ,24.497,Cmd,-1.011, Enc, 6.730, Gyro, 6.551
+VelControlTask  ,24.504,Cmd,-1.615, Enc, 6.128, Gyro, 7.001
+VelControlTask  ,24.511,Cmd,-2.934, Enc, 6.354, Gyro, 7.184
+VelControlTask  ,24.518,Cmd,-3.513, Enc, 6.692, Gyro, 7.113
+VelControlTask  ,24.525,Cmd,-4.013, Enc, 6.504, Gyro, 6.991
+VelControlTask  ,24.532,Cmd,-4.907, Enc, 6.335, Gyro, 6.579
+VelControlTask  ,24.539,Cmd,-5.233, Enc, 6.091, Gyro, 5.903
+VelControlTask  ,24.546,Cmd,-5.547, Enc, 4.888, Gyro, 5.046
+VelControlTask  ,24.553,Cmd,-5.614, Enc, 3.666, Gyro, 4.025
+VelControlTask  ,24.560,Cmd,-5.523, Enc, 2.688, Gyro, 2.598
+VelControlTask  ,24.567,Cmd,-4.914, Enc, 0.827, Gyro, 1.186
+VelControlTask  ,24.574,Cmd,-4.434, Enc,-0.038, Gyro,-0.428
+VelControlTask  ,24.581,Cmd,-3.362, Enc,-1.429, Gyro,-1.516
+VelControlTask  ,24.588,Cmd,-2.780, Enc,-2.763, Gyro,-2.812
+VelControlTask  ,24.595,Cmd,-2.110, Enc,-4.004, Gyro,-4.126
+VelControlTask  ,24.602,Cmd,-0.548, Enc,-4.944, Gyro,-5.441
+VelControlTask  ,24.609,Cmd, 0.322, Enc,-6.034, Gyro,-6.513
+VelControlTask  ,24.616,Cmd, 2.131, Enc,-7.332, Gyro,-7.498
+VelControlTask  ,24.623,Cmd, 2.977, Enc,-7.670, Gyro,-8.219
+VelControlTask  ,24.630,Cmd, 3.849, Enc,-8.046, Gyro,-8.588
+VelControlTask  ,24.637,Cmd, 5.330, Enc,-8.027, Gyro,-8.634
+VelControlTask  ,24.644,Cmd, 6.011, Enc,-8.008, Gyro,-8.568
+VelControlTask  ,24.651,Cmd, 7.147, Enc,-7.839, Gyro,-8.206
+VelControlTask  ,24.658,Cmd, 7.603, Enc,-7.256, Gyro,-7.678
+VelControlTask  ,24.665,Cmd, 7.979, Enc,-6.918, Gyro,-6.856
+VelControlTask  ,24.672,Cmd, 8.370, Enc,-5.602, Gyro,-5.854
+VelControlTask  ,24.679,Cmd, 8.470, Enc,-4.305, Gyro,-4.815
+VelControlTask  ,24.686,Cmd, 8.263, Enc,-3.271, Gyro,-3.353
+VelControlTask  ,24.693,Cmd, 8.005, Enc,-1.899, Gyro,-1.900
+VelControlTask  ,24.700,Cmd, 7.597, Enc,-0.150, Gyro,-0.504
+VelControlTask  ,24.707,Cmd, 6.707, Enc, 0.338, Gyro, 0.450
+VelControlTask  ,24.714,Cmd, 6.388, Enc, 0.921, Gyro, 1.075
+VelControlTask  ,24.721,Cmd, 5.721, Enc, 1.767, Gyro, 1.818
+VelControlTask  ,24.728,Cmd, 5.315, Enc, 2.463, Gyro, 2.556
+VelControlTask  ,24.735,Cmd, 4.851, Enc, 3.121, Gyro, 3.408
+VelControlTask  ,24.742,Cmd, 3.737, Enc, 3.985, Gyro, 4.256
+VelControlTask  ,24.749,Cmd, 3.100, Enc, 4.831, Gyro, 4.958
+VelControlTask  ,24.756,Cmd, 1.697, Enc, 5.433, Gyro, 5.960
+VelControlTask  ,24.763,Cmd, 0.970, Enc, 6.185, Gyro, 6.772
+VelControlTask  ,24.770,Cmd, 0.148, Enc, 7.482, Gyro, 7.322
+VelControlTask  ,24.777,Cmd,-1.445, Enc, 7.294, Gyro, 8.075
+VelControlTask  ,24.784,Cmd,-2.270, Enc, 7.895, Gyro, 8.411
+VelControlTask  ,24.791,Cmd,-3.715, Enc, 7.614, Gyro, 8.581
+VelControlTask  ,24.798,Cmd,-4.385, Enc, 7.839, Gyro, 8.378
+VelControlTask  ,24.805,Cmd,-4.935, Enc, 7.726, Gyro, 8.043
+VelControlTask  ,24.812,Cmd,-5.846, Enc, 7.332, Gyro, 7.436
+VelControlTask  ,24.819,Cmd,-6.156, Enc, 6.110, Gyro, 6.644
+VelControlTask  ,24.826,Cmd,-6.520, Enc, 5.282, Gyro, 5.555
+VelControlTask  ,24.833,Cmd,-6.428, Enc, 4.061, Gyro, 4.223
+VelControlTask  ,24.840,Cmd,-6.275, Enc, 2.350, Gyro, 2.615
+VelControlTask  ,24.847,Cmd,-5.483, Enc, 0.771, Gyro, 0.772
+VelControlTask  ,24.854,Cmd,-4.835, Enc,-0.884, Gyro,-1.019
+VelControlTask  ,24.861,Cmd,-3.371, Enc,-2.669, Gyro,-2.688
+VelControlTask  ,24.868,Cmd,-2.565, Enc,-4.173, Gyro,-4.341
+VelControlTask  ,24.875,Cmd,-1.656, Enc,-5.395, Gyro,-5.842
+VelControlTask  ,24.882,Cmd, 0.306, Enc,-6.843, Gyro,-7.151
+VelControlTask  ,24.889,Cmd, 1.273, Enc,-7.614, Gyro,-8.263
+VelControlTask  ,24.896,Cmd, 3.271, Enc,-8.459, Gyro,-8.992
+VelControlTask  ,24.903,Cmd, 4.183, Enc,-8.892, Gyro,-9.528
+VelControlTask  ,24.910,Cmd, 5.065, Enc,-9.193, Gyro,-9.634
+VelControlTask  ,24.917,Cmd, 6.569, Enc,-9.042, Gyro,-9.522
+VelControlTask  ,24.924,Cmd, 7.198, Enc,-8.892, Gyro,-8.977
+VelControlTask  ,24.931,Cmd, 8.139, Enc,-7.820, Gyro,-8.331
+VelControlTask  ,24.938,Cmd, 8.444, Enc,-6.899, Gyro,-7.358
+VelControlTask  ,24.945,Cmd, 8.639, Enc,-6.166, Gyro,-6.051
+VelControlTask  ,24.952,Cmd, 8.591, Enc,-4.230, Gyro,-4.598
+VelControlTask  ,24.959,Cmd, 8.377, Enc,-2.594, Gyro,-2.952
+VelControlTask  ,24.966,Cmd, 7.539, Enc,-1.147, Gyro,-1.245
+VelControlTask  ,24.973,Cmd, 7.083, Enc, 0.094, Gyro,-0.025
+VelControlTask  ,24.980,Cmd, 6.658, Enc, 0.733, Gyro, 0.842
+VelControlTask  ,24.987,Cmd, 5.958, Enc, 1.579, Gyro, 1.417
+VelControlTask  ,24.994,Cmd, 5.634, Enc, 1.654, Gyro, 2.125
+VelControlTask  ,25.001,Cmd, 4.812, Enc, 2.500, Gyro, 2.734
+VelControlTask  ,25.008,Cmd, 4.352, Enc, 3.309, Gyro, 3.585
+VelControlTask  ,25.015,Cmd, 3.780, Enc, 4.155, Gyro, 4.265
+VelControlTask  ,25.022,Cmd, 2.578, Enc, 4.888, Gyro, 5.144
+VelControlTask  ,25.029,Cmd, 1.893, Enc, 5.771, Gyro, 5.877
+VelControlTask  ,25.036,Cmd, 0.344, Enc, 6.016, Gyro, 6.852
+VelControlTask  ,25.043,Cmd,-0.392, Enc, 7.256, Gyro, 7.363
+VelControlTask  ,25.050,Cmd,-1.164, Enc, 7.520, Gyro, 7.953
+VelControlTask  ,25.057,Cmd,-2.724, Enc, 7.595, Gyro, 8.228
+VelControlTask  ,25.064,Cmd,-3.437, Enc, 7.576, Gyro, 8.325
+VelControlTask  ,25.071,Cmd,-4.682, Enc, 7.632, Gyro, 8.156
+VelControlTask  ,25.078,Cmd,-5.187, Enc, 7.614, Gyro, 7.818
+VelControlTask  ,25.085,Cmd,-5.648, Enc, 7.106, Gyro, 7.295
+VelControlTask  ,25.092,Cmd,-6.349, Enc, 6.316, Gyro, 6.630
+VelControlTask  ,25.099,Cmd,-6.575, Enc, 5.057, Gyro, 5.669
+VelControlTask  ,25.106,Cmd,-6.587, Enc, 4.155, Gyro, 4.302
+VelControlTask  ,25.113,Cmd,-6.384, Enc, 2.519, Gyro, 2.805
+VelControlTask  ,25.120,Cmd,-6.043, Enc, 0.940, Gyro, 1.122
+VelControlTask  ,25.127,Cmd,-4.983, Enc,-0.376, Gyro,-0.606
+VelControlTask  ,25.134,Cmd,-4.318, Enc,-2.087, Gyro,-2.012
+VelControlTask  ,25.141,Cmd,-2.951, Enc,-3.252, Gyro,-3.536
+VelControlTask  ,25.148,Cmd,-2.105, Enc,-4.737, Gyro,-5.025
+VelControlTask  ,25.155,Cmd,-1.191, Enc,-6.185, Gyro,-6.383
+VelControlTask  ,25.162,Cmd, 0.751, Enc,-6.880, Gyro,-7.735
+VelControlTask  ,25.169,Cmd, 1.798, Enc,-8.121, Gyro,-8.550
+VelControlTask  ,25.176,Cmd, 3.659, Enc,-8.666, Gyro,-9.176
+VelControlTask  ,25.183,Cmd, 4.537, Enc,-8.854, Gyro,-9.459
+VelControlTask  ,25.190,Cmd, 5.320, Enc,-9.117, Gyro,-9.369
+VelControlTask  ,25.197,Cmd, 6.613, Enc,-8.666, Gyro,-8.936
+VelControlTask  ,25.204,Cmd, 7.091, Enc,-7.614, Gyro,-8.363
+VelControlTask  ,25.211,Cmd, 7.785, Enc,-7.162, Gyro,-7.351
+VelControlTask  ,25.218,Cmd, 7.942, Enc,-6.053, Gyro,-6.227
+VelControlTask  ,25.225,Cmd, 7.997, Enc,-4.606, Gyro,-5.034
+VelControlTask  ,25.232,Cmd, 7.821, Enc,-3.440, Gyro,-3.565
+VelControlTask  ,25.239,Cmd, 7.571, Enc,-2.124, Gyro,-2.243
+VelControlTask  ,25.246,Cmd, 6.911, Enc,-0.733, Gyro,-1.082
+VelControlTask  ,25.253,Cmd, 6.650, Enc,-0.038, Gyro,-0.114
+VelControlTask  ,25.260,Cmd, 6.307, Enc, 0.564, Gyro, 0.535
+VelControlTask  ,25.267,Cmd, 5.756, Enc, 0.921, Gyro, 1.059
+VelControlTask  ,25.274,Cmd, 5.508, Enc, 1.429, Gyro, 1.451
+VelControlTask  ,25.281,Cmd, 4.968, Enc, 1.635, Gyro, 1.911
+VelControlTask  ,25.288,Cmd, 4.648, Enc, 2.218, Gyro, 2.412
+VelControlTask  ,25.295,Cmd, 4.294, Enc, 2.763, Gyro, 2.880
+VelControlTask  ,25.302,Cmd, 3.492, Enc, 3.083, Gyro, 3.374
+VelControlTask  ,25.309,Cmd, 3.081, Enc, 3.854, Gyro, 3.770
+VelControlTask  ,25.316,Cmd, 2.163, Enc, 3.666, Gyro, 4.420
+VelControlTask  ,25.323,Cmd, 1.569, Enc, 5.057, Gyro, 4.816
+VelControlTask  ,25.330,Cmd, 1.086, Enc, 4.982, Gyro, 5.470
+VelControlTask  ,25.337,Cmd,-0.161, Enc, 5.696, Gyro, 5.862
+VelControlTask  ,25.344,Cmd,-0.707, Enc, 6.128, Gyro, 6.227
+VelControlTask  ,25.351,Cmd,-1.948, Enc, 5.809, Gyro, 6.648
+VelControlTask  ,25.358,Cmd,-2.562, Enc, 6.410, Gyro, 6.785
+VelControlTask  ,25.365,Cmd,-3.108, Enc, 6.711, Gyro, 6.775
+VelControlTask  ,25.372,Cmd,-4.138, Enc, 6.279, Gyro, 6.770
+VelControlTask  ,25.379,Cmd,-4.620, Enc, 6.110, Gyro, 6.551
+VelControlTask  ,25.386,Cmd,-5.366, Enc, 5.884, Gyro, 6.072
+VelControlTask  ,25.393,Cmd,-5.591, Enc, 5.433, Gyro, 5.263
+VelControlTask  ,25.400,Cmd,-5.682, Enc, 4.004, Gyro, 4.296
+VelControlTask  ,25.407,Cmd,-5.532, Enc, 3.215, Gyro, 2.860
+VelControlTask  ,25.414,Cmd,-5.253, Enc, 1.166, Gyro, 1.475
+VelControlTask  ,25.421,Cmd,-4.233, Enc,-0.150, Gyro,-0.337
+VelControlTask  ,25.428,Cmd,-3.632, Enc,-1.635, Gyro,-1.785
+VelControlTask  ,25.435,Cmd,-2.967, Enc,-3.233, Gyro,-3.242
+VelControlTask  ,25.442,Cmd,-1.419, Enc,-4.549, Gyro,-4.679
+VelControlTask  ,25.449,Cmd,-0.571, Enc,-5.621, Gyro,-6.005
+VelControlTask  ,25.456,Cmd, 1.234, Enc,-6.768, Gyro,-7.045
+VelControlTask  ,25.463,Cmd, 2.165, Enc,-7.576, Gyro,-7.877
+VelControlTask  ,25.470,Cmd, 3.026, Enc,-7.952, Gyro,-8.510
+VelControlTask  ,25.477,Cmd, 4.690, Enc,-8.271, Gyro,-8.747
+VelControlTask  ,25.484,Cmd, 5.388, Enc,-8.177, Gyro,-8.727
+VelControlTask  ,25.491,Cmd, 6.589, Enc,-8.065, Gyro,-8.355
+VelControlTask  ,25.498,Cmd, 7.040, Enc,-7.595, Gyro,-7.785
+VelControlTask  ,25.505,Cmd, 7.424, Enc,-6.730, Gyro,-7.228
+VelControlTask  ,25.512,Cmd, 8.007, Enc,-6.110, Gyro,-6.273
+VelControlTask  ,25.519,Cmd, 8.105, Enc,-5.113, Gyro,-5.123
+VelControlTask  ,25.526,Cmd, 8.052, Enc,-3.515, Gyro,-3.964
+VelControlTask  ,25.533,Cmd, 7.861, Enc,-2.331, Gyro,-2.607
+VelControlTask  ,25.540,Cmd, 7.561, Enc,-1.410, Gyro,-1.278
+VelControlTask  ,25.547,Cmd, 6.841, Enc, 0.056, Gyro,-0.194
+VelControlTask  ,25.554,Cmd, 6.463, Enc, 0.395, Gyro, 0.624
+VelControlTask  ,25.561,Cmd, 5.861, Enc, 1.053, Gyro, 1.146
+VelControlTask  ,25.568,Cmd, 5.570, Enc, 1.692, Gyro, 1.736
+VelControlTask  ,25.575,Cmd, 5.235, Enc, 2.181, Gyro, 2.347
+VelControlTask  ,25.582,Cmd, 4.395, Enc, 2.933, Gyro, 3.126
+VelControlTask  ,25.589,Cmd, 3.894, Enc, 3.685, Gyro, 3.865
+VelControlTask  ,25.596,Cmd, 2.734, Enc, 4.230, Gyro, 4.719
+VelControlTask  ,25.603,Cmd, 2.020, Enc, 5.264, Gyro, 5.554
+VelControlTask  ,25.610,Cmd, 1.326, Enc, 5.734, Gyro, 6.599
+VelControlTask  ,25.617,Cmd,-0.322, Enc, 7.313, Gyro, 7.213
+VelControlTask  ,25.624,Cmd,-1.110, Enc, 7.313, Gyro, 7.989
+VelControlTask  ,25.631,Cmd,-2.805, Enc, 7.482, Gyro, 8.479
+VelControlTask  ,25.638,Cmd,-3.585, Enc, 8.422, Gyro, 8.493
+VelControlTask  ,25.645,Cmd,-4.208, Enc, 8.196, Gyro, 8.627
+VelControlTask  ,25.652,Cmd,-5.578, Enc, 7.801, Gyro, 8.602
+VelControlTask  ,25.659,Cmd,-6.178, Enc, 7.538, Gyro, 8.305
+VelControlTask  ,25.666,Cmd,-7.082, Enc, 7.764, Gyro, 7.517
+VelControlTask  ,25.673,Cmd,-7.298, Enc, 6.504, Gyro, 6.668
+VelControlTask  ,25.680,Cmd,-7.504, Enc, 5.000, Gyro, 5.586
+VelControlTask  ,25.687,Cmd,-7.467, Enc, 3.609, Gyro, 4.120
+VelControlTask  ,25.694,Cmd,-7.246, Enc, 2.763, Gyro, 2.300
+VelControlTask  ,25.701,Cmd,-6.245, Enc, 0.038, Gyro, 0.503
+VelControlTask  ,25.708,Cmd,-5.508, Enc,-1.166, Gyro,-1.388
+VelControlTask  ,25.715,Cmd,-4.783, Enc,-2.970, Gyro,-3.076
+VelControlTask  ,25.722,Cmd,-3.037, Enc,-4.568, Gyro,-4.891
+VelControlTask  ,25.729,Cmd,-2.044, Enc,-6.222, Gyro,-6.545
+VelControlTask  ,25.736,Cmd, 0.177, Enc,-7.501, Gyro,-8.153
+VelControlTask  ,25.743,Cmd, 1.302, Enc,-8.591, Gyro,-9.355
+VelControlTask  ,25.750,Cmd, 2.440, Enc,-9.437, Gyro,-10.254
+VelControlTask  ,25.757,Cmd, 4.553, Enc,-9.982, Gyro,-10.719
+VelControlTask  ,25.764,Cmd, 5.504, Enc,-10.057, Gyro,-10.847
+VelControlTask  ,25.771,Cmd, 7.098, Enc,-10.151, Gyro,-10.576
+VelControlTask  ,25.778,Cmd, 7.729, Enc,-9.644, Gyro,-9.971
+VelControlTask  ,25.785,Cmd, 8.267, Enc,-8.854, Gyro,-9.287
+VelControlTask  ,25.792,Cmd, 9.076, Enc,-8.083, Gyro,-8.160
+VelControlTask  ,25.799,Cmd, 9.256, Enc,-6.128, Gyro,-6.915
+VelControlTask  ,25.806,Cmd, 9.288, Enc,-5.245, Gyro,-5.371
+VelControlTask  ,25.813,Cmd, 9.079, Enc,-3.647, Gyro,-3.763
+VelControlTask  ,25.820,Cmd, 8.786, Enc,-1.767, Gyro,-1.991
+VelControlTask  ,25.827,Cmd, 7.814, Enc,-0.226, Gyro,-0.464
+VelControlTask  ,25.834,Cmd, 7.347, Enc, 0.526, Gyro, 0.600
+VelControlTask  ,25.841,Cmd, 6.595, Enc, 1.260, Gyro, 1.208
+VelControlTask  ,25.848,Cmd, 6.291, Enc, 1.711, Gyro, 1.872
+VelControlTask  ,25.855,Cmd, 5.911, Enc, 2.256, Gyro, 2.409
+VelControlTask  ,25.862,Cmd, 5.138, Enc, 2.594, Gyro, 3.022
+VelControlTask  ,25.869,Cmd, 4.699, Enc, 3.365, Gyro, 3.421
+VelControlTask  ,25.876,Cmd, 3.786, Enc, 3.572, Gyro, 4.071
+VelControlTask  ,25.883,Cmd, 3.288, Enc, 4.173, Gyro, 4.499
+VelControlTask  ,25.890,Cmd, 2.793, Enc, 4.718, Gyro, 5.140
+VelControlTask  ,25.897,Cmd, 1.600, Enc, 5.508, Gyro, 5.648
+VelControlTask  ,25.904,Cmd, 0.939, Enc, 6.091, Gyro, 6.398
+VelControlTask  ,25.911,Cmd,-0.487, Enc, 6.448, Gyro, 6.976
+VelControlTask  ,25.918,Cmd,-1.178, Enc, 7.181, Gyro, 7.243
+VelControlTask  ,25.925,Cmd,-1.831, Enc, 7.050, Gyro, 7.623
+VelControlTask  ,25.932,Cmd,-3.201, Enc, 6.768, Gyro, 7.865
+VelControlTask  ,25.939,Cmd,-3.863, Enc, 7.576, Gyro, 7.688
+VelControlTask  ,25.946,Cmd,-4.935, Enc, 7.256, Gyro, 7.600
+VelControlTask  ,25.953,Cmd,-5.408, Enc, 6.880, Gyro, 7.200
+VelControlTask  ,25.960,Cmd,-5.796, Enc, 6.166, Gyro, 6.531
+VelControlTask  ,25.967,Cmd,-6.280, Enc, 5.301, Gyro, 5.526
+VelControlTask  ,25.974,Cmd,-6.261, Enc, 4.173, Gyro, 4.115
+VelControlTask  ,25.981,Cmd,-5.840, Enc, 2.406, Gyro, 2.593
+VelControlTask  ,25.988,Cmd,-5.356, Enc, 0.470, Gyro, 0.781
+VelControlTask  ,25.995,Cmd,-4.763, Enc,-0.846, Gyro,-1.088
+VelControlTask  ,26.002,Cmd,-3.354, Enc,-2.651, Gyro,-2.514
+VelControlTask  ,26.009,Cmd,-2.615, Enc,-3.948, Gyro,-4.133
+VelControlTask  ,26.016,Cmd,-0.827, Enc,-5.395, Gyro,-5.634
+VelControlTask  ,26.023,Cmd, 0.126, Enc,-6.392, Gyro,-6.986
+VelControlTask  ,26.030,Cmd, 1.136, Enc,-7.595, Gyro,-8.003
+VelControlTask  ,26.037,Cmd, 3.061, Enc,-8.027, Gyro,-8.802
+VelControlTask  ,26.044,Cmd, 3.974, Enc,-8.441, Gyro,-9.317
+VelControlTask  ,26.051,Cmd, 5.654, Enc,-8.704, Gyro,-9.459
+VelControlTask  ,26.058,Cmd, 6.372, Enc,-8.854, Gyro,-9.286
+VelControlTask  ,26.065,Cmd, 6.990, Enc,-8.572, Gyro,-8.790
+VelControlTask  ,26.072,Cmd, 7.934, Enc,-8.196, Gyro,-8.157
+VelControlTask  ,26.079,Cmd, 8.291, Enc,-7.012, Gyro,-7.326
+VelControlTask  ,26.086,Cmd, 8.684, Enc,-5.790, Gyro,-6.144
+VelControlTask  ,26.093,Cmd, 8.670, Enc,-4.493, Gyro,-4.876
+VelControlTask  ,26.100,Cmd, 8.579, Enc,-3.139, Gyro,-3.541
+VelControlTask  ,26.107,Cmd, 8.098, Enc,-2.011, Gyro,-2.115
+VelControlTask  ,26.114,Cmd, 7.768, Enc,-0.808, Gyro,-0.916
+VelControlTask  ,26.121,Cmd, 7.035, Enc, 0.132, Gyro, 0.172
+VelControlTask  ,26.128,Cmd, 6.676, Enc, 0.714, Gyro, 0.822
+VelControlTask  ,26.135,Cmd, 6.392, Enc, 1.241, Gyro, 1.298
+VelControlTask  ,26.142,Cmd, 5.822, Enc, 1.692, Gyro, 1.886
+VelControlTask  ,26.149,Cmd, 5.467, Enc, 2.256, Gyro, 2.468
+VelControlTask  ,26.156,Cmd, 4.624, Enc, 2.933, Gyro, 3.123
+VelControlTask  ,26.163,Cmd, 4.183, Enc, 3.534, Gyro, 3.715
+VelControlTask  ,26.170,Cmd, 3.678, Enc, 4.117, Gyro, 4.462
+VelControlTask  ,26.177,Cmd, 2.491, Enc, 4.737, Gyro, 5.209
+VelControlTask  ,26.184,Cmd, 1.786, Enc, 5.546, Gyro, 6.010
+VelControlTask  ,26.191,Cmd, 0.322, Enc, 6.260, Gyro, 6.811
+VelControlTask  ,26.198,Cmd,-0.426, Enc, 7.087, Gyro, 7.313
+VelControlTask  ,26.205,Cmd,-1.177, Enc, 7.256, Gyro, 7.803
+VelControlTask  ,26.212,Cmd,-2.707, Enc, 7.275, Gyro, 8.183
+VelControlTask  ,26.219,Cmd,-3.422, Enc, 7.933, Gyro, 8.241
+VelControlTask  ,26.226,Cmd,-4.728, Enc, 7.651, Gyro, 8.340
+VelControlTask  ,26.233,Cmd,-5.376, Enc, 7.576, Gyro, 8.280
+VelControlTask  ,26.240,Cmd,-5.956, Enc, 7.632, Gyro, 7.989
+VelControlTask  ,26.247,Cmd,-6.916, Enc, 7.463, Gyro, 7.400
+VelControlTask  ,26.254,Cmd,-7.201, Enc, 6.730, Gyro, 6.687
+VelControlTask  ,26.261,Cmd,-7.722, Enc, 5.376, Gyro, 5.957
+VelControlTask  ,26.268,Cmd,-7.799, Enc, 4.925, Gyro, 4.768
+VelControlTask  ,26.275,Cmd,-7.728, Enc, 3.139, Gyro, 3.569
+VelControlTask  ,26.282,Cmd,-7.306, Enc, 1.711, Gyro, 2.029
+VelControlTask  ,26.289,Cmd,-6.881, Enc, 0.320, Gyro, 0.258
+VelControlTask  ,26.296,Cmd,-5.675, Enc,-1.090, Gyro,-1.213
+VelControlTask  ,26.303,Cmd,-5.049, Enc,-2.613, Gyro,-2.668
+VelControlTask  ,26.310,Cmd,-4.318, Enc,-4.079, Gyro,-4.292
+VelControlTask  ,26.317,Cmd,-2.546, Enc,-5.226, Gyro,-5.829
+VelControlTask  ,26.324,Cmd,-1.545, Enc,-6.749, Gyro,-7.162
+VelControlTask  ,26.331,Cmd, 0.588, Enc,-7.877, Gyro,-8.567
+VelControlTask  ,26.338,Cmd, 1.671, Enc,-9.023, Gyro,-9.485
+VelControlTask  ,26.345,Cmd, 2.703, Enc,-9.268, Gyro,-10.278
+VelControlTask  ,26.352,Cmd, 4.730, Enc,-9.663, Gyro,-10.618
+VelControlTask  ,26.359,Cmd, 5.634, Enc,-9.888, Gyro,-10.730
+VelControlTask  ,26.366,Cmd, 7.194, Enc,-9.851, Gyro,-10.386
+VelControlTask  ,26.373,Cmd, 7.798, Enc,-9.832, Gyro,-9.758
+VelControlTask  ,26.380,Cmd, 8.294, Enc,-9.249, Gyro,-8.950
+VelControlTask  ,26.387,Cmd, 9.029, Enc,-8.347, Gyro,-7.967
+VelControlTask  ,26.394,Cmd, 9.241, Enc,-6.655, Gyro,-6.882
+VelControlTask  ,26.401,Cmd, 9.393, Enc,-5.076, Gyro,-5.539
+VelControlTask  ,26.408,Cmd, 9.256, Enc,-3.647, Gyro,-3.972
+VelControlTask  ,26.415,Cmd, 8.994, Enc,-1.955, Gyro,-2.409
+VelControlTask  ,26.422,Cmd, 8.213, Enc,-0.940, Gyro,-0.899
+VelControlTask  ,26.429,Cmd, 7.782, Enc, 0.094, Gyro, 0.071
+VelControlTask  ,26.436,Cmd, 7.174, Enc, 0.432, Gyro, 0.596
+VelControlTask  ,26.443,Cmd, 6.962, Enc, 0.827, Gyro, 0.952
+VelControlTask  ,26.450,Cmd, 6.767, Enc, 1.184, Gyro, 1.380
+VelControlTask  ,26.457,Cmd, 6.221, Enc, 1.598, Gyro, 1.898
+VelControlTask  ,26.464,Cmd, 5.894, Enc, 2.218, Gyro, 2.491
+VelControlTask  ,26.471,Cmd, 5.123, Enc, 2.914, Gyro, 2.876
+VelControlTask  ,26.478,Cmd, 4.761, Enc, 2.895, Gyro, 3.476
+VelControlTask  ,26.485,Cmd, 4.278, Enc, 3.835, Gyro, 3.878
+VelControlTask  ,26.492,Cmd, 3.367, Enc, 4.042, Gyro, 4.479
+VelControlTask  ,26.499,Cmd, 2.799, Enc, 4.775, Gyro, 4.899
+VelControlTask  ,26.506,Cmd, 1.625, Enc, 5.076, Gyro, 5.634
+VelControlTask  ,26.513,Cmd, 1.008, Enc, 5.828, Gyro, 6.187
+VelControlTask  ,26.520,Cmd, 0.337, Enc, 6.241, Gyro, 6.684
+VelControlTask  ,26.527,Cmd,-1.007, Enc, 6.674, Gyro, 7.081
+VelControlTask  ,26.534,Cmd,-1.682, Enc, 6.918, Gyro, 7.335
+VelControlTask  ,26.541,Cmd,-2.927, Enc, 6.899, Gyro, 7.424
+VelControlTask  ,26.548,Cmd,-3.517, Enc, 6.862, Gyro, 7.431
+VelControlTask  ,26.555,Cmd,-4.062, Enc, 7.144, Gyro, 7.187
+VelControlTask  ,26.562,Cmd,-4.937, Enc, 6.392, Gyro, 6.899
+VelControlTask  ,26.569,Cmd,-5.377, Enc, 6.034, Gyro, 6.463
+VelControlTask  ,26.576,Cmd,-5.927, Enc, 5.546, Gyro, 5.780
+VelControlTask  ,26.583,Cmd,-6.117, Enc, 4.643, Gyro, 5.178
+VelControlTask  ,26.590,Cmd,-6.284, Enc, 4.286, Gyro, 4.389
+VelControlTask  ,26.597,Cmd,-6.355, Enc, 3.158, Gyro, 3.551
+VelControlTask  ,26.604,Cmd,-6.321, Enc, 2.575, Gyro, 2.482
+VelControlTask  ,26.611,Cmd,-5.847, Enc, 1.128, Gyro, 1.349
+VelControlTask  ,26.618,Cmd,-5.536, Enc, 0.188, Gyro,-0.018
+VelControlTask  ,26.625,Cmd,-5.025, Enc,-1.222, Gyro,-1.146
+VelControlTask  ,26.632,Cmd,-4.030, Enc,-2.199, Gyro,-2.315
+VelControlTask  ,26.639,Cmd,-3.414, Enc,-3.215, Gyro,-3.400
+VelControlTask  ,26.646,Cmd,-2.081, Enc,-4.286, Gyro,-4.478
+VelControlTask  ,26.653,Cmd,-1.368, Enc,-5.000, Gyro,-5.544
+VelControlTask  ,26.660,Cmd,-0.565, Enc,-6.561, Gyro,-6.430
+VelControlTask  ,26.667,Cmd, 1.036, Enc,-6.862, Gyro,-7.185
+VelControlTask  ,26.674,Cmd, 1.808, Enc,-6.824, Gyro,-7.490
+VelControlTask  ,26.681,Cmd, 3.040, Enc,-7.068, Gyro,-7.378
+VelControlTask  ,26.688,Cmd, 3.519, Enc,-6.730, Gyro,-7.037
+VelControlTask  ,26.695,Cmd, 3.910, Enc,-6.410, Gyro,-6.384
+VelControlTask  ,26.702,Cmd, 4.355, Enc,-5.301, Gyro,-5.498
+VelControlTask  ,26.709,Cmd, 4.403, Enc,-3.534, Gyro,-4.195
+VelControlTask  ,26.716,Cmd, 3.977, Enc,-2.575, Gyro,-2.539
+VelControlTask  ,26.723,Cmd, 3.515, Enc,-0.733, Gyro,-0.912
+VelControlTask  ,26.730,Cmd, 3.010, Enc, 0.226, Gyro, 0.444
+VelControlTask  ,26.737,Cmd, 2.068, Enc, 1.316, Gyro, 1.187
+VelControlTask  ,26.744,Cmd, 1.736, Enc, 1.786, Gyro, 1.748
+VelControlTask  ,26.751,Cmd, 1.079, Enc, 2.030, Gyro, 2.256
+VelControlTask  ,26.758,Cmd, 0.739, Enc, 2.293, Gyro, 2.590
+VelControlTask  ,26.765,Cmd, 0.427, Enc, 2.669, Gyro, 2.855
+VelControlTask  ,26.772,Cmd,-0.117, Enc, 3.121, Gyro, 2.864
+VelControlTask  ,26.779,Cmd,-0.372, Enc, 2.745, Gyro, 3.022
+VelControlTask  ,26.786,Cmd,-0.903, Enc, 2.933, Gyro, 3.006
+VelControlTask  ,26.793,Cmd,-1.052, Enc, 2.688, Gyro, 2.834
+VelControlTask  ,26.800,Cmd,-1.219, Enc, 2.387, Gyro, 2.580
+VelControlTask  ,26.807,Cmd,-1.426, Enc, 2.162, Gyro, 2.260
+VelControlTask  ,26.814,Cmd,-1.455, Enc, 1.542, Gyro, 1.820
+VelControlTask  ,26.821,Cmd,-1.404, Enc, 1.128, Gyro, 1.361
+VelControlTask  ,26.828,Cmd,-1.318, Enc, 0.790, Gyro, 0.858
+VelControlTask  ,26.835,Cmd,-1.205, Enc, 0.545, Gyro, 0.419
+VelControlTask  ,26.842,Cmd,-0.971, Enc, 0.263, Gyro, 0.088
+VelControlTask  ,26.849,Cmd,-0.862, Enc,-0.075, Gyro,-0.126
+VelControlTask  ,26.856,Cmd,-0.711, Enc,-0.113, Gyro,-0.249
+VelControlTask  ,26.863,Cmd,-0.659, Enc,-0.263, Gyro,-0.274
+VelControlTask  ,26.870,Cmd,-0.633, Enc,-0.244, Gyro,-0.285
+VelControlTask  ,26.877,Cmd,-0.585, Enc,-0.263, Gyro,-0.283
+VelControlTask  ,26.884,Cmd,-0.564, Enc,-0.376, Gyro,-0.308
+VelControlTask  ,26.891,Cmd,-0.502, Enc,-0.338, Gyro,-0.337
+VelControlTask  ,26.898,Cmd,-0.461, Enc,-0.395, Gyro,-0.356
+VelControlTask  ,26.905,Cmd,-0.429, Enc,-0.357, Gyro,-0.402
+VelControlTask  ,26.912,Cmd,-0.337, Enc,-0.432, Gyro,-0.452
+VelControlTask  ,26.919,Cmd,-0.283, Enc,-0.451, Gyro,-0.500
+VelControlTask  ,26.926,Cmd,-0.180, Enc,-0.470, Gyro,-0.520
+VelControlTask  ,26.933,Cmd,-0.134, Enc,-0.470, Gyro,-0.525
+VelControlTask  ,26.940,Cmd,-0.095, Enc,-0.451, Gyro,-0.499
+VelControlTask  ,26.947,Cmd,-0.045, Enc,-0.395, Gyro,-0.453
+VelControlTask  ,26.954,Cmd,-0.029, Enc,-0.338, Gyro,-0.377
+VelControlTask  ,26.961,Cmd,-0.037, Enc,-0.244, Gyro,-0.277
+VelControlTask  ,26.968,Cmd,-0.056, Enc,-0.150, Gyro,-0.136
+VelControlTask  ,26.975,Cmd,-0.098, Enc,-0.019, Gyro,-0.031
+VelControlTask  ,26.982,Cmd,-0.170, Enc, 0.000, Gyro, 0.061
+VelControlTask  ,26.989,Cmd,-0.204, Enc, 0.000, Gyro, 0.108
+VelControlTask  ,26.996,Cmd,-0.251, Enc, 0.000, Gyro, 0.137
+VelControlTask  ,27.003,Cmd,-0.268, Enc, 0.000, Gyro, 0.136
+VelControlTask  ,27.010,Cmd,-0.276, Enc, 0.000, Gyro, 0.104
+VelControlTask  ,27.017,Cmd,-0.264, Enc, 0.000, Gyro, 0.054
+VelControlTask  ,27.024,Cmd,-0.249, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,27.031,Cmd,-0.213, Enc, 0.000, Gyro,-0.031
+VelControlTask  ,27.038,Cmd,-0.203, Enc, 0.000, Gyro,-0.050
+VelControlTask  ,27.045,Cmd,-0.194, Enc, 0.000, Gyro,-0.054
+VelControlTask  ,27.052,Cmd,-0.184, Enc, 0.000, Gyro,-0.045
+VelControlTask  ,27.059,Cmd,-0.185, Enc, 0.000, Gyro,-0.021
+VelControlTask  ,27.066,Cmd,-0.199, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,27.073,Cmd,-0.209, Enc, 0.000, Gyro, 0.016
+VelControlTask  ,27.080,Cmd,-0.214, Enc, 0.000, Gyro, 0.016
+VelControlTask  ,27.087,Cmd,-0.215, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,27.094,Cmd,-0.212, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.101,Cmd,-0.208, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,27.108,Cmd,-0.207, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.115,Cmd,-0.209, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,27.122,Cmd,-0.211, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,27.129,Cmd,-0.211, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.136,Cmd,-0.207, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,27.143,Cmd,-0.207, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.150,Cmd,-0.207, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.157,Cmd,-0.207, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.164,Cmd,-0.207, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,27.171,Cmd,-0.203, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,27.178,Cmd,-0.203, Enc, 0.000, Gyro,-0.014
+VelControlTask  ,27.185,Cmd,-0.199, Enc, 0.000, Gyro,-0.024
+VelControlTask  ,27.192,Cmd,-0.186, Enc, 0.000, Gyro,-0.042
+VelControlTask  ,27.199,Cmd,-0.176, Enc, 0.000, Gyro,-0.058
+VelControlTask  ,27.206,Cmd,-0.159, Enc, 0.000, Gyro,-0.060
+VelControlTask  ,27.213,Cmd,-0.155, Enc, 0.000, Gyro,-0.053
+VelControlTask  ,27.220,Cmd,-0.154, Enc, 0.000, Gyro,-0.045
+VelControlTask  ,27.227,Cmd,-0.154, Enc, 0.000, Gyro,-0.027
+VelControlTask  ,27.234,Cmd,-0.161, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.241,Cmd,-0.178, Enc, 0.000, Gyro, 0.014
+VelControlTask  ,27.248,Cmd,-0.182, Enc, 0.000, Gyro, 0.011
+VelControlTask  ,27.255,Cmd,-0.181, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,27.262,Cmd,-0.175, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.269,Cmd,-0.174, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,27.276,Cmd,-0.176, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.283,Cmd,-0.175, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.290,Cmd,-0.176, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.297,Cmd,-0.176, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.304,Cmd,-0.175, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.311,Cmd,-0.175, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,27.318,Cmd,-0.174, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.325,Cmd,-0.174, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,27.332,Cmd,-0.174, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.339,Cmd,-0.173, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,27.346,Cmd,-0.170, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,27.353,Cmd,-0.169, Enc, 0.000, Gyro,-0.008
+VelControlTask  ,27.360,Cmd,-0.168, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,27.367,Cmd,-0.166, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,27.374,Cmd,-0.165, Enc,-0.019, Gyro,-0.013
+VelControlTask  ,27.381,Cmd,-0.160, Enc,-0.019, Gyro,-0.018
+VelControlTask  ,27.388,Cmd,-0.158, Enc,-0.038, Gyro,-0.014
+VelControlTask  ,27.395,Cmd,-0.158, Enc,-0.019, Gyro,-0.012
+VelControlTask  ,27.402,Cmd,-0.157, Enc,-0.019, Gyro,-0.014
+VelControlTask  ,27.409,Cmd,-0.156, Enc,-0.038, Gyro,-0.012
+VelControlTask  ,27.416,Cmd,-0.156, Enc,-0.019, Gyro,-0.006
+VelControlTask  ,27.423,Cmd,-0.159, Enc,-0.019, Gyro, 0.004
+VelControlTask  ,27.430,Cmd,-0.162, Enc,-0.019, Gyro, 0.008
+VelControlTask  ,27.437,Cmd,-0.167, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,27.444,Cmd,-0.168, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,27.451,Cmd,-0.166, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.458,Cmd,-0.164, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.465,Cmd,-0.163, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.472,Cmd,-0.164, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,27.479,Cmd,-0.166, Enc,-0.019, Gyro, 0.011
+VelControlTask  ,27.486,Cmd,-0.173, Enc, 0.000, Gyro, 0.019
+VelControlTask  ,27.493,Cmd,-0.178, Enc,-0.019, Gyro, 0.028
+VelControlTask  ,27.500,Cmd,-0.182, Enc,-0.019, Gyro, 0.016
+VelControlTask  ,27.507,Cmd,-0.177, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,27.514,Cmd,-0.174, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.521,Cmd,-0.169, Enc,-0.019, Gyro,-0.006
+VelControlTask  ,27.528,Cmd,-0.168, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,27.535,Cmd,-0.166, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,27.542,Cmd,-0.165, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,27.549,Cmd,-0.166, Enc,-0.019, Gyro,-0.006
+VelControlTask  ,27.556,Cmd,-0.167, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.563,Cmd,-0.169, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.570,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.577,Cmd,-0.167, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.584,Cmd,-0.168, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.591,Cmd,-0.166, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.598,Cmd,-0.167, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.605,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.612,Cmd,-0.167, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.619,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.626,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.633,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.640,Cmd,-0.167, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.647,Cmd,-0.167, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.654,Cmd,-0.167, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.661,Cmd,-0.168, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.668,Cmd,-0.167, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.675,Cmd,-0.168, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,27.682,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.689,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.696,Cmd,-0.170, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,27.703,Cmd,-0.173, Enc, 0.000, Gyro, 0.012
+VelControlTask  ,27.710,Cmd,-0.175, Enc,-0.019, Gyro, 0.009
+VelControlTask  ,27.717,Cmd,-0.175, Enc,-0.019, Gyro, 0.006
+VelControlTask  ,27.724,Cmd,-0.173, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,27.731,Cmd,-0.168, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,27.738,Cmd,-0.167, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,27.745,Cmd,-0.167, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.752,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.759,Cmd,-0.170, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.766,Cmd,-0.169, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.773,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.780,Cmd,-0.169, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.787,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.794,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.801,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.808,Cmd,-0.169, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.815,Cmd,-0.169, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.822,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.829,Cmd,-0.168, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.836,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.843,Cmd,-0.170, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.850,Cmd,-0.169, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,27.857,Cmd,-0.168, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,27.864,Cmd,-0.170, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.871,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.878,Cmd,-0.167, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.885,Cmd,-0.167, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,27.892,Cmd,-0.168, Enc,-0.019, Gyro,-0.001
+VelControlTask  ,27.899,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.906,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,27.913,Cmd,-0.168, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.920,Cmd,-0.169, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.927,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.934,Cmd,-0.169, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.941,Cmd,-0.170, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,27.948,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.955,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,27.962,Cmd,-0.170, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,27.969,Cmd,-0.171, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,27.976,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.983,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,27.990,Cmd,-0.171, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,27.997,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.004,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.011,Cmd,-0.170, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.018,Cmd,-0.170, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.025,Cmd,-0.169, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.032,Cmd,-0.169, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.039,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.046,Cmd,-0.169, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.053,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.060,Cmd,-0.169, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.067,Cmd,-0.170, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.074,Cmd,-0.170, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.081,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.088,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.095,Cmd,-0.170, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.102,Cmd,-0.169, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.109,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.116,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.123,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.130,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.137,Cmd,-0.171, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.144,Cmd,-0.170, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.151,Cmd,-0.170, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.158,Cmd,-0.169, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.165,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.172,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.179,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.186,Cmd,-0.170, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.193,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.200,Cmd,-0.169, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.207,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.214,Cmd,-0.169, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.221,Cmd,-0.167, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.228,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.235,Cmd,-0.168, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.242,Cmd,-0.167, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.249,Cmd,-0.167, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,28.256,Cmd,-0.166, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.263,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.270,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.277,Cmd,-0.168, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,28.284,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.291,Cmd,-0.168, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.298,Cmd,-0.167, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.305,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.312,Cmd,-0.168, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.319,Cmd,-0.168, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.326,Cmd,-0.167, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.333,Cmd,-0.167, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.340,Cmd,-0.167, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,28.347,Cmd,-0.167, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.354,Cmd,-0.167, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.361,Cmd,-0.166, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,28.368,Cmd,-0.167, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,28.375,Cmd,-0.167, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,28.382,Cmd,-0.167, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,28.389,Cmd,-0.167, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,28.396,Cmd,-0.168, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,28.403,Cmd,-0.170, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.410,Cmd,-0.169, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.417,Cmd,-0.168, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,28.424,Cmd,-0.168, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,28.431,Cmd,-0.170, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,28.438,Cmd,-0.173, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,28.445,Cmd,-0.174, Enc, 0.000, Gyro, 0.019
+VelControlTask  ,28.452,Cmd,-0.185, Enc, 0.000, Gyro, 0.041
+VelControlTask  ,28.459,Cmd,-0.194, Enc, 0.000, Gyro, 0.019
+VelControlTask  ,28.466,Cmd,-0.208, Enc, 0.000, Gyro, 0.086
+VelControlTask  ,28.473,Cmd,-0.247, Enc, 0.000, Gyro, 0.226
+VelControlTask  ,28.480,Cmd,-0.320, Enc, 0.207, Gyro, 0.448
+VelControlTask  ,28.487,Cmd,-0.537, Enc, 0.696, Gyro, 0.692
+VelControlTask  ,28.494,Cmd,-0.713, Enc, 1.015, Gyro, 1.163
+VelControlTask  ,28.501,Cmd,-1.224, Enc, 1.448, Gyro, 1.685
+VelControlTask  ,28.508,Cmd,-1.590, Enc, 2.143, Gyro, 2.323
+VelControlTask  ,28.515,Cmd,-1.992, Enc, 2.970, Gyro, 2.987
+VelControlTask  ,28.522,Cmd,-2.938, Enc, 3.553, Gyro, 3.728
+VelControlTask  ,28.529,Cmd,-3.503, Enc, 4.249, Gyro, 4.579
+VelControlTask  ,28.536,Cmd,-4.779, Enc, 5.170, Gyro, 5.250
+VelControlTask  ,28.543,Cmd,-5.394, Enc, 5.489, Gyro, 5.910
+VelControlTask  ,28.550,Cmd,-6.082, Enc, 6.110, Gyro, 6.398
+VelControlTask  ,28.557,Cmd,-7.271, Enc, 6.542, Gyro, 6.600
+VelControlTask  ,28.564,Cmd,-7.890, Enc, 6.185, Gyro, 6.695
+VelControlTask  ,28.571,Cmd,-8.867, Enc, 5.828, Gyro, 6.471
+VelControlTask  ,28.578,Cmd,-9.257, Enc, 5.658, Gyro, 6.026
+VelControlTask  ,28.585,Cmd,-9.534, Enc, 5.188, Gyro, 5.484
+VelControlTask  ,28.592,Cmd,-9.965, Enc, 4.700, Gyro, 4.893
+VelControlTask  ,28.599,Cmd,-10.104, Enc, 3.985, Gyro, 4.318
+VelControlTask  ,28.606,Cmd,-10.301, Enc, 3.572, Gyro, 3.698
+VelControlTask  ,28.613,Cmd,-10.356, Enc, 2.613, Gyro, 3.165
+VelControlTask  ,28.620,Cmd,-10.398, Enc, 2.199, Gyro, 2.417
+VelControlTask  ,28.627,Cmd,-10.231, Enc, 1.372, Gyro, 1.608
+VelControlTask  ,28.634,Cmd,-10.001, Enc, 0.677, Gyro, 0.435
+VelControlTask  ,28.641,Cmd,-9.272, Enc,-0.508, Gyro,-0.343
+VelControlTask  ,28.648,Cmd,-9.025, Enc,-0.808, Gyro,-0.973
+VelControlTask  ,28.655,Cmd,-8.726, Enc,-1.654, Gyro,-1.636
+VelControlTask  ,28.662,Cmd,-7.979, Enc,-2.293, Gyro,-2.399
+VelControlTask  ,28.669,Cmd,-7.507, Enc,-3.252, Gyro,-3.256
+VelControlTask  ,28.676,Cmd,-6.314, Enc,-3.835, Gyro,-4.356
+VelControlTask  ,28.683,Cmd,-5.558, Enc,-5.264, Gyro,-5.497
+VelControlTask  ,28.690,Cmd,-4.734, Enc,-6.091, Gyro,-6.914
+VelControlTask  ,28.697,Cmd,-2.744, Enc,-7.708, Gyro,-7.981
+VelControlTask  ,28.704,Cmd,-1.742, Enc,-8.459, Gyro,-9.177
+VelControlTask  ,28.711,Cmd, 0.370, Enc,-9.475, Gyro,-9.999
+VelControlTask  ,28.718,Cmd, 1.469, Enc,-10.283, Gyro,-10.782
+VelControlTask  ,28.725,Cmd, 2.531, Enc,-10.621, Gyro,-11.264
+VelControlTask  ,28.732,Cmd, 4.501, Enc,-10.678, Gyro,-11.372
+VelControlTask  ,28.739,Cmd, 5.354, Enc,-10.603, Gyro,-11.122
+VelControlTask  ,28.746,Cmd, 6.745, Enc,-10.208, Gyro,-10.485
+VelControlTask  ,28.753,Cmd, 7.276, Enc,-9.080, Gyro,-9.758
+VelControlTask  ,28.760,Cmd, 7.721, Enc,-8.779, Gyro,-8.518
+VelControlTask  ,28.767,Cmd, 8.093, Enc,-6.166, Gyro,-7.351
+VelControlTask  ,28.774,Cmd, 8.202, Enc,-5.564, Gyro,-5.511
+VelControlTask  ,28.781,Cmd, 7.643, Enc,-3.572, Gyro,-3.587
+VelControlTask  ,28.788,Cmd, 7.201, Enc,-1.466, Gyro,-1.668
+VelControlTask  ,28.795,Cmd, 6.618, Enc, 0.320, Gyro, 0.133
+VelControlTask  ,28.802,Cmd, 5.450, Enc, 1.109, Gyro, 1.198
+VelControlTask  ,28.809,Cmd, 4.997, Enc, 1.786, Gyro, 2.128
+VelControlTask  ,28.816,Cmd, 4.019, Enc, 3.045, Gyro, 2.949
+VelControlTask  ,28.823,Cmd, 3.431, Enc, 3.873, Gyro, 3.955
+VelControlTask  ,28.830,Cmd, 2.793, Enc, 4.455, Gyro, 4.943
+VelControlTask  ,28.837,Cmd, 1.320, Enc, 5.884, Gyro, 5.853
+VelControlTask  ,28.844,Cmd, 0.572, Enc, 6.429, Gyro, 6.939
+VelControlTask  ,28.851,Cmd,-1.256, Enc, 7.313, Gyro, 7.956
+VelControlTask  ,28.858,Cmd,-2.226, Enc, 8.478, Gyro, 8.704
+VelControlTask  ,28.865,Cmd,-3.138, Enc, 8.817, Gyro, 9.369
+VelControlTask  ,28.872,Cmd,-5.027, Enc, 8.835, Gyro, 9.904
+VelControlTask  ,28.879,Cmd,-5.921, Enc, 9.437, Gyro,10.143
+VelControlTask  ,28.886,Cmd,-7.488, Enc, 9.399, Gyro,10.003
+VelControlTask  ,28.893,Cmd,-8.151, Enc, 9.362, Gyro, 9.659
+VelControlTask  ,28.900,Cmd,-8.753, Enc, 8.854, Gyro, 9.186
+VelControlTask  ,28.907,Cmd,-9.735, Enc, 8.441, Gyro, 8.338
+VelControlTask  ,28.914,Cmd,-10.027, Enc, 6.373, Gyro, 7.396
+VelControlTask  ,28.921,Cmd,-10.201, Enc, 5.602, Gyro, 5.705
+VelControlTask  ,28.928,Cmd,-9.985, Enc, 3.553, Gyro, 3.923
+VelControlTask  ,28.935,Cmd,-9.626, Enc, 1.391, Gyro, 1.729
+VelControlTask  ,28.942,Cmd,-8.251, Enc,-0.357, Gyro,-0.591
+VelControlTask  ,28.949,Cmd,-7.420, Enc,-2.293, Gyro,-2.156
+VelControlTask  ,28.956,Cmd,-5.904, Enc,-3.309, Gyro,-3.800
+VelControlTask  ,28.963,Cmd,-5.058, Enc,-4.982, Gyro,-5.234
+VelControlTask  ,28.970,Cmd,-4.137, Enc,-6.392, Gyro,-6.619
+VelControlTask  ,28.977,Cmd,-2.106, Enc,-7.482, Gyro,-8.073
+VelControlTask  ,28.984,Cmd,-0.997, Enc,-8.817, Gyro,-9.290
+VelControlTask  ,28.991,Cmd, 1.268, Enc,-9.606, Gyro,-10.364
+VelControlTask  ,28.998,Cmd, 2.382, Enc,-10.527, Gyro,-10.966
+VelControlTask  ,29.005,Cmd, 3.411, Enc,-10.715, Gyro,-11.245
+VelControlTask  ,29.012,Cmd, 5.229, Enc,-10.621, Gyro,-11.168
+VelControlTask  ,29.019,Cmd, 6.008, Enc,-10.452, Gyro,-10.725
+VelControlTask  ,29.026,Cmd, 7.197, Enc,-9.512, Gyro,-9.985
+VelControlTask  ,29.033,Cmd, 7.675, Enc,-8.516, Gyro,-9.111
+VelControlTask  ,29.040,Cmd, 8.014, Enc,-7.971, Gyro,-7.703
+VelControlTask  ,29.047,Cmd, 8.191, Enc,-5.527, Gyro,-6.254
+VelControlTask  ,29.054,Cmd, 8.074, Enc,-4.399, Gyro,-4.239
+VelControlTask  ,29.061,Cmd, 7.181, Enc,-1.673, Gyro,-2.260
+VelControlTask  ,29.068,Cmd, 6.589, Enc,-0.244, Gyro,-0.141
+VelControlTask  ,29.075,Cmd, 5.868, Enc, 1.090, Gyro, 1.241
+VelControlTask  ,29.082,Cmd, 4.670, Enc, 2.669, Gyro, 2.479
+VelControlTask  ,29.089,Cmd, 4.036, Enc, 3.365, Gyro, 3.817
+VelControlTask  ,29.096,Cmd, 2.502, Enc, 4.963, Gyro, 4.970
+VelControlTask  ,29.103,Cmd, 1.751, Enc, 5.395, Gyro, 6.064
+VelControlTask  ,29.110,Cmd, 0.898, Enc, 6.843, Gyro, 6.675
+VelControlTask  ,29.117,Cmd,-0.678, Enc, 6.674, Gyro, 7.661
+VelControlTask  ,29.124,Cmd,-1.559, Enc, 7.914, Gyro, 8.009
+VelControlTask  ,29.131,Cmd,-3.068, Enc, 7.745, Gyro, 8.516
+VelControlTask  ,29.138,Cmd,-3.867, Enc, 7.764, Gyro, 8.797
+VelControlTask  ,29.145,Cmd,-4.619, Enc, 7.801, Gyro, 8.927
+VelControlTask  ,29.152,Cmd,-6.012, Enc, 8.441, Gyro, 8.688
+VelControlTask  ,29.159,Cmd,-6.539, Enc, 8.102, Gyro, 8.380
+VelControlTask  ,29.166,Cmd,-7.510, Enc, 7.595, Gyro, 7.908
+VelControlTask  ,29.173,Cmd,-7.916, Enc, 7.106, Gyro, 7.267
+VelControlTask  ,29.180,Cmd,-8.224, Enc, 6.091, Gyro, 6.483
+VelControlTask  ,29.187,Cmd,-8.576, Enc, 5.000, Gyro, 5.449
+VelControlTask  ,29.194,Cmd,-8.580, Enc, 3.647, Gyro, 4.209
+VelControlTask  ,29.201,Cmd,-8.168, Enc, 2.651, Gyro, 2.559
+VelControlTask  ,29.208,Cmd,-7.714, Enc, 0.508, Gyro, 0.808
+VelControlTask  ,29.215,Cmd,-7.140, Enc,-0.639, Gyro,-0.850
+VelControlTask  ,29.222,Cmd,-5.926, Enc,-2.011, Gyro,-2.038
+VelControlTask  ,29.229,Cmd,-5.322, Enc,-2.970, Gyro,-3.365
+VelControlTask  ,29.236,Cmd,-3.848, Enc,-4.399, Gyro,-4.563
+VelControlTask  ,29.243,Cmd,-3.064, Enc,-5.245, Gyro,-5.817
+VelControlTask  ,29.250,Cmd,-2.175, Enc,-6.862, Gyro,-6.964
+VelControlTask  ,29.257,Cmd,-0.324, Enc,-7.332, Gyro,-8.133
+VelControlTask  ,29.264,Cmd, 0.711, Enc,-8.516, Gyro,-8.824
+VelControlTask  ,29.271,Cmd, 2.530, Enc,-8.666, Gyro,-9.379
+VelControlTask  ,29.278,Cmd, 3.369, Enc,-8.911, Gyro,-9.478
+VelControlTask  ,29.285,Cmd, 4.106, Enc,-8.948, Gyro,-9.401
+VelControlTask  ,29.292,Cmd, 5.424, Enc,-8.535, Gyro,-9.052
+VelControlTask  ,29.299,Cmd, 5.944, Enc,-8.065, Gyro,-8.443
+VelControlTask  ,29.306,Cmd, 6.667, Enc,-7.181, Gyro,-7.565
+VelControlTask  ,29.313,Cmd, 6.887, Enc,-6.241, Gyro,-6.417
+VelControlTask  ,29.320,Cmd, 6.943, Enc,-4.888, Gyro,-5.038
+VelControlTask  ,29.327,Cmd, 6.657, Enc,-3.177, Gyro,-3.363
+VelControlTask  ,29.334,Cmd, 6.240, Enc,-1.109, Gyro,-1.644
+VelControlTask  ,29.341,Cmd, 5.217, Enc,-0.075, Gyro, 0.002
+VelControlTask  ,29.348,Cmd, 4.724, Enc, 0.959, Gyro, 0.935
+VelControlTask  ,29.355,Cmd, 4.321, Enc, 1.842, Gyro, 1.877
+VelControlTask  ,29.362,Cmd, 3.354, Enc, 2.688, Gyro, 2.844
+VelControlTask  ,29.369,Cmd, 2.807, Enc, 3.553, Gyro, 3.674
+VelControlTask  ,29.376,Cmd, 1.550, Enc, 4.380, Gyro, 4.668
+VelControlTask  ,29.383,Cmd, 0.881, Enc, 5.207, Gyro, 5.443
+VelControlTask  ,29.390,Cmd, 0.181, Enc, 6.316, Gyro, 6.308
+VelControlTask  ,29.397,Cmd,-1.341, Enc, 6.655, Gyro, 7.162
+VelControlTask  ,29.404,Cmd,-2.220, Enc, 7.050, Gyro, 7.862
+VelControlTask  ,29.411,Cmd,-3.788, Enc, 8.008, Gyro, 8.182
+VelControlTask  ,29.418,Cmd,-4.603, Enc, 7.952, Gyro, 8.679
+VelControlTask  ,29.425,Cmd,-5.399, Enc, 7.877, Gyro, 8.842
+VelControlTask  ,29.432,Cmd,-6.776, Enc, 8.121, Gyro, 8.646
+VelControlTask  ,29.439,Cmd,-7.333, Enc, 8.234, Gyro, 8.135
+VelControlTask  ,29.446,Cmd,-8.149, Enc, 7.745, Gyro, 7.503
+VelControlTask  ,29.453,Cmd,-8.419, Enc, 6.185, Gyro, 6.692
+VelControlTask  ,29.460,Cmd,-8.626, Enc, 5.019, Gyro, 5.527
+VelControlTask  ,29.467,Cmd,-8.534, Enc, 3.797, Gyro, 3.973
+VelControlTask  ,29.474,Cmd,-8.261, Enc, 1.899, Gyro, 2.164
+VelControlTask  ,29.481,Cmd,-7.111, Enc, 0.150, Gyro, 0.053
+VelControlTask  ,29.488,Cmd,-6.378, Enc,-1.429, Gyro,-1.578
+VelControlTask  ,29.495,Cmd,-5.702, Enc,-2.782, Gyro,-3.062
+VelControlTask  ,29.502,Cmd,-4.188, Enc,-4.455, Gyro,-4.388
+VelControlTask  ,29.509,Cmd,-3.378, Enc,-5.301, Gyro,-5.849
+VelControlTask  ,29.516,Cmd,-1.446, Enc,-6.899, Gyro,-7.111
+VelControlTask  ,29.523,Cmd,-0.418, Enc,-8.215, Gyro,-8.452
+VelControlTask  ,29.530,Cmd, 0.671, Enc,-9.042, Gyro,-9.508
+VelControlTask  ,29.537,Cmd, 2.767, Enc,-9.456, Gyro,-10.096
+VelControlTask  ,29.544,Cmd, 3.718, Enc,-9.757, Gyro,-10.407
+VelControlTask  ,29.551,Cmd, 5.399, Enc,-9.456, Gyro,-10.315
+VelControlTask  ,29.558,Cmd, 6.090, Enc,-9.625, Gyro,-9.826
+VelControlTask  ,29.565,Cmd, 6.635, Enc,-9.155, Gyro,-9.082
+VelControlTask  ,29.572,Cmd, 7.422, Enc,-7.914, Gyro,-8.204
+VelControlTask  ,29.579,Cmd, 7.711, Enc,-6.768, Gyro,-7.068
+VelControlTask  ,29.586,Cmd, 7.874, Enc,-5.715, Gyro,-5.753
+VelControlTask  ,29.593,Cmd, 7.786, Enc,-3.873, Gyro,-4.433
+VelControlTask  ,29.600,Cmd, 7.639, Enc,-2.519, Gyro,-2.651
+VelControlTask  ,29.607,Cmd, 6.782, Enc,-0.808, Gyro,-0.953
+VelControlTask  ,29.614,Cmd, 6.251, Enc, 0.207, Gyro, 0.277
+VelControlTask  ,29.621,Cmd, 5.480, Enc, 0.846, Gyro, 0.974
+VelControlTask  ,29.628,Cmd, 5.118, Enc, 1.805, Gyro, 1.822
+VelControlTask  ,29.635,Cmd, 4.670, Enc, 2.500, Gyro, 2.731
+VelControlTask  ,29.642,Cmd, 3.607, Enc, 3.403, Gyro, 3.537
+VelControlTask  ,29.649,Cmd, 3.044, Enc, 4.004, Gyro, 4.468
+VelControlTask  ,29.656,Cmd, 1.754, Enc, 5.188, Gyro, 5.223
+VelControlTask  ,29.663,Cmd, 1.003, Enc, 5.452, Gyro, 6.338
+VelControlTask  ,29.670,Cmd, 0.156, Enc, 6.636, Gyro, 6.999
+VelControlTask  ,29.677,Cmd,-1.421, Enc, 7.350, Gyro, 7.716
+VelControlTask  ,29.684,Cmd,-2.267, Enc, 7.595, Gyro, 8.313
+VelControlTask  ,29.691,Cmd,-3.916, Enc, 8.347, Gyro, 8.581
+VelControlTask  ,29.698,Cmd,-4.579, Enc, 8.441, Gyro, 8.760
+VelControlTask  ,29.705,Cmd,-5.300, Enc, 8.347, Gyro, 8.825
+VelControlTask  ,29.712,Cmd,-6.616, Enc, 7.914, Gyro, 8.570
+VelControlTask  ,29.719,Cmd,-7.136, Enc, 7.820, Gyro, 8.114
+VelControlTask  ,29.726,Cmd,-7.945, Enc, 7.407, Gyro, 7.388
+VelControlTask  ,29.733,Cmd,-8.186, Enc, 5.903, Gyro, 6.565
+VelControlTask  ,29.740,Cmd,-8.386, Enc, 5.489, Gyro, 5.402
+VelControlTask  ,29.747,Cmd,-8.285, Enc, 3.478, Gyro, 4.101
+VelControlTask  ,29.754,Cmd,-8.149, Enc, 2.387, Gyro, 2.457
+VelControlTask  ,29.761,Cmd,-7.253, Enc, 0.620, Gyro, 0.723
+VelControlTask  ,29.768,Cmd,-6.673, Enc,-0.545, Gyro,-0.825
+VelControlTask  ,29.775,Cmd,-6.065, Enc,-2.143, Gyro,-2.009
+VelControlTask  ,29.782,Cmd,-4.846, Enc,-3.045, Gyro,-3.467
+VelControlTask  ,29.789,Cmd,-4.037, Enc,-4.756, Gyro,-4.820
+VelControlTask  ,29.796,Cmd,-2.267, Enc,-5.583, Gyro,-6.359
+VelControlTask  ,29.803,Cmd,-1.238, Enc,-7.332, Gyro,-7.564
+VelControlTask  ,29.810,Cmd,-0.229, Enc,-8.497, Gyro,-8.995
+VelControlTask  ,29.817,Cmd, 2.026, Enc,-9.569, Gyro,-9.876
+VelControlTask  ,29.824,Cmd, 3.074, Enc,-9.757, Gyro,-10.380
+VelControlTask  ,29.831,Cmd, 4.862, Enc,-9.644, Gyro,-10.397
+VelControlTask  ,29.838,Cmd, 5.599, Enc,-9.663, Gyro,-10.072
+VelControlTask  ,29.845,Cmd, 6.226, Enc,-9.287, Gyro,-9.319
+VelControlTask  ,29.852,Cmd, 7.034, Enc,-8.365, Gyro,-8.330
+VelControlTask  ,29.859,Cmd, 7.301, Enc,-6.918, Gyro,-7.280
+VelControlTask  ,29.866,Cmd, 7.515, Enc,-5.809, Gyro,-5.927
+VelControlTask  ,29.873,Cmd, 7.441, Enc,-4.249, Gyro,-4.509
+VelControlTask  ,29.880,Cmd, 7.247, Enc,-2.481, Gyro,-2.810
+VelControlTask  ,29.887,Cmd, 6.442, Enc,-1.015, Gyro,-1.105
+VelControlTask  ,29.894,Cmd, 5.911, Enc, 0.357, Gyro, 0.206
+VelControlTask  ,29.901,Cmd, 5.070, Enc, 0.846, Gyro, 1.015
+VelControlTask  ,29.908,Cmd, 4.722, Enc, 1.748, Gyro, 1.567
+VelControlTask  ,29.915,Cmd, 4.407, Enc, 2.181, Gyro, 2.447
+VelControlTask  ,29.922,Cmd, 3.420, Enc, 3.027, Gyro, 3.252
+VelControlTask  ,29.929,Cmd, 2.891, Enc, 4.173, Gyro, 3.932
+VelControlTask  ,29.936,Cmd, 1.759, Enc, 4.155, Gyro, 4.851
+VelControlTask  ,29.943,Cmd, 1.009, Enc, 5.677, Gyro, 5.474
+VelControlTask  ,29.950,Cmd, 0.409, Enc, 5.583, Gyro, 6.329
+VelControlTask  ,29.957,Cmd,-1.041, Enc, 6.542, Gyro, 6.714
+VelControlTask  ,29.964,Cmd,-1.716, Enc, 6.711, Gyro, 7.260
+VelControlTask  ,29.971,Cmd,-3.152, Enc, 6.805, Gyro, 7.598
+VelControlTask  ,29.978,Cmd,-3.772, Enc, 7.125, Gyro, 7.678
+VelControlTask  ,29.985,Cmd,-4.383, Enc, 7.125, Gyro, 7.664
+VelControlTask  ,29.992,Cmd,-5.473, Enc, 6.880, Gyro, 7.390
+VelControlTask  ,29.999,Cmd,-5.925, Enc, 6.636, Gyro, 7.045
+VelControlTask  ,30.006,Cmd,-6.683, Enc, 6.241, Gyro, 6.562
+VelControlTask  ,30.013,Cmd,-6.969, Enc, 6.354, Gyro, 5.931
+VelControlTask  ,30.020,Cmd,-7.180, Enc, 4.775, Gyro, 5.243
+VelControlTask  ,30.027,Cmd,-7.395, Enc, 4.211, Gyro, 4.170
+VelControlTask  ,30.034,Cmd,-7.314, Enc, 2.763, Gyro, 3.077
+VelControlTask  ,30.041,Cmd,-6.846, Enc, 1.466, Gyro, 1.689
+VelControlTask  ,30.048,Cmd,-6.435, Enc, 0.263, Gyro, 0.098
+VelControlTask  ,30.055,Cmd,-5.875, Enc,-1.166, Gyro,-1.099
+VelControlTask  ,30.062,Cmd,-4.848, Enc,-2.105, Gyro,-2.289
+VelControlTask  ,30.069,Cmd,-4.228, Enc,-3.196, Gyro,-3.433
+VelControlTask  ,30.076,Cmd,-2.809, Enc,-4.587, Gyro,-4.720
+VelControlTask  ,30.083,Cmd,-1.985, Enc,-5.602, Gyro,-5.989
+VelControlTask  ,30.090,Cmd,-1.063, Enc,-7.144, Gyro,-7.293
+VelControlTask  ,30.097,Cmd, 0.922, Enc,-7.783, Gyro,-8.373
+VelControlTask  ,30.104,Cmd, 1.920, Enc,-8.685, Gyro,-9.140
+VelControlTask  ,30.111,Cmd, 3.785, Enc,-8.892, Gyro,-9.607
+VelControlTask  ,30.118,Cmd, 4.618, Enc,-8.986, Gyro,-9.793
+VelControlTask  ,30.125,Cmd, 5.414, Enc,-9.193, Gyro,-9.568
+VelControlTask  ,30.132,Cmd, 6.662, Enc,-8.835, Gyro,-9.050
+VelControlTask  ,30.139,Cmd, 7.113, Enc,-8.328, Gyro,-8.341
+VelControlTask  ,30.146,Cmd, 7.784, Enc,-7.614, Gyro,-7.448
+VelControlTask  ,30.153,Cmd, 7.990, Enc,-6.486, Gyro,-6.500
+VelControlTask  ,30.160,Cmd, 8.132, Enc,-5.151, Gyro,-5.426
+VelControlTask  ,30.167,Cmd, 8.132, Enc,-3.609, Gyro,-4.156
+VelControlTask  ,30.174,Cmd, 7.975, Enc,-2.707, Gyro,-2.855
+VelControlTask  ,30.181,Cmd, 7.482, Enc,-1.598, Gyro,-1.676
+VelControlTask  ,30.188,Cmd, 7.145, Enc,-0.583, Gyro,-0.600
+VelControlTask  ,30.195,Cmd, 6.826, Enc, 0.132, Gyro, 0.112
+VelControlTask  ,30.202,Cmd, 6.344, Enc, 0.338, Gyro, 0.566
+VelControlTask  ,30.209,Cmd, 6.141, Enc, 0.827, Gyro, 0.925
+VelControlTask  ,30.216,Cmd, 5.714, Enc, 1.203, Gyro, 1.374
+VelControlTask  ,30.223,Cmd, 5.434, Enc, 1.654, Gyro, 1.884
+VelControlTask  ,30.230,Cmd, 5.105, Enc, 2.143, Gyro, 2.444
+VelControlTask  ,30.237,Cmd, 4.297, Enc, 2.989, Gyro, 3.070
+VelControlTask  ,30.244,Cmd, 3.847, Enc, 3.553, Gyro, 3.955
+VelControlTask  ,30.251,Cmd, 2.617, Enc, 4.737, Gyro, 4.736
+VelControlTask  ,30.258,Cmd, 1.939, Enc, 5.151, Gyro, 5.923
+VelControlTask  ,30.265,Cmd, 1.054, Enc, 6.598, Gyro, 6.592
+VelControlTask  ,30.272,Cmd,-0.555, Enc, 7.068, Gyro, 7.424
+VelControlTask  ,30.279,Cmd,-1.307, Enc, 7.595, Gyro, 7.780
+VelControlTask  ,30.286,Cmd,-2.771, Enc, 7.651, Gyro, 8.185
+VelControlTask  ,30.293,Cmd,-3.500, Enc, 7.708, Gyro, 8.381
+VelControlTask  ,30.300,Cmd,-4.198, Enc, 7.952, Gyro, 8.359
+VelControlTask  ,30.307,Cmd,-5.419, Enc, 7.651, Gyro, 8.221
+VelControlTask  ,30.314,Cmd,-5.948, Enc, 7.745, Gyro, 7.859
+VelControlTask  ,30.321,Cmd,-6.836, Enc, 7.200, Gyro, 7.357
+VelControlTask  ,30.328,Cmd,-7.182, Enc, 6.655, Gyro, 6.898
+VelControlTask  ,30.335,Cmd,-7.539, Enc, 5.696, Gyro, 6.358
+VelControlTask  ,30.342,Cmd,-8.088, Enc, 5.489, Gyro, 5.693
+VelControlTask  ,30.349,Cmd,-8.264, Enc, 4.549, Gyro, 5.065
+VelControlTask  ,30.356,Cmd,-8.469, Enc, 4.023, Gyro, 4.136
+VelControlTask  ,30.363,Cmd,-8.426, Enc, 2.895, Gyro, 3.213
+VelControlTask  ,30.370,Cmd,-8.324, Enc, 2.162, Gyro, 1.911
+VelControlTask  ,30.377,Cmd,-7.720, Enc, 0.677, Gyro, 0.670
+VelControlTask  ,30.384,Cmd,-7.282, Enc,-0.602, Gyro,-0.570
+VelControlTask  ,30.391,Cmd,-6.287, Enc,-1.354, Gyro,-1.892
+VelControlTask  ,30.398,Cmd,-5.617, Enc,-3.027, Gyro,-3.085
+VelControlTask  ,30.405,Cmd,-4.974, Enc,-4.211, Gyro,-4.396
+VelControlTask  ,30.412,Cmd,-3.328, Enc,-5.508, Gyro,-5.882
+VelControlTask  ,30.419,Cmd,-2.353, Enc,-7.068, Gyro,-7.430
+VelControlTask  ,30.426,Cmd,-0.038, Enc,-8.553, Gyro,-9.073
+VelControlTask  ,30.433,Cmd, 1.251, Enc,-9.757, Gyro,-10.443
+VelControlTask  ,30.440,Cmd, 2.507, Enc,-10.715, Gyro,-11.586
+VelControlTask  ,30.447,Cmd, 4.929, Enc,-11.166, Gyro,-12.163
+VelControlTask  ,30.454,Cmd, 6.065, Enc,-11.072, Gyro,-12.527
+VelControlTask  ,30.461,Cmd, 7.973, Enc,-10.828, Gyro,-12.052
+VelControlTask  ,30.468,Cmd, 8.615, Enc,-10.828, Gyro,-11.122
+VelControlTask  ,30.475,Cmd, 9.107, Enc,-10.095, Gyro,-9.962
+VelControlTask  ,30.482,Cmd, 9.715, Enc,-9.136, Gyro,-8.640
+VelControlTask  ,30.489,Cmd, 9.860, Enc,-8.215, Gyro,-7.011
+VelControlTask  ,30.496,Cmd, 9.678, Enc,-7.031, Gyro,-5.333
+VelControlTask  ,30.503,Cmd, 9.442, Enc,-5.658, Gyro,-3.536
+VelControlTask  ,30.510,Cmd, 9.049, Enc,-4.361, Gyro,-1.494
+VelControlTask  ,30.517,Cmd, 8.008, Enc, 1.015, Gyro,-0.746
+VelControlTask  ,30.524,Cmd, 7.771, Enc, 0.865, Gyro, 0.718
+VelControlTask  ,30.531,Cmd, 6.818, Enc, 0.978, Gyro, 1.496
+VelControlTask  ,30.538,Cmd, 6.436, Enc, 1.617, Gyro, 2.400
+VelControlTask  ,30.545,Cmd, 5.915, Enc, 2.989, Gyro, 3.153
+VelControlTask  ,30.552,Cmd, 4.869, Enc, 3.628, Gyro, 3.958
+VelControlTask  ,30.559,Cmd, 4.276, Enc, 4.568, Gyro, 4.590
+VelControlTask  ,30.566,Cmd, 3.055, Enc, 4.662, Gyro, 5.427
+VelControlTask  ,30.573,Cmd, 2.405, Enc, 5.771, Gyro, 5.888
+VelControlTask  ,30.580,Cmd, 1.793, Enc, 6.147, Gyro, 6.606
+VelControlTask  ,30.587,Cmd, 0.358, Enc, 6.373, Gyro, 7.102
+VelControlTask  ,30.594,Cmd,-0.365, Enc, 7.125, Gyro, 7.281
+VelControlTask  ,30.601,Cmd,-1.584, Enc, 7.332, Gyro, 7.411
+VelControlTask  ,30.608,Cmd,-2.233, Enc, 7.125, Gyro, 7.704
+VelControlTask  ,30.615,Cmd,-2.897, Enc, 7.256, Gyro, 7.663
+VelControlTask  ,30.622,Cmd,-4.035, Enc, 7.050, Gyro, 7.664
+VelControlTask  ,30.629,Cmd,-4.596, Enc, 7.275, Gyro, 7.526
+VelControlTask  ,30.636,Cmd,-5.643, Enc, 7.125, Gyro, 7.412
+VelControlTask  ,30.643,Cmd,-6.163, Enc, 6.843, Gyro, 7.304
+VelControlTask  ,30.650,Cmd,-6.657, Enc, 6.674, Gyro, 7.050
+VelControlTask  ,30.657,Cmd,-7.527, Enc, 6.222, Gyro, 6.760
+VelControlTask  ,30.664,Cmd,-7.923, Enc, 6.655, Gyro, 6.321
+VelControlTask  ,30.671,Cmd,-8.538, Enc, 5.865, Gyro, 5.959
+VelControlTask  ,30.678,Cmd,-8.850, Enc, 4.850, Gyro, 5.542
+VelControlTask  ,30.685,Cmd,-9.120, Enc, 4.625, Gyro, 4.961
+VelControlTask  ,30.692,Cmd,-9.449, Enc, 3.703, Gyro, 4.423
+VelControlTask  ,30.699,Cmd,-9.605, Enc, 3.271, Gyro, 3.821
+VelControlTask  ,30.706,Cmd,-9.656, Enc, 3.365, Gyro, 3.027
+VelControlTask  ,30.713,Cmd,-9.554, Enc, 2.199, Gyro, 2.210
+VelControlTask  ,30.720,Cmd,-9.444, Enc, 0.978, Gyro, 1.417
+VelControlTask  ,30.727,Cmd,-9.078, Enc, 0.714, Gyro, 0.647
+VelControlTask  ,30.734,Cmd,-8.873, Enc, 0.338, Gyro, 0.144
+VelControlTask  ,30.741,Cmd,-8.618, Enc,-0.113, Gyro,-0.011
+VelControlTask  ,30.748,Cmd,-8.590, Enc,-0.038, Gyro,-0.014
+VelControlTask  ,30.755,Cmd,-8.591, Enc,-0.113, Gyro, 0.058
+VelControlTask  ,30.762,Cmd,-8.651, Enc,-0.094, Gyro, 0.124
+VelControlTask  ,30.769,Cmd,-8.683, Enc, 0.132, Gyro, 0.173
+VelControlTask  ,30.776,Cmd,-8.749, Enc, 0.188, Gyro, 0.226
+VelControlTask  ,30.783,Cmd,-8.776, Enc, 0.169, Gyro, 0.222
+VelControlTask  ,30.790,Cmd,-8.789, Enc, 0.188, Gyro, 0.164
+VelControlTask  ,30.797,Cmd,-8.769, Enc, 0.075, Gyro, 0.087
+VelControlTask  ,30.804,Cmd,-8.747, Enc, 0.019, Gyro, 0.025
+VelControlTask  ,30.811,Cmd,-8.717, Enc, 0.038, Gyro,-0.003
+VelControlTask  ,30.818,Cmd,-8.703, Enc, 0.019, Gyro,-0.029
+VelControlTask  ,30.825,Cmd,-8.694, Enc,-0.019, Gyro,-0.037
+VelControlTask  ,30.832,Cmd,-8.686, Enc, 0.000, Gyro,-0.029
+VelControlTask  ,30.839,Cmd,-8.687, Enc, 0.019, Gyro,-0.009
+VelControlTask  ,30.846,Cmd,-8.700, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,30.853,Cmd,-8.700, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,30.860,Cmd,-8.699, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,30.867,Cmd,-8.700, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,30.874,Cmd,-8.698, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,30.881,Cmd,-8.700, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,30.888,Cmd,-8.701, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,30.895,Cmd,-8.701, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,30.902,Cmd,-8.702, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,30.909,Cmd,-8.703, Enc, 0.000, Gyro, 0.016
+VelControlTask  ,30.916,Cmd,-8.724, Enc, 0.000, Gyro, 0.072
+VelControlTask  ,30.923,Cmd,-8.761, Enc, 0.000, Gyro, 0.195
+VelControlTask  ,30.930,Cmd,-8.822, Enc, 0.094, Gyro, 0.307
+VelControlTask  ,30.937,Cmd,-8.948, Enc, 0.169, Gyro, 0.375
+VelControlTask  ,30.944,Cmd,-8.988, Enc, 0.357, Gyro, 0.381
+VelControlTask  ,30.951,Cmd,-9.055, Enc, 0.338, Gyro, 0.381
+VelControlTask  ,30.958,Cmd,-9.074, Enc, 0.301, Gyro, 0.348
+VelControlTask  ,30.965,Cmd,-9.088, Enc, 0.282, Gyro, 0.289
+VelControlTask  ,30.972,Cmd,-9.095, Enc, 0.244, Gyro, 0.258
+VelControlTask  ,30.979,Cmd,-9.103, Enc, 0.244, Gyro, 0.224
+VelControlTask  ,30.986,Cmd,-9.112, Enc, 0.169, Gyro, 0.197
+VelControlTask  ,30.993,Cmd,-9.120, Enc, 0.169, Gyro, 0.192
+VelControlTask  ,31.000,Cmd,-9.134, Enc, 0.207, Gyro, 0.205
+VelControlTask  ,31.007,Cmd,-9.187, Enc, 0.263, Gyro, 0.261
+VelControlTask  ,31.014,Cmd,-9.223, Enc, 0.301, Gyro, 0.294
+VelControlTask  ,31.021,Cmd,-9.293, Enc, 0.282, Gyro, 0.331
+VelControlTask  ,31.028,Cmd,-9.326, Enc, 0.320, Gyro, 0.331
+VelControlTask  ,31.035,Cmd,-9.350, Enc, 0.301, Gyro, 0.304
+VelControlTask  ,31.042,Cmd,-9.367, Enc, 0.207, Gyro, 0.228
+VelControlTask  ,31.049,Cmd,-9.354, Enc, 0.094, Gyro, 0.128
+VelControlTask  ,31.056,Cmd,-9.294, Enc, 0.019, Gyro, 0.019
+VelControlTask  ,31.063,Cmd,-9.265, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,31.070,Cmd,-9.261, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,31.077,Cmd,-9.260, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,31.084,Cmd,-9.259, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,31.091,Cmd,-9.259, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,31.098,Cmd,-9.258, Enc, 0.000, Gyro,-0.009
+VelControlTask  ,31.105,Cmd,-9.254, Enc, 0.019, Gyro,-0.010
+VelControlTask  ,31.112,Cmd,-9.255, Enc, 0.019, Gyro, 0.000
+VelControlTask  ,31.119,Cmd,-9.258, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,31.126,Cmd,-9.258, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,31.133,Cmd,-9.257, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,31.140,Cmd,-9.258, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,31.147,Cmd,-9.257, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,31.154,Cmd,-9.256, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,31.161,Cmd,-9.242, Enc, 0.000, Gyro,-0.050
+VelControlTask  ,31.168,Cmd,-9.208, Enc, 0.000, Gyro,-0.281
+VelControlTask  ,31.175,Cmd,-9.088, Enc, 0.000, Gyro,-0.803
+VelControlTask  ,31.182,Cmd,-8.609, Enc,-1.372, Gyro,-1.186
+VelControlTask  ,31.189,Cmd,-8.368, Enc,-1.767, Gyro,-2.102
+VelControlTask  ,31.196,Cmd,-7.355, Enc,-3.233, Gyro,-3.094
+VelControlTask  ,31.203,Cmd,-6.665, Enc,-3.967, Gyro,-4.584
+VelControlTask  ,31.210,Cmd,-5.789, Enc,-5.903, Gyro,-6.028
+VelControlTask  ,31.217,Cmd,-3.760, Enc,-6.993, Gyro,-7.822
+VelControlTask  ,31.224,Cmd,-2.523, Enc,-8.835, Gyro,-9.423
+VelControlTask  ,31.231,Cmd, 0.164, Enc,-10.321, Gyro,-11.183
+VelControlTask  ,31.238,Cmd, 1.647, Enc,-11.994, Gyro,-12.964
+VelControlTask  ,31.245,Cmd, 3.255, Enc,-13.535, Gyro,-14.525
+VelControlTask  ,31.252,Cmd, 6.570, Enc,-14.663, Gyro,-15.913
+VelControlTask  ,31.259,Cmd, 8.243, Enc,-15.772, Gyro,-17.141
+VelControlTask  ,31.266,Cmd,11.526, Enc,-16.487, Gyro,-17.555
+VelControlTask  ,31.273,Cmd,12.888, Enc,-16.411, Gyro,-17.387
+VelControlTask  ,31.280,Cmd,14.034, Enc,-15.847, Gyro,-15.128
+VelControlTask  ,31.287,Cmd,15.199, Enc,-13.874, Gyro,-14.486
+VelControlTask  ,31.294,Cmd,15.925, Enc,-12.934, Gyro,-13.251
+VelControlTask  ,31.301,Cmd,16.813, Enc,-11.956, Gyro,-11.463
+VelControlTask  ,31.308,Cmd,17.002, Enc,-10.283, Gyro,-9.705
+VelControlTask  ,31.315,Cmd,17.109, Enc,-8.234, Gyro,-8.176
+VelControlTask  ,31.322,Cmd,17.350, Enc,-5.301, Gyro,-7.193
+VelControlTask  ,31.329,Cmd,17.485, Enc,-4.963, Gyro,-5.908
+VelControlTask  ,31.336,Cmd,17.498, Enc,-4.606, Gyro,-4.894
+VelControlTask  ,31.343,Cmd,17.511, Enc,-4.117, Gyro,-4.048
+VelControlTask  ,31.350,Cmd,17.517, Enc,-3.327, Gyro,-3.358
+VelControlTask  ,31.357,Cmd,17.572, Enc,-2.651, Gyro,-2.901
+VelControlTask  ,31.364,Cmd,17.640, Enc,-2.049, Gyro,-2.559
+VelControlTask  ,31.371,Cmd,17.790, Enc,-1.880, Gyro,-2.293
+VelControlTask  ,31.378,Cmd,17.868, Enc,-1.635, Gyro,-2.033
+VelControlTask  ,31.385,Cmd,17.921, Enc,-1.579, Gyro,-1.712
+VelControlTask  ,31.392,Cmd,17.933, Enc,-1.448, Gyro,-1.346
+VelControlTask  ,31.399,Cmd,17.904, Enc,-1.316, Gyro,-1.052
+VelControlTask  ,31.406,Cmd,17.829, Enc,-0.902, Gyro,-0.772
+VelControlTask  ,31.413,Cmd,17.831, Enc,-0.414, Gyro,-0.616
+VelControlTask  ,31.420,Cmd,17.813, Enc,-0.639, Gyro,-0.523
+VelControlTask  ,31.427,Cmd,17.835, Enc,-0.244, Gyro,-0.568
+VelControlTask  ,31.434,Cmd,17.902, Enc,-0.338, Gyro,-0.498
+VelControlTask  ,31.441,Cmd,17.916, Enc,-0.564, Gyro,-0.436
+VelControlTask  ,31.448,Cmd,17.942, Enc,-0.470, Gyro,-0.426
+VelControlTask  ,31.455,Cmd,17.970, Enc,-0.451, Gyro,-0.398
+VelControlTask  ,31.462,Cmd,18.009, Enc,-0.282, Gyro,-0.357
+VelControlTask  ,31.469,Cmd,18.019, Enc,-0.150, Gyro,-0.287
+VelControlTask  ,31.476,Cmd,17.996, Enc,-0.263, Gyro,-0.167
+VelControlTask  ,31.483,Cmd,17.968, Enc,-0.094, Gyro,-0.096
+VelControlTask  ,31.490,Cmd,17.950, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,31.497,Cmd,17.895, Enc, 0.000, Gyro, 0.038
+VelControlTask  ,31.504,Cmd,17.878, Enc, 0.000, Gyro, 0.075
+VelControlTask  ,31.511,Cmd,17.844, Enc, 0.000, Gyro, 0.100
+VelControlTask  ,31.518,Cmd,17.825, Enc, 0.019, Gyro, 0.140
+VelControlTask  ,31.525,Cmd,17.798, Enc, 0.038, Gyro, 0.209
+VelControlTask  ,31.532,Cmd,17.717, Enc, 0.019, Gyro, 0.269
+VelControlTask  ,31.539,Cmd,17.683, Enc, 0.338, Gyro, 0.253
+VelControlTask  ,31.546,Cmd,17.625, Enc, 0.301, Gyro, 0.326
+VelControlTask  ,31.553,Cmd,17.585, Enc, 0.432, Gyro, 0.351
+VelControlTask  ,31.560,Cmd,17.548, Enc, 0.432, Gyro, 0.391
+VelControlTask  ,31.567,Cmd,17.471, Enc, 0.545, Gyro, 0.375
+VelControlTask  ,31.574,Cmd,17.454, Enc, 0.545, Gyro, 0.367
+VelControlTask  ,31.581,Cmd,17.401, Enc, 0.414, Gyro, 0.383
+VelControlTask  ,31.588,Cmd,17.364, Enc, 0.376, Gyro, 0.394
+VelControlTask  ,31.595,Cmd,17.328, Enc, 0.395, Gyro, 0.435
+VelControlTask  ,31.602,Cmd,17.234, Enc, 0.414, Gyro, 0.488
+VelControlTask  ,31.609,Cmd,17.178, Enc, 0.432, Gyro, 0.495
+VelControlTask  ,31.616,Cmd,17.099, Enc, 0.432, Gyro, 0.491
+VelControlTask  ,31.623,Cmd,17.069, Enc, 0.451, Gyro, 0.477
+VelControlTask  ,31.630,Cmd,17.037, Enc, 0.470, Gyro, 0.504
+VelControlTask  ,31.637,Cmd,16.940, Enc, 0.508, Gyro, 0.549
+VelControlTask  ,31.644,Cmd,16.880, Enc, 0.564, Gyro, 0.588
+VelControlTask  ,31.651,Cmd,16.754, Enc, 0.564, Gyro, 0.671
+VelControlTask  ,31.658,Cmd,16.669, Enc, 0.564, Gyro, 0.737
+VelControlTask  ,31.665,Cmd,16.591, Enc, 0.602, Gyro, 0.805
+VelControlTask  ,31.672,Cmd,16.434, Enc, 0.564, Gyro, 0.817
+VelControlTask  ,31.679,Cmd,16.372, Enc, 0.752, Gyro, 0.815
+VelControlTask  ,31.686,Cmd,16.215, Enc, 0.771, Gyro, 0.920
+VelControlTask  ,31.693,Cmd,16.107, Enc, 0.921, Gyro, 1.050
+VelControlTask  ,31.700,Cmd,15.979, Enc, 1.147, Gyro, 1.182
+VelControlTask  ,31.707,Cmd,15.714, Enc, 1.241, Gyro, 1.302
+VelControlTask  ,31.714,Cmd,15.563, Enc, 1.485, Gyro, 1.517
+VelControlTask  ,31.721,Cmd,15.132, Enc, 1.692, Gyro, 1.868
+VelControlTask  ,31.728,Cmd,14.858, Enc, 1.955, Gyro, 2.235
+VelControlTask  ,31.735,Cmd,14.560, Enc, 2.369, Gyro, 2.576
+VelControlTask  ,31.742,Cmd,13.975, Enc, 2.857, Gyro, 2.830
+VelControlTask  ,31.749,Cmd,13.605, Enc, 3.215, Gyro, 3.594
+VelControlTask  ,31.756,Cmd,12.522, Enc, 4.098, Gyro, 4.296
+VelControlTask  ,31.763,Cmd,11.923, Enc, 4.474, Gyro, 5.222
+VelControlTask  ,31.770,Cmd,11.189, Enc, 5.696, Gyro, 6.059
+VelControlTask  ,31.777,Cmd, 9.717, Enc, 6.504, Gyro, 6.970
+VelControlTask  ,31.784,Cmd, 8.773, Enc, 7.087, Gyro, 7.949
+VelControlTask  ,31.791,Cmd, 6.948, Enc, 8.309, Gyro, 8.643
+VelControlTask  ,31.798,Cmd, 5.999, Enc, 8.610, Gyro, 9.244
+VelControlTask  ,31.805,Cmd, 5.123, Enc, 9.117, Gyro, 9.918
+VelControlTask  ,31.812,Cmd, 3.210, Enc,10.076, Gyro,10.345
+VelControlTask  ,31.819,Cmd, 2.264, Enc,10.377, Gyro,10.963
+VelControlTask  ,31.826,Cmd, 0.227, Enc,10.828, Gyro,11.336
+VelControlTask  ,31.833,Cmd,-0.817, Enc,10.565, Gyro,11.888
+VelControlTask  ,31.840,Cmd,-1.865, Enc,10.847, Gyro,11.785
+VelControlTask  ,31.847,Cmd,-3.465, Enc,10.978, Gyro,11.329
+VelControlTask  ,31.854,Cmd,-4.183, Enc,10.640, Gyro,11.126
+VelControlTask  ,31.861,Cmd,-5.687, Enc,10.076, Gyro,10.732
+VelControlTask  ,31.868,Cmd,-6.327, Enc, 9.663, Gyro,10.384
+VelControlTask  ,31.875,Cmd,-6.979, Enc, 9.174, Gyro,10.172
+VelControlTask  ,31.882,Cmd,-8.350, Enc, 9.080, Gyro, 9.976
+VelControlTask  ,31.889,Cmd,-9.026, Enc, 9.155, Gyro, 9.746
+VelControlTask  ,31.896,Cmd,-10.249, Enc, 9.287, Gyro, 9.360
+VelControlTask  ,31.903,Cmd,-10.807, Enc, 8.779, Gyro, 8.880
+VelControlTask  ,31.910,Cmd,-11.305, Enc, 7.783, Gyro, 8.406
+VelControlTask  ,31.917,Cmd,-12.142, Enc, 7.050, Gyro, 7.594
+VelControlTask  ,31.924,Cmd,-12.390, Enc, 5.922, Gyro, 6.730
+VelControlTask  ,31.931,Cmd,-12.677, Enc, 5.658, Gyro, 5.588
+VelControlTask  ,31.938,Cmd,-12.714, Enc, 4.098, Gyro, 4.731
+VelControlTask  ,31.945,Cmd,-12.758, Enc, 3.478, Gyro, 3.771
+VelControlTask  ,31.952,Cmd,-12.697, Enc, 2.613, Gyro, 3.095
+VelControlTask  ,31.959,Cmd,-12.689, Enc, 2.293, Gyro, 2.541
+VelControlTask  ,31.966,Cmd,-12.726, Enc, 2.124, Gyro, 2.260
+VelControlTask  ,31.973,Cmd,-12.821, Enc, 1.823, Gyro, 2.121
+VelControlTask  ,31.980,Cmd,-12.936, Enc, 1.560, Gyro, 1.998
+VelControlTask  ,31.987,Cmd,-13.156, Enc, 1.711, Gyro, 1.963
+VelControlTask  ,31.994,Cmd,-13.312, Enc, 1.711, Gyro, 2.035
+VelControlTask  ,32.001,Cmd,-13.709, Enc, 2.049, Gyro, 2.292
+VelControlTask  ,32.008,Cmd,-13.998, Enc, 2.481, Gyro, 2.488
+VelControlTask  ,32.015,Cmd,-14.245, Enc, 2.350, Gyro, 2.599
+VelControlTask  ,32.022,Cmd,-14.696, Enc, 2.199, Gyro, 2.562
+VelControlTask  ,32.029,Cmd,-14.849, Enc, 2.199, Gyro, 2.275
+VelControlTask  ,32.036,Cmd,-14.921, Enc, 2.105, Gyro, 1.768
+VelControlTask  ,32.043,Cmd,-14.838, Enc, 1.654, Gyro, 1.224
+VelControlTask  ,32.050,Cmd,-14.743, Enc, 0.564, Gyro, 0.834
+VelControlTask  ,32.057,Cmd,-14.566, Enc, 0.451, Gyro, 0.417
+VelControlTask  ,32.064,Cmd,-14.464, Enc, 0.263, Gyro, 0.205
+VelControlTask  ,32.071,Cmd,-14.384, Enc,-0.056, Gyro, 0.159
+VelControlTask  ,32.078,Cmd,-14.391, Enc,-0.075, Gyro, 0.169
+VelControlTask  ,32.085,Cmd,-14.408, Enc, 0.188, Gyro, 0.210
+VelControlTask  ,32.092,Cmd,-14.489, Enc, 0.338, Gyro, 0.350
+VelControlTask  ,32.099,Cmd,-14.575, Enc, 0.658, Gyro, 0.621
+VelControlTask  ,32.106,Cmd,-14.871, Enc, 0.865, Gyro, 0.865
+VelControlTask  ,32.113,Cmd,-14.995, Enc, 1.053, Gyro, 0.948
+VelControlTask  ,32.120,Cmd,-15.095, Enc, 0.902, Gyro, 0.957
+VelControlTask  ,32.127,Cmd,-15.246, Enc, 0.639, Gyro, 0.921
+VelControlTask  ,32.134,Cmd,-15.288, Enc, 0.470, Gyro, 0.768
+VelControlTask  ,32.141,Cmd,-15.283, Enc, 0.395, Gyro, 0.587
+VelControlTask  ,32.148,Cmd,-15.261, Enc, 0.244, Gyro, 0.441
+VelControlTask  ,32.155,Cmd,-15.241, Enc, 0.244, Gyro, 0.303
+VelControlTask  ,32.162,Cmd,-15.183, Enc, 0.263, Gyro, 0.179
+VelControlTask  ,32.169,Cmd,-15.159, Enc, 0.150, Gyro, 0.114
+VelControlTask  ,32.176,Cmd,-15.135, Enc, 0.075, Gyro, 0.065
+VelControlTask  ,32.183,Cmd,-15.123, Enc, 0.094, Gyro, 0.010
+VelControlTask  ,32.190,Cmd,-15.103, Enc, 0.075, Gyro, 0.010
+VelControlTask  ,32.197,Cmd,-15.104, Enc, 0.056, Gyro, 0.013
+VelControlTask  ,32.204,Cmd,-15.106, Enc, 0.056, Gyro, 0.019
+VelControlTask  ,32.211,Cmd,-15.113, Enc, 0.056, Gyro, 0.019
+VelControlTask  ,32.218,Cmd,-15.111, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,32.225,Cmd,-15.104, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,32.232,Cmd,-15.102, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.239,Cmd,-15.102, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.246,Cmd,-15.100, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,32.253,Cmd,-15.101, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.260,Cmd,-15.100, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,32.267,Cmd,-15.100, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.274,Cmd,-15.099, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,32.281,Cmd,-15.098, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,32.288,Cmd,-15.097, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,32.295,Cmd,-15.096, Enc, 0.000, Gyro,-0.022
+VelControlTask  ,32.302,Cmd,-15.083, Enc, 0.000, Gyro,-0.031
+VelControlTask  ,32.309,Cmd,-15.078, Enc, 0.000, Gyro,-0.017
+VelControlTask  ,32.316,Cmd,-15.088, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.323,Cmd,-15.090, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.330,Cmd,-15.090, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.337,Cmd,-15.089, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,32.344,Cmd,-15.088, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,32.351,Cmd,-15.088, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.358,Cmd,-15.089, Enc, 0.000, Gyro, 0.006
+VelControlTask  ,32.365,Cmd,-15.093, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,32.372,Cmd,-15.091, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.379,Cmd,-15.090, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.386,Cmd,-15.090, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,32.393,Cmd,-15.091, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,32.400,Cmd,-15.090, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,32.407,Cmd,-15.090, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,32.414,Cmd,-15.089, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.421,Cmd,-15.089, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.428,Cmd,-15.087, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,32.435,Cmd,-15.087, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.442,Cmd,-15.087, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.449,Cmd,-15.087, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.456,Cmd,-15.087, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,32.463,Cmd,-15.087, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,32.470,Cmd,-15.086, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,32.477,Cmd,-15.080, Enc, 0.000, Gyro,-0.025
+VelControlTask  ,32.484,Cmd,-15.070, Enc, 0.000, Gyro,-0.045
+VelControlTask  ,32.491,Cmd,-15.062, Enc, 0.000, Gyro,-0.020
+VelControlTask  ,32.498,Cmd,-15.068, Enc, 0.000, Gyro,-0.016
+VelControlTask  ,32.505,Cmd,-15.068, Enc, 0.000, Gyro,-0.027
+VelControlTask  ,32.512,Cmd,-15.051, Enc, 0.000, Gyro,-0.062
+VelControlTask  ,32.519,Cmd,-15.032, Enc, 0.000, Gyro,-0.104
+VelControlTask  ,32.526,Cmd,-14.991, Enc,-0.056, Gyro,-0.134
+VelControlTask  ,32.533,Cmd,-14.988, Enc,-0.132, Gyro,-0.088
+VelControlTask  ,32.540,Cmd,-14.993, Enc,-0.357, Gyro,-0.274
+VelControlTask  ,32.547,Cmd,-14.782, Enc,-0.545, Gyro,-0.618
+VelControlTask  ,32.554,Cmd,-14.606, Enc,-0.827, Gyro,-0.995
+VelControlTask  ,32.561,Cmd,-14.144, Enc,-1.354, Gyro,-1.559
+VelControlTask  ,32.568,Cmd,-13.745, Enc,-1.880, Gyro,-2.424
+VelControlTask  ,32.575,Cmd,-13.266, Enc,-3.196, Gyro,-3.144
+VelControlTask  ,32.582,Cmd,-12.202, Enc,-3.816, Gyro,-4.097
+VelControlTask  ,32.589,Cmd,-11.547, Enc,-4.756, Gyro,-5.160
+VelControlTask  ,32.596,Cmd,-10.025, Enc,-5.546, Gyro,-6.121
+VelControlTask  ,32.603,Cmd,-9.177, Enc,-6.580, Gyro,-6.968
+VelControlTask  ,32.610,Cmd,-8.369, Enc,-7.313, Gyro,-7.835
+VelControlTask  ,32.617,Cmd,-6.597, Enc,-7.895, Gyro,-8.702
+VelControlTask  ,32.624,Cmd,-5.591, Enc,-8.798, Gyro,-9.660
+VelControlTask  ,32.631,Cmd,-3.491, Enc,-9.775, Gyro,-10.511
+VelControlTask  ,32.638,Cmd,-2.361, Enc,-10.603, Gyro,-11.356
+VelControlTask  ,32.645,Cmd,-1.199, Enc,-11.354, Gyro,-12.266
+VelControlTask  ,32.652,Cmd, 1.267, Enc,-12.370, Gyro,-12.943
+VelControlTask  ,32.659,Cmd, 2.470, Enc,-12.576, Gyro,-13.593
+VelControlTask  ,32.666,Cmd, 4.926, Enc,-13.234, Gyro,-14.058
+VelControlTask  ,32.673,Cmd, 6.129, Enc,-13.385, Gyro,-14.326
+VelControlTask  ,32.680,Cmd, 7.302, Enc,-13.780, Gyro,-14.309
+VelControlTask  ,32.687,Cmd, 9.302, Enc,-13.310, Gyro,-13.798
+VelControlTask  ,32.694,Cmd,10.185, Enc,-12.219, Gyro,-13.299
+VelControlTask  ,32.701,Cmd,11.751, Enc,-11.242, Gyro,-12.584
+VelControlTask  ,32.708,Cmd,12.357, Enc,-11.016, Gyro,-11.563
+VelControlTask  ,32.715,Cmd,12.858, Enc,-10.001, Gyro,-10.415
+VelControlTask  ,32.722,Cmd,13.610, Enc,-9.305, Gyro,-9.251
+VelControlTask  ,32.729,Cmd,13.864, Enc,-7.388, Gyro,-8.205
+VelControlTask  ,32.736,Cmd,14.370, Enc,-6.580, Gyro,-7.344
+VelControlTask  ,32.743,Cmd,14.630, Enc,-5.640, Gyro,-6.689
+VelControlTask  ,32.750,Cmd,14.898, Enc,-5.602, Gyro,-5.817
+VelControlTask  ,32.757,Cmd,15.187, Enc,-5.000, Gyro,-5.124
+VelControlTask  ,32.764,Cmd,15.311, Enc,-4.286, Gyro,-4.412
+VelControlTask  ,32.771,Cmd,15.512, Enc,-3.534, Gyro,-3.997
+VelControlTask  ,32.778,Cmd,15.679, Enc,-2.857, Gyro,-3.551
+VelControlTask  ,32.785,Cmd,15.778, Enc,-2.613, Gyro,-3.074
+VelControlTask  ,32.792,Cmd,15.877, Enc,-2.613, Gyro,-2.560
+VelControlTask  ,32.799,Cmd,15.886, Enc,-2.030, Gyro,-2.200
+VelControlTask  ,32.806,Cmd,16.029, Enc,-1.523, Gyro,-2.016
+VelControlTask  ,32.813,Cmd,16.098, Enc,-1.391, Gyro,-1.803
+VelControlTask  ,32.820,Cmd,16.149, Enc,-1.729, Gyro,-1.528
+VelControlTask  ,32.827,Cmd,16.202, Enc,-1.448, Gyro,-1.322
+VelControlTask  ,32.834,Cmd,16.221, Enc,-1.297, Gyro,-1.130
+VelControlTask  ,32.841,Cmd,16.274, Enc,-0.733, Gyro,-1.060
+VelControlTask  ,32.848,Cmd,16.322, Enc,-0.865, Gyro,-0.974
+VelControlTask  ,32.855,Cmd,16.377, Enc,-0.733, Gyro,-0.995
+VelControlTask  ,32.862,Cmd,16.531, Enc,-0.771, Gyro,-0.981
+VelControlTask  ,32.869,Cmd,16.600, Enc,-0.846, Gyro,-0.924
+VelControlTask  ,32.876,Cmd,16.682, Enc,-0.714, Gyro,-0.815
+VelControlTask  ,32.883,Cmd,16.690, Enc,-0.602, Gyro,-0.666
+VelControlTask  ,32.890,Cmd,16.688, Enc,-0.489, Gyro,-0.501
+VelControlTask  ,32.897,Cmd,16.648, Enc,-0.320, Gyro,-0.356
+VelControlTask  ,32.904,Cmd,16.621, Enc,-0.207, Gyro,-0.193
+VelControlTask  ,32.911,Cmd,16.537, Enc,-0.056, Gyro,-0.070
+VelControlTask  ,32.918,Cmd,16.503, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,32.925,Cmd,16.480, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,32.932,Cmd,16.479, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,32.939,Cmd,16.479, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,32.946,Cmd,16.477, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,32.953,Cmd,16.474, Enc, 0.000, Gyro, 0.027
+VelControlTask  ,32.960,Cmd,16.463, Enc, 0.000, Gyro, 0.085
+VelControlTask  ,32.967,Cmd,16.406, Enc, 0.000, Gyro, 0.170
+VelControlTask  ,32.974,Cmd,16.358, Enc, 0.000, Gyro, 0.270
+VelControlTask  ,32.981,Cmd,16.250, Enc, 0.000, Gyro, 0.335
+VelControlTask  ,32.988,Cmd,16.210, Enc, 0.094, Gyro, 0.331
+VelControlTask  ,32.995,Cmd,16.191, Enc, 0.244, Gyro, 0.279
+VelControlTask  ,33.002,Cmd,16.170, Enc, 0.207, Gyro, 0.298
+VelControlTask  ,33.009,Cmd,16.141, Enc, 0.282, Gyro, 0.321
+VelControlTask  ,33.016,Cmd,16.065, Enc, 0.357, Gyro, 0.376
+VelControlTask  ,33.023,Cmd,16.016, Enc, 0.432, Gyro, 0.453
+VelControlTask  ,33.030,Cmd,15.951, Enc, 0.526, Gyro, 0.594
+VelControlTask  ,33.037,Cmd,15.762, Enc, 0.733, Gyro, 0.726
+VelControlTask  ,33.044,Cmd,15.664, Enc, 0.639, Gyro, 0.801
+VelControlTask  ,33.051,Cmd,15.495, Enc, 0.771, Gyro, 0.838
+VelControlTask  ,33.058,Cmd,15.421, Enc, 0.846, Gyro, 0.915
+VelControlTask  ,33.065,Cmd,15.319, Enc, 1.109, Gyro, 1.014
+VelControlTask  ,33.072,Cmd,15.072, Enc, 1.260, Gyro, 1.218
+VelControlTask  ,33.079,Cmd,14.909, Enc, 1.203, Gyro, 1.425
+VelControlTask  ,33.086,Cmd,14.541, Enc, 1.466, Gyro, 1.593
+VelControlTask  ,33.093,Cmd,14.361, Enc, 1.579, Gyro, 1.870
+VelControlTask  ,33.100,Cmd,14.113, Enc, 2.199, Gyro, 2.102
+VelControlTask  ,33.107,Cmd,13.608, Enc, 2.425, Gyro, 2.501
+VelControlTask  ,33.114,Cmd,13.252, Enc, 2.651, Gyro, 2.944
+VelControlTask  ,33.121,Cmd,12.485, Enc, 2.857, Gyro, 3.329
+VelControlTask  ,33.128,Cmd,12.143, Enc, 3.779, Gyro, 3.524
+VelControlTask  ,33.135,Cmd,11.787, Enc, 3.816, Gyro, 4.348
+VelControlTask  ,33.142,Cmd,10.532, Enc, 4.380, Gyro, 5.341
+VelControlTask  ,33.149,Cmd, 9.800, Enc, 5.884, Gyro, 6.127
+VelControlTask  ,33.156,Cmd, 8.048, Enc, 6.279, Gyro, 7.536
+VelControlTask  ,33.163,Cmd, 7.151, Enc, 7.820, Gyro, 8.179
+VelControlTask  ,33.170,Cmd, 6.259, Enc, 8.065, Gyro, 9.009
+VelControlTask  ,33.177,Cmd, 4.396, Enc, 8.666, Gyro, 9.364
+VelControlTask  ,33.184,Cmd, 3.598, Enc, 8.817, Gyro, 9.669
+VelControlTask  ,33.191,Cmd, 2.035, Enc, 8.948, Gyro, 9.622
+VelControlTask  ,33.198,Cmd, 1.286, Enc, 9.005, Gyro, 9.756
+VelControlTask  ,33.205,Cmd, 0.504, Enc, 9.437, Gyro, 9.936
+VelControlTask  ,33.212,Cmd,-1.216, Enc,10.057, Gyro,10.367
+VelControlTask  ,33.219,Cmd,-2.118, Enc,10.321, Gyro,11.048
+VelControlTask  ,33.226,Cmd,-4.287, Enc,10.715, Gyro,11.594
+VelControlTask  ,33.233,Cmd,-5.284, Enc,11.148, Gyro,11.779
+VelControlTask  ,33.240,Cmd,-6.238, Enc,11.242, Gyro,12.075
+VelControlTask  ,33.247,Cmd,-8.209, Enc,11.918, Gyro,12.225
+VelControlTask  ,33.254,Cmd,-9.208, Enc,11.618, Gyro,12.646
+VelControlTask  ,33.261,Cmd,-11.441, Enc,11.768, Gyro,13.088
+VelControlTask  ,33.268,Cmd,-12.515, Enc,12.558, Gyro,13.199
+VelControlTask  ,33.275,Cmd,-13.551, Enc,12.445, Gyro,13.273
+VelControlTask  ,33.282,Cmd,-15.534, Enc,12.294, Gyro,12.928
+VelControlTask  ,33.289,Cmd,-16.389, Enc,11.749, Gyro,12.710
+VelControlTask  ,33.296,Cmd,-17.997, Enc,11.430, Gyro,12.156
+VelControlTask  ,33.303,Cmd,-18.689, Enc,10.772, Gyro,11.477
+VelControlTask  ,33.310,Cmd,-19.294, Enc, 9.719, Gyro,10.638
+VelControlTask  ,33.317,Cmd,-20.255, Enc, 9.305, Gyro, 9.412
+VelControlTask  ,33.324,Cmd,-20.439, Enc, 7.501, Gyro, 7.847
+VelControlTask  ,33.331,Cmd,-20.420, Enc, 5.790, Gyro, 6.247
+VelControlTask  ,33.338,Cmd,-20.307, Enc, 4.493, Gyro, 4.656
+VelControlTask  ,33.345,Cmd,-20.089, Enc, 2.726, Gyro, 3.370
+VelControlTask  ,33.352,Cmd,-19.693, Enc, 2.143, Gyro, 2.263
+VelControlTask  ,33.359,Cmd,-19.470, Enc, 1.335, Gyro, 1.555
+VelControlTask  ,33.366,Cmd,-19.276, Enc, 1.147, Gyro, 1.163
+VelControlTask  ,33.373,Cmd,-19.243, Enc, 0.790, Gyro, 1.022
+VelControlTask  ,33.380,Cmd,-19.288, Enc, 0.620, Gyro, 1.009
+VelControlTask  ,33.387,Cmd,-19.379, Enc, 1.053, Gyro, 0.771
+VelControlTask  ,33.394,Cmd,-19.353, Enc, 0.714, Gyro, 0.706
+VelControlTask  ,33.401,Cmd,-19.416, Enc, 0.752, Gyro, 0.656
+VelControlTask  ,33.408,Cmd,-19.456, Enc, 0.564, Gyro, 0.621
+VelControlTask  ,33.415,Cmd,-19.485, Enc, 0.395, Gyro, 0.503
+VelControlTask  ,33.422,Cmd,-19.463, Enc, 0.226, Gyro, 0.313
+VelControlTask  ,33.429,Cmd,-19.412, Enc, 0.094, Gyro, 0.103
+VelControlTask  ,33.436,Cmd,-19.298, Enc,-0.113, Gyro, 0.112
+VelControlTask  ,33.443,Cmd,-19.372, Enc,-0.207, Gyro, 0.341
+VelControlTask  ,33.450,Cmd,-19.475, Enc, 0.639, Gyro, 0.358
+VelControlTask  ,33.457,Cmd,-19.581, Enc, 0.602, Gyro, 0.434
+VelControlTask  ,33.464,Cmd,-19.620, Enc, 0.432, Gyro, 0.375
+VelControlTask  ,33.471,Cmd,-19.617, Enc, 0.207, Gyro, 0.257
+VelControlTask  ,33.478,Cmd,-19.583, Enc, 0.094, Gyro, 0.123
+VelControlTask  ,33.485,Cmd,-19.548, Enc, 0.000, Gyro, 0.065
+VelControlTask  ,33.492,Cmd,-19.524, Enc,-0.075, Gyro, 0.054
+VelControlTask  ,33.499,Cmd,-19.525, Enc,-0.056, Gyro, 0.045
+VelControlTask  ,33.506,Cmd,-19.522, Enc, 0.094, Gyro, 0.024
+VelControlTask  ,33.513,Cmd,-19.524, Enc, 0.056, Gyro, 0.043
+VelControlTask  ,33.520,Cmd,-19.533, Enc, 0.075, Gyro, 0.057
+VelControlTask  ,33.527,Cmd,-19.548, Enc, 0.038, Gyro, 0.044
+VelControlTask  ,33.534,Cmd,-19.539, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,33.541,Cmd,-19.521, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,33.548,Cmd,-19.521, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,33.555,Cmd,-19.523, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,33.562,Cmd,-19.516, Enc, 0.000, Gyro,-0.023
+VelControlTask  ,33.569,Cmd,-19.506, Enc, 0.000, Gyro,-0.042
+VelControlTask  ,33.576,Cmd,-19.485, Enc, 0.000, Gyro,-0.058
+VelControlTask  ,33.583,Cmd,-19.477, Enc,-0.038, Gyro,-0.053
+VelControlTask  ,33.590,Cmd,-19.476, Enc,-0.113, Gyro,-0.061
+VelControlTask  ,33.597,Cmd,-19.463, Enc,-0.075, Gyro,-0.056
+VelControlTask  ,33.604,Cmd,-19.464, Enc,-0.056, Gyro,-0.036
+VelControlTask  ,33.611,Cmd,-19.476, Enc,-0.019, Gyro,-0.011
+VelControlTask  ,33.618,Cmd,-19.483, Enc, 0.019, Gyro, 0.004
+VelControlTask  ,33.625,Cmd,-19.487, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,33.632,Cmd,-19.488, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,33.639,Cmd,-19.487, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,33.646,Cmd,-19.485, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,33.653,Cmd,-19.485, Enc, 0.000, Gyro,-0.006
+VelControlTask  ,33.660,Cmd,-19.483, Enc, 0.000, Gyro,-0.012
+VelControlTask  ,33.667,Cmd,-19.476, Enc,-0.019, Gyro,-0.023
+VelControlTask  ,33.674,Cmd,-19.470, Enc,-0.019, Gyro,-0.031
+VelControlTask  ,33.681,Cmd,-19.461, Enc,-0.019, Gyro,-0.028
+VelControlTask  ,33.688,Cmd,-19.462, Enc, 0.000, Gyro,-0.021
+VelControlTask  ,33.695,Cmd,-19.463, Enc,-0.019, Gyro,-0.018
+VelControlTask  ,33.702,Cmd,-19.461, Enc, 0.000, Gyro,-0.026
+VelControlTask  ,33.709,Cmd,-19.454, Enc,-0.019, Gyro,-0.045
+VelControlTask  ,33.716,Cmd,-19.429, Enc,-0.019, Gyro,-0.077
+VelControlTask  ,33.723,Cmd,-19.409, Enc,-0.056, Gyro,-0.130
+VelControlTask  ,33.730,Cmd,-19.377, Enc,-0.075, Gyro,-0.244
+VelControlTask  ,33.737,Cmd,-19.251, Enc,-0.132, Gyro,-0.431
+VelControlTask  ,33.744,Cmd,-19.142, Enc,-0.545, Gyro,-0.632
+VelControlTask  ,33.751,Cmd,-18.866, Enc,-0.865, Gyro,-0.971
+VelControlTask  ,33.758,Cmd,-18.640, Enc,-1.354, Gyro,-1.417
+VelControlTask  ,33.765,Cmd,-18.371, Enc,-1.861, Gyro,-2.008
+VelControlTask  ,33.772,Cmd,-17.646, Enc,-2.557, Gyro,-2.644
+VelControlTask  ,33.779,Cmd,-17.201, Enc,-3.196, Gyro,-3.305
+VelControlTask  ,33.786,Cmd,-16.154, Enc,-3.666, Gyro,-4.099
+VelControlTask  ,33.793,Cmd,-15.612, Enc,-4.531, Gyro,-4.689
+VelControlTask  ,33.800,Cmd,-15.034, Enc,-4.812, Gyro,-5.439
+VelControlTask  ,33.807,Cmd,-13.706, Enc,-5.997, Gyro,-5.955
+VelControlTask  ,33.814,Cmd,-13.077, Enc,-6.373, Gyro,-6.723
+VelControlTask  ,33.821,Cmd,-11.537, Enc,-6.768, Gyro,-7.269
+VelControlTask  ,33.828,Cmd,-10.771, Enc,-7.670, Gyro,-8.191
+VelControlTask  ,33.835,Cmd,-9.823, Enc,-8.347, Gyro,-9.170
+VelControlTask  ,33.842,Cmd,-7.748, Enc,-9.493, Gyro,-10.202
+VelControlTask  ,33.849,Cmd,-6.577, Enc,-10.527, Gyro,-11.253
+VelControlTask  ,33.856,Cmd,-4.100, Enc,-11.317, Gyro,-12.312
+VelControlTask  ,33.863,Cmd,-2.802, Enc,-12.445, Gyro,-13.202
+VelControlTask  ,33.870,Cmd,-1.510, Enc,-13.084, Gyro,-13.659
+VelControlTask  ,33.877,Cmd, 0.906, Enc,-13.366, Gyro,-14.139
+VelControlTask  ,33.884,Cmd, 2.123, Enc,-13.723, Gyro,-14.563
+VelControlTask  ,33.891,Cmd, 4.569, Enc,-13.648, Gyro,-14.761
+VelControlTask  ,33.898,Cmd, 5.726, Enc,-13.855, Gyro,-14.753
+VelControlTask  ,33.905,Cmd, 6.813, Enc,-13.554, Gyro,-14.665
+VelControlTask  ,33.912,Cmd, 8.919, Enc,-13.422, Gyro,-14.384
+VelControlTask  ,33.919,Cmd, 9.888, Enc,-12.896, Gyro,-13.997
+VelControlTask  ,33.926,Cmd,11.651, Enc,-12.840, Gyro,-13.542
+VelControlTask  ,33.933,Cmd,12.525, Enc,-12.595, Gyro,-13.153
+VelControlTask  ,33.940,Cmd,13.367, Enc,-12.219, Gyro,-12.677
+VelControlTask  ,33.947,Cmd,14.885, Enc,-11.279, Gyro,-12.019
+VelControlTask  ,33.954,Cmd,15.528, Enc,-10.884, Gyro,-10.972
+VelControlTask  ,33.961,Cmd,16.399, Enc,-9.193, Gyro,-9.920
+VelControlTask  ,33.968,Cmd,16.712, Enc,-7.952, Gyro,-8.656
+VelControlTask  ,33.975,Cmd,16.894, Enc,-6.185, Gyro,-7.196
+VelControlTask  ,33.982,Cmd,16.903, Enc,-5.358, Gyro,-5.538
+VelControlTask  ,33.989,Cmd,16.684, Enc,-3.309, Gyro,-4.198
+VelControlTask  ,33.996,Cmd,16.320, Enc,-2.707, Gyro,-2.862
+VelControlTask  ,34.003,Cmd,16.092, Enc,-2.030, Gyro,-2.044
+VelControlTask  ,34.010,Cmd,15.974, Enc,-1.034, Gyro,-1.600
+VelControlTask  ,34.017,Cmd,15.900, Enc,-0.771, Gyro,-1.289
+VelControlTask  ,34.024,Cmd,15.914, Enc,-0.677, Gyro,-1.303
+VelControlTask  ,34.031,Cmd,16.104, Enc,-1.316, Gyro,-1.226
+VelControlTask  ,34.038,Cmd,16.201, Enc,-1.203, Gyro,-1.371
+VelControlTask  ,34.045,Cmd,16.347, Enc,-1.391, Gyro,-1.397
+VelControlTask  ,34.052,Cmd,16.583, Enc,-1.297, Gyro,-1.413
+VelControlTask  ,34.059,Cmd,16.675, Enc,-1.147, Gyro,-1.263
+VelControlTask  ,34.066,Cmd,16.733, Enc,-1.015, Gyro,-1.038
+VelControlTask  ,34.073,Cmd,16.719, Enc,-0.846, Gyro,-0.750
+VelControlTask  ,34.080,Cmd,16.667, Enc,-0.602, Gyro,-0.464
+VelControlTask  ,34.087,Cmd,16.530, Enc,-0.338, Gyro,-0.194
+VelControlTask  ,34.094,Cmd,16.455, Enc,-0.019, Gyro,-0.066
+VelControlTask  ,34.101,Cmd,16.385, Enc,-0.019, Gyro,-0.007
+VelControlTask  ,34.108,Cmd,16.377, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,34.115,Cmd,16.380, Enc,-0.019, Gyro,-0.031
+VelControlTask  ,34.122,Cmd,16.405, Enc,-0.038, Gyro,-0.080
+VelControlTask  ,34.129,Cmd,16.429, Enc,-0.056, Gyro,-0.108
+VelControlTask  ,34.136,Cmd,16.456, Enc,-0.056, Gyro,-0.097
+VelControlTask  ,34.143,Cmd,16.453, Enc, 0.000, Gyro,-0.039
+VelControlTask  ,34.150,Cmd,16.431, Enc, 0.000, Gyro, 0.022
+VelControlTask  ,34.157,Cmd,16.383, Enc, 0.000, Gyro, 0.088
+VelControlTask  ,34.164,Cmd,16.355, Enc, 0.000, Gyro, 0.110
+VelControlTask  ,34.171,Cmd,16.331, Enc, 0.000, Gyro, 0.096
+VelControlTask  ,34.178,Cmd,16.332, Enc, 0.000, Gyro, 0.082
+VelControlTask  ,34.185,Cmd,16.329, Enc, 0.075, Gyro, 0.088
+VelControlTask  ,34.192,Cmd,16.314, Enc, 0.056, Gyro, 0.088
+VelControlTask  ,34.199,Cmd,16.309, Enc, 0.094, Gyro, 0.071
+VelControlTask  ,34.206,Cmd,16.306, Enc, 0.056, Gyro, 0.063
+VelControlTask  ,34.213,Cmd,16.308, Enc, 0.056, Gyro, 0.045
+VelControlTask  ,34.220,Cmd,16.310, Enc, 0.019, Gyro, 0.027
+VelControlTask  ,34.227,Cmd,16.318, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,34.234,Cmd,16.324, Enc, 0.000, Gyro, 0.007
+VelControlTask  ,34.241,Cmd,16.321, Enc, 0.000, Gyro, 0.016
+VelControlTask  ,34.248,Cmd,16.316, Enc, 0.019, Gyro, 0.033
+VelControlTask  ,34.255,Cmd,16.306, Enc, 0.019, Gyro, 0.064
+VelControlTask  ,34.262,Cmd,16.274, Enc, 0.038, Gyro, 0.093
+VelControlTask  ,34.269,Cmd,16.257, Enc, 0.056, Gyro, 0.116
+VelControlTask  ,34.276,Cmd,16.224, Enc, 0.038, Gyro, 0.135
+VelControlTask  ,34.283,Cmd,16.205, Enc, 0.038, Gyro, 0.163
+VelControlTask  ,34.290,Cmd,16.185, Enc, 0.188, Gyro, 0.156
+VelControlTask  ,34.297,Cmd,16.155, Enc, 0.188, Gyro, 0.202
+VelControlTask  ,34.304,Cmd,16.120, Enc, 0.244, Gyro, 0.258
+VelControlTask  ,34.311,Cmd,16.039, Enc, 0.244, Gyro, 0.323
+VelControlTask  ,34.318,Cmd,15.993, Enc, 0.282, Gyro, 0.365
+VelControlTask  ,34.325,Cmd,15.949, Enc, 0.338, Gyro, 0.376
+VelControlTask  ,34.332,Cmd,15.885, Enc, 0.263, Gyro, 0.368
+VelControlTask  ,34.339,Cmd,15.865, Enc, 0.282, Gyro, 0.327
+VelControlTask  ,34.346,Cmd,15.861, Enc, 0.226, Gyro, 0.223
+VelControlTask  ,34.353,Cmd,15.887, Enc, 0.094, Gyro, 0.129
+VelControlTask  ,34.360,Cmd,15.915, Enc, 0.038, Gyro, 0.074
+VelControlTask  ,34.367,Cmd,15.917, Enc, 0.132, Gyro, 0.172
+VelControlTask  ,34.374,Cmd,15.847, Enc, 0.414, Gyro, 0.510
+VelControlTask  ,34.381,Cmd,15.453, Enc, 1.034, Gyro, 1.072
+VelControlTask  ,34.388,Cmd,15.147, Enc, 1.861, Gyro, 1.891
+VelControlTask  ,34.395,Cmd,14.685, Enc, 2.839, Gyro, 3.056
+VelControlTask  ,34.402,Cmd,13.391, Enc, 3.741, Gyro, 4.205
+VelControlTask  ,34.409,Cmd,12.654, Enc, 4.869, Gyro, 5.255
+VelControlTask  ,34.416,Cmd,11.158, Enc, 5.358, Gyro, 6.196
+VelControlTask  ,34.423,Cmd,10.303, Enc, 6.316, Gyro, 6.968
+VelControlTask  ,34.430,Cmd, 9.540, Enc, 6.862, Gyro, 7.765
+VelControlTask  ,34.437,Cmd, 7.764, Enc, 7.971, Gyro, 8.528
+VelControlTask  ,34.444,Cmd, 6.882, Enc, 8.723, Gyro, 9.366
+VelControlTask  ,34.451,Cmd, 4.981, Enc, 9.155, Gyro, 9.952
+VelControlTask  ,34.458,Cmd, 3.988, Enc, 9.362, Gyro,10.489
+VelControlTask  ,34.465,Cmd, 3.009, Enc,10.245, Gyro,10.585
+VelControlTask  ,34.472,Cmd, 1.325, Enc,10.264, Gyro,10.660
+VelControlTask  ,34.479,Cmd, 0.544, Enc, 9.851, Gyro,10.342
+VelControlTask  ,34.486,Cmd,-0.755, Enc, 9.061, Gyro,10.033
+VelControlTask  ,34.493,Cmd,-1.405, Enc, 9.268, Gyro, 9.839
+VelControlTask  ,34.500,Cmd,-2.089, Enc, 9.399, Gyro,10.288
+VelControlTask  ,34.507,Cmd,-3.963, Enc, 9.794, Gyro,10.990
+VelControlTask  ,34.514,Cmd,-5.104, Enc,10.941, Gyro,12.030
+VelControlTask  ,34.521,Cmd,-7.695, Enc,12.276, Gyro,13.143
+VelControlTask  ,34.528,Cmd,-9.158, Enc,13.385, Gyro,14.298
+VelControlTask  ,34.535,Cmd,-10.607, Enc,14.531, Gyro,15.214
+VelControlTask  ,34.542,Cmd,-13.493, Enc,14.851, Gyro,15.777
+VelControlTask  ,34.549,Cmd,-14.816, Enc,15.265, Gyro,15.751
+VelControlTask  ,34.556,Cmd,-17.153, Enc,14.381, Gyro,15.641
+VelControlTask  ,34.563,Cmd,-18.221, Enc,14.118, Gyro,14.992
+VelControlTask  ,34.570,Cmd,-19.064, Enc,13.592, Gyro,13.852
+VelControlTask  ,34.577,Cmd,-20.377, Enc,11.242, Gyro,12.646
+VelControlTask  ,34.584,Cmd,-20.696, Enc, 9.042, Gyro, 9.572
+VelControlTask  ,34.591,Cmd,-20.201, Enc, 6.956, Gyro, 7.424
+VelControlTask  ,34.598,Cmd,-19.926, Enc, 5.602, Gyro, 5.731
+VelControlTask  ,34.605,Cmd,-19.802, Enc, 4.399, Gyro, 4.673
+VelControlTask  ,34.612,Cmd,-19.658, Enc, 2.895, Gyro, 3.454
+VelControlTask  ,34.619,Cmd,-19.483, Enc, 2.199, Gyro, 2.376
+VelControlTask  ,34.626,Cmd,-19.140, Enc, 1.166, Gyro, 1.663
+VelControlTask  ,34.633,Cmd,-19.038, Enc, 0.752, Gyro, 1.147
+VelControlTask  ,34.640,Cmd,-18.940, Enc, 0.677, Gyro, 0.765
+VelControlTask  ,34.647,Cmd,-18.798, Enc, 0.489, Gyro, 0.470
+VelControlTask  ,34.654,Cmd,-18.730, Enc, 0.188, Gyro, 0.254
+VelControlTask  ,34.661,Cmd,-18.556, Enc, 0.226, Gyro,-0.066
+VelControlTask  ,34.668,Cmd,-18.456, Enc,-0.150, Gyro,-0.384
+VelControlTask  ,34.675,Cmd,-18.310, Enc,-0.432, Gyro,-0.489
+VelControlTask  ,34.682,Cmd,-18.155, Enc,-0.489, Gyro,-0.551
+VelControlTask  ,34.689,Cmd,-18.105, Enc,-0.846, Gyro,-0.531
+VelControlTask  ,34.696,Cmd,-18.032, Enc,-0.489, Gyro,-0.506
+VelControlTask  ,34.703,Cmd,-17.999, Enc,-0.244, Gyro,-0.424
+VelControlTask  ,34.710,Cmd,-18.010, Enc,-0.150, Gyro,-0.266
+VelControlTask  ,34.717,Cmd,-18.096, Enc,-0.169, Gyro,-0.066
+VelControlTask  ,34.724,Cmd,-18.164, Enc,-0.132, Gyro, 0.123
+VelControlTask  ,34.731,Cmd,-18.297, Enc, 0.075, Gyro, 0.201
+VelControlTask  ,34.738,Cmd,-18.326, Enc, 0.094, Gyro, 0.201
+VelControlTask  ,34.745,Cmd,-18.337, Enc, 0.075, Gyro, 0.083
+VelControlTask  ,34.752,Cmd,-18.258, Enc, 0.000, Gyro,-0.057
+VelControlTask  ,34.759,Cmd,-18.212, Enc, 0.000, Gyro,-0.109
+VelControlTask  ,34.766,Cmd,-18.177, Enc, 0.000, Gyro,-0.083
+VelControlTask  ,34.773,Cmd,-18.192, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,34.780,Cmd,-18.218, Enc, 0.000, Gyro, 0.023
+VelControlTask  ,34.787,Cmd,-18.234, Enc, 0.000, Gyro, 0.007
+VelControlTask  ,34.794,Cmd,-18.229, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,34.801,Cmd,-18.234, Enc, 0.000, Gyro, 0.023
+VelControlTask  ,34.808,Cmd,-18.243, Enc, 0.075, Gyro, 0.019
+VelControlTask  ,34.815,Cmd,-18.240, Enc, 0.132, Gyro, 0.000
+VelControlTask  ,34.822,Cmd,-18.233, Enc, 0.132, Gyro, 0.005
+VelControlTask  ,34.829,Cmd,-18.235, Enc, 0.132, Gyro, 0.011
+VelControlTask  ,34.836,Cmd,-18.250, Enc, 0.019, Gyro, 0.042
+VelControlTask  ,34.843,Cmd,-18.259, Enc, 0.056, Gyro, 0.035
+VelControlTask  ,34.850,Cmd,-18.259, Enc, 0.019, Gyro, 0.026
+VelControlTask  ,34.857,Cmd,-18.254, Enc, 0.019, Gyro, 0.017
+VelControlTask  ,34.864,Cmd,-18.255, Enc, 0.019, Gyro, 0.013
+VelControlTask  ,34.871,Cmd,-18.252, Enc, 0.019, Gyro, 0.008
+VelControlTask  ,34.878,Cmd,-18.249, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,34.885,Cmd,-18.245, Enc, 0.019, Gyro,-0.005
+VelControlTask  ,34.892,Cmd,-18.244, Enc, 0.019, Gyro,-0.001
+VelControlTask  ,34.899,Cmd,-18.246, Enc, 0.019, Gyro, 0.003
+VelControlTask  ,34.906,Cmd,-18.247, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,34.913,Cmd,-18.248, Enc, 0.019, Gyro, 0.002
+VelControlTask  ,34.920,Cmd,-18.248, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,34.927,Cmd,-18.248, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,34.934,Cmd,-18.246, Enc,-0.019, Gyro,-0.003
+VelControlTask  ,34.941,Cmd,-18.245, Enc, 0.000, Gyro,-0.008
+VelControlTask  ,34.948,Cmd,-18.237, Enc,-0.019, Gyro,-0.052
+VelControlTask  ,34.955,Cmd,-18.216, Enc,-0.056, Gyro,-0.119
+VelControlTask  ,34.962,Cmd,-18.151, Enc,-0.075, Gyro,-0.184
+VelControlTask  ,34.969,Cmd,-18.112, Enc,-0.113, Gyro,-0.257
+VelControlTask  ,34.976,Cmd,-18.012, Enc,-0.150, Gyro,-0.359
+VelControlTask  ,34.983,Cmd,-17.934, Enc,-0.395, Gyro,-0.516
+VelControlTask  ,34.990,Cmd,-17.836, Enc,-0.846, Gyro,-0.808
+VelControlTask  ,34.997,Cmd,-17.463, Enc,-1.166, Gyro,-1.292
+VelControlTask  ,35.004,Cmd,-17.184, Enc,-1.861, Gyro,-1.801
+VelControlTask  ,35.011,Cmd,-16.491, Enc,-2.162, Gyro,-2.483
+VelControlTask  ,35.018,Cmd,-16.064, Enc,-2.970, Gyro,-2.966
+VelControlTask  ,35.025,Cmd,-15.672, Enc,-3.271, Gyro,-3.511
+VelControlTask  ,35.032,Cmd,-14.781, Enc,-3.741, Gyro,-4.063
+VelControlTask  ,35.039,Cmd,-14.228, Enc,-4.606, Gyro,-4.788
+VelControlTask  ,35.046,Cmd,-12.913, Enc,-5.226, Gyro,-5.783
+VelControlTask  ,35.053,Cmd,-12.051, Enc,-6.824, Gyro,-6.928
+VelControlTask  ,35.060,Cmd,-11.150, Enc,-7.294, Gyro,-8.009
+VelControlTask  ,35.067,Cmd,-9.097, Enc,-8.779, Gyro,-9.234
+VelControlTask  ,35.074,Cmd,-7.929, Enc,-9.945, Gyro,-10.784
+VelControlTask  ,35.081,Cmd,-5.163, Enc,-11.242, Gyro,-12.331
+VelControlTask  ,35.088,Cmd,-3.681, Enc,-12.689, Gyro,-13.685
+VelControlTask  ,35.095,Cmd,-2.185, Enc,-13.911, Gyro,-14.947
+VelControlTask  ,35.102,Cmd, 0.901, Enc,-14.945, Gyro,-15.806
+VelControlTask  ,35.109,Cmd, 2.385, Enc,-15.490, Gyro,-16.505
+VelControlTask  ,35.116,Cmd, 5.279, Enc,-15.847, Gyro,-16.874
+VelControlTask  ,35.123,Cmd, 6.652, Enc,-16.035, Gyro,-17.060
+VelControlTask  ,35.130,Cmd, 7.988, Enc,-16.242, Gyro,-17.052
+VelControlTask  ,35.137,Cmd,10.535, Enc,-15.471, Gyro,-16.948
+VelControlTask  ,35.144,Cmd,11.753, Enc,-15.565, Gyro,-16.361
+VelControlTask  ,35.151,Cmd,13.645, Enc,-15.020, Gyro,-15.370
+VelControlTask  ,35.158,Cmd,14.377, Enc,-14.231, Gyro,-14.090
+VelControlTask  ,35.165,Cmd,14.974, Enc,-12.520, Gyro,-12.671
+VelControlTask  ,35.172,Cmd,15.770, Enc,-11.580, Gyro,-11.032
+VelControlTask  ,35.179,Cmd,15.998, Enc,-10.471, Gyro,-9.399
+VelControlTask  ,35.186,Cmd,16.277, Enc,-9.399, Gyro,-8.058
+VelControlTask  ,35.193,Cmd,16.444, Enc,-6.749, Gyro,-7.121
+VelControlTask  ,35.200,Cmd,16.652, Enc,-4.775, Gyro,-6.240
+VelControlTask  ,35.207,Cmd,16.900, Enc,-4.418, Gyro,-4.992
+VelControlTask  ,35.214,Cmd,16.773, Enc,-4.173, Gyro,-3.776
+VelControlTask  ,35.221,Cmd,16.544, Enc,-2.651, Gyro,-2.975
+VelControlTask  ,35.228,Cmd,16.551, Enc,-1.654, Gyro,-2.497
+VelControlTask  ,35.235,Cmd,16.571, Enc,-1.466, Gyro,-2.333
+VelControlTask  ,35.242,Cmd,16.773, Enc,-2.049, Gyro,-2.181
+VelControlTask  ,35.249,Cmd,16.923, Enc,-2.312, Gyro,-2.355
+VelControlTask  ,35.256,Cmd,17.395, Enc,-2.406, Gyro,-2.441
+VelControlTask  ,35.263,Cmd,17.560, Enc,-2.162, Gyro,-2.242
+VelControlTask  ,35.270,Cmd,17.644, Enc,-2.143, Gyro,-1.764
+VelControlTask  ,35.277,Cmd,17.578, Enc,-1.147, Gyro,-1.380
+VelControlTask  ,35.284,Cmd,17.535, Enc,-0.996, Gyro,-0.959
+VelControlTask  ,35.291,Cmd,17.425, Enc,-0.921, Gyro,-0.736
+VelControlTask  ,35.298,Cmd,17.441, Enc,-0.451, Gyro,-0.698
+VelControlTask  ,35.305,Cmd,17.475, Enc,-0.508, Gyro,-0.641
+VelControlTask  ,35.312,Cmd,17.516, Enc,-0.564, Gyro,-0.548
+VelControlTask  ,35.319,Cmd,17.525, Enc,-0.526, Gyro,-0.423
+VelControlTask  ,35.326,Cmd,17.491, Enc,-0.357, Gyro,-0.293
+VelControlTask  ,35.333,Cmd,17.475, Enc,-0.094, Gyro,-0.190
+VelControlTask  ,35.340,Cmd,17.449, Enc, 0.000, Gyro,-0.053
+VelControlTask  ,35.347,Cmd,17.391, Enc, 0.226, Gyro,-0.060
+VelControlTask  ,35.354,Cmd,17.388, Enc, 0.000, Gyro, 0.022
+VelControlTask  ,35.361,Cmd,17.336, Enc, 0.075, Gyro, 0.072
+VelControlTask  ,35.368,Cmd,17.311, Enc, 0.113, Gyro, 0.120
+VelControlTask  ,35.375,Cmd,17.287, Enc, 0.113, Gyro, 0.146
+VelControlTask  ,35.382,Cmd,17.247, Enc, 0.150, Gyro, 0.166
+VelControlTask  ,35.389,Cmd,17.227, Enc, 0.169, Gyro, 0.199
+VelControlTask  ,35.396,Cmd,17.163, Enc, 0.188, Gyro, 0.262
+VelControlTask  ,35.403,Cmd,17.120, Enc, 0.169, Gyro, 0.318
+VelControlTask  ,35.410,Cmd,17.076, Enc, 0.169, Gyro, 0.386
+VelControlTask  ,35.417,Cmd,16.966, Enc, 0.188, Gyro, 0.460
+VelControlTask  ,35.424,Cmd,16.909, Enc, 0.451, Gyro, 0.462
+VelControlTask  ,35.431,Cmd,16.822, Enc, 0.432, Gyro, 0.510
+VelControlTask  ,35.438,Cmd,16.772, Enc, 0.508, Gyro, 0.537
+VelControlTask  ,35.445,Cmd,16.721, Enc, 0.489, Gyro, 0.567
+VelControlTask  ,35.452,Cmd,16.619, Enc, 0.526, Gyro, 0.579
+VelControlTask  ,35.459,Cmd,16.573, Enc, 0.545, Gyro, 0.569
+VelControlTask  ,35.466,Cmd,16.489, Enc, 0.526, Gyro, 0.582
+VelControlTask  ,35.473,Cmd,16.437, Enc, 0.639, Gyro, 0.596
+VelControlTask  ,35.480,Cmd,16.387, Enc, 0.620, Gyro, 0.669
+VelControlTask  ,35.487,Cmd,16.229, Enc, 0.790, Gyro, 0.779
+VelControlTask  ,35.494,Cmd,16.143, Enc, 0.714, Gyro, 0.805
+VelControlTask  ,35.501,Cmd,15.988, Enc, 0.790, Gyro, 0.856
+VelControlTask  ,35.508,Cmd,15.892, Enc, 0.902, Gyro, 0.967
+VelControlTask  ,35.515,Cmd,15.779, Enc, 1.147, Gyro, 1.176
+VelControlTask  ,35.522,Cmd,15.475, Enc, 1.429, Gyro, 1.400
+VelControlTask  ,35.529,Cmd,15.263, Enc, 1.372, Gyro, 1.742
+VelControlTask  ,35.536,Cmd,14.767, Enc, 1.899, Gyro, 2.014
+VelControlTask  ,35.543,Cmd,14.498, Enc, 2.143, Gyro, 2.312
+VelControlTask  ,35.550,Cmd,14.225, Enc, 2.500, Gyro, 2.657
+VelControlTask  ,35.557,Cmd,13.601, Enc, 3.045, Gyro, 2.954
+VelControlTask  ,35.564,Cmd,13.235, Enc, 3.196, Gyro, 3.717
+VelControlTask  ,35.571,Cmd,12.070, Enc, 4.211, Gyro, 4.523
+VelControlTask  ,35.578,Cmd,11.452, Enc, 4.850, Gyro, 5.340
+VelControlTask  ,35.585,Cmd,10.763, Enc, 5.264, Gyro, 5.987
+VelControlTask  ,35.592,Cmd, 9.382, Enc, 6.222, Gyro, 6.560
+VelControlTask  ,35.599,Cmd, 8.705, Enc, 6.486, Gyro, 7.195
+VelControlTask  ,35.606,Cmd, 7.024, Enc, 7.463, Gyro, 8.141
+VelControlTask  ,35.613,Cmd, 6.042, Enc, 8.384, Gyro, 9.132
+VelControlTask  ,35.620,Cmd, 5.028, Enc, 9.757, Gyro, 9.833
+VelControlTask  ,35.627,Cmd, 2.991, Enc, 9.775, Gyro,10.524
+VelControlTask  ,35.634,Cmd, 2.005, Enc, 9.832, Gyro,10.800
+VelControlTask  ,35.641,Cmd, 0.258, Enc,10.189, Gyro,10.749
+VelControlTask  ,35.648,Cmd,-0.527, Enc,10.415, Gyro,10.729
+VelControlTask  ,35.655,Cmd,-1.320, Enc,10.076, Gyro,11.005
+VelControlTask  ,35.662,Cmd,-3.125, Enc,10.170, Gyro,11.227
+VelControlTask  ,35.669,Cmd,-4.081, Enc,10.640, Gyro,11.555
+VelControlTask  ,35.676,Cmd,-6.042, Enc,10.809, Gyro,11.891
+VelControlTask  ,35.683,Cmd,-7.060, Enc,11.373, Gyro,12.105
+VelControlTask  ,35.690,Cmd,-8.052, Enc,11.655, Gyro,12.677
+VelControlTask  ,35.697,Cmd,-10.271, Enc,12.464, Gyro,12.776
+VelControlTask  ,35.704,Cmd,-11.261, Enc,12.520, Gyro,13.055
+VelControlTask  ,35.711,Cmd,-13.239, Enc,11.956, Gyro,12.910
+VelControlTask  ,35.718,Cmd,-14.203, Enc,11.561, Gyro,12.515
+VelControlTask  ,35.725,Cmd,-14.965, Enc,10.978, Gyro,11.714
+VelControlTask  ,35.732,Cmd,-16.175, Enc,10.133, Gyro,10.901
+VelControlTask  ,35.739,Cmd,-16.656, Enc, 9.644, Gyro,10.020
+VelControlTask  ,35.746,Cmd,-17.318, Enc, 6.674, Gyro, 7.903
+VelControlTask  ,35.753,Cmd,-16.900, Enc, 5.978, Gyro, 6.180
+VelControlTask  ,35.760,Cmd,-16.791, Enc, 3.403, Gyro, 4.169
+VelControlTask  ,35.767,Cmd,-16.069, Enc, 2.237, Gyro, 2.202
+VelControlTask  ,35.774,Cmd,-15.500, Enc, 0.827, Gyro, 0.826
+VelControlTask  ,35.781,Cmd,-14.778, Enc, 0.169, Gyro, 0.302
+VelControlTask  ,35.788,Cmd,-14.727, Enc,-0.056, Gyro, 0.209
+VelControlTask  ,35.795,Cmd,-14.715, Enc, 0.282, Gyro, 0.112
+VelControlTask  ,35.802,Cmd,-14.645, Enc,-0.056, Gyro,-0.007
+VelControlTask  ,35.809,Cmd,-14.617, Enc,-0.132, Gyro,-0.161
+VelControlTask  ,35.816,Cmd,-14.449, Enc,-0.301, Gyro,-0.379
+VelControlTask  ,35.823,Cmd,-14.341, Enc,-0.545, Gyro,-0.615
+VelControlTask  ,35.830,Cmd,-14.210, Enc,-0.808, Gyro,-0.832
+VelControlTask  ,35.837,Cmd,-13.945, Enc,-0.959, Gyro,-0.999
+VelControlTask  ,35.844,Cmd,-13.801, Enc,-0.884, Gyro,-1.172
+VelControlTask  ,35.851,Cmd,-13.516, Enc,-1.034, Gyro,-1.269
+VelControlTask  ,35.858,Cmd,-13.396, Enc,-1.128, Gyro,-1.248
+VelControlTask  ,35.865,Cmd,-13.317, Enc,-0.978, Gyro,-1.151
+VelControlTask  ,35.872,Cmd,-13.235, Enc,-0.846, Gyro,-0.948
+VelControlTask  ,35.879,Cmd,-13.251, Enc,-0.714, Gyro,-0.650
+VelControlTask  ,35.886,Cmd,-13.375, Enc,-0.470, Gyro,-0.349
+VelControlTask  ,35.893,Cmd,-13.452, Enc,-0.338, Gyro,-0.147
+VelControlTask  ,35.900,Cmd,-13.509, Enc,-0.188, Gyro,-0.059
+VelControlTask  ,35.907,Cmd,-13.543, Enc,-0.038, Gyro,-0.094
+VelControlTask  ,35.914,Cmd,-13.515, Enc, 0.000, Gyro,-0.169
+VelControlTask  ,35.921,Cmd,-13.437, Enc,-0.113, Gyro,-0.218
+VelControlTask  ,35.928,Cmd,-13.415, Enc,-0.094, Gyro,-0.254
+VelControlTask  ,35.935,Cmd,-13.379, Enc,-0.113, Gyro,-0.281
+VelControlTask  ,35.942,Cmd,-13.321, Enc,-0.282, Gyro,-0.258
+VelControlTask  ,35.949,Cmd,-13.309, Enc,-0.263, Gyro,-0.318
+VelControlTask  ,35.956,Cmd,-13.218, Enc,-0.357, Gyro,-0.388
+VelControlTask  ,35.963,Cmd,-13.158, Enc,-0.414, Gyro,-0.440
+VelControlTask  ,35.970,Cmd,-13.110, Enc,-0.470, Gyro,-0.417
+VelControlTask  ,35.977,Cmd,-13.076, Enc,-0.320, Gyro,-0.329
+VelControlTask  ,35.984,Cmd,-13.087, Enc,-0.338, Gyro,-0.188
+VelControlTask  ,35.991,Cmd,-13.169, Enc,-0.282, Gyro,-0.041
+VelControlTask  ,35.998,Cmd,-13.219, Enc,-0.094, Gyro, 0.041
+VelControlTask  ,36.005,Cmd,-13.242, Enc, 0.150, Gyro, 0.009
+VelControlTask  ,36.012,Cmd,-13.227, Enc, 0.038, Gyro,-0.027
+VelControlTask  ,36.019,Cmd,-13.202, Enc,-0.132, Gyro,-0.107
+VelControlTask  ,36.026,Cmd,-13.133, Enc,-0.132, Gyro,-0.161
+VelControlTask  ,36.033,Cmd,-13.109, Enc,-0.075, Gyro,-0.166
+VelControlTask  ,36.040,Cmd,-13.097, Enc,-0.094, Gyro,-0.156
+VelControlTask  ,36.047,Cmd,-13.074, Enc,-0.094, Gyro,-0.175
+VelControlTask  ,36.054,Cmd,-13.050, Enc,-0.113, Gyro,-0.246
+VelControlTask  ,36.061,Cmd,-12.956, Enc,-0.169, Gyro,-0.334
+VelControlTask  ,36.068,Cmd,-12.899, Enc,-0.470, Gyro,-0.422
+VelControlTask  ,36.075,Cmd,-12.833, Enc,-0.432, Gyro,-0.537
+VelControlTask  ,36.082,Cmd,-12.677, Enc,-0.602, Gyro,-0.592
+VelControlTask  ,36.089,Cmd,-12.622, Enc,-0.526, Gyro,-0.605
+VelControlTask  ,36.096,Cmd,-12.545, Enc,-0.508, Gyro,-0.530
+VelControlTask  ,36.103,Cmd,-12.538, Enc,-0.376, Gyro,-0.440
+VelControlTask  ,36.110,Cmd,-12.539, Enc,-0.301, Gyro,-0.315
+VelControlTask  ,36.117,Cmd,-12.572, Enc,-0.244, Gyro,-0.242
+VelControlTask  ,36.124,Cmd,-12.575, Enc,-0.207, Gyro,-0.223
+VelControlTask  ,36.131,Cmd,-12.547, Enc,-0.226, Gyro,-0.238
+VelControlTask  ,36.138,Cmd,-12.520, Enc,-0.226, Gyro,-0.257
+VelControlTask  ,36.145,Cmd,-12.494, Enc,-0.263, Gyro,-0.299
+VelControlTask  ,36.152,Cmd,-12.409, Enc,-0.338, Gyro,-0.394
+VelControlTask  ,36.159,Cmd,-12.347, Enc,-0.508, Gyro,-0.487
+VelControlTask  ,36.166,Cmd,-12.175, Enc,-0.602, Gyro,-0.701
+VelControlTask  ,36.173,Cmd,-12.021, Enc,-0.940, Gyro,-1.008
+VelControlTask  ,36.180,Cmd,-11.829, Enc,-1.278, Gyro,-1.409
+VelControlTask  ,36.187,Cmd,-11.342, Enc,-1.598, Gyro,-1.747
+VelControlTask  ,36.194,Cmd,-11.086, Enc,-2.049, Gyro,-2.083
+VelControlTask  ,36.201,Cmd,-10.521, Enc,-2.406, Gyro,-2.439
+VelControlTask  ,36.208,Cmd,-10.200, Enc,-2.726, Gyro,-2.724
+VelControlTask  ,36.215,Cmd,-9.907, Enc,-2.669, Gyro,-2.935
+VelControlTask  ,36.222,Cmd,-9.285, Enc,-2.970, Gyro,-3.173
+VelControlTask  ,36.229,Cmd,-8.993, Enc,-3.309, Gyro,-3.383
+VelControlTask  ,36.236,Cmd,-8.292, Enc,-3.271, Gyro,-3.678
+VelControlTask  ,36.243,Cmd,-7.908, Enc,-3.835, Gyro,-3.911
+VelControlTask  ,36.250,Cmd,-7.537, Enc,-4.079, Gyro,-4.161
+VelControlTask  ,36.257,Cmd,-6.724, Enc,-4.136, Gyro,-4.441
+VelControlTask  ,36.264,Cmd,-6.288, Enc,-4.286, Gyro,-4.701
+VelControlTask  ,36.271,Cmd,-5.425, Enc,-4.662, Gyro,-4.918
+VelControlTask  ,36.278,Cmd,-4.946, Enc,-4.794, Gyro,-5.200
+VelControlTask  ,36.285,Cmd,-4.459, Enc,-5.282, Gyro,-5.359
+VelControlTask  ,36.292,Cmd,-3.524, Enc,-5.170, Gyro,-5.585
+VelControlTask  ,36.299,Cmd,-3.018, Enc,-5.282, Gyro,-5.703
+VelControlTask  ,36.306,Cmd,-2.123, Enc,-5.658, Gyro,-5.653
+VelControlTask  ,36.313,Cmd,-1.721, Enc,-5.226, Gyro,-5.576
+VelControlTask  ,36.320,Cmd,-1.338, Enc,-5.188, Gyro,-5.327
+VelControlTask  ,36.327,Cmd,-0.739, Enc,-4.831, Gyro,-4.955
+VelControlTask  ,36.334,Cmd,-0.513, Enc,-4.136, Gyro,-4.491
+VelControlTask  ,36.341,Cmd,-0.235, Enc,-4.042, Gyro,-3.862
+VelControlTask  ,36.348,Cmd,-0.198, Enc,-3.064, Gyro,-3.223
+VelControlTask  ,36.355,Cmd,-0.182, Enc,-2.181, Gyro,-2.522
+VelControlTask  ,36.362,Cmd,-0.344, Enc,-1.542, Gyro,-1.712
+VelControlTask  ,36.369,Cmd,-0.513, Enc,-1.109, Gyro,-0.872
+VelControlTask  ,36.376,Cmd,-0.934, Enc,-0.075, Gyro,-0.338
+VelControlTask  ,36.383,Cmd,-1.074, Enc, 0.320, Gyro, 0.129
+VelControlTask  ,36.390,Cmd,-1.250, Enc, 0.564, Gyro, 0.461
+VelControlTask  ,36.397,Cmd,-1.538, Enc, 0.639, Gyro, 0.659
+VelControlTask  ,36.404,Cmd,-1.652, Enc, 0.602, Gyro, 0.739
+VelControlTask  ,36.411,Cmd,-1.785, Enc, 0.583, Gyro, 0.706
+VelControlTask  ,36.418,Cmd,-1.812, Enc, 0.583, Gyro, 0.590
+VelControlTask  ,36.425,Cmd,-1.813, Enc, 0.526, Gyro, 0.456
+VelControlTask  ,36.432,Cmd,-1.790, Enc, 0.414, Gyro, 0.342
+VelControlTask  ,36.439,Cmd,-1.772, Enc, 0.301, Gyro, 0.224
+VelControlTask  ,36.446,Cmd,-1.724, Enc, 0.075, Gyro, 0.127
+VelControlTask  ,36.453,Cmd,-1.702, Enc, 0.000, Gyro, 0.039
+VelControlTask  ,36.460,Cmd,-1.671, Enc,-0.019, Gyro,-0.057
+VelControlTask  ,36.467,Cmd,-1.602, Enc, 0.000, Gyro,-0.103
+VelControlTask  ,36.474,Cmd,-1.584, Enc,-0.019, Gyro,-0.089
+VelControlTask  ,36.481,Cmd,-1.596, Enc, 0.000, Gyro,-0.025
+VelControlTask  ,36.488,Cmd,-1.619, Enc, 0.000, Gyro, 0.033
+VelControlTask  ,36.495,Cmd,-1.641, Enc, 0.000, Gyro, 0.046
+VelControlTask  ,36.502,Cmd,-1.653, Enc, 0.000, Gyro, 0.037
+VelControlTask  ,36.509,Cmd,-1.655, Enc, 0.000, Gyro, 0.065
+VelControlTask  ,36.516,Cmd,-1.696, Enc, 0.000, Gyro, 0.130
+VelControlTask  ,36.523,Cmd,-1.736, Enc, 0.000, Gyro, 0.220
+VelControlTask  ,36.530,Cmd,-1.784, Enc, 0.000, Gyro, 0.297
+VelControlTask  ,36.537,Cmd,-1.859, Enc, 0.301, Gyro, 0.292
+VelControlTask  ,36.544,Cmd,-1.889, Enc, 0.207, Gyro, 0.328
+VelControlTask  ,36.551,Cmd,-1.951, Enc, 0.338, Gyro, 0.319
+VelControlTask  ,36.558,Cmd,-1.973, Enc, 0.282, Gyro, 0.315
+VelControlTask  ,36.565,Cmd,-1.993, Enc, 0.376, Gyro, 0.257
+VelControlTask  ,36.572,Cmd,-1.996, Enc, 0.282, Gyro, 0.248
+VelControlTask  ,36.579,Cmd,-2.021, Enc, 0.282, Gyro, 0.265
+VelControlTask  ,36.586,Cmd,-2.070, Enc, 0.301, Gyro, 0.293
+VelControlTask  ,36.593,Cmd,-2.111, Enc, 0.282, Gyro, 0.338
+VelControlTask  ,36.600,Cmd,-2.148, Enc, 0.282, Gyro, 0.331
+VelControlTask  ,36.607,Cmd,-2.201, Enc, 0.301, Gyro, 0.352
+VelControlTask  ,36.614,Cmd,-2.237, Enc, 0.376, Gyro, 0.385
+VelControlTask  ,36.621,Cmd,-2.320, Enc, 0.357, Gyro, 0.412
+VelControlTask  ,36.628,Cmd,-2.359, Enc, 0.395, Gyro, 0.433
+VelControlTask  ,36.635,Cmd,-2.398, Enc, 0.395, Gyro, 0.455
+VelControlTask  ,36.642,Cmd,-2.476, Enc, 0.470, Gyro, 0.447
+VelControlTask  ,36.649,Cmd,-2.506, Enc, 0.357, Gyro, 0.430
+VelControlTask  ,36.656,Cmd,-2.547, Enc, 0.320, Gyro, 0.385
+VelControlTask  ,36.663,Cmd,-2.566, Enc, 0.357, Gyro, 0.367
+VelControlTask  ,36.670,Cmd,-2.584, Enc, 0.301, Gyro, 0.325
+VelControlTask  ,36.677,Cmd,-2.607, Enc, 0.263, Gyro, 0.281
+VelControlTask  ,36.684,Cmd,-2.604, Enc, 0.301, Gyro, 0.199
+VelControlTask  ,36.691,Cmd,-2.588, Enc, 0.169, Gyro, 0.154
+VelControlTask  ,36.698,Cmd,-2.581, Enc, 0.056, Gyro, 0.102
+VelControlTask  ,36.705,Cmd,-2.568, Enc, 0.038, Gyro, 0.053
+VelControlTask  ,36.712,Cmd,-2.548, Enc, 0.038, Gyro, 0.049
+VelControlTask  ,36.719,Cmd,-2.555, Enc, 0.075, Gyro, 0.078
+VelControlTask  ,36.726,Cmd,-2.596, Enc, 0.132, Gyro, 0.133
+VelControlTask  ,36.733,Cmd,-2.628, Enc, 0.226, Gyro, 0.186
+VelControlTask  ,36.740,Cmd,-2.660, Enc, 0.263, Gyro, 0.238
+VelControlTask  ,36.747,Cmd,-2.733, Enc, 0.301, Gyro, 0.301
+VelControlTask  ,36.754,Cmd,-2.785, Enc, 0.357, Gyro, 0.407
+VelControlTask  ,36.761,Cmd,-2.920, Enc, 0.376, Gyro, 0.497
+VelControlTask  ,36.768,Cmd,-2.987, Enc, 0.526, Gyro, 0.529
+VelControlTask  ,36.775,Cmd,-3.036, Enc, 0.508, Gyro, 0.587
+VelControlTask  ,36.782,Cmd,-3.154, Enc, 0.564, Gyro, 0.606
+VelControlTask  ,36.789,Cmd,-3.210, Enc, 0.620, Gyro, 0.654
+VelControlTask  ,36.796,Cmd,-3.334, Enc, 0.677, Gyro, 0.680
+VelControlTask  ,36.803,Cmd,-3.387, Enc, 0.696, Gyro, 0.645
+VelControlTask  ,36.810,Cmd,-3.426, Enc, 0.602, Gyro, 0.673
+VelControlTask  ,36.817,Cmd,-3.538, Enc, 0.602, Gyro, 0.674
+VelControlTask  ,36.824,Cmd,-3.590, Enc, 0.658, Gyro, 0.678
+VelControlTask  ,36.831,Cmd,-3.690, Enc, 0.620, Gyro, 0.675
+VelControlTask  ,36.838,Cmd,-3.742, Enc, 0.602, Gyro, 0.672
+VelControlTask  ,36.845,Cmd,-3.791, Enc, 0.602, Gyro, 0.677
+VelControlTask  ,36.852,Cmd,-3.894, Enc, 0.620, Gyro, 0.677
+VelControlTask  ,36.859,Cmd,-3.946, Enc, 0.620, Gyro, 0.675
+VelControlTask  ,36.866,Cmd,-4.043, Enc, 0.620, Gyro, 0.655
+VelControlTask  ,36.873,Cmd,-4.081, Enc, 0.602, Gyro, 0.639
+VelControlTask  ,36.880,Cmd,-4.122, Enc, 0.620, Gyro, 0.574
+VelControlTask  ,36.887,Cmd,-4.181, Enc, 0.508, Gyro, 0.591
+VelControlTask  ,36.894,Cmd,-4.229, Enc, 0.508, Gyro, 0.547
+VelControlTask  ,36.901,Cmd,-4.278, Enc, 0.414, Gyro, 0.506
+VelControlTask  ,36.908,Cmd,-4.302, Enc, 0.414, Gyro, 0.459
+VelControlTask  ,36.915,Cmd,-4.319, Enc, 0.395, Gyro, 0.427
+VelControlTask  ,36.922,Cmd,-4.354, Enc, 0.338, Gyro, 0.379
+VelControlTask  ,36.929,Cmd,-4.368, Enc, 0.320, Gyro, 0.344
+VelControlTask  ,36.936,Cmd,-4.394, Enc, 0.263, Gyro, 0.313
+VelControlTask  ,36.943,Cmd,-4.406, Enc, 0.282, Gyro, 0.282
+VelControlTask  ,36.950,Cmd,-4.416, Enc, 0.226, Gyro, 0.256
+VelControlTask  ,36.957,Cmd,-4.434, Enc, 0.188, Gyro, 0.218
+VelControlTask  ,36.964,Cmd,-4.434, Enc, 0.169, Gyro, 0.171
+VelControlTask  ,36.971,Cmd,-4.430, Enc, 0.132, Gyro, 0.137
+VelControlTask  ,36.978,Cmd,-4.425, Enc, 0.094, Gyro, 0.102
+VelControlTask  ,36.985,Cmd,-4.421, Enc, 0.056, Gyro, 0.072
+VelControlTask  ,36.992,Cmd,-4.408, Enc, 0.038, Gyro, 0.039
+VelControlTask  ,36.999,Cmd,-4.400, Enc, 0.019, Gyro, 0.012
+VelControlTask  ,37.006,Cmd,-4.384, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,37.013,Cmd,-4.382, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,37.020,Cmd,-4.382, Enc, 0.000, Gyro, 0.004
+VelControlTask  ,37.027,Cmd,-4.386, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.034,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.041,Cmd,-4.383, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.048,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.055,Cmd,-4.384, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.062,Cmd,-4.384, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.069,Cmd,-4.383, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.076,Cmd,-4.384, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.083,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.090,Cmd,-4.384, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.097,Cmd,-4.384, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.104,Cmd,-4.384, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.111,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.118,Cmd,-4.384, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.125,Cmd,-4.383, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,37.132,Cmd,-4.383, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.139,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.146,Cmd,-4.384, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.153,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.160,Cmd,-4.384, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.167,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.174,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.181,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.188,Cmd,-4.383, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.195,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.202,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.209,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.216,Cmd,-4.384, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.223,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.230,Cmd,-4.384, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.237,Cmd,-4.387, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.244,Cmd,-4.384, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.251,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.258,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.265,Cmd,-4.385, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,37.272,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.279,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.286,Cmd,-4.385, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.293,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.300,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.307,Cmd,-4.386, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.314,Cmd,-4.385, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,37.321,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.328,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.335,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.342,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.349,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.356,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.363,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.370,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.377,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.384,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.391,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.398,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.405,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.412,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.419,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.426,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.433,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.440,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.447,Cmd,-4.384, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.454,Cmd,-4.384, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.461,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.468,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.475,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.482,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.489,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.496,Cmd,-4.386, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,37.503,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.510,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.517,Cmd,-4.386, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.524,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.531,Cmd,-4.385, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.538,Cmd,-4.385, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.545,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.552,Cmd,-4.385, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.559,Cmd,-4.385, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.566,Cmd,-4.388, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,37.573,Cmd,-4.392, Enc, 0.019, Gyro, 0.008
+VelControlTask  ,37.580,Cmd,-4.391, Enc, 0.000, Gyro,-0.004
+VelControlTask  ,37.587,Cmd,-4.386, Enc, 0.000, Gyro, 0.007
+VelControlTask  ,37.594,Cmd,-4.391, Enc, 0.019, Gyro, 0.008
+VelControlTask  ,37.601,Cmd,-4.393, Enc, 0.000, Gyro, 0.007
+VelControlTask  ,37.608,Cmd,-4.391, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,37.615,Cmd,-4.391, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.622,Cmd,-4.391, Enc, 0.000, Gyro,-0.003
+VelControlTask  ,37.629,Cmd,-4.389, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,37.636,Cmd,-4.389, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.643,Cmd,-4.391, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.650,Cmd,-4.391, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.657,Cmd,-4.390, Enc, 0.000, Gyro,-0.002
+VelControlTask  ,37.664,Cmd,-4.390, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.671,Cmd,-4.391, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,37.678,Cmd,-4.390, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,37.685,Cmd,-4.391, Enc, 0.000, Gyro,-0.001
+VelControlTask  ,37.692,Cmd,-4.385, Enc, 0.000, Gyro,-0.028
+VelControlTask  ,37.699,Cmd,-4.375, Enc, 0.019, Gyro,-0.035
+VelControlTask  ,37.706,Cmd,-4.361, Enc, 0.038, Gyro,-0.053
+VelControlTask  ,37.713,Cmd,-4.347, Enc, 0.056, Gyro,-0.087
+VelControlTask  ,37.720,Cmd,-4.329, Enc, 0.056, Gyro,-0.102
+VelControlTask  ,37.727,Cmd,-4.310, Enc,-0.094, Gyro,-0.049
+VelControlTask  ,37.734,Cmd,-4.334, Enc,-0.019, Gyro, 0.014
+VelControlTask  ,37.741,Cmd,-4.383, Enc, 0.056, Gyro, 0.074
+VelControlTask  ,37.748,Cmd,-4.407, Enc, 0.056, Gyro, 0.102
+VelControlTask  ,37.755,Cmd,-4.422, Enc, 0.056, Gyro, 0.094
+VelControlTask  ,37.762,Cmd,-4.431, Enc, 0.038, Gyro, 0.088
+VelControlTask  ,37.769,Cmd,-4.437, Enc, 0.038, Gyro, 0.087
+VelControlTask  ,37.776,Cmd,-4.453, Enc, 0.038, Gyro, 0.099
+VelControlTask  ,37.783,Cmd,-4.464, Enc, 0.056, Gyro, 0.106
+VelControlTask  ,37.790,Cmd,-4.474, Enc, 0.038, Gyro, 0.112
+VelControlTask  ,37.797,Cmd,-4.494, Enc, 0.038, Gyro, 0.110
+VelControlTask  ,37.804,Cmd,-4.501, Enc, 0.056, Gyro, 0.103
+VelControlTask  ,37.811,Cmd,-4.509, Enc, 0.075, Gyro, 0.088
+VelControlTask  ,37.818,Cmd,-4.509, Enc, 0.075, Gyro, 0.075
+VelControlTask  ,37.825,Cmd,-4.511, Enc, 0.056, Gyro, 0.071
+VelControlTask  ,37.832,Cmd,-4.518, Enc, 0.056, Gyro, 0.066
+VelControlTask  ,37.839,Cmd,-4.522, Enc, 0.038, Gyro, 0.075
+VelControlTask  ,37.846,Cmd,-4.542, Enc, 0.075, Gyro, 0.092
+VelControlTask  ,37.853,Cmd,-4.555, Enc, 0.113, Gyro, 0.104
+VelControlTask  ,37.860,Cmd,-4.567, Enc, 0.113, Gyro, 0.121
+VelControlTask  ,37.867,Cmd,-4.598, Enc, 0.132, Gyro, 0.135
+VelControlTask  ,37.874,Cmd,-4.612, Enc, 0.132, Gyro, 0.137
+VelControlTask  ,37.881,Cmd,-4.627, Enc, 0.113, Gyro, 0.109
+VelControlTask  ,37.888,Cmd,-4.615, Enc, 0.038, Gyro, 0.035
+VelControlTask  ,37.895,Cmd,-4.592, Enc, 0.000, Gyro,-0.022
+VelControlTask  ,37.902,Cmd,-4.554, Enc, 0.000, Gyro,-0.033
+VelControlTask  ,37.909,Cmd,-4.552, Enc, 0.000, Gyro,-0.020
+VelControlTask  ,37.916,Cmd,-4.557, Enc, 0.000, Gyro,-0.013
+VelControlTask  ,37.923,Cmd,-4.556, Enc, 0.000, Gyro,-0.023
+VelControlTask  ,37.930,Cmd,-4.551, Enc, 0.000, Gyro,-0.029
+VelControlTask  ,37.937,Cmd,-4.541, Enc, 0.000, Gyro,-0.035
+VelControlTask  ,37.944,Cmd,-4.538, Enc, 0.000, Gyro,-0.024
+VelControlTask  ,37.951,Cmd,-4.546, Enc, 0.000, Gyro,-0.005
+VelControlTask  ,37.958,Cmd,-4.551, Enc, 0.000, Gyro, 0.003
+VelControlTask  ,37.965,Cmd,-4.553, Enc, 0.000, Gyro,-0.008
+VelControlTask  ,37.972,Cmd,-4.547, Enc, 0.000, Gyro,-0.008
+VelControlTask  ,37.979,Cmd,-4.549, Enc, 0.000, Gyro, 0.007
+VelControlTask  ,37.986,Cmd,-4.558, Enc, 0.000, Gyro, 0.013
+VelControlTask  ,37.993,Cmd,-4.559, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,38.000,Cmd,-4.559, Enc, 0.000, Gyro, 0.006
+VelControlTask  ,38.007,Cmd,-4.560, Enc, 0.000, Gyro, 0.011
+VelControlTask  ,38.014,Cmd,-4.562, Enc, 0.000, Gyro, 0.011
+VelControlTask  ,38.021,Cmd,-4.562, Enc, 0.000, Gyro, 0.006
+VelControlTask  ,38.028,Cmd,-4.559, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,38.035,Cmd,-4.554, Enc, 0.000, Gyro,-0.019
+VelControlTask  ,38.042,Cmd,-4.548, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,38.049,Cmd,-4.551, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,38.056,Cmd,-4.557, Enc, 0.000, Gyro, 0.005
+VelControlTask  ,38.063,Cmd,-4.556, Enc, 0.000, Gyro, 0.002
+VelControlTask  ,38.070,Cmd,-4.556, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,38.077,Cmd,-4.561, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,38.084,Cmd,-4.562, Enc, 0.000, Gyro, 0.010
+VelControlTask  ,38.091,Cmd,-4.562, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,38.098,Cmd,-4.563, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,38.105,Cmd,-4.564, Enc, 0.000, Gyro, 0.010
+VelControlTask  ,38.112,Cmd,-4.567, Enc, 0.000, Gyro, 0.012
+VelControlTask  ,38.119,Cmd,-4.568, Enc, 0.000, Gyro, 0.013
+VelControlTask  ,38.126,Cmd,-4.568, Enc, 0.000, Gyro, 0.008
+VelControlTask  ,38.133,Cmd,-4.568, Enc, 0.000, Gyro, 0.010
+VelControlTask  ,38.140,Cmd,-4.570, Enc, 0.000, Gyro, 0.009
+VelControlTask  ,38.147,Cmd,-4.570, Enc, 0.000, Gyro, 0.000
+VelControlTask  ,38.154,Cmd,-4.567, Enc, 0.000, Gyro,-0.007
+VelControlTask  ,38.161,Cmd,-4.561, Enc, 0.000, Gyro,-0.010
+VelControlTask  ,38.168,Cmd,-4.561, Enc, 0.000, Gyro,-0.006

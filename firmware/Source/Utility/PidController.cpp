@@ -25,7 +25,9 @@ PidController::PidController()
     bFirstFlag = false;            
     fNowDiff = 0.0f;             
     fOld1Diff = 0.0f;            
-    fOld2Diff = 0.0f;          
+    fOld2Diff = 0.0f;
+    fOutput_I_Sum = 0.0f;
+    fNowTarget = 0.0f;
 }
 
 PidController::~PidController()
@@ -102,6 +104,7 @@ float PidController::GetOutput(float fTarget, float fFeedback)
     float fResult = 0.0f;
 
     fNowDiff = fTarget - fFeedback;
+    fNowTarget = fTarget;
     fNowFeedback = fFeedback;
 
     if(bFirstFlag){
@@ -166,9 +169,15 @@ float PidController::CalcOutput_Nomal()
         fResult = fDeltaOutput + fOldOutput;
         break;
     case EN_PID_TYPE_POSITION:
-        //fResult = fGain[EN_GAIN_P] * (fNowDiff);
-        //fResult += fGain[EN_GAIN_I] * fNowDiff;
-        //fResult += CalcOutput_D_PosType();
+        fResult = fGain[EN_GAIN_P] * fNowDiff;
+        //制御量が目標値を超えたらIゲインの出力を0にする
+        if(fabs(fNowTarget) < fabsf(fNowFeedback)){
+            fOutput_I_Sum = 0.0f;
+        }
+        fOutput_I_Sum += fGain[EN_GAIN_I] * fNowDiff * fSamplingTimeSec;
+        
+        fResult += fOutput_I_Sum;
+        fResult += CalcOutput_D_PosType();
         break;
     default:
         break;
@@ -229,8 +238,7 @@ float PidController::CalcOutput_D_VelType()
     
     //差分値を加算
     //Yd[k] = Yd[k-1] + ΔYd
-    fNowDiff = fOldOutput_D + fDeltaOutput_d;
-
+    fNowOutput_D = fOldOutput_D + fDeltaOutput_d;
 
     return fNowOutput_D;
 }

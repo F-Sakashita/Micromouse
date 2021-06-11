@@ -67,6 +67,8 @@ class PidController{
         float fOldFeedback;         //1step前のフィードバック値
         float fNowOutput_D;         //現在の微分項の出力値
         float fOldOutput_D;         //1step前微分項の出力値
+        float fOutput_I_Sum;
+        float fNowTarget;
 };
 
 #endif //PID_CONTROLLER_HPP

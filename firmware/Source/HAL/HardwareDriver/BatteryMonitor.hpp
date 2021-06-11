@@ -1,6 +1,8 @@
 #ifndef BATTERY_MONITOR_HPP
 #define BATTERY_MONITOR_HPP
 
+#include <cstdint>
+
 class BatteryMonitor{
 private:
     BatteryMonitor();
@@ -12,7 +14,11 @@ private:
     float fPercentage;
     bool bIsUpperError;
     bool bIsLowerError;
+
     bool bInitialized;
+    uint32_t uiUpperErrorCount;
+    uint32_t uiLowerErrorCount;
+
     typedef struct{
         float fUpper;
         float fLower;
@@ -20,6 +26,7 @@ private:
     static const Threshold_t stThreshold;
     static const float fGain;
     #define DEF_ADC_CHANNEL_RANK    (1)
+    #define DEF_ERR_COUNT_MAX       (50)
 
 public:
     static BatteryMonitor& GetInstance(){
@@ -49,6 +56,8 @@ public:
     void ClearError(){
         bIsLowerError = false;
         bIsUpperError = false;
+        uiUpperErrorCount = 0u;
+        uiLowerErrorCount = 0u;
     }
 
     void Update();

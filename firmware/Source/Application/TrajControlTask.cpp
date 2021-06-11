@@ -6,6 +6,7 @@
 #include "DebugQueue.hpp"
 #include "MessageQueueList.hpp"
 #include "PidController.hpp"
+#include "SystickTimer.h"
 
 //外部参照可能なメッセージキューインスタンス
 MessageQueue<OdometoryMsg_t> g_PosMsgQueue;
@@ -27,14 +28,14 @@ bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc)
     bResult &= g_rOdometory.InitializePos(TRAJ_CONTROL_TASK_SAMPLING_PERIOD_MS, stInitPos);
     bResult &= g_PosMsgQueue.Initialize(pOsFunc->OdometoryPosQueueId);
     bResult &= g_VelCmdMsgQueue.Initialize(pOsFunc->VelCmdQueueId);
-    bResult &= g_AnglePidCon.Initialize(TRAJ_CONTROL_TASK_SAMPLING_PERIOD_MS, 1000.0f);
+    bResult &= g_AnglePidCon.Initialize(TRAJ_CONTROL_TASK_SAMPLING_PERIOD_MS, 1000.0f, PidController::EN_MODE_NORMAL, PidController::EN_PID_TYPE_POSITION);
 
     if(!bResult){
         return false;
     }
 
     g_pOsFunc = pOsFunc;
-    g_AnglePidCon.SetAllGain(0.0005f, 0.0005f, 0.0f);
+    g_AnglePidCon.SetAllGain(15.0f, 0.0f, 0.5f);
     g_DebugLed1.ForceOn();
     g_bEnable = false;
     g_bInitialized = true;
@@ -86,7 +87,29 @@ void TrajControlTask_Update()
             stVelCmdMsg.fAngVelCmd = 0.0f;
 
             //軌道追従制御
-            stVelCmdMsg.fAngVelCmd = g_AnglePidCon.GetOutput(0.0f, g_rOdometory.GetAngle());
+
+            static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
+            static uint8_t ucCount = 0u;
+            if(SystickTimer_IsTimeElapsed(uiTimerMs, 5000)){
+                uiTimerMs = SystickTimer_GetTimeMS();
+                //ucCount ++;
+                if(ucCount >= 4){
+                    ucCount = 0;
+                }
+            }
+
+            float fTargetAngle = 0.0f;
+            switch(ucCount){
+                case 0:     fTargetAngle = 0.0f;    break;
+                case 1:     fTargetAngle = 90.0f;   break;
+                case 2:     fTargetAngle = 0.0f;    break;
+                case 3:     fTargetAngle = -90.0f;  break;
+                default:    break;
+            }
+            fTargetAngle = Calc_ConvDegToRad(fTargetAngle);
+            
+            
+            stVelCmdMsg.fAngVelCmd = g_AnglePidCon.GetOutput(fTargetAngle, g_rOdometory.GetAngle());
         
 
             if(!g_VelCmdMsgQueue.IsFull()){
@@ -97,7 +120,8 @@ void TrajControlTask_Update()
             //Debug Consoleに出力
             #ifdef ENABLE_TRAJ_CONTROL_TASK_DEBUG_CONSOLE
             if(!g_rDebugQueue.IsFull()){
-                g_rDebugQueue.Printf(0,"Angle,%6.4f,CmdVel,%6.4f,NowVel,%6.4f", 
+                g_rDebugQueue.Printf(0,"Cmd,%6.4f,Ang,%6.4f,CmdV,%6.4f,AngV,%6.4f", 
+                                        fTargetAngle,
                                         g_rOdometory.GetAngle(),
                                         stVelCmdMsg.fAngVelCmd,
                                         g_rOdometory.GetAngleVel()
@@ -107,12 +131,6 @@ void TrajControlTask_Update()
 
             g_DebugLed1.SetPeriod(250u);   
         }else{
-            #ifdef ENABLE_TRAJ_CONTROL_TASK_DEBUG_CONSOLE
-            //ジャイロ補正中
-            if(!g_rDebugQueue.IsFull()){
-                g_rDebugQueue.Printf(0,"Gyro calibrating ...");
-            }
-            #endif
             g_DebugLed1.SetPeriod(500u);
         }
     }else{

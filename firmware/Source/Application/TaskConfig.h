@@ -25,7 +25,7 @@ extern "C" {
 #endif
 
 //モータ出力有効化
-#define ENABLE_MOTOR_OUTPUT
+//#define ENABLE_MOTOR_OUTPUT
 
 
 #ifdef __cplusplus

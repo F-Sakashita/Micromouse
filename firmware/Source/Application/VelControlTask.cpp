@@ -42,10 +42,10 @@ bool VelControlTask_Initialize(const VelControlTask_OsFunc_t *pOsFunc)
 
     g_pOsFunc = pOsFunc;
     g_rBattMoni.SetOffset(-0.112f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetAllGain(0.0001f, 1.0f, 0.0002f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.0001f, 1.0f, 0.0002f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-5.0f, 5.0f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-5.0f, 5.0f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetAllGain(0.03f, 20.0f, 0.0000f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.03f, 20.0f, 0.0000f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-7.0f, 7.0f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-7.0f, 7.0f);
     g_bEnable = false;
 
     g_DebugLed2.ForceOn();
@@ -80,6 +80,9 @@ void VelControlTask_Update()
     //バッテリー電圧が閾値を下回ったら停止する
     if(g_rBattMoni.IsError()){
         g_bEnable = false;
+        if(!g_rDebugQueue.IsFull()){
+            g_rDebugQueue.Printf(0,"Current Battery Voltage, %f", fBattVoltage);
+        }
     }
 
     OdometoryMsg_t stVelMsg = {
@@ -127,9 +130,9 @@ void VelControlTask_Update()
             }else{
                 stVelCmdMsg.fAngVelCmd = Calc_ConvDegToRad(-180.0f) / 1.0f;
             }
-            #else
+
                 uint32_t uiTimerMs = SystickTimer_GetTimeMS();
-                float fOmega = 10.0f;
+                float fOmega = 1.0f;
                 stVelCmdMsg.fAngVelCmd = Calc_ConvDegToRad(360.0f) * arm_sin_f32(fOmega * static_cast<float>(uiTimerMs) / 1000.0f);
             #endif
 
@@ -160,12 +163,20 @@ void VelControlTask_Update()
             //デバッグ出力
             #ifdef ENABLE_VEL_CONTROL_TASK_DEBUG_CONSOLE
             if(!g_rDebugQueue.IsFull()){
+                #if 0
                 g_rDebugQueue.Printf(0,"L,%6.3f,%6.3f,R,%6.3f,%6.3f",
                                         fWheelVelCmd[DCMotor::EN_MOTOR_LEFT],
                                         fNowWheelVel[DCMotor::EN_MOTOR_LEFT],
                                         fWheelVelCmd[DCMotor::EN_MOTOR_RIGHT],
                                         fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]
                                         );
+                #else
+                g_rDebugQueue.Printf(0,"Cmd,%6.3f, Enc,%6.3f, Gyro,%6.3f", 
+                                    stVelCmdMsg.fAngVelCmd,
+                                    (-fNowWheelVel[DCMotor::EN_MOTOR_LEFT] + fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]) / (ROBOT_PARAM_TREAD_MM),
+                                    g_rOdometory.GetAngleVel()
+                                    );
+                #endif
             }
             #endif
             
@@ -183,10 +194,12 @@ void VelControlTask_Update()
     }
     
     //モータ出力
-    #ifdef ENABLE_MOTOR_OUTPUT
+    #ifndef ENABLE_MOTOR_OUTPUT
+    g_rLeftMotor.Stop();
+    g_rRightMotor.Stop();
+    #endif
     g_rLeftMotor.Update();
     g_rRightMotor.Update();
-    #endif
 
     //LED点灯
     g_DebugLed2.Update();

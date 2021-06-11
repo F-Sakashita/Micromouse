@@ -3,7 +3,7 @@
 
 const BatteryMonitor::Threshold_t BatteryMonitor::stThreshold = {
     8.50f,  /* Upper Threshold */
-    7.20f   /* Lower Threshold */
+    7.00f   /* Lower Threshold */
 };
 
 const float BatteryMonitor::fGain = 3.3f * 3.0f;    /* Vref * (10k+20k)/10k */
@@ -18,6 +18,8 @@ BatteryMonitor::BatteryMonitor()
     bIsLowerError = false;
     fFullVoltage = 1.0f;
     bInitialized = false;
+    uiUpperErrorCount = 0u;
+    uiLowerErrorCount = 0u;
 }
 
 BatteryMonitor::~BatteryMonitor()
@@ -48,14 +50,23 @@ void BatteryMonitor::Update()
         fPercentage = fVoltage / fFullVoltage;
 
         if(fVoltage < stThreshold.fLower){
+            uiLowerErrorCount ++;
+        }else if(fVoltage > stThreshold.fUpper){
+            uiUpperErrorCount ++;
+        }else{
+            uiUpperErrorCount = 0u;
+            uiLowerErrorCount = 0u; 
+        }
+
+        if(uiLowerErrorCount >= DEF_ERR_COUNT_MAX){
             bIsUpperError = false;
             bIsLowerError = true;
-        }else if(fVoltage > stThreshold.fUpper){
+        }else if(uiUpperErrorCount >= DEF_ERR_COUNT_MAX){
             bIsUpperError = true;
             bIsLowerError = false;
         }else{
             bIsUpperError = false;
-            bIsLowerError = false;   
+            bIsLowerError = false;
         }
     }
 }
