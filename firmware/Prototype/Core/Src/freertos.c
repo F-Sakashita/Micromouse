@@ -27,10 +27,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "SystickTimer.h"
+#include "TaskList.h"
 #include "DebugTask.h"
 #include "WallDetectTask.h"
 #include "MainTask.h"
-#include "VelControlTask.h"
 #include "TrajControlTask.h"
 #include "arm_math.h"
 #include "MessageQueueType.h"

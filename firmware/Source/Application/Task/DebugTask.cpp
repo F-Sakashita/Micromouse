@@ -5,6 +5,7 @@
 #include "DebugQueue.hpp"
 #include "main.h"
 #include "Blink.hpp"
+#include "TaskList.h"
 
 static bool g_bInitialized = false;
 static DebugQueue & g_rDebugQueue = DebugQueue::GetInstance();

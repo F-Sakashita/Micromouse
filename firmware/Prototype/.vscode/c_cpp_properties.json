@@ -15,6 +15,8 @@
                 "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
                 "${workspaceFolder}/../Source/Application",
                 "${workspaceFolder}/../Source/Application/MessageQueue",
+                "${workspaceFolder}/../Source/Application/Task",
+                "${workspaceFolder}/../Source/Application/Motion",
                 "${workspaceFolder}/../Source/Middle",
                 "${workspaceFolder}/../Source/HAL",
                 "${workspaceFolder}/../Source/HAL/HardwareDriver",

@@ -1,6 +1,10 @@
 #ifndef TASK_LIST_H
 #define TASK_LIST_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
     タスクリスト
     ここで宣言された関数をfreertos.c内でコールする.
@@ -68,5 +72,8 @@ bool DebugTask_Initialize(const DebugTask_OsFunc_t *pOsFunc);
 void DebugTask_Update();
 /***********************************************************************/ 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TASK_LIST_H */

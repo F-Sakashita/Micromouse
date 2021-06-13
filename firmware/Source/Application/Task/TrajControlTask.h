@@ -11,6 +11,7 @@ extern "C"
 #include <stdbool.h>
 
 //Taskで使用するOS機能
+/*
 typedef struct{
     osMessageQueueId_t OdometoryPosQueueId;     //オドメトリキュー
     osMessageQueueId_t VelCmdQueueId;           //速度指令キュー
@@ -18,6 +19,7 @@ typedef struct{
 
 bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc);
 void TrajControlTask_Update();
+*/
 void TrajControlTask_Enable();
 void TrajControlTask_Disable();
 bool TrajControlTask_IsCalibCompleted();

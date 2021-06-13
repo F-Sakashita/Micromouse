@@ -7,6 +7,8 @@
 #include "MessageQueueList.hpp"
 #include "PidController.hpp"
 #include "SystickTimer.h"
+#include "VelControlTask.hpp"
+#include "TaskList.h"
 
 //外部参照可能なメッセージキューインスタンス
 MessageQueue<OdometoryMsg_t> g_PosMsgQueue;
@@ -18,6 +20,7 @@ static DebugQueue &g_rDebugQueue = DebugQueue::GetInstance();
 static PidController g_AnglePidCon;
 static bool g_bEnable = false;
 static const TrajControlTask_OsFunc_t *g_pOsFunc;
+static MessageQueue<OdometoryMsg_t> &g_rVelMsgQueue = VelControlTask::GetInstance().GetVelMsgQueueInst();
 
 bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc)
 {
@@ -46,7 +49,7 @@ void TrajControlTask_Update()
 	
     //未初期化(MsgQueueも含む)なら即Return
     if(     !g_bInitialized 
-        ||  !g_VelMsgQueue.IsInitialized()
+        ||  !g_rVelMsgQueue.IsInitialized()
         ||  !g_PosCmdMsgQueue.IsInitialized()
         ||  !g_rDebugQueue.IsInitialized()){
         return;
@@ -62,8 +65,8 @@ void TrajControlTask_Update()
             };
 
             //オドメトリによる速度メッセージキューからPop
-            if(!g_VelMsgQueue.IsEmpty()){
-                g_VelMsgQueue.Pop(&stVelQueue, 0);
+            if(!g_rVelMsgQueue.IsEmpty()){
+            	g_rVelMsgQueue.Pop(&stVelQueue, 0);
             }
 
             //ロボットの位置を更新
@@ -93,7 +96,7 @@ void TrajControlTask_Update()
 
             //速度制御タスクに速度指令をPush
             if(!g_VelCmdMsgQueue.IsFull()){
-                g_VelCmdMsgQueue.Push(&stVelCmdMsg, 0);
+            	g_VelCmdMsgQueue.Push(&stVelCmdMsg, 0);
             }            
 
             //Debug Consoleに出力

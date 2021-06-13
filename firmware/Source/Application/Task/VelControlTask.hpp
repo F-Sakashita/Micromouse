@@ -35,7 +35,7 @@ class VelControlTask : public TaskTemplate<VelControlTask_OsFunc_t>{
             return self;
         }
 
-        static MessageQueue& GetVelMsgQueueInst(){
+        MessageQueue<OdometoryMsg_t>& GetVelMsgQueueInst(){
             return VelMsgQueue;
         }
 
@@ -55,7 +55,7 @@ class VelControlTask : public TaskTemplate<VelControlTask_OsFunc_t>{
         
         //内部クラス
         PidController WheelVelPidCon[DCMotor::EN_MOTOR_LAST];
-        MessageQueue<OdometoryMsg_t> VelMsgQueue;
+        static MessageQueue<OdometoryMsg_t> VelMsgQueue;
 
         //メンバ変数
         bool bCalibCompleted;

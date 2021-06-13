@@ -13,7 +13,7 @@
  * Public member functions
  */
 
-Button::Button(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin) {
+Button::Button() {
     uiPushCount = 0;
 	uiReleaseCount = 0;
 	uiPushFilterTimeMs = 0;
@@ -49,7 +49,7 @@ bool Button::Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin, bool bReverse
     this->pGPIOx = pGPIOx;
 	this->uiInputPin = uiInputPin;
     SetPushReverse(bReverseEnable);
-    bInitialize = true;
+    bInitialized = true;
     return true;
 }
 

@@ -1,4 +1,5 @@
 #include "MainTask.h"
+#include "TaskList.h"
 #include "Odometory.hpp"
 #include "TaskConfig.h"
 #include "Calculation.h"
@@ -9,7 +10,7 @@
 #include "MessageQueueType.h"
 #include "SystickTimer.h"
 #include "TrajControlTask.h"
-#include "VelControlTask.h"
+#include "VelControlTask.hpp"
 
 MessageQueue<PosControlCmdMsg_t> g_PosCmdMsgQueue;
 MessageQueue<bool> g_MotionStartMsgQueue;
@@ -34,11 +35,11 @@ typedef enum{
 static void MainTask_SetOtherTaskEnable(bool bEnable)
 {
     if(bEnable){
-        VelControlTask_Enable();
+        //VelControlTask_Enable();
         TrajControlTask_Enable();
         g_bEnable = true;
     }else{
-        VelControlTask_Disable();
+        //VelControlTask_Disable();
         TrajControlTask_Disable();
         g_bEnable= false;
     }
@@ -230,6 +231,8 @@ void MainTask_Update()
                 g_DbgLed[1].SetPeriod(50);
                 g_DbgLed[2].Off();
                 break;
+            default:
+            	break;
             }
 
             //動作中

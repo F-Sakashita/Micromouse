@@ -8,7 +8,7 @@
 //初期化及びPushするタスクがインスタンスを定義する
 
 //オドメトリによる速度データメッセージ
-extern MessageQueue<OdometoryMsg_t> g_VelMsgQueue;
+//extern MessageQueue<OdometoryMsg_t> g_VelMsgQueue;
 
 //オドメトリによる位置データメッセージ
 extern MessageQueue<OdometoryMsg_t> g_PosMsgQueue;

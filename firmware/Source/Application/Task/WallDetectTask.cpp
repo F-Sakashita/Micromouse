@@ -6,6 +6,7 @@
 #include "Button.hpp"
 #include "DebugQueue.hpp"
 #include "main.h"
+#include "TaskList.h"
 
 static DebugQueue &g_rDebugQueue = DebugQueue::GetInstance();
 static bool g_bInitialized = false;

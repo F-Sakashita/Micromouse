@@ -8,6 +8,7 @@ extern "C"
 
 #include "cmsis_os.h"
 
+/*
 //Taskで使用するOS機能
 typedef struct{
     osMessageQueueId_t MotionStartQueueId;      //動作開始イベントID
@@ -16,6 +17,7 @@ typedef struct{
 
 bool MainTask_Initialize(const MainTask_OsFunc_t *pOsFunc);
 void MainTask_Update();
+*/
 
 #ifdef  __cplusplus
 }
