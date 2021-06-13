@@ -11,6 +11,7 @@ typedef enum{
     EN_TOP_STATE_PREPARE,               //準備中（時間経過によりキャリブレ
     EN_TOP_STATE_CALIBRATING,           //キャリブレーション中
     EN_TOP_STATE_RUNNING,               //動作中
+    EN_TOP_STATE_BATT_LOW,              //バッテリ電圧低下
     EN_TOP_STATE_LAST,
 }EN_TOP_STATE;
 

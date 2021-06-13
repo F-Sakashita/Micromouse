@@ -28,15 +28,18 @@ private:
 	bool 		bFirstFlag;
 	bool 		bPushFilterStartFlag;
 	bool 		bReleaseFilterStartFlag;
+    bool        bInitialized;
 	uint64_t	ullPushFilterStartTimeMs;
 	uint64_t	ullReleaseFilterStartTimeMs;
 
 	void ExecuteEdgeFilter();
 
 public:
-	Button(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin);
+	Button();
 	~Button();
 	Button(const Button &other);
+
+    bool Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin, bool bReverseEnable = false);
 
 	void SetPushEdgeFilter(uint32_t uiFilterTimeMs = 10){
 		uiPushFilterTimeMs = uiFilterTimeMs;

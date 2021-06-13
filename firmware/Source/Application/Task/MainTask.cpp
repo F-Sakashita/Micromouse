@@ -14,8 +14,8 @@
 MessageQueue<PosControlCmdMsg_t> g_PosCmdMsgQueue;
 MessageQueue<bool> g_MotionStartMsgQueue;
 
-static Button g_ModeSelectSW(SW0_GPIO_Port, SW0_Pin);
-static Button g_StartSW(SW1_GPIO_Port, SW1_Pin);
+static Button g_ModeSelectSW;
+static Button g_StartSW;
 static Blink g_TickLed;
 static Blink g_DbgLed[3];
 static bool g_bInitialized = false;
@@ -53,6 +53,8 @@ bool MainTask_Initialize(const MainTask_OsFunc_t *pOsFunc)
     bResult &= g_DbgLed[0].Initialize(DBG_LED0_GPIO_Port, DBG_LED0_Pin, 1000);
     bResult &= g_DbgLed[1].Initialize(DBG_LED1_GPIO_Port, DBG_LED1_Pin, 1000);
     bResult &= g_DbgLed[2].Initialize(DBG_LED2_GPIO_Port, DBG_LED2_Pin, 1000);
+    bResult &= g_ModeSelectSW.Initialize(SW0_GPIO_Port, SW0_Pin, true);
+    bResult &= g_StartSW.Initialize(SW1_GPIO_Port, SW1_Pin, true);
     bResult &= g_PosCmdMsgQueue.Initialize(pOsFunc->PosCmdQueueId);
 
     if(!bResult){
@@ -60,8 +62,6 @@ bool MainTask_Initialize(const MainTask_OsFunc_t *pOsFunc)
     }
 
     g_pOsFunc = pOsFunc;
-    g_StartSW.SetPushReverse();
-    g_ModeSelectSW.SetPushReverse();
 
     g_TickLed.ForceOn();
     for(uint8_t ucCount = 0; ucCount < 3; ucCount ++){

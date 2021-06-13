@@ -7,17 +7,14 @@
 
 #include <Button.hpp>
 #include "SystickTimer.h"
+#include <stddef.h>
 
 /*
  * Public member functions
  */
 
 Button::Button(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin) {
-	// TODO Auto-generated constructor stub
-	this->pGPIOx = pGPIOx;
-	this->uiInputPin = uiInputPin;
-
-	uiPushCount = 0;
+    uiPushCount = 0;
 	uiReleaseCount = 0;
 	uiPushFilterTimeMs = 0;
 	uiReleaseFilterTimeMs = 0;
@@ -31,6 +28,7 @@ Button::Button(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin) {
 	bFirstFlag = false;
 	ullPushFilterStartTimeMs = 0;
 	ullReleaseFilterStartTimeMs = 0;
+    bInitialized = false;
 }
 
 Button::~Button() {
@@ -42,9 +40,25 @@ Button::Button(const Button &other) {
 
 }
 
+bool Button::Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiInputPin, bool bReverseEnable)
+{
+    if(NULL == pGPIOx){
+        return false;
+    }
+
+    this->pGPIOx = pGPIOx;
+	this->uiInputPin = uiInputPin;
+    SetPushReverse(bReverseEnable);
+    bInitialize = true;
+    return true;
+}
 
 void Button::Update()
 {
+    if(!bInitialized){
+        return;
+    }
+
 	bRawState = (bool)LL_GPIO_IsInputPinSet(pGPIOx, uiInputPin);
 
 	if(bReverseEnable){

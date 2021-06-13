@@ -14,6 +14,8 @@
                 "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/include",
                 "${workspaceFolder}/../Prototype/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
                 "${workspaceFolder}/Application",
+                "${workspaceFolder}/Application/Task",
+                "${workspaceFolder}/Application/Motion",
                 "${workspaceFolder}/Application/MessageQueue",
                 "${workspaceFolder}/Middle",
                 "${workspaceFolder}/HAL",
