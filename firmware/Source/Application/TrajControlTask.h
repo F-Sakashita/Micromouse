@@ -7,6 +7,7 @@ extern "C"
 #endif
 
 #include "cmsis_os.h"
+#include "TaskConfig.h"
 #include <stdbool.h>
 
 //Taskで使用するOS機能
@@ -19,7 +20,8 @@ bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc);
 void TrajControlTask_Update();
 void TrajControlTask_Enable();
 void TrajControlTask_Disable();
-
+bool TrajControlTask_IsCalibCompleted();
+void TrajControlTask_SetTopState(EN_TOP_STATE enState);
 
 #ifdef  __cplusplus
 }

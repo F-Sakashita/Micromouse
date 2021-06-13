@@ -72,7 +72,7 @@ const osThreadAttr_t MainTask_attributes = {
 };
 /* Definitions for DebugTask */
 osThreadId_t DebugTaskHandle;
-uint32_t DebugTaskBuffer[ 2048 ];
+uint32_t DebugTaskBuffer[ 1024 ];
 osStaticThreadDef_t DebugTaskControlBlock;
 const osThreadAttr_t DebugTask_attributes = {
   .name = "DebugTask",
@@ -120,7 +120,7 @@ const osThreadAttr_t TrajControlTask_attributes = {
 };
 /* Definitions for DebugQueue */
 osMessageQueueId_t DebugQueueHandle;
-uint8_t DebugQueueBuffer[ 100 * sizeof( DebugMsg_t ) ];
+uint8_t DebugQueueBuffer[ 500 * sizeof( DebugMsg_t ) ];
 osStaticMessageQDef_t DebugQueueControlBlock;
 const osMessageQueueAttr_t DebugQueue_attributes = {
   .name = "DebugQueue",
@@ -211,7 +211,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* creation of DebugQueue */
-  DebugQueueHandle = osMessageQueueNew (100, sizeof(DebugMsg_t), &DebugQueue_attributes);
+  DebugQueueHandle = osMessageQueueNew (500, sizeof(DebugMsg_t), &DebugQueue_attributes);
 
   /* creation of OdometoryPosQueue */
   OdometoryPosQueueHandle = osMessageQueueNew (10, sizeof(OdometoryMsg_t), &OdometoryPosQueue_attributes);

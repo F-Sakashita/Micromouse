@@ -20,6 +20,7 @@ private:
     uint32_t    uiWaitTime;
     uint32_t    uiStartTimeMs;
     bool bInitialized;
+    bool bBlinking;
     void SetState(bool bState);
     
 public:
@@ -33,6 +34,7 @@ public:
         this->uiPeriodMs = uiPeriodMs;
         uiOnTimeMs = (uint32_t)((float)uiPeriodMs * fOnPercentage);
         uiOffTimeMs = uiPeriodMs - uiOnTimeMs;
+        bBlinking = true;
     }
 
     void SetOnTime(uint32_t uiOnTimeMs){
@@ -51,19 +53,21 @@ public:
     void ForceOn(){
         SetState(true);
         bNowState = true;
+        bBlinking = false;
     }
     void ForceOff(){
         SetState(false);
         bNowState = false;
+        bBlinking = false;
     }
     
     void On(){
         bNowState = true;
-        bChangeStateFlag = false;
+        bBlinking = false;
     }
     void Off(){
         bNowState = false;
-        bChangeStateFlag = false;
+        bBlinking = false;
     }
     bool IsFinishDelayTime(){
         return bFinishDelay;

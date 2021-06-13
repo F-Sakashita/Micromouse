@@ -5,6 +5,15 @@
 extern "C" {
 #endif
 
+typedef enum{
+    EN_TOP_STATE_FIRST = 0,
+    EN_TOP_STATE_WAIT_MODE_SELECT = 0,  //モード選択待ち
+    EN_TOP_STATE_PREPARE,               //準備中（時間経過によりキャリブレ
+    EN_TOP_STATE_CALIBRATING,           //キャリブレーション中
+    EN_TOP_STATE_RUNNING,               //動作中
+    EN_TOP_STATE_LAST,
+}EN_TOP_STATE;
+
 // サンプリング周期設定
 #define VEL_CONTROL_TASK_SAMPLING_PERIOD_MS     (1u)    //速度制御タスク
 #define TRAJ_CONTROL_TASK_SAMPLING_PERIOD_MS    (5u)    //軌道追従制御タスク
@@ -18,14 +27,14 @@ extern "C" {
 
 //各タスクのデバッグ有効化（未定義にすれば無効）
 #ifdef ENABLE_DEBUG_CONSOLE
-#define ENABLE_VEL_CONTROL_TASK_DEBUG_CONSOLE
-//#define ENABLE_TRAJ_CONTROL_TASK_DEBUG_CONSOLE
+//#define ENABLE_VEL_CONTROL_TASK_DEBUG_CONSOLE
+#define ENABLE_TRAJ_CONTROL_TASK_DEBUG_CONSOLE
 //#define ENABLE_MAIN_TASK_DEBUG_CONSOLE
 //#define ENABLE_WALL_DETECT_TASK_DEBUG_CONSOLE
 #endif
 
 //モータ出力有効化
-//#define ENABLE_MOTOR_OUTPUT
+#define ENABLE_MOTOR_OUTPUT
 
 
 #ifdef __cplusplus

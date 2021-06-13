@@ -35,6 +35,7 @@ class PidController{
         bool IsEnableOutput(){
             return bEnableOutput; 
         }
+        void Reset();
         
     private:
         PidController(const PidController &other);

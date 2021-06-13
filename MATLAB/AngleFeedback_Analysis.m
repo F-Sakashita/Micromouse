@@ -8,7 +8,7 @@ timeData = rawData(:,2);
 timeStart = timeData(1,1);
 timeData = timeData - timeStart;
 
-timeData = 1:length(timeData);
+%timeData = 1:length(timeData);
 
 figure(1);
 plot(timeData, rawData(:,4));

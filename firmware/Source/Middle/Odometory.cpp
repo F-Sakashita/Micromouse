@@ -96,11 +96,17 @@ void Odometory::UpdatePosition(const Posture_t &stVel)
     }
 }
 
-
 void Odometory::ResetPosture(Posture_t stPosture)
 {
     if(!bResetPosFlag){
         stResetPosture = stPosture;
         bResetPosFlag = true;
+    }
+}
+
+void Odometory::RestartCalibration()
+{
+    if(rImu.IsGyroOffsetCompleted() && bInitialized){
+    	rImu.EnableGyroOffestCalc(5000u / uiSamplingTimeMs[EN_ODOMETORY_VEL]);
     }
 }

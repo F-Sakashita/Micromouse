@@ -108,11 +108,7 @@ float PidController::GetOutput(float fTarget, float fFeedback)
     fNowFeedback = fFeedback;
 
     if(bFirstFlag){
-        fOldFeedback = fNowFeedback;    //現在値を採用
-        fOld1Diff = fNowDiff;           //現在値を採用
-        fOld2Diff = fNowDiff;           //現在値を採用
-        fOldOutput_D = 0.0f;            //出力0
-        fOldOutput = 0.0f;              //出力0
+        Reset();
         bFirstFlag = false;
     }
 
@@ -154,6 +150,15 @@ float PidController::GetOutput(float fTarget, float fFeedback)
     fNowOutput = fResult;
     
     return fResult;
+}
+
+void PidController::Reset()
+{
+    fOldFeedback = fNowFeedback;    //現在値を採用
+    fOld1Diff = fNowDiff;           //現在値を採用
+    fOld2Diff = fNowDiff;           //現在値を採用
+    fOldOutput_D = 0.0f;            //出力0
+    fOldOutput = 0.0f;              //出力0
 }
 
 /* Private */

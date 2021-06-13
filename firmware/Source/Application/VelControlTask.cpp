@@ -15,7 +15,6 @@ MessageQueue<OdometoryMsg_t> g_VelMsgQueue;
 
 static Odometory &g_rOdometory = Odometory::GetInstance();
 static bool g_bInitialized = false;
-static Blink g_DebugLed2;
 static DCMotor &g_rLeftMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_LEFT);
 static DCMotor &g_rRightMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_RIGHT);
 static DebugQueue &g_rDebugQueue = DebugQueue::GetInstance();
@@ -27,7 +26,6 @@ static bool g_bEnable = false;
 bool VelControlTask_Initialize(const VelControlTask_OsFunc_t *pOsFunc)
 {
     bool bResult = true;
-    bResult &= g_DebugLed2.Initialize(DBG_LED2_GPIO_Port, DBG_LED2_Pin, 1000);
     bResult &= g_rOdometory.InitializeVel(VEL_CONTROL_TASK_SAMPLING_PERIOD_MS);
     bResult &= g_VelMsgQueue.Initialize(pOsFunc->OdometoryVelQueueId);
     bResult &= g_rLeftMotor.Initialize(0.8f);
@@ -42,13 +40,12 @@ bool VelControlTask_Initialize(const VelControlTask_OsFunc_t *pOsFunc)
 
     g_pOsFunc = pOsFunc;
     g_rBattMoni.SetOffset(-0.112f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetAllGain(0.03f, 20.0f, 0.0000f);
-    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.03f, 20.0f, 0.0000f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetAllGain(0.01f,  1.2f, 0.0000f);
+    g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.01f, 1.2f, 0.0000f);
     g_WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-7.0f, 7.0f);
     g_WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-7.0f, 7.0f);
     g_bEnable = false;
 
-    g_DebugLed2.ForceOn();
     g_bInitialized = true;
     return true;
 }
@@ -64,6 +61,7 @@ void VelControlTask_Update()
         return;
     }
 
+#if 1
     g_rBattMoni.Update();
 
     float fBattVoltage = g_rBattMoni.GetVoltage();
@@ -89,6 +87,7 @@ void VelControlTask_Update()
         0u,
         {0.0f, 0.0f, 0.0f},
     };
+#endif
 
     if(g_bEnable){
         //オドメトリの速度データを更新
@@ -96,8 +95,7 @@ void VelControlTask_Update()
 
         if(g_rOdometory.IsEnableUpdate()){
             //ジャイロ補正完了
-            g_DebugLed2.SetPeriod(250u);
-            
+
             //速度データをメッセージキューにPush
             stVelMsg.stData = g_rOdometory.GetVelocity();
             stVelMsg.uiTimestamp = uiTick;
@@ -106,7 +104,7 @@ void VelControlTask_Update()
             }
 
             //目標速度をメッセージキューからPop
-            VelControlCmdMsg_t stVelCmdMsg;
+            static VelControlCmdMsg_t stVelCmdMsg;
             if(!g_VelCmdMsgQueue.IsEmpty()){
                 g_VelCmdMsgQueue.Pop(&stVelCmdMsg, 0);
             }
@@ -116,26 +114,6 @@ void VelControlTask_Update()
                 Vr = V + Tr/2 * Omega
                 Vl = V - Tr/2 * Omega
             */
-            
-            static bool bChangeCmd = false;
-            #if 0
-            static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
-
-            if(SystickTimer_IsTimeElapsed(uiTimerMs, 2000u)){
-                bChangeCmd = !bChangeCmd;
-                uiTimerMs = SystickTimer_GetTimeMS();
-            }
-            if(bChangeCmd){
-                stVelCmdMsg.fAngVelCmd = Calc_ConvDegToRad(180.0f) / 1.0f;
-            }else{
-                stVelCmdMsg.fAngVelCmd = Calc_ConvDegToRad(-180.0f) / 1.0f;
-            }
-
-                uint32_t uiTimerMs = SystickTimer_GetTimeMS();
-                float fOmega = 1.0f;
-                stVelCmdMsg.fAngVelCmd = Calc_ConvDegToRad(360.0f) * arm_sin_f32(fOmega * static_cast<float>(uiTimerMs) / 1000.0f);
-            #endif
-
             float fWheelVelCmd[DCMotor::EN_MOTOR_LAST];
             fWheelVelCmd[DCMotor::EN_MOTOR_RIGHT] = stVelCmdMsg.fStraightVelCmd + ROBOT_PARAM_TREAD_MM / 2.0f * stVelCmdMsg.fAngVelCmd;
             fWheelVelCmd[DCMotor::EN_MOTOR_LEFT] = stVelCmdMsg.fStraightVelCmd - ROBOT_PARAM_TREAD_MM / 2.0f * stVelCmdMsg.fAngVelCmd;
@@ -171,38 +149,40 @@ void VelControlTask_Update()
                                         fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]
                                         );
                 #else
-                g_rDebugQueue.Printf(0,"Cmd,%6.3f, Enc,%6.3f, Gyro,%6.3f", 
+                g_rDebugQueue.Printf(0,"Cmd,%6.3f,Enc,%6.3f,Gyro,%6.3f", 
                                     stVelCmdMsg.fAngVelCmd,
                                     (-fNowWheelVel[DCMotor::EN_MOTOR_LEFT] + fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]) / (ROBOT_PARAM_TREAD_MM),
                                     g_rOdometory.GetAngleVel()
                                     );
+                #endif
+                #if 0
+                static bool bToggle = false;
+                if(bToggle) g_DebugLed2.ForceOn();
+                else        g_DebugLed2.ForceOff();
+                bToggle = !bToggle;
                 #endif
             }
             #endif
             
         }else{
             //ジャイロ補正中
-            g_DebugLed2.SetPeriod(500u);
             g_rLeftMotor.Stop();
             g_rRightMotor.Stop(); 
         }
     }else{
         //動作停止中
-        g_DebugLed2.SetPeriod(1000u);
         g_rLeftMotor.Stop();
         g_rRightMotor.Stop(); 
     }
     
-    //モータ出力
     #ifndef ENABLE_MOTOR_OUTPUT
     g_rLeftMotor.Stop();
     g_rRightMotor.Stop();
     #endif
+    
+    //モータ出力
     g_rLeftMotor.Update();
     g_rRightMotor.Update();
-
-    //LED点灯
-    g_DebugLed2.Update();
 }
 
 void VelControlTask_Enable()
@@ -212,4 +192,9 @@ void VelControlTask_Enable()
 void VelControlTask_Disable()
 {
     g_bEnable = false;
+}
+
+void VelControlTask_RestartOdometoryCalib()
+{
+    g_rOdometory.RestartCalibration();
 }

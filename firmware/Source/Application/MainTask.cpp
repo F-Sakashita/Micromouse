@@ -11,16 +11,25 @@
 #include "TrajControlTask.h"
 #include "VelControlTask.h"
 
-
 MessageQueue<PosControlCmdMsg_t> g_PosCmdMsgQueue;
 MessageQueue<bool> g_MotionStartMsgQueue;
 
-static Button g_Sw0(SW0_GPIO_Port, SW0_Pin);
+static Button g_ModeSelectSW(SW0_GPIO_Port, SW0_Pin);
+static Button g_StartSW(SW1_GPIO_Port, SW1_Pin);
 static Blink g_TickLed;
+static Blink g_DbgLed[3];
 static bool g_bInitialized = false;
 static DebugQueue& g_rDebugQueue = DebugQueue::GetInstance();
 static bool g_bEnable = false;
 static const MainTask_OsFunc_t*	g_pOsFunc;
+
+typedef enum{
+    EN_MODE_FIRST = 0,
+    EN_MODE_FREE = 0,
+    EN_MODE_ENKAI,
+    EN_MODE_ANG_SIN,
+    EN_MODE_LAST,
+}EN_MODE;
 
 static void MainTask_SetOtherTaskEnable(bool bEnable)
 {
@@ -41,15 +50,24 @@ bool MainTask_Initialize(const MainTask_OsFunc_t *pOsFunc)
     bool bResult = true;
 
     bResult &= g_TickLed.Initialize(TICK_LED_GPIO_Port, TICK_LED_Pin, 1000);
+    bResult &= g_DbgLed[0].Initialize(DBG_LED0_GPIO_Port, DBG_LED0_Pin, 1000);
+    bResult &= g_DbgLed[1].Initialize(DBG_LED1_GPIO_Port, DBG_LED1_Pin, 1000);
+    bResult &= g_DbgLed[2].Initialize(DBG_LED2_GPIO_Port, DBG_LED2_Pin, 1000);
     bResult &= g_PosCmdMsgQueue.Initialize(pOsFunc->PosCmdQueueId);
-    
+
     if(!bResult){
         return false;
     }
 
     g_pOsFunc = pOsFunc;
-    g_Sw0.SetPushReverse();
+    g_StartSW.SetPushReverse();
+    g_ModeSelectSW.SetPushReverse();
+
     g_TickLed.ForceOn();
+    for(uint8_t ucCount = 0; ucCount < 3; ucCount ++){
+        SystickTimer_DelayMS(50);
+        g_DbgLed[ucCount].ForceOn();
+    }
    
     g_bInitialized = true;
     return true;
@@ -65,8 +83,169 @@ void MainTask_Update()
         return;
     }
 
-    g_Sw0.Update();
+    g_TickLed.SetPeriod(1000);
 
+    static EN_MODE enMode = EN_MODE_FREE;
+    static EN_TOP_STATE enNowState = EN_TOP_STATE_WAIT_MODE_SELECT;
+    static EN_TOP_STATE enOldState = EN_TOP_STATE_WAIT_MODE_SELECT;
+    static uint32_t uiStartTimeMs = SystickTimer_GetTimeMS();
+
+    //スイッチのUpdate
+    switch (enNowState)
+    {
+    case EN_TOP_STATE_WAIT_MODE_SELECT:
+        //モード選択スイッチの状態をアップデート
+        g_ModeSelectSW.Update();
+        if(EN_MODE_FREE != enMode){
+            g_StartSW.Update();
+        }
+        break;
+    case EN_TOP_STATE_PREPARE:
+    case EN_TOP_STATE_CALIBRATING:
+    case EN_TOP_STATE_RUNNING:
+        //動作中はスタートスイッチの状態をアップデート
+        g_StartSW.Update();
+        break;
+    default:
+        break;
+    }
+
+    //状態遷移
+    switch(enNowState){
+    case EN_TOP_STATE_WAIT_MODE_SELECT:
+        //停止中
+        //押した回数に応じてモードを決定
+        enMode = static_cast<EN_MODE>(g_ModeSelectSW.IsPushCount() % static_cast<uint32_t>(EN_MODE_LAST));
+        
+        if(!g_StartSW.IsReleaseEdge()){
+            switch(enMode){
+            case EN_MODE_FREE:
+                //モータ停止モード
+                g_DbgLed[0].Off();
+                g_DbgLed[1].Off();
+                g_DbgLed[2].Off();
+                break;
+            case EN_MODE_ENKAI:
+                //宴会芸
+                g_DbgLed[0].On();
+                g_DbgLed[1].Off();
+                g_DbgLed[2].Off();
+                break;
+            case EN_MODE_ANG_SIN:
+                //目標角度正弦波
+                g_DbgLed[0].On();
+                g_DbgLed[1].On();
+                g_DbgLed[2].Off();
+                break;
+            default:
+                break;
+            }
+        }else{
+            //動作開始
+            switch(enMode){
+            case EN_MODE_ENKAI:
+            case EN_MODE_ANG_SIN:
+                enOldState = EN_TOP_STATE_WAIT_MODE_SELECT;
+                enNowState = EN_TOP_STATE_PREPARE;
+                uiStartTimeMs = SystickTimer_GetTimeMS();
+                break;
+            case EN_MODE_FREE:
+            default:
+                //遷移させない
+                break;
+            }
+        }
+        break;
+    case EN_TOP_STATE_PREPARE:
+        if(EN_TOP_STATE_WAIT_MODE_SELECT == enOldState){
+            switch(enMode){
+            case EN_MODE_ENKAI:
+                //宴会芸
+                g_DbgLed[0].SetPeriod(1000);
+                g_DbgLed[1].Off();
+                g_DbgLed[2].Off();
+                break;
+            case EN_MODE_ANG_SIN:
+                //目標角度正弦波
+                g_DbgLed[0].SetPeriod(1000);
+                g_DbgLed[1].SetPeriod(1000);
+                g_DbgLed[2].Off();
+                break;
+            }
+            if(SystickTimer_IsTimeElapsed(uiStartTimeMs, 5000)){
+                enOldState = EN_TOP_STATE_PREPARE;
+                enNowState = EN_TOP_STATE_CALIBRATING;
+                uiStartTimeMs = SystickTimer_GetTimeMS();
+            }else if(g_StartSW.IsReleaseEdge()){
+                //スタートスイッチを押下したらモード選択に戻る
+                enOldState = EN_TOP_STATE_PREPARE;
+                enNowState = EN_TOP_STATE_WAIT_MODE_SELECT;
+            }
+        }
+        break;
+    case EN_TOP_STATE_CALIBRATING:
+        if(EN_TOP_STATE_PREPARE == enOldState){
+            //キャリブレーション中
+            switch(enMode){
+            case EN_MODE_ENKAI:
+                //宴会芸
+                g_DbgLed[0].SetPeriod(250);
+                g_DbgLed[1].Off();
+                g_DbgLed[2].Off();
+                break;
+            case EN_MODE_ANG_SIN:
+                //目標角度正弦波
+                g_DbgLed[0].SetPeriod(500);
+                g_DbgLed[1].SetPeriod(500);
+                g_DbgLed[2].Off();
+                break;
+            }
+            //キャリブレーション開始を別タスクに通知
+            
+
+            //キャリブレーション完了
+            if(SystickTimer_IsTimeElapsed(uiStartTimeMs, 5000)){
+                enOldState = EN_TOP_STATE_CALIBRATING;
+                enNowState = EN_TOP_STATE_RUNNING;
+            }else if(g_StartSW.IsReleaseEdge()){
+                //スタートスイッチを押下したらモード選択に戻る
+                enOldState = EN_TOP_STATE_CALIBRATING;
+                enNowState = EN_TOP_STATE_WAIT_MODE_SELECT;
+            }
+        }
+        break;
+    case EN_TOP_STATE_RUNNING:
+        if(enOldState == EN_TOP_STATE_CALIBRATING){
+            //動作中
+            switch(enMode){
+            case EN_MODE_ENKAI:
+                //宴会芸
+                g_DbgLed[0].SetPeriod(50);
+                g_DbgLed[1].Off();
+                g_DbgLed[2].Off();
+                break;
+            case EN_MODE_ANG_SIN:
+                //目標角度正弦波
+                g_DbgLed[0].SetPeriod(50);
+                g_DbgLed[1].SetPeriod(50);
+                g_DbgLed[2].Off();
+                break;
+            }
+
+            //動作中
+            if(g_StartSW.IsReleaseEdge()){
+                //スタートスイッチを押下したらモード選択に戻る
+                enOldState = EN_TOP_STATE_RUNNING;
+                enNowState = EN_TOP_STATE_WAIT_MODE_SELECT;
+            }
+        }
+        break;
+    default:
+        break;
+    }
+
+
+#if 0
     uint32_t uiSwCount = g_Sw0.IsPushCount();
     static bool bMotionStartFlag = false;
     static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
@@ -115,6 +294,7 @@ void MainTask_Update()
             uiConsoleOutputTimeMs = SystickTimer_GetTimeMS();
         }
     }
+#endif
 
     #ifdef ENABLE_MAIN_TASK_DEBUG_CONSOLE
     if(!g_rDebugQueue.IsFull()){
@@ -122,5 +302,9 @@ void MainTask_Update()
     }
     #endif
 
+    //LED点灯
     g_TickLed.Update();
+    for(uint8_t ucCount = 0; ucCount < 3; ucCount ++){
+        g_DbgLed[ucCount].Update();
+    }
 }

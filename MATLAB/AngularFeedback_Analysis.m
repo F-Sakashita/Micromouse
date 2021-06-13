@@ -2,7 +2,7 @@ clear
 close all;
 
 % CSVファイルをRead
-rawData = readmatrix('Log/20210606_AngVel2.csv');
+rawData = readmatrix('Log/20210606_AngVel.csv');
 
 % 各データを取得
 timeData = rawData(:,2);

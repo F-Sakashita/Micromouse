@@ -1,3 +1,4 @@
+VelControlTask  ,90.121,Cmd,-0.076,Enc,-96.908,Gyro, 0.001
 VelControlTask  ,90.122,Cmd,-0.076,Enc,-0.132,Gyro, 0.001
 VelControlTask  ,90.123,Cmd,-0.076,Enc,-0.113,Gyro, 0.007
 VelControlTask  ,90.124,Cmd,-0.076,Enc,-0.150,Gyro, 0.042
@@ -631,6 +632,7 @@ VelControlTask  ,90.895,Cmd,-0.015,Enc, 0.000,Gyro, 0.043
 VelControlTask  ,90.896,Cmd,-0.024,Enc, 0.000,Gyro, 0.041
 VelControlTask  ,90.897,Cmd,-0.024,Enc, 0.000,Gyro, 0.039
 VelControlTask  ,90.898,Cmd,-0.024,Enc, 0.000,Gyro, 0.036
+Ve, 0.000,Gyro,-0.027
 VelControlTask  ,90.970,Cmd, 0.028,Enc, 0.000,Gyro,-0.019
 VelControlTask  ,90.971,Cmd, 0.021,Enc, 0.000,Gyro,-0.013
 VelControlTask  ,90.972,Cmd, 0.021,Enc, 0.000,Gyro,-0.004
@@ -1865,6 +1867,7 @@ VelControlTask  ,93.995,Cmd, 0.499,Enc, 1.372,Gyro, 2.507
 VelControlTask  ,93.996,Cmd, 0.381,Enc, 1.842,Gyro, 2.205
 VelControlTask  ,93.998,Cmd, 0.381,Enc, 0.395,Gyro, 1.505
 VelControlTask  ,93.999,Cmd, 0.381,Enc, 0.432,Gyro, 1.102
+VelControlTask  ,94.001,Cmd, 0.897sk  ,94.110,Cmd, 1.290,Enc, 1.617,Gyro, 0.776
 VelControlTask  ,94.112,Cmd, 0.853,Enc, 1.184,Gyro, 0.984
 VelControlTask  ,94.113,Cmd, 0.853,Enc, 0.808,Gyro, 1.065
 VelControlTask  ,94.115,Cmd, 0.853,Enc, 1.166,Gyro, 1.089
@@ -2512,6 +2515,7 @@ VelControlTask  ,95.658,Cmd,-1.491,Enc,-1.372,Gyro, 0.032
 VelControlTask  ,95.659,Cmd,-1.491,Enc,-1.448,Gyro, 0.052
 VelControlTask  ,95.661,Cmd,-1.539,Enc,-1.560,Gyro, 0.095
 VelControlTask  ,95.663,Cmd,-1.539,Enc,-1.429,Gyro, 0.135
+VelControlTaro, 0.13264,Cmd,-1.539,Enc,-1.466,Gyro, 0.152
 VelControlTask  ,95.666,Cmd,-1.599,Enc,-1.654,Gyro, 0.191
 VelControlTask  ,95.778,Cmd,-1.590,Enc,-1.542,Gyro, 0.086
 VelControlTask  ,95.779,Cmd,-1.590,Enc,-1.542,Gyro, 0.061
@@ -3435,6 +3439,7 @@ VelControlTask  ,98.070,Cmd, 1.063,Enc, 0.996,Gyro,-0.597
 VelControlTask  ,98.072,Cmd, 1.144,Enc, 1.147,Gyro,-0.620
 VelControlTask  ,98.073,Cmd, 1.144,Enc, 1.241,Gyro,-0.632
 VelControlTask  ,98.075,Cmd, 1.144,Enc, 1.222,Gyro,-0.645
+VelControlTask  ,98.076,Cmd, 1.220sk  ,98.186,Cmd, 2.276,Enc, 1.936,Gyro,-0.519
 VelControlTask  ,98.187,Cmd, 2.276,Enc, 2.181,Gyro,-0.524
 VelControlTask  ,98.189,Cmd, 2.276,Enc, 2.387,Gyro,-0.548
 VelControlTask  ,98.190,Cmd, 2.276,Enc, 2.162,Gyro,-0.551

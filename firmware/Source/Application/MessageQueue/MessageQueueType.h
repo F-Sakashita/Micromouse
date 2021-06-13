@@ -11,7 +11,7 @@ extern "C" {
 #include "Calculation.h"
 
 //デバッグメッセージ型
-#define DEBUG_QUEUE_CHAR_MAX_SIZE   256
+#define DEBUG_QUEUE_CHAR_MAX_SIZE   64
 typedef struct{
     osThreadId_t taskId;
     uint32_t uiTimestamp;

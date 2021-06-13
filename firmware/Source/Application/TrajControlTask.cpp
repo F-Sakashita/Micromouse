@@ -14,7 +14,6 @@ MessageQueue<VelControlCmdMsg_t> g_VelCmdMsgQueue;
 
 static Odometory &g_rOdometory = Odometory::GetInstance();
 static bool g_bInitialized = false;
-static Blink g_DebugLed1;
 static DebugQueue &g_rDebugQueue = DebugQueue::GetInstance();
 static PidController g_AnglePidCon;
 static bool g_bEnable = false;
@@ -24,7 +23,6 @@ bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc)
 {
     bool bResult = true;
     Posture_t stInitPos = {0.0f, 0.0f, 0.0f};
-    bResult &= g_DebugLed1.Initialize(DBG_LED1_GPIO_Port, DBG_LED1_Pin, 1000);
     bResult &= g_rOdometory.InitializePos(TRAJ_CONTROL_TASK_SAMPLING_PERIOD_MS, stInitPos);
     bResult &= g_PosMsgQueue.Initialize(pOsFunc->OdometoryPosQueueId);
     bResult &= g_VelCmdMsgQueue.Initialize(pOsFunc->VelCmdQueueId);
@@ -35,8 +33,7 @@ bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc)
     }
 
     g_pOsFunc = pOsFunc;
-    g_AnglePidCon.SetAllGain(15.0f, 0.0f, 0.5f);
-    g_DebugLed1.ForceOn();
+    g_AnglePidCon.SetAllGain(40.0f, 0.0f, 2.0f);
     g_bEnable = false;
     g_bInitialized = true;
     return true;
@@ -50,6 +47,7 @@ void TrajControlTask_Update()
     //未初期化(MsgQueueも含む)なら即Return
     if(     !g_bInitialized 
         ||  !g_VelMsgQueue.IsInitialized()
+        ||  !g_PosCmdMsgQueue.IsInitialized()
         ||  !g_rDebugQueue.IsInitialized()){
         return;
     }
@@ -79,43 +77,24 @@ void TrajControlTask_Update()
                 g_PosMsgQueue.Push(&stPosQueue, 0u);
             }
 
-            
-            //速度制御タスクに速度指令をPush
+            //MainTaskからの目標値を取得
+            static PosControlCmdMsg_t stPosCmdMsg;
+            if(!g_PosCmdMsgQueue.IsEmpty()){
+                g_PosCmdMsgQueue.Pop(&stPosCmdMsg, 0);
+            }
+
             VelControlCmdMsg_t stVelCmdMsg;
             stVelCmdMsg.uiTimestamp = uiTick;
-            stVelCmdMsg.fStraightVelCmd = 0.0f;
-            stVelCmdMsg.fAngVelCmd = 0.0f;
-
+    
             //軌道追従制御
-
-            static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
-            static uint8_t ucCount = 0u;
-            if(SystickTimer_IsTimeElapsed(uiTimerMs, 5000)){
-                uiTimerMs = SystickTimer_GetTimeMS();
-                //ucCount ++;
-                if(ucCount >= 4){
-                    ucCount = 0;
-                }
-            }
-
-            float fTargetAngle = 0.0f;
-            switch(ucCount){
-                case 0:     fTargetAngle = 0.0f;    break;
-                case 1:     fTargetAngle = 90.0f;   break;
-                case 2:     fTargetAngle = 0.0f;    break;
-                case 3:     fTargetAngle = -90.0f;  break;
-                default:    break;
-            }
-            fTargetAngle = Calc_ConvDegToRad(fTargetAngle);
-            
-            
+            stVelCmdMsg.fStraightVelCmd = 0.0f;         
+            float fTargetAngle = stPosCmdMsg.stTargetPos.fRad;
             stVelCmdMsg.fAngVelCmd = g_AnglePidCon.GetOutput(fTargetAngle, g_rOdometory.GetAngle());
-        
 
+            //速度制御タスクに速度指令をPush
             if(!g_VelCmdMsgQueue.IsFull()){
                 g_VelCmdMsgQueue.Push(&stVelCmdMsg, 0);
-            }
-            
+            }            
 
             //Debug Consoleに出力
             #ifdef ENABLE_TRAJ_CONTROL_TASK_DEBUG_CONSOLE
@@ -124,20 +103,17 @@ void TrajControlTask_Update()
                                         fTargetAngle,
                                         g_rOdometory.GetAngle(),
                                         stVelCmdMsg.fAngVelCmd,
-                                        g_rOdometory.GetAngleVel()
+                                        stVelQueue.stData.fRad
                                         );
             }
             #endif
-
-            g_DebugLed1.SetPeriod(250u);   
+            
         }else{
-            g_DebugLed1.SetPeriod(500u);
+            //ジャイロキャリブレーション中
         }
     }else{
-        g_DebugLed1.SetPeriod(1000u);
+        //タスク無効時
     }
-
-    g_DebugLed1.Update();
 }
 
 void TrajControlTask_Enable()

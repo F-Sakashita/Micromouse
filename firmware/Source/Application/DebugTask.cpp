@@ -3,6 +3,8 @@
 #include "TaskConfig.h"
 //#include "DebugQueue.h"
 #include "DebugQueue.hpp"
+#include "main.h"
+#include "Blink.hpp"
 
 static bool g_bInitialized = false;
 static DebugQueue & g_rDebugQueue = DebugQueue::GetInstance();
@@ -25,7 +27,6 @@ void DebugTask_Update()
 {
 	uint32_t uiTick = osKernelGetTickCount();
 	osDelayUntil(uiTick + DEBUG_TASK_SAMPLING_PERIOD_MS);
-
     #ifdef ENABLE_DEBUG_CONSOLE
 
     if(g_bInitialized && !g_rDebugQueue.IsEmpty()){
@@ -37,8 +38,15 @@ void DebugTask_Update()
 							static_cast<float>(stData.uiTimestamp)/1000.0f, //タイムスタンプ
 							stData.cData    //データ
 							);
-		}
-
-    }
+     
+        }
+        #if 0
+        static bool bToggle = false;
+        if(bToggle) g_Led0.ForceOn();
+        else        g_Led0.ForceOff();
+        bToggle = !bToggle;
+        #endif
+    }    
     #endif
 }
+

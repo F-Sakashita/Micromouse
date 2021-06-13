@@ -22,17 +22,18 @@ class Odometory{
         void UpdatePosition(const Posture_t &stVel);
 
         void ResetPosture(Posture_t stPosture);
+        void RestartCalibration();
 
-        const float& GetAngle(){
+        const float& GetAngle() const{
             return stNowPosture.fRad;
         }
-        const float& GetAngleVel(){
+        const float& GetAngleVel() const{
             return stNowVelocity.fRad;
         }
-        const Posture_t& GetPosture(){
+        const Posture_t& GetPosture() const{
             return stNowPosture;
         }
-        const Posture_t& GetVelocity(){
+        const Posture_t& GetVelocity() const{
             return stNowVelocity;
         }
 
