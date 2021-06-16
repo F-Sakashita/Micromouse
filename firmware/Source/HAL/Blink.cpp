@@ -20,6 +20,7 @@ Blink::Blink()
     uiStartTimeMs = 0;
     bInitialized = false;
     bBlinking = false;
+    bResetTimeFlag = false;
     SetPeriod(uiPeriodMs);
     SetState(false);
 }
@@ -47,6 +48,7 @@ Blink::Blink(const Blink &other)
     this->uiWaitTime = other.uiWaitTime;
     this->bInitialized = other.bInitialized;
     this->bBlinking = other.bBlinking;
+    this->bResetTimeFlag = other.bResetTimeFlag;
 }
 
 bool Blink::Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiOutputPin, uint32_t uiPeriodMs)
@@ -99,7 +101,7 @@ void Blink::Update()
             bNowState = !bOldState;
         }
         
-        if(bBlinking){
+        if(bBlinking && !bResetTimeFlag){
             //点灯時
             if(SystickTimer_IsTimeElapsed(uiStartTimeMs, uiWaitTime)){
                 uiStartTimeMs = SystickTimer_GetTimeMS();
@@ -109,6 +111,7 @@ void Blink::Update()
             //常時点灯または消灯時
             uiStartTimeMs = SystickTimer_GetTimeMS();
             bChangeStateFlag = false;
+            bResetTimeFlag =false;
         }
     }
 

@@ -1,13 +1,19 @@
 #include "VelControlTask.hpp"
+#include "TrajControlTask.hpp"
 #include "MessageQueueList.hpp"
 
+//初期化が必要なインスタンスの取得
 DCMotor& VelControlTask::rLeftMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_LEFT);
 DCMotor& VelControlTask::rRightMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_RIGHT);
 Odometory& VelControlTask::rOdometory = Odometory::GetInstance();
-DebugQueue& VelControlTask::rDebugQueue = DebugQueue::GetInstance();
 BatteryMonitor& VelControlTask::rBattMoni = BatteryMonitor::GetInstance();
-MessageQueue<OdometoryMsg_t> VelControlTask::VelMsgQueue;
+//MessageQueue<OdometoryMsg_t> VelControlTask::VelMsgQueue;
 
+//別タスクで初期化を行うインスタンスの取得
+DebugQueue& VelControlTask::rDebugQueue = DebugQueue::GetInstance();
+MessageQueue<VelControlCmdMsg_t>& VelControlTask::rVelCmdMsgQueue = TrajControlTask::GetInstance().GetVelCmdMsgQueueInst();
+
+//本クラスのインスタンスの取得
 static VelControlTask &g_rVelControlTask = VelControlTask::GetInstance();
 
 
@@ -16,6 +22,8 @@ VelControlTask::VelControlTask()
 {
     bCalibCompleted = false;
     enNowTopState = EN_TOP_STATE_FIRST;
+    bIsBatteryError = false; 
+    bFirstCalibShot = false;
 }
 
 void VelControlTask::InputUpdate()
@@ -58,6 +66,7 @@ bool VelControlTask::Initialize(const VelControlTask_OsFunc_t *pOsFunc)
     bResult &= WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].Initialize(VEL_CONTROL_TASK_SAMPLING_PERIOD_MS, 1000.0f);
     bResult &= rBattMoni.Initialize(8.2f);
     bResult &= VelMsgQueue.Initialize(pOsFunc->OdometoryVelQueueId);
+    stOsFunc = *pOsFunc;
     if(!bResult){
         return false;
     }
@@ -66,6 +75,7 @@ bool VelControlTask::Initialize(const VelControlTask_OsFunc_t *pOsFunc)
     WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.01f, 1.2f, 0.0000f);
     WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-7.0f, 7.0f);
     WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-7.0f, 7.0f);
+    bFirstCalibShot = true;
     bInitialized = true;
     return true;
 }
@@ -83,7 +93,8 @@ void VelControlTask::Update()
 	osDelayUntil(uiTick + VEL_CONTROL_TASK_SAMPLING_PERIOD_MS);
 
     if(     !bInitialized
-        ||  !g_VelCmdMsgQueue.IsInitialized()){
+        ||  !rDebugQueue.IsInitialized()
+        ||  !rVelCmdMsgQueue.IsInitialized()){
     	return;
     }
 
@@ -94,20 +105,33 @@ void VelControlTask::Update()
 
     switch (enNowTopState)
     {
+    case EN_TOP_STATE_WAIT_MODE_SELECT:
+    case EN_TOP_STATE_PREPARE:
+        bStartCalibFlag = false;
+        bCalibCompleted = false;
+        rLeftMotor.Stop();
+        rRightMotor.Stop();
+        break;
     case EN_TOP_STATE_CALIBRATING: //キャリブレーション中
-        if(bStartCalibFlag){
-            rOdometory.RestartCalibration();
-            bStartCalibFlag = false;
+        //キャリブレーションを開始
+        if(!bStartCalibFlag && !bFirstCalibShot){
+            bStartCalibFlag = true;
+            rOdometory.RestartCalibration();    
         }
+        //キャリブレーションが完了しているか確認
         bCalibCompleted = rOdometory.IsEnableUpdate();
+
         rLeftMotor.Stop();
         rRightMotor.Stop();
         break;
     case EN_TOP_STATE_RUNNING:      //動作中
+        bFirstCalibShot = false;
+        bStartCalibFlag = false;
         if(rBattMoni.IsError() || !bCalibCompleted){
             //バッテリー電圧低下，またはキャリブレーションが未完了で遷移した場合モータ停止
             rLeftMotor.Stop();
             rRightMotor.Stop();
+            bIsBatteryError = true;
         }else{
             //速度データをメッセージキューにPush
             stVelMsg.stData = rOdometory.GetVelocity();
@@ -117,8 +141,8 @@ void VelControlTask::Update()
             }
 
             //目標速度をメッセージキューからPop
-            if(!g_VelCmdMsgQueue.IsEmpty()){
-                g_VelCmdMsgQueue.Pop(&stVelCmdMsg, 0);
+            if(!rVelCmdMsgQueue.IsEmpty()){
+                rVelCmdMsgQueue.Pop(&stVelCmdMsg, 0);
             }
             
             //目標速度を各車輪の速度に変換する
@@ -145,33 +169,30 @@ void VelControlTask::Update()
             //モータPWMデューティ比設定
             rLeftMotor.SetDuty(fMotorDuty[DCMotor::EN_MOTOR_LEFT]);
             rRightMotor.SetDuty(fMotorDuty[DCMotor::EN_MOTOR_RIGHT]);
-
-            //デバッグ出力
-            #ifdef ENABLE_VEL_CONTROL_TASK_DEBUG_CONSOLE
-            if(!rDebugQueue.IsFull()){
-                #if 0
-                rDebugQueue.Printf(0,"L,%6.3f,%6.3f,R,%6.3f,%6.3f",
-                                        fWheelVelCmd[DCMotor::EN_MOTOR_LEFT],
-                                        fNowWheelVel[DCMotor::EN_MOTOR_LEFT],
-                                        fWheelVelCmd[DCMotor::EN_MOTOR_RIGHT],
-                                        fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]
-                                        );
-                #else
-                rDebugQueue.Printf(0,"Cmd,%6.3f,Enc,%6.3f,Gyro,%6.3f", 
-                                    stVelCmdMsg.fAngVelCmd,
-                                    (-fNowWheelVel[DCMotor::EN_MOTOR_LEFT] + fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]) / (ROBOT_PARAM_TREAD_MM),
-                                    rOdometory.GetAngleVel()
-                                    );
-                #endif
-            }
-            #endif
         }
+        break;
     case EN_TOP_STATE_BATT_LOW: //バッテリー電圧低下
     default:
         rLeftMotor.Stop();
         rRightMotor.Stop();
         break;
     }
+
+    //デバッグ出力
+    #ifdef ENABLE_VEL_CONTROL_TASK_DEBUG_CONSOLE
+    if(!rDebugQueue.IsFull()){
+        #if 0
+        rDebugQueue.Printf(0,"Cmd,%6.3f,Enc,%6.3f,Gyro,%6.3f", 
+                            stVelCmdMsg.fAngVelCmd,
+                            (-fNowWheelVel[DCMotor::EN_MOTOR_LEFT] + fNowWheelVel[DCMotor::EN_MOTOR_RIGHT]) / (ROBOT_PARAM_TREAD_MM),
+                            rOdometory.GetAngleVel()
+                            );
+
+        #endif
+        //rDebugQueue.Printf(0,"L,%6.3f,R,%6.3f",fMotorDuty[DCMotor::EN_MOTOR_LEFT], fMotorDuty[DCMotor::EN_MOTOR_RIGHT]);
+        //rDebugQueue.Printf(0,"Calib,%d,%d,%d",enNowTopState, bStartCalibFlag, bCalibCompleted);
+    }
+    #endif
 
     //出力系の更新
     OutputUpdate();

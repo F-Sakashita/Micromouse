@@ -29,9 +29,6 @@
 #include "SystickTimer.h"
 #include "TaskList.h"
 #include "DebugTask.h"
-#include "WallDetectTask.h"
-#include "MainTask.h"
-#include "TrajControlTask.h"
 #include "arm_math.h"
 #include "MessageQueueType.h"
 #include <stdbool.h>
@@ -40,6 +37,7 @@
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
 typedef StaticQueue_t osStaticMessageQDef_t;
+typedef StaticSemaphore_t osStaticMutexDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -173,6 +171,22 @@ const osMessageQueueAttr_t VelCmdQueue_attributes = {
   .mq_mem = &VelCmdQueueBuffer,
   .mq_size = sizeof(VelCmdQueueBuffer)
 };
+/* Definitions for OdometoryCalibMutex */
+osMutexId_t OdometoryCalibMutexHandle;
+osStaticMutexDef_t OdometoryCalibMutexControlBlock;
+const osMutexAttr_t OdometoryCalibMutex_attributes = {
+  .name = "OdometoryCalibMutex",
+  .cb_mem = &OdometoryCalibMutexControlBlock,
+  .cb_size = sizeof(OdometoryCalibMutexControlBlock),
+};
+/* Definitions for ResetPosMutex */
+osMutexId_t ResetPosMutexHandle;
+osStaticMutexDef_t ResetPosMutexControlBlock;
+const osMutexAttr_t ResetPosMutex_attributes = {
+  .name = "ResetPosMutex",
+  .cb_mem = &ResetPosMutexControlBlock,
+  .cb_size = sizeof(ResetPosMutexControlBlock),
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -196,6 +210,12 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
+  /* Create the mutex(es) */
+  /* creation of OdometoryCalibMutex */
+  OdometoryCalibMutexHandle = osMutexNew(&OdometoryCalibMutex_attributes);
+
+  /* creation of ResetPosMutex */
+  ResetPosMutexHandle = osMutexNew(&ResetPosMutex_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -270,16 +290,21 @@ void MX_FREERTOS_Init(void) {
   TrajControlTask_OsFunc_t trajControlTask_OsFunc;
   trajControlTask_OsFunc.OdometoryPosQueueId = OdometoryPosQueueHandle;
   trajControlTask_OsFunc.VelCmdQueueId = VelCmdQueueHandle;
+  trajControlTask_OsFunc.ResetPosMutexId = ResetPosMutexHandle;
   bInitialize &= TrajControlTask_Initialize(&trajControlTask_OsFunc);
   SystickTimer_DelayMS(50u);
 
   VelControlTask_OsFunc_t velControlTask_OsFunc;
   velControlTask_OsFunc.OdometoryVelQueueId = OdometoryVelQueueHandle;
+  velControlTask_OsFunc.OdometoryCalibMutexId = OdometoryCalibMutexHandle;
   bInitialize &= VelControlTask_Initialize(&velControlTask_OsFunc);
   SystickTimer_DelayMS(50u);
 
   DebugConsole_Printf("\nHello World!\n");
+  DebugConsole_Printf("CalibMutex, %p\n", OdometoryCalibMutexHandle);
+  DebugConsole_Printf("CalibMutex, %p\n", velControlTask_OsFunc.OdometoryCalibMutexId);
   DebugConsole_Printf("RTOS Tasks Initialized : %d\n", bInitialize);
+
   SystickTimer_DelayMS(3000u);
   /* USER CODE END RTOS_EVENTS */
 

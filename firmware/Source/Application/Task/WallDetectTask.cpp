@@ -1,17 +1,23 @@
-#include "WallDetectTask.h"
-#include "FreeRTOS.h"
+#include "WallDetectTask.hpp"
 #include "WallSensor.h"
-#include "TaskConfig.h"
-#include "Blink.hpp"
-#include "Button.hpp"
-#include "DebugQueue.hpp"
 #include "main.h"
-#include "TaskList.h"
 
-static DebugQueue &g_rDebugQueue = DebugQueue::GetInstance();
-static bool g_bInitialized = false;
+//初期化が必要なインスタンスの取得
 
-bool WallDetectTask_Initialize(const WallDetectTask_OsFunc_t *pOsFunc)
+//別タスクで初期化を行うインスタンスの取得
+DebugQueue& WallDetectTask::rDebugQueue = DebugQueue::GetInstance();
+
+//本クラスのインスタンスの取得
+static WallDetectTask &g_rWallDeteckTask = WallDetectTask::GetInstance();
+
+/* Private member functions */
+WallDetectTask::WallDetectTask()
+{
+    enNowTopState = EN_TOP_STATE_FIRST;
+}
+
+/* Public member functions */
+bool WallDetectTask::Initialize(const WallDetectTask_OsFunc_t *pOsFunc)
 {
     bool bResult = true;
     //bResult &= g_Led0.Initialize(DBG_LED0_GPIO_Port, DBG_LED0_Pin, 500);
@@ -20,17 +26,16 @@ bool WallDetectTask_Initialize(const WallDetectTask_OsFunc_t *pOsFunc)
     	return false;
     }
 
-    g_bInitialized = true;
+    bInitialized = true;
     return bResult;
 }
-
-void WallDetectTask_Update(void)
+void WallDetectTask::Update()
 {
     uint32_t uiTick = osKernelGetTickCount();
 	osDelayUntil(uiTick + WALL_DETECT_TASK_SAMPLING_PERIOD_MS);
     
-	if(     !g_bInitialized
-        ||  !g_rDebugQueue.IsInitialized()){
+	if(     !bInitialized
+        ||  !rDebugQueue.IsInitialized()){
 		return;
 	}
 
@@ -42,8 +47,8 @@ void WallDetectTask_Update(void)
     }
     
     #ifdef ENABLE_WALL_DETECT_TASK_DEBUG_CONSOLE
-    if(!g_rDebugQueue.IsFull()){
-        g_rDebugQueue.Printf(0,"LS,%d,LF,%d,RF,%d,RS,%d",
+    if(!rDebugQueue.IsFull()){
+    	rDebugQueue.Printf(0,"LS,%d,LF,%d,RF,%d,RS,%d",
                                 usWallAdcValue[EN_WALLSENSOR_POS_LS],
                                 usWallAdcValue[EN_WALLSENSOR_POS_LF],
                                 usWallAdcValue[EN_WALLSENSOR_POS_RF],
@@ -51,6 +56,14 @@ void WallDetectTask_Update(void)
                                 );
     }
     #endif
+}
 
-    //g_Led0.Update();
+bool WallDetectTask_Initialize(const WallDetectTask_OsFunc_t *pOsFunc)
+{
+    return g_rWallDeteckTask.Initialize(pOsFunc);
+}
+
+void WallDetectTask_Update(void)
+{
+    g_rWallDeteckTask.Update();
 }

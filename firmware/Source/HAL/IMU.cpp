@@ -81,8 +81,8 @@ void IMU::EnableGyroOffestCalc(uint32_t uiSamplingNum, bool bCalcX, bool bCalcY,
 	for(uint8_t ucCount; ucCount < 3; ucCount ++){
 		bGyroOffsetCalcCompleted[ucCount] = !bGyroOffsetCalcStartFlag[ucCount];
 	}
-    if(0 < uiGyroOffsetSamplingCount && bGyroOffsetCalcStart && !IsGyroOffsetCompleted()){
-        uiGyroOffsetSamplingCount = 0;
+    if(bGyroOffsetCalcStart){
+        uiGyroOffsetSamplingCount = 0u;
     }
 }
 

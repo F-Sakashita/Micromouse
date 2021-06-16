@@ -36,6 +36,7 @@ void MainTask_Update();
 typedef struct{
     osMessageQueueId_t OdometoryPosQueueId;     //オドメトリによる位置データキュー
     osMessageQueueId_t VelCmdQueueId;           //速度指令キュー
+    osMutexId_t         ResetPosMutexId;
 }TrajControlTask_OsFunc_t;
 
 bool TrajControlTask_Initialize(const TrajControlTask_OsFunc_t *pOsFunc);
@@ -46,6 +47,7 @@ void TrajControlTask_Update();
 //Taskで使用するOS機能
 typedef struct{
     osMessageQueueId_t OdometoryVelQueueId;  //オドメトリによる速度データキュー
+    osMutexId_t         OdometoryCalibMutexId;
 }VelControlTask_OsFunc_t;
 
 bool VelControlTask_Initialize(const VelControlTask_OsFunc_t *pOsFunc);

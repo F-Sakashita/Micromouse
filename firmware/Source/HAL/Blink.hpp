@@ -21,6 +21,7 @@ private:
     uint32_t    uiStartTimeMs;
     bool bInitialized;
     bool bBlinking;
+    bool bResetTimeFlag;
     void SetState(bool bState);
     
 public:
@@ -31,8 +32,14 @@ public:
     bool Initialize(GPIO_TypeDef *pGPIOx, uint32_t uiOutputPin, uint32_t uiPeriodMs=1000);
 
     void SetPeriod(uint32_t uiPeriodMs, float fOnPercentage=0.5){
+
+        uint32_t uiRequestOnTime = (uint32_t)((float)uiPeriodMs * fOnPercentage);
+        if(uiPeriodMs != this->uiPeriodMs || uiOnTimeMs != uiRequestOnTime){
+            bResetTimeFlag = true;
+            bNowState = false;
+        }
         this->uiPeriodMs = uiPeriodMs;
-        uiOnTimeMs = (uint32_t)((float)uiPeriodMs * fOnPercentage);
+        uiOnTimeMs = uiRequestOnTime;
         uiOffTimeMs = uiPeriodMs - uiOnTimeMs;
         bBlinking = true;
     }

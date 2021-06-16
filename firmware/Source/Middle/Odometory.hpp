@@ -16,12 +16,12 @@ class Odometory{
         }
 
         bool InitializeVel(uint32_t uiSamplingTimeMs);
-        bool InitializePos(uint32_t uiSamplingTimeMs, Posture_t stInitPosture);
+        bool InitializePos(uint32_t uiSamplingTimeMs, const Posture_t& rInitPosture);
 
         void UpdateVelocity();
-        void UpdatePosition(const Posture_t &stVel);
+        void UpdatePosition(const Posture_t &rVel);
 
-        void ResetPosture(Posture_t stPosture);
+        void ResetPosture(const Posture_t& rPosture);
         void RestartCalibration();
 
         const float& GetAngle() const{
@@ -66,7 +66,7 @@ class Odometory{
 
         bool bResetPosFlag;
         bool bEnableUpdate;
-        
+        bool bFirstCalibCompleted;        
 
         static IMU &rImu;
 };
