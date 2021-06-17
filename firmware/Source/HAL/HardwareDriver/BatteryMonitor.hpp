@@ -26,7 +26,7 @@ private:
     static const Threshold_t stThreshold;
     static const float fGain;
     #define DEF_ADC_CHANNEL_RANK    (1)
-    #define DEF_ERR_COUNT_MAX       (50)
+    #define DEF_ERR_COUNT_MAX       (1000)
 
 public:
     static BatteryMonitor& GetInstance(){

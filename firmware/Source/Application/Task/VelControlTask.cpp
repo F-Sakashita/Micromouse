@@ -1,6 +1,7 @@
 #include "VelControlTask.hpp"
 #include "TrajControlTask.hpp"
 #include "MessageQueueList.hpp"
+#include "SystickTimer.h"
 
 //初期化が必要なインスタンスの取得
 DCMotor& VelControlTask::rLeftMotor = DCMotor::GetInstance(DCMotor::EN_MOTOR_LEFT);
@@ -73,8 +74,8 @@ bool VelControlTask::Initialize(const VelControlTask_OsFunc_t *pOsFunc)
     rBattMoni.SetOffset(-0.112f);
     WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetAllGain(0.01f,  1.2f, 0.0000f);
     WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetAllGain(0.01f, 1.2f, 0.0000f);
-    WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-7.0f, 7.0f);
-    WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-7.0f, 7.0f);
+    WheelVelPidCon[DCMotor::EN_MOTOR_RIGHT].SetOutputLimit(-5.0f, 5.0f);
+    WheelVelPidCon[DCMotor::EN_MOTOR_LEFT].SetOutputLimit(-5.0f, 5.0f);
     bFirstCalibShot = true;
     bInitialized = true;
     return true;
@@ -102,6 +103,12 @@ void VelControlTask::Update()
     InputUpdate();
 
     float fBattVoltage = rBattMoni.GetVoltage();
+    static bool bOneShort = true;
+    if(bOneShort){
+        rDebugQueue.Printf(0,"Current Battery Voltage, %3.3f [V]",fBattVoltage);
+        bOneShort = false;
+    }
+
 
     switch (enNowTopState)
     {
@@ -176,6 +183,15 @@ void VelControlTask::Update()
         rLeftMotor.Stop();
         rRightMotor.Stop();
         break;
+    }
+
+    static uint32_t uiTimerMs = SystickTimer_GetTimeMS();
+    if(bIsBatteryError && SystickTimer_IsTimeElapsed(uiTimerMs, 1000u)){
+        uiTimerMs = SystickTimer_GetTimeMS();
+        if(!rDebugQueue.IsFull()){
+            rDebugQueue.Printf(0,"Battery Low Error, %6.3f [V]", fBattVoltage);
+        }
+
     }
 
     //デバッグ出力

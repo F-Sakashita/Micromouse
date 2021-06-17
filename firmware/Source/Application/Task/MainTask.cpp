@@ -276,7 +276,14 @@ void MainTask::Update()
             case EN_MODE_ANG_SIN:
                 stPosCmdMsg.stTargetPos.fValueX = 0.0f;
                 stPosCmdMsg.stTargetPos.fValueY = 0.0f;
-                stPosCmdMsg.stTargetPos.fRad = Calc_ConvDegToRad(180.0f) * arm_sin_f32(0.5f * 2.0f * M_PI * static_cast<float>(SystickTimer_GetTimeMS() - uiStartTimeMs));
+                stPosCmdMsg.stTargetPos.fRad = Calc_ConvDegToRad(90.0f) * arm_sin_f32(0.05f * 2.0f * M_PI * static_cast<float>(SystickTimer_GetTimeMS() - uiStartTimeMs) / 1000.0f);
+
+                if(SystickTimer_IsTimeElapsed(uiStartTimeMs, 20000)){
+                    enOldState = EN_TOP_STATE_RUNNING;
+                    enNowState = EN_TOP_STATE_WAIT_MODE_SELECT;
+                }
+                break;
+            default:
                 break;
             }
 
